@@ -1,4 +1,4 @@
-import 'package:cronotracker/trending/ui/screens/trending.dart';
+import 'package:cronotracker/trending/ui/screens/trending_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
