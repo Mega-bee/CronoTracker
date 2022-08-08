@@ -8,8 +8,9 @@ class TrendingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        
+
         backgroundColor: Colors.appBarPurple,
+
         actions: [
           IconButton(
               onPressed: (){},
