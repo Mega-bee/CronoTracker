@@ -66,6 +66,7 @@ flutter:
     - lib/assets/images/watch2.jpg
     - lib/assets/images/watch3.jpg
     - lib/assets/images/watch4.png
+    - lib/assets/images/watch5.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

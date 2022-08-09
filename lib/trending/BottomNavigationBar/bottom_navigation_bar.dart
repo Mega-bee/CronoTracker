@@ -14,6 +14,7 @@ class _BottomMenuState extends State<BottomMenu> {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
+
       type: BottomNavigationBarType.fixed,
       backgroundColor: Colors.bottomNavPurple,
       currentIndex: currentIndex,
@@ -29,7 +30,6 @@ class _BottomMenuState extends State<BottomMenu> {
             color: Colors.white,
           ),
           label: 'Trending',
-          backgroundColor: Colors.white
         ),
         BottomNavigationBarItem(
           icon: Icon(

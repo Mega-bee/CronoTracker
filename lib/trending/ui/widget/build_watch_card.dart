@@ -12,7 +12,7 @@ class BuildWatchCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(10.0),
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8.0),
@@ -21,13 +21,11 @@ class BuildWatchCard extends StatelessWidget {
             BoxShadow(
               color: Colors.grey,
               blurRadius: 2.0,
-              spreadRadius: 0.0,
-              offset: Offset(2.0, 2.0), // shadow direction: bottom right
+              offset: Offset(1.0, 1.0), // shadow direction: bottom right
             )
           ],
         ),
-        width: 150,
-        height: 150,
+        width: 100,
         child: Image(
           width: double.infinity,
           height: double.infinity,
