@@ -25,7 +25,7 @@ class BuildWatchCard extends StatelessWidget {
             )
           ],
         ),
-        width: 100,
+        width: 130,
         child: Image(
           width: double.infinity,
           height: double.infinity,

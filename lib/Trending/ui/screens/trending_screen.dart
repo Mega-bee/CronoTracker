@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import '../../../DrawerMenu/ui/widgets/drawer_menu_widget.dart';
 import '../../BottomNavigationBar/bottom_navigation_bar.dart';
 import '../../model_classes/watch_card.dart';
 import '../widget/build_watch_card.dart';
-import '../widget/navigation_drawer.dart';
 
 class TrendingScreen extends StatelessWidget {
 
@@ -16,19 +16,19 @@ class TrendingScreen extends StatelessWidget {
 
 
   watchCard(
-    img: 'lib/assets/images/watch5.jpg'
+    img: 'assets/images/watch5.jpg'
   ),
 
     watchCard(
-        img: 'lib/assets/images/watch5.jpg'
+        img: 'assets/images/watch2.jpg'
     ),
 
     watchCard(
-        img: 'lib/assets/images/watch5.jpg'
+        img: 'assets/images/watch5.jpg'
     ),
 
     watchCard(
-        img: 'lib/assets/images/watch5.jpg'
+        img: 'assets/images/watch5.jpg'
     ),
 
 
@@ -221,8 +221,6 @@ class TrendingScreen extends StatelessWidget {
                   ],
                 ),
 
-
-
               ],
 
             ),
@@ -234,71 +232,7 @@ class TrendingScreen extends StatelessWidget {
           },
         ),
 
-      drawer: Drawer(
-    child: ListView(
-    // Important: Remove any padding from the ListView.
-    padding: EdgeInsets.zero,
-      children: [
-
-        SizedBox(height: 30),
-
-        Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Container(
-            child: Center(
-                child: Text(
-                    'Meta Auction Platinium',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18
-                  ),
-                ),
-            ),
-          ),
-        ),
-
-        Divider(),
-
-        ListTile(
-          leading: Icon(
-            Icons.mic,
-            size: 30,
-          ),
-          title: Text('Assistant'),
-          onTap: () {},
-        ),
-        ListTile(
-          leading: Icon(
-            Icons.info_outline,
-            size: 30,
-          ),
-          title: Text('About'),
-          onTap: () {},
-        ),
-        Divider(),
-
-        ListTile(
-          leading: Icon(
-            Icons.image,
-            size: 30,
-          ),
-          title: Text('App Gallery'),
-          onTap: () {},
-        ),
-
-        ListTile(
-          leading: Icon(
-            Icons.push_pin,
-            size: 30,
-          ),
-          title: Text('Add shortcut'),
-          onTap: () {},
-        ),
-
-      ],
-    ),
-    ),
-
+      drawer: DrawerMenu(),
 
 
     );
