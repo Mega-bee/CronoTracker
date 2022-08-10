@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../DrawerMenu/ui/widgets/drawer_menu_widget.dart';
-import '../../BottomNavigationBar/bottom_navigation_bar.dart';
 import '../../model_classes/watch_card.dart';
 import '../widget/build_watch_card.dart';
 
@@ -24,11 +23,11 @@ class TrendingScreen extends StatelessWidget {
     ),
 
     watchCard(
-        img: 'assets/images/watch5.jpg'
+        img: 'assets/images/watch.png'
     ),
 
     watchCard(
-        img: 'assets/images/watch5.jpg'
+        img: 'assets/images/watch.png'
     ),
 
 
@@ -61,7 +60,7 @@ class TrendingScreen extends StatelessWidget {
           },
         ),
       ),
-        body: Padding(
+      body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: SingleChildScrollView(
             child: Column(
@@ -226,13 +225,8 @@ class TrendingScreen extends StatelessWidget {
             ),
           ),
         ),
-
-        bottomNavigationBar: BottomMenu(
-          onClicked: (int value) {
-          },
-        ),
-
       drawer: DrawerMenu(),
+
 
 
     );

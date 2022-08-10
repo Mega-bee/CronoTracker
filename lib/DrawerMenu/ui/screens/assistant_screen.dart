@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import '../../../trending/BottomNavigationBar/bottom_navigation_bar.dart';
+import '../../../BottomNavigationBar/ui/screens/bottom_navigation_bar_screen.dart';
 import '../widgets/drawer_menu_widget.dart';
 
 class AssistantScreen extends StatelessWidget {
@@ -55,11 +54,9 @@ class AssistantScreen extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: BottomMenu(
-        onClicked: (int value) {
-        },
-      ),
+      // bottomNavigationBar: BottomNavigationBarScreen(),
       drawer: DrawerMenu(),
+
       );
   }
 }
