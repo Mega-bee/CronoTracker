@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import '../../../trending/ui/screens/trending_screen.dart';
+import '../../../BottomNavigationBar/ui/screens/bottom_navigation_bar_screen.dart';
 
 class AboutScreen extends StatelessWidget {
 
@@ -49,7 +48,7 @@ class AboutScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => TrendingScreen()),
+                    MaterialPageRoute(builder: (context) => BottomNavigationBarScreen()),
                   );
                 },
                 child: Text(
