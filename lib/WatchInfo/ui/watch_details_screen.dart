@@ -151,6 +151,7 @@ class WatchDetailsScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.end,
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
+
           FloatingActionButton(
             onPressed: () {  },
             child: Icon(Icons.credit_card),
