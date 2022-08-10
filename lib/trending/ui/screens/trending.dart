@@ -9,7 +9,7 @@ class TrendingScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
 
-        backgroundColor: Colors.appBarPurple,
+        // backgroundColor: Colors.appBarPurple,
 
         actions: [
           IconButton(
@@ -31,7 +31,7 @@ class TrendingScreen extends StatelessWidget {
 
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.appBarPurple,
+        // backgroundColor: Colors.appBarPurple,
         items: [
 
           BottomNavigationBarItem(
