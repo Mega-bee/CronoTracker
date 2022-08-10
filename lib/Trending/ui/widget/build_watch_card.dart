@@ -14,12 +14,11 @@ class BuildWatchCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-        // Navigator.push(
-        //   context,
-        //   MaterialPageRoute(builder: (context) => WatchDetailsScreen(
-        //
-        //   )),
-        // );
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => WatchDetailsScreen()
+          ),
+        );
       },
       child: Padding(
         padding: const EdgeInsets.all(10.0),

@@ -6,8 +6,8 @@ import '../Model/watch_details_model.dart';
 
 class WatchDetailsScreen extends StatelessWidget {
 
-  WatchDetails? watchDetails;
-  WatchDetailsScreen(this.watchDetails);
+  // WatchDetails? watchDetails;
+  // WatchDetailsScreen(this.watchDetails);
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +29,15 @@ class WatchDetailsScreen extends StatelessWidget {
             onPressed: (){},
           )
         ],
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: (){
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => BottomNavigationBarScreen()),
+            );
+          },
+        ),
       ),
       body: Container(
         width: double.infinity,
@@ -153,7 +162,7 @@ class WatchDetailsScreen extends StatelessWidget {
         children: [
 
           FloatingActionButton(
-            onPressed: () {  },
+            onPressed: () {},
             child: Icon(Icons.credit_card),
             backgroundColor: Colors.appBarPurple,
           ),
@@ -161,7 +170,7 @@ class WatchDetailsScreen extends StatelessWidget {
           SizedBox(height: 5),
 
           FloatingActionButton(
-            onPressed: () {  },
+            onPressed: () {},
             child: Icon(Icons.favorite),
             backgroundColor: Colors.appBarPurple,
           ),
