@@ -1,9 +1,11 @@
-class watchCard {
-  String? img,
+class WatchDetails {
+
+  String? image,
       brand,
       modelName,
       reference,
       nickname,
+      size,
       dialColor,
       caseMaterial,
       braceletMaterial,
@@ -13,12 +15,13 @@ class watchCard {
       soldStatus,
       sellingPrice;
 
-  watchCard({
-      this.img,
+  WatchDetails(
+      this.image,
       this.brand,
       this.modelName,
       this.reference,
       this.nickname,
+      this.size,
       this.dialColor,
       this.caseMaterial,
       this.braceletMaterial,
@@ -26,6 +29,5 @@ class watchCard {
       this.priceTracking,
       this.bidDate,
       this.soldStatus,
-      this.sellingPrice
-  });
+      this.sellingPrice);
 }
