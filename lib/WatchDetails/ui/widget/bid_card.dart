@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import '../../../Trending/model_classes/watch_card.dart';
 
 class BidCard extends StatelessWidget {
@@ -64,9 +63,41 @@ class BidCard extends StatelessWidget {
                   ],
                 ),
                 Spacer(),
+
                 IconButton(
                   icon: Icon(Icons.more_vert),
-                  onPressed: (){},
+                  onPressed: (){
+                    showModalBottomSheet(
+                        context: context,
+                        builder: (context) {
+                          return Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              ListTile(
+                                leading: new Icon(Icons.favorite),
+                                title: new Text('ADD'),
+                                onTap: () {
+                                  print('pressed !');
+                                },
+                              ),
+                              ListTile(
+                                leading: new Icon(Icons.campaign),
+                                title: new Text('Notify Me'),
+                                onTap: () {
+                                  print('pressed !');
+                                },
+                              ),
+                              ListTile(
+                                leading: new Icon(Icons.open_in_new),
+                                title: new Text('Open URL (Photo)'),
+                                onTap: () {
+                                  print('pressed !');
+                                },
+                              ),
+                            ],
+                          );
+                        });
+                  },
                 ),
               ],
             ),

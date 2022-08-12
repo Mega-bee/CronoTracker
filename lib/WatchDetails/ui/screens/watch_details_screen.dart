@@ -1,3 +1,4 @@
+import 'package:cronotracker/AlertMessage/ui/widget/alert_message_card.dart';
 import 'package:cronotracker/Trending/model_classes/watch_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -6,7 +7,7 @@ import '../widget/bid_card.dart';
 
 class WatchDetailsScreen extends StatelessWidget {
 
-  String? image,brand , modelName, referece, nickname, dialColor, caseMaterial, braceletMaterial, soldMonth, priceTracking;
+  String? image, brand, modelName, referece, nickname, dialColor, caseMaterial, braceletMaterial, soldMonth, priceTracking;
 
 
   WatchDetailsScreen({
@@ -23,31 +24,32 @@ class WatchDetailsScreen extends StatelessWidget {
   });
 
 
+
   List<watchCard> bids = [
 
     watchCard(
       soldStatus: '2022 Unknown - Not Sold',
       bidDate: '1 August 2022',
       sellingPrice: 'Last Bid AED 2200 = 599 \$',
-      img: 'assets/watch.jpg'
+      img: 'assets/watch4 (2).jpg'
     ),
     watchCard(
         soldStatus: '2022 Unworn - Sold',
         bidDate: '30 July 2022',
         sellingPrice: 'Last Bid AED 2500 = 681 \$',
-        img: 'assets/watch.jpg'
+        img: 'assets/watch2.jpg'
     ),
     watchCard(
         soldStatus: '2022 Unworn - Sold',
         bidDate: '27 July 2022',
         sellingPrice: 'Last Bid AED 2300 = 627 \$',
-        img: 'assets/watch.jpg'
+        img: 'assets/watch5.jpg'
     ),
     watchCard(
         soldStatus: '2022 Unworn - Sold',
         bidDate: '25 July 2022',
         sellingPrice: 'Last Bid AED 2550 = 695 \$',
-        img: 'assets/watch.jpg'
+        img: 'assets/watch4 (1).jpg'
     ),
     watchCard(
         soldStatus: '2022 Unknown - Not Sold',
@@ -85,10 +87,12 @@ class WatchDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AlertMessageCard ac;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.appBarPurple,
         actions: [
+
           IconButton(
             icon: Icon(Icons.search),
             onPressed: (){
@@ -98,10 +102,48 @@ class WatchDetailsScreen extends StatelessWidget {
             icon: Icon(Icons.refresh),
             onPressed: (){},
           ),
-          IconButton(
-            icon: Icon(Icons.more_vert),
-            onPressed: (){},
-          )
+
+          PopupMenuButton(itemBuilder: (BuildContext context) => [
+            
+            PopupMenuItem(child: GestureDetector(
+              onTap: (){
+                print('hello');
+              },
+              child: Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 3),
+                    child: Icon(Icons.favorite, color: Colors.appBarPurple),
+                  ),
+                  SizedBox(width: 5),
+                  Text('ADD'),
+                ],
+              ),
+            )),
+
+            PopupMenuItem(child: GestureDetector(
+              onTap: (){
+                print('Hello');
+              },
+              child: Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 3),
+                    child: Icon(Icons.credit_card, color: Colors.appBarPurple,
+                    ),
+                  ),
+                  SizedBox(width: 5),
+                  Text('Notify Me'),
+                ],
+              ),
+            )),
+
+
+          ],
+          ),
+
+
+
         ],
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
@@ -134,7 +176,7 @@ class WatchDetailsScreen extends StatelessWidget {
               Row(
                 children: [
                   Container(
-                    width: 180,
+                    width: 140,
                     child: Column(
                       children: [
 
@@ -277,7 +319,7 @@ class WatchDetailsScreen extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    width: 180,
+                    width: 220,
                     child: Column(
                       children: [
 
@@ -288,6 +330,7 @@ class WatchDetailsScreen extends StatelessWidget {
                               padding: const EdgeInsets.all(12.0),
                               child: Text(
                                 '${this.brand}',
+                                  maxLines: 3
 
                               ),
                             ),
@@ -301,6 +344,7 @@ class WatchDetailsScreen extends StatelessWidget {
                               padding: const EdgeInsets.all(12.0),
                               child: Text(
                                 '${this.modelName}',
+                                maxLines: 2,
                                 style: TextStyle(
                                 ),
                               ),
@@ -429,15 +473,40 @@ class WatchDetailsScreen extends StatelessWidget {
         children: [
 
           FloatingActionButton(
-            onPressed: () {},
+            onPressed: () {
+              showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertMessageCard(
+                        'Confirm',
+                        'Would you like to be instantly notified when this watch is listed in the next live action ?',
+                        'No',
+                        'Notify Me'
+                    );
+                  }
+              );
+            },
             child: Icon(Icons.credit_card),
             backgroundColor: Colors.appBarPurple,
           ),
 
           SizedBox(height: 5),
 
+
           FloatingActionButton(
-            onPressed: () {},
+            onPressed: () {
+              showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertMessageCard(
+                        'Confirm',
+                        'Would you like to add this watch to your favorites ?',
+                        'No',
+                        'ADD'
+                    );
+                  }
+              );
+            },
             child: Icon(Icons.favorite),
             backgroundColor: Colors.appBarPurple,
           ),

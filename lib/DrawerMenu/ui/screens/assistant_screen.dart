@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../../../BottomNavigationBar/ui/screens/bottom_navigation_bar_screen.dart';
 import '../widgets/drawer_menu_widget.dart';
 
 class AssistantScreen extends StatelessWidget {
@@ -47,7 +46,7 @@ class AssistantScreen extends StatelessWidget {
                 fit: BoxFit.fitWidth,
                 width: double.infinity,
                 height: 500,
-                image: AssetImage('lib/assets/images/watch3.jpg'),
+                image: AssetImage('assets/watch2.jpg'),
               ),
 
             ],

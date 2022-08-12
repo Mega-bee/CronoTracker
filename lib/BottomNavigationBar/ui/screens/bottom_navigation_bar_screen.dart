@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import '../../../Auctions/ui/screens/auctions_screen.dart';
 import '../../../Discover/ui/screens/discover_screen.dart';
 import '../../../Notfications/ui/Screen/NotificationScreen.dart';
+import '../../../Profile/ui/screens/profile_screen.dart';
 import '../../../Trending/ui/screens/trending_screen.dart';
 
 
@@ -18,8 +20,9 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
   List<Widget> screens = [
     TrendingScreen(),
     DiscoverScreen(),
+    Auctions(),
     NotificationScreen(),
-
+    ProfileScreen(),
   ];
 
   @override
