@@ -1,7 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import '../../../Auctions/ui/screens/auctions_screen.dart';
+import '../../../Discover/ui/screens/discover_screen.dart';
 import '../../../Notfications/ui/Screen/NotificationScreen.dart';
+import '../../../Profile/ui/screens/profile_screen.dart';
 import '../../../Trending/ui/screens/trending_screen.dart';
+
 
 class BottomNavigationBarScreen extends StatefulWidget {
 
@@ -15,9 +19,11 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
 
   List<Widget> screens = [
     TrendingScreen(),
+    DiscoverScreen(),
+    Auctions(),
     NotificationScreen(),
+    ProfileScreen(),
   ];
-
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +37,7 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
         unselectedIconTheme: IconThemeData(color:Colors.white38 ),
         selectedIconTheme: IconThemeData(color: Colors.white),
         type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.bottomNavPurple,
+        backgroundColor: Colors.appBarPurple,
         currentIndex: currentIndex,
         onTap: (index) {
           setState(() {
