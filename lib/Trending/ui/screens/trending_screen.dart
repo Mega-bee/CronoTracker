@@ -12,26 +12,73 @@ class TrendingScreen extends StatelessWidget {
 
   List<watchCard> watches = [
 
-
-
-  watchCard(
-    img: 'assets/images/watch5.jpg'
-  ),
-
     watchCard(
-        img: 'assets/images/watch2.jpg'
+        img: 'assets/watch.jpg',
+        brand: 'Omega',
+        modelName: 'SpeedMaster SunSwatch',
+        reference: 'SO7KG33H',
+        nickname: 'Sun',
+        dialColor: 'Brown',
+        caseMaterial: 'ceramic',
+        braceletMaterial: 'Strap',
+        soldMonth: '6',
+        priceTracking: '40'
     ),
 
     watchCard(
-        img: 'assets/images/watch.png'
+        img: 'assets/watch2.jpg',
+        brand: 'Rolex',
+        modelName: 'Rolex-2421',
+        reference: 'SO7KG33H',
+        nickname: 'king',
+        dialColor: 'silver',
+        caseMaterial: 'ceramic',
+        braceletMaterial: 'Strap',
+        soldMonth: '12',
+        priceTracking: '32'
     ),
 
     watchCard(
-        img: 'assets/images/watch.png'
+        img: 'assets/watch4 (1).jpg',
+        brand: 'Quartz',
+        modelName: 'fancy watch',
+        reference: 'quartz-3421fds',
+        nickname: 'cool watch',
+        dialColor: 'blue',
+        caseMaterial: 'silver',
+        braceletMaterial: 'Strap',
+        soldMonth: '12',
+        priceTracking: '30'
+    ),
+
+    watchCard(
+        img: 'assets/watch4 (2).jpg',
+        brand: 'Fossil',
+        modelName: 'fossilWatchCool',
+        reference: 'fossil-6423',
+        nickname: 'hello world',
+        dialColor: 'Brown',
+        caseMaterial: 'gold',
+        braceletMaterial: 'Strap',
+      soldMonth: '12',
+      priceTracking: '10'
+    ),
+
+    watchCard(
+        img: 'assets/watch5.jpg',
+        brand: 'Casio',
+        modelName: 'nice watch',
+        reference: 'casio-3453',
+        nickname: 'sweet',
+        dialColor: 'silver',
+        caseMaterial: 'ceramic',
+        braceletMaterial: 'Strap',
+        soldMonth: '12',
+        priceTracking: '8'
     ),
 
 
-];
+  ];
 
   final GlobalKey<ScaffoldState> _key = GlobalKey();
   @override
@@ -42,8 +89,8 @@ class TrendingScreen extends StatelessWidget {
         backgroundColor: Colors.appBarPurple,
         actions: [
           IconButton(
-              onPressed: (){},
-              icon: Icon(Icons.search),
+            onPressed: (){},
+            icon: Icon(Icons.search),
           ),
 
           IconButton(
@@ -61,170 +108,170 @@ class TrendingScreen extends StatelessWidget {
         ),
       ),
       body: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
+        padding: const EdgeInsets.all(8.0),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
 
-                Stack(
-                  children: [
+              Stack(
+                children: [
 
-                    Container(
-                      width: double.infinity,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          'Trending Watches below 10,000\$',
-                          style: TextStyle(
-                              fontSize: 17,
-                              fontWeight: FontWeight.normal
-                          ),
-                        ),
-                      ),
-                      height: 200,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(1.0),
-                        color: Colors.white,
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey,
-                            blurRadius: 2.0,
-                            spreadRadius: 0.0,
-                            offset: Offset(1.0, 1.0),
-                          )
-                        ],
-                      ),
-                    ),
-
-                    Positioned.fill(
-                        child: Align(
-                          alignment: Alignment.bottomLeft,
-                          child: Container(
-                            width: double.infinity,
-                            height: 150,
-                            child: ListView.builder(
-                              itemBuilder: (context, index) {
-                                return BuildWatchCard(watches[index]);
-                              },
-                              scrollDirection: Axis.horizontal,
-                              itemCount: watches.length,
-                              shrinkWrap: true,
-                            ),
-                          ),
-                        ),
-                    ),
-                  ],
-                ),
-
-                SizedBox(height: 10),
-
-                Stack(
-                  children: [
-
-                    Container(
-                      width: double.infinity,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          'Trending Watches Watches',
-                          style: TextStyle(
-                              fontSize: 17,
-                              fontWeight: FontWeight.normal
-                          ),
-                        ),
-                      ),
-                      height: 200,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(1.0),
-                        color: Colors.white,
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey,
-                            blurRadius: 2.0,
-                            spreadRadius: 0.0,
-                            offset: Offset(1.0, 1.0),
-                          )
-                        ],
-                      ),
-                    ),
-
-                    Positioned.fill(
-                      child: Align(
-                        alignment: Alignment.bottomLeft,
-                        child: Container(
-                          width: double.infinity,
-                          height: 150,
-                          child: ListView.builder(
-                            itemBuilder: (context, index) {
-                              return BuildWatchCard(watches[index]);
-                            },
-                            scrollDirection: Axis.horizontal,
-                            itemCount: watches.length,
-                            shrinkWrap: true,
-                          ),
+                  Container(
+                    width: double.infinity,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        'Trending Watches below 10,000\$',
+                        style: TextStyle(
+                            fontSize: 17,
+                            fontWeight: FontWeight.normal
                         ),
                       ),
                     ),
-                  ],
-                ),
-
-                SizedBox(height: 10),
-
-                Stack(
-                  children: [
-
-                    Container(
-                      width: double.infinity,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          'Most Trending Rose Gold Watches',
-                          style: TextStyle(
-                              fontSize: 17,
-                              fontWeight: FontWeight.normal
-                          ),
-                        ),
-                      ),
-                      height: 200,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(1.0),
-                        color: Colors.white,
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey,
-                            blurRadius: 2.0,
-                            spreadRadius: 0.0,
-                            offset: Offset(1.0, 1.0),
-                          )
-                        ],
-                      ),
+                    height: 200,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(1.0),
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey,
+                          blurRadius: 2.0,
+                          spreadRadius: 0.0,
+                          offset: Offset(1.0, 1.0),
+                        )
+                      ],
                     ),
+                  ),
 
-                    Positioned.fill(
-                      child: Align(
-                        alignment: Alignment.bottomLeft,
-                        child: Container(
-                          width: double.infinity,
-                          height: 150,
-                          child: ListView.builder(
-                            itemBuilder: (context, index) {
-                              return BuildWatchCard(watches[index]);
-                            },
-                            scrollDirection: Axis.horizontal,
-                            itemCount: watches.length,
-                            shrinkWrap: true,
-                          ),
+                  Positioned.fill(
+                    child: Align(
+                      alignment: Alignment.bottomLeft,
+                      child: Container(
+                        width: double.infinity,
+                        height: 150,
+                        child: ListView.builder(
+                          itemBuilder: (context, index) {
+                            return BuildWatchCard(watches[index]);
+                          },
+                          scrollDirection: Axis.horizontal,
+                          itemCount: watches.length,
+                          shrinkWrap: true,
                         ),
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
+              ),
 
-              ],
+              SizedBox(height: 10),
 
-            ),
+              Stack(
+                children: [
+
+                  Container(
+                    width: double.infinity,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        'Trending Watches Watches',
+                        style: TextStyle(
+                            fontSize: 17,
+                            fontWeight: FontWeight.normal
+                        ),
+                      ),
+                    ),
+                    height: 200,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(1.0),
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey,
+                          blurRadius: 2.0,
+                          spreadRadius: 0.0,
+                          offset: Offset(1.0, 1.0),
+                        )
+                      ],
+                    ),
+                  ),
+
+                  Positioned.fill(
+                    child: Align(
+                      alignment: Alignment.bottomLeft,
+                      child: Container(
+                        width: double.infinity,
+                        height: 150,
+                        child: ListView.builder(
+                          itemBuilder: (context, index) {
+                            return BuildWatchCard(watches[index]);
+                          },
+                          scrollDirection: Axis.horizontal,
+                          itemCount: watches.length,
+                          shrinkWrap: true,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+
+              SizedBox(height: 10),
+
+              Stack(
+                children: [
+
+                  Container(
+                    width: double.infinity,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        'Most Trending Rose Gold Watches',
+                        style: TextStyle(
+                            fontSize: 17,
+                            fontWeight: FontWeight.normal
+                        ),
+                      ),
+                    ),
+                    height: 200,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(1.0),
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey,
+                          blurRadius: 2.0,
+                          spreadRadius: 0.0,
+                          offset: Offset(1.0, 1.0),
+                        )
+                      ],
+                    ),
+                  ),
+
+                  Positioned.fill(
+                    child: Align(
+                      alignment: Alignment.bottomLeft,
+                      child: Container(
+                        width: double.infinity,
+                        height: 150,
+                        child: ListView.builder(
+                          itemBuilder: (context, index) {
+                            return BuildWatchCard(watches[index]);
+                          },
+                          scrollDirection: Axis.horizontal,
+                          itemCount: watches.length,
+                          shrinkWrap: true,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+
+            ],
+
           ),
         ),
+      ),
       drawer: DrawerMenu(),
 
 

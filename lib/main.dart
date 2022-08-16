@@ -1,5 +1,5 @@
+import 'package:cronotracker/splash_screen.dart';
 import 'package:flutter/material.dart';
-import 'BottomNavigationBar/ui/screens/bottom_navigation_bar_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: BottomNavigationBarScreen(),
+      home: SplashScreenMain(),
     );
   }
 }

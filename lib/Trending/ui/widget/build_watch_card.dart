@@ -1,6 +1,6 @@
-import 'package:cronotracker/WatchInfo/ui/watch_details_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import '../../../WatchDetails/ui/screens/watch_details_screen.dart';
 import '../../model_classes/watch_card.dart';
 
 
@@ -13,11 +13,22 @@ class BuildWatchCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
+      onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => WatchDetailsScreen()
-          ),
+          MaterialPageRoute(builder: (context) => WatchDetailsScreen(
+            image: wc.img,
+            brand: wc.brand,
+            modelName: wc.modelName,
+            referece: wc.reference,
+            nickname: wc.nickname,
+            dialColor: wc.dialColor,
+            caseMaterial: wc.caseMaterial,
+            braceletMaterial: wc.braceletMaterial,
+            soldMonth: wc.soldMonth,
+            priceTracking: wc.priceTracking
+
+          )),
         );
       },
       child: Padding(
