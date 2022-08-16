@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../NavigationBar/ui/Screen/navbar.dart';
+import '../../../utils/Images/Images.dart';
 import '../../../utils/style/colors.dart';
 
 class AboutScreen extends StatelessWidget {
@@ -21,7 +22,7 @@ class AboutScreen extends StatelessWidget {
                 width: 200,
                 height: 200,
                 image: AssetImage(
-                  'assets/images/img.png'
+                    ImageAsset.LOGO
                 ),
               ),
             ),

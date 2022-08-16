@@ -15,7 +15,6 @@ class _AuctionsState extends State<Auctions> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height*0.82,
       child: SingleChildScrollView(
               child:Padding(
                 padding: EdgeInsets.only(top: 10),
