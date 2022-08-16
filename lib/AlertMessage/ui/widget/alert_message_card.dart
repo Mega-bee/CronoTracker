@@ -1,3 +1,4 @@
+import 'package:cronotracker/utils/style/colors.dart';
 import 'package:flutter/material.dart';
 
 class AlertMessageCard extends StatelessWidget {
@@ -67,7 +68,7 @@ class AlertMessageCard extends StatelessWidget {
                 }, child: Text('${this.b1}', style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 15,
-                  color: Colors.appBarPurple,
+                  color: PrimaryColor,
                     ),
                   ),
                 ),
@@ -77,7 +78,7 @@ class AlertMessageCard extends StatelessWidget {
                 }, child: Text('${this.b2}', style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 15,
-                  color: Colors.appBarPurple,
+                  color: PrimaryColor,
                 ),
                 ),
                 ),

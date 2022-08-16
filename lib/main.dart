@@ -1,4 +1,4 @@
-import 'package:cronotracker/splash_screen.dart';
+import 'package:cronotracker/SplashScreen/ui/Screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {

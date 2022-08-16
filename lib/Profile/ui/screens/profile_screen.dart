@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../../../DrawerMenu/ui/widgets/drawer_menu_widget.dart';
+import '../../../DrawerMenu/ui/Screen/drawer_menu.dart';
+import '../../../utils/style/colors.dart';
 
 class ProfileScreen extends StatelessWidget {
 
@@ -11,7 +12,7 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       key: _key,
       appBar: AppBar(
-        backgroundColor: Colors.appBarPurple,
+        backgroundColor: PrimaryColor,
         leading: IconButton(
           icon: Icon(Icons.sort),
           onPressed: () {
