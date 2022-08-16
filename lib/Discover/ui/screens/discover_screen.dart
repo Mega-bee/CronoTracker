@@ -12,38 +12,38 @@ class DiscoverScreen extends StatelessWidget {
   List<DiscoverItem> brands = [
 
     DiscoverItem(
-        image: 'assets/ROLEX.png',
+        image: 'assets/rlx.png',
       label: 'Rolex'
     ),
 
     DiscoverItem(
-        image: 'assets/ROLEX.png',
+        image: 'assets/rlx.png',
         label: 'Audemars Piguet'
     ),
 
     DiscoverItem(
-        image: 'assets/ROLEX.png',
+        image: 'assets/rlx.png',
         label: 'Patek philipe'
     ),
 
     DiscoverItem(
-        image: 'assets/ROLEX.png',
+        image: 'assets/rlx.png',
         label: 'Vacheron Costantin'
     ),
 
     DiscoverItem(
-        image: 'assets/ROLEX.png',
+        image: 'assets/rlx.png',
         label: 'Richard Mille'
     ),
 
     DiscoverItem(
-        image: 'assets/ROLEX.png',
+        image: 'assets/rlx.png',
         label: 'Girrard-Perregaux'
     ),
 
 
     DiscoverItem(
-        image: 'assets/ROLEX.png',
+        image: 'assets/rlx.png',
         label: 'Other Brands'
     ),
 
@@ -97,6 +97,7 @@ class DiscoverScreen extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return DiscoverItemCard(brands[index]);
                 },
+                physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
                 itemCount: brands.length,
                 shrinkWrap: true,
                 separatorBuilder: (context, index) => Divider(),

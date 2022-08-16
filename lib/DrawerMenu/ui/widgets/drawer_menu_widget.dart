@@ -10,7 +10,6 @@ class DrawerMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: ListView(
-        // Important: Remove any padding from the ListView.
         padding: EdgeInsets.zero,
         children: [
 

@@ -17,7 +17,7 @@ class AlertMessageCard extends StatelessWidget {
   }
 
   _buildChild(BuildContext context) => Container(
-    height: 195,
+    height: 190,
     decoration: BoxDecoration(
         color: Colors.white,
         shape: BoxShape.rectangle,
@@ -35,7 +35,7 @@ class AlertMessageCard extends StatelessWidget {
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 20,
-                      fontWeight: FontWeight.w300),
+                      fontWeight: FontWeight.w400),
                   textAlign: TextAlign.left,
                 ),
                 Spacer(),
@@ -51,8 +51,7 @@ class AlertMessageCard extends StatelessWidget {
           child: Text('${this.label2}', style: TextStyle(color: Colors.grey), textAlign: TextAlign.left,),
         ),
 
-
-        SizedBox(height: 15),
+        SizedBox(height: 10),
         Container(
           width: double.infinity,
           child: Padding(
@@ -62,7 +61,8 @@ class AlertMessageCard extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 Spacer(),
-                TextButton(onPressed: (){
+                TextButton(
+                  onPressed: (){
                   Navigator.of(context).pop();
                 }, child: Text('${this.b1}', style: TextStyle(
                   fontWeight: FontWeight.bold,
