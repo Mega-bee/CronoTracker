@@ -171,9 +171,11 @@ final TrendingModel trendingModel;
             onPressed: () {  showDialog(
                 context: context,
                 builder: (BuildContext context) {
-                  return AlertMessageCard(
-                      'Confirm',
-                      'Would you like to be instantly notified when this watch is listed in the next live action ?',
+                  return CustomDeleteDialog(content:'Would you like to be instantly notified when this watch is listed in the next live action ?',
+                      title: 'Confirm',
+                      noBtn: ,
+                      ,
+                      ,
                       'No',
                       'Notify Me'
                   );
