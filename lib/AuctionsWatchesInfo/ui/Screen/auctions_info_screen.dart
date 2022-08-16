@@ -1,4 +1,3 @@
-import 'package:cronotracker/AlertMessage/Model/alert_model.dart';
 import 'package:flutter/material.dart';
 import '../../../AlertMessage/ui/widget/alert_message_card.dart';
 import '../../../Auctions/Model/auctions_model.dart';
