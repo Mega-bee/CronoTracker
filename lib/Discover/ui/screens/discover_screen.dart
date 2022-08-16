@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import '../../../DrawerMenu/ui/widgets/drawer_menu_widget.dart';
+import '../../../DrawerMenu/ui/Screen/drawer_menu.dart';
+import '../../../utils/style/colors.dart';
 import '../../models/discoverItem.dart';
 import '../widgets/discover_item_card.dart';
 
@@ -55,7 +55,7 @@ class DiscoverScreen extends StatelessWidget {
     return Scaffold(
       key: _key,
       appBar: AppBar(
-        backgroundColor: Colors.appBarPurple,
+        backgroundColor: PrimaryColor,
         elevation: 0,
         leading: IconButton(
           icon: Icon(Icons.sort),
@@ -81,7 +81,7 @@ class DiscoverScreen extends StatelessWidget {
             children: [
               Container(
                 width: double.infinity,
-                color: Colors.appBarPurple,
+                color: PrimaryColor,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text('Discover',
