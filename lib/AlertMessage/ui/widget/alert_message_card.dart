@@ -1,88 +1,87 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class CustomDeleteDialog extends StatelessWidget {
-  final String title;
-  final String content;
-  final Function yesBtn;
-  final Function noBtn;
-  const CustomDeleteDialog({
-    required this.title,
-    required this.content,
-    required this.yesBtn,
-    required this.noBtn,
-  });
+class AlertMessageCard extends StatelessWidget {
+  String? label1, label2, b1, b2;
+  AlertMessageCard(this.label1, this.label2, this.b1, this.b2);
+
   @override
   Widget build(BuildContext context) {
-    return AlertDialog(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const SizedBox(
-              height: 30,
-            ),
-            Container(
-              child: Text(
-                title,
-                style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ],
-        ),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              content,
-              style: const TextStyle(fontSize: 14),
-            ),
-            const SizedBox(
-              height: 50,
-            ),
-            Center(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  ElevatedButton(
-                    onPressed: () {
-                      yesBtn();
-                    },
-                    child: Text("  Yes  ",
-                        style: TextStyle(
-                            color: Theme.of(context).primaryColor,
-                            fontWeight: FontWeight.w400,
-                            fontSize: 12)
-                    ),
-                    style: ElevatedButton.styleFrom(
-                        elevation: 0,
-                        side: BorderSide(color: Theme.of(context).primaryColor),
-                        padding: const EdgeInsets.fromLTRB(30, 10, 30, 10)),
-                  ),
-                  ElevatedButton(
-                    onPressed: () {
-                      noBtn();
-                    },
-                    child: Text(
-                      "Cancel",
-                      style: TextStyle(
-                          color: Theme.of(context).primaryColor,
-                          fontWeight: FontWeight.w400,
-                          fontSize: 12)     ,               ),
-                    style: ElevatedButton.styleFrom(
-                        elevation: 0,
-                        side: BorderSide(color: Theme.of(context).primaryColor),
-                        padding: const EdgeInsets.fromLTRB(30, 10, 30, 10)),
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-          ],
-        ));
+    return Dialog(
+      backgroundColor: Colors.transparent,
+      child: _buildChild(context),
+    );
   }
+
+  _buildChild(BuildContext context) => Container(
+    height: 195,
+    decoration: BoxDecoration(
+        color: Colors.white,
+        shape: BoxShape.rectangle,
+    ),
+    child: Column(
+      children: <Widget>[
+
+        Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Container(
+            width: double.infinity,
+            child: Row(
+              children: [
+                Text('${this.label1}',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w300),
+                  textAlign: TextAlign.left,
+                ),
+                Spacer(),
+              ],
+            ),
+          ),
+        ),
+
+        SizedBox(height: 10),
+
+        Padding(
+          padding: const EdgeInsets.all(10),
+          child: Text('${this.label2}', style: TextStyle(color: Colors.grey), textAlign: TextAlign.left,),
+        ),
+
+
+        SizedBox(height: 15),
+        Container(
+          width: double.infinity,
+          child: Padding(
+            padding: const EdgeInsets.only(top: 5, right: 8, left: 8),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Spacer(),
+                TextButton(onPressed: (){
+                  Navigator.of(context).pop();
+                }, child: Text('${this.b1}', style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                  color: Colors.appBarPurple,
+                    ),
+                  ),
+                ),
+                SizedBox(width: 6),
+                TextButton(onPressed: (){
+                  Navigator.of(context).pop();
+                }, child: Text('${this.b2}', style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                  color: Colors.appBarPurple,
+                ),
+                ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
+    ),
+  );
 }

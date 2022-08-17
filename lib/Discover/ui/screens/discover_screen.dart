@@ -1,8 +1,7 @@
-import 'package:cronotracker/utils/Images/Images.dart';
+import 'package:cronotracker/utils/style/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../DrawerMenu/ui/Screen/drawer_menu.dart';
-import '../../../utils/style/colors.dart';
 import '../../models/discoverItem.dart';
 import '../widgets/discover_item_card.dart';
 
@@ -13,38 +12,38 @@ class DiscoverScreen extends StatelessWidget {
   List<DiscoverItem> brands = [
 
     DiscoverItem(
-        image: ImageAsset.WATCH2,
+        image: 'assets/ROLEX.png',
       label: 'Rolex'
     ),
 
     DiscoverItem(
-        image: ImageAsset.WATCH3,
+        image: 'assets/ROLEX.png',
         label: 'Audemars Piguet'
     ),
 
     DiscoverItem(
-        image: ImageAsset.WATCH4,
+        image: 'assets/ROLEX.png',
         label: 'Patek philipe'
     ),
 
     DiscoverItem(
-        image: ImageAsset.WATCH1,
+        image: 'assets/ROLEX.png',
         label: 'Vacheron Costantin'
     ),
 
     DiscoverItem(
-        image: ImageAsset.WATCH2,
+        image: 'assets/ROLEX.png',
         label: 'Richard Mille'
     ),
 
     DiscoverItem(
-        image: ImageAsset.WATCH3,
+        image: 'assets/ROLEX.png',
         label: 'Girrard-Perregaux'
     ),
 
 
     DiscoverItem(
-        image: ImageAsset.WATCH4,
+        image: 'assets/ROLEX.png',
         label: 'Other Brands'
     ),
 
