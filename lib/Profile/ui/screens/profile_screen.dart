@@ -10,15 +10,6 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _key,
-      appBar: AppBar(
-        backgroundColor: Colors.appBarPurple,
-        leading: IconButton(
-          icon: Icon(Icons.sort),
-          onPressed: () {
-            _key.currentState!.openDrawer();
-          },
-        ),
-      ),
       body: Center(
         child: Text(
           'Profile Screen'

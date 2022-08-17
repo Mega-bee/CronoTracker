@@ -45,7 +45,7 @@ class AboutScreen extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                       borderRadius: new BorderRadius.circular(8)),
                   onPressed: () {
-                    Navigator.push(
+                    Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(builder: (context) => BottomNavigationBarScreen()),
                     );

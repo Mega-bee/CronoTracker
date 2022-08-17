@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../../AuctionsWatchInfo/ui/screen/AuctionWatchInfo.dart';
 import '../../models/auctions_model.dart';
 
 class AuctionsCard extends StatelessWidget {
@@ -12,9 +13,9 @@ class AuctionsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        // Navigator.push(
-        //     context,
-        //     MaterialPageRoute(builder: (context) => AuctionsInfo(auctionsModel: auctionsModel)));
+        Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => AuctionsInfo(auctionsModel: auctionsModel)));
       },
       child: SizedBox(
         height: MediaQuery

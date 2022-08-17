@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import '../../../Auctions/ui/screens/auctions_screen.dart';
 import '../../../DrawerMenu/ui/widgets/drawer_menu_widget.dart';
 import '../../models/discoverItem.dart';
 import '../widgets/discover_item_card.dart';
@@ -53,56 +53,64 @@ class DiscoverScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final GlobalKey<ScaffoldState> _key = GlobalKey();
     return Scaffold(
-      key: _key,
       appBar: AppBar(
-        backgroundColor: Colors.appBarPurple,
-        elevation: 0,
-        leading: IconButton(
-          icon: Icon(Icons.sort),
+      backgroundColor: Colors.appBarPurple,
+      actions: [
+        IconButton(
           onPressed: (){
-            _key.currentState!.openDrawer();
-          }
+            showSearch(
+                context: context,
+                delegate: MysearchDelegate());
+          },
+          icon: Icon(Icons.search),
         ),
-        actions: [
-          IconButton(
-              onPressed: (){},
-              icon: Icon(Icons.search)
-          ),
-          IconButton(
-              onPressed: (){},
-              icon: Icon(Icons.refresh),
-          )
-        ],
+
+        IconButton(
+          onPressed: (){},
+          icon: Icon(Icons.refresh),
+        ),
+
+      ],
+
+      leading: IconButton(
+        icon: Icon(Icons.sort),
+        onPressed: () {
+          _key.currentState!.openDrawer();
+        },
       ),
-      body: SingleChildScrollView(
-        child: Container(
-          width: double.infinity,
-          child: Column(
-            children: [
-              Container(
-                width: double.infinity,
-                color: Colors.appBarPurple,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text('Discover',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18
-                  )
+    ),
+      body: Container(
+        child: SingleChildScrollView(
+          child: Container(
+            width: double.infinity,
+            child: Column(
+              children: [
+                Container(
+                  width: double.infinity,
+                  color: Colors.appBarPurple,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                        'Discover',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18
+                        )
+                    ),
                   ),
+                  height: 40,
                 ),
-                height: 40,
-              ),
-              ListView.separated(
-                itemBuilder: (context, index) {
-                  return DiscoverItemCard(brands[index]);
-                },
-                physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
-                itemCount: brands.length,
-                shrinkWrap: true,
-                separatorBuilder: (context, index) => Divider(),
+                ListView.separated(
+                  itemBuilder: (context, index) {
+                    return DiscoverItemCard(brands[index]);
+                  },
+                  physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+                  itemCount: brands.length,
+                  shrinkWrap: true,
+                  separatorBuilder: (context, index) => Divider(),
                 ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
@@ -110,3 +118,4 @@ class DiscoverScreen extends StatelessWidget {
     );
   }
 }
+

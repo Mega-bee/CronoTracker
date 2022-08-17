@@ -87,7 +87,6 @@ class WatchDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AlertMessageCard ac;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.appBarPurple,
@@ -477,11 +476,15 @@ class WatchDetailsScreen extends StatelessWidget {
               showDialog(
                   context: context,
                   builder: (BuildContext context) {
-                    return AlertMessageCard(
-                        'Confirm',
-                        'Would you like to be instantly notified when this watch is listed in the next live action ?',
-                        'No',
-                        'Notify Me'
+                    return CustomDeleteDialog(
+                      title: 'Confirm',
+                      content: 'Would you like to be instantly notified when this watch is listed in the next live action ?',
+                      yesBtn: (){
+                        Navigator.pop(context);
+                      },
+                      noBtn: (){
+                        Navigator.pop(context);
+                      },
                     );
                   }
               );
@@ -498,11 +501,15 @@ class WatchDetailsScreen extends StatelessWidget {
               showDialog(
                   context: context,
                   builder: (BuildContext context) {
-                    return AlertMessageCard(
-                        'Confirm',
-                        'Would you like to add this watch to your favorites ?',
-                        'No',
-                        'ADD'
+                    return CustomDeleteDialog(
+                      title: 'Confirm',
+                      content: 'Would you like to add the watch to you favorites ?',
+                      yesBtn: (){
+                        Navigator.pop(context);
+                      },
+                      noBtn: (){
+                        Navigator.pop(context);
+                      },
                     );
                   }
               );

@@ -1,8 +1,8 @@
+import 'package:cronotracker/AlertMessage/Model/alert_model.dart';
 import 'package:flutter/material.dart';
-
-
 import '../../../AlertMessage/ui/widget/alert_message_card.dart';
 import '../../../Auctions/models/auctions_model.dart';
+
 
 class AuctionsInfo extends StatelessWidget {
   final AuctionsModel auctionsModel;
@@ -40,6 +40,7 @@ class AuctionsInfo extends StatelessWidget {
               children: [
                 Container(
                     height: MediaQuery.of(context).size.height * 0.35,
+                    width: double.infinity,
                     child: Image.asset(
                       "${auctionsModel.image}",
                       fit: BoxFit.cover,
@@ -178,11 +179,15 @@ class AuctionsInfo extends StatelessWidget {
               showDialog(
                   context: context,
                   builder: (BuildContext context) {
-                    return AlertMessageCard(
-                        'Confirm',
-                        'Would you like to be instantly notified when this watch is listed in the next live action ?',
-                        'No',
-                        'Notify Me'
+                    return CustomDeleteDialog(
+                      title: 'Confirm',
+                      content: 'Would you like to be instantly notified when this watch is listed in the next live action ?',
+                      yesBtn: (){
+                        Navigator.pop(context);
+                      },
+                      noBtn: (){
+                        Navigator.pop(context);
+                      },
                     );
                   }
               );
@@ -197,11 +202,15 @@ class AuctionsInfo extends StatelessWidget {
             onPressed: () {   showDialog(
                 context: context,
                 builder: (BuildContext context) {
-                  return AlertMessageCard(
-                      'Confirm',
-                      'Would you like to be instantly notified when this watch is listed in the next live action ?',
-                      'No',
-                      'Notify Me'
+                  return CustomDeleteDialog(
+                    title: 'Confirm',
+                    content: 'Would you like to add the watch to you favorites ?',
+                    yesBtn: (){
+                      Navigator.pop(context);
+                    },
+                    noBtn: (){
+                      Navigator.pop(context);
+                    },
                   );
                 }
             );

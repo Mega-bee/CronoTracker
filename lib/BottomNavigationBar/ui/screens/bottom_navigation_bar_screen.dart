@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import '../../../Auctions/models/auctions_model.dart';
 import '../../../Auctions/ui/screens/auctions_screen.dart';
+import '../../../AuctionsWatchInfo/ui/screen/AuctionWatchInfo.dart';
 import '../../../Discover/ui/screens/discover_screen.dart';
+import '../../../DrawerMenu/ui/widgets/drawer_menu_widget.dart';
 import '../../../Notfications/ui/Screen/NotificationScreen.dart';
 import '../../../Profile/ui/screens/profile_screen.dart';
 import '../../../Trending/ui/screens/trending_screen.dart';
@@ -28,7 +31,6 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: screens[currentIndex],
 
       bottomNavigationBar: BottomNavigationBar(
@@ -78,8 +80,6 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
           ),
         ],
       ),
-
-
     );
   }
 }

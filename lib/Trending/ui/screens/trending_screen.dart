@@ -1,6 +1,7 @@
 import 'package:cronotracker/Auctions/models/auctions_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import '../../../Auctions/ui/screens/auctions_screen.dart';
 import '../../../AuctionsWatchInfo/ui/screen/AuctionWatchInfo.dart';
 import '../../../DrawerMenu/ui/widgets/drawer_menu_widget.dart';
 import '../../model_classes/watch_card.dart';
@@ -86,34 +87,33 @@ class TrendingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: _key,
-      appBar: AppBar(
-        backgroundColor: Colors.appBarPurple,
-        actions: [
-          IconButton(
-            onPressed: (){
-              showSearch(
-                  context: context,
-                  delegate: MysearchDelegate());},
-            icon: Icon(Icons.search),
+        appBar: AppBar(
+          backgroundColor: Colors.appBarPurple,
+          actions: [
+            IconButton(
+              onPressed: (){
+                showSearch(
+                    context: context,
+                    delegate: MysearchDelegate());
+              },
+              icon: Icon(Icons.search),
+            ),
+
+            IconButton(
+              onPressed: (){},
+              icon: Icon(Icons.refresh),
+            ),
+
+          ],
+
+          leading: IconButton(
+            icon: Icon(Icons.sort),
+            onPressed: () {
+              _key.currentState!.openDrawer();
+            },
           ),
-
-          IconButton(
-            onPressed: (){},
-            icon: Icon(Icons.refresh),
-          ),
-
-        ],
-
-        leading: IconButton(
-          icon: Icon(Icons.sort),
-          onPressed: () {
-            _key.currentState!.openDrawer();
-          },
         ),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        body: Container(
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -276,77 +276,16 @@ class TrendingScreen extends StatelessWidget {
 
           ),
         ),
+
+
       ),
       drawer: DrawerMenu(),
-
-
-
     );
 
 
   }
 }
 
-class MysearchDelegate extends SearchDelegate{
-  @override
-  List<Widget>? buildActions(BuildContext context) {
-    [
-      IconButton(
-          onPressed: (){
-            if(query.isEmpty){
-              close(context,null);
-            }
-            else {query="";}
-          },
-          icon: Icon(Icons.clear)),
-    ];
-  }@override
-  Widget? buildLeading(BuildContext context) {
-    return IconButton(
-        onPressed: (){close(context,null);},
-        icon: const Icon(Icons.arrow_back));
-  }
-
-  @override
-  Widget buildResults(BuildContext context) {
-    return Container();
-  }
-
-  @override
-  Widget buildSuggestions(BuildContext context) {
-    return Container(
-      child: ListView.builder(
-        itemCount: AuctionsList.length,
-          itemBuilder: (context, index) {
-        return InkWell(
-            onTap: (){
-              Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (context) => AuctionsInfo(auctionsModel: AuctionsList[index],)
-                  ))  ;          },
-            child:Container(
-          height: MediaQuery.of(context).size.height * 0.15,
-          child: Row(
-            children: [
-              Container(
-                width: MediaQuery.of(context).size.width*0.2,
-                  child: Padding(
-                    padding: const EdgeInsets.all(5.0),
-                    child: Image.asset(AuctionsList[index].image.toString(),fit: BoxFit.cover,),
-                  )),
-              Spacer(),
-              Expanded(
-                flex: 10,
-                  child: Text(
-                      AuctionsList[index].text.toString()
-                  )
-              ),
-            ],
-            )));
-            },
-          ),
-        );
-  }
-}
 
 
 
