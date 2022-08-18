@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../DrawerMenu/ui/Screen/drawer_menu.dart';
+import '../../../utils/Images/Images.dart';
 import '../../Model/trending_model.dart';
 import '../Widget/trending_watch_card.dart';
 
@@ -12,23 +13,20 @@ class TrendingScreen extends StatelessWidget {
   TrendingModel? wc;
 
   List<TrendingModel> watches = [
-
-
-
     TrendingModel(
-        image: 'assets/images/watch5.jpg'
+      image: ImageAsset.WATCH1,
     ),
 
     TrendingModel(
-        image: 'assets/images/watch2.jpg'
+      image: ImageAsset.WATCH2,
     ),
 
     TrendingModel(
-        image: 'assets/images/watch.png'
+      image: ImageAsset.WATCH3,
     ),
 
     TrendingModel(
-        image: 'assets/images/watch.png'
+      image: ImageAsset.WATCH4,
     ),
 
 

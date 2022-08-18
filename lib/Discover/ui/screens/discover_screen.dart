@@ -1,3 +1,4 @@
+import 'package:cronotracker/utils/Images/Images.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../DrawerMenu/ui/Screen/drawer_menu.dart';
@@ -12,38 +13,38 @@ class DiscoverScreen extends StatelessWidget {
   List<DiscoverItem> brands = [
 
     DiscoverItem(
-        image: 'assets/ROLEX.png',
+        image: ImageAsset.WATCH2,
       label: 'Rolex'
     ),
 
     DiscoverItem(
-        image: 'assets/ROLEX.png',
+        image: ImageAsset.WATCH3,
         label: 'Audemars Piguet'
     ),
 
     DiscoverItem(
-        image: 'assets/ROLEX.png',
+        image: ImageAsset.WATCH4,
         label: 'Patek philipe'
     ),
 
     DiscoverItem(
-        image: 'assets/ROLEX.png',
+        image: ImageAsset.WATCH1,
         label: 'Vacheron Costantin'
     ),
 
     DiscoverItem(
-        image: 'assets/ROLEX.png',
+        image: ImageAsset.WATCH2,
         label: 'Richard Mille'
     ),
 
     DiscoverItem(
-        image: 'assets/ROLEX.png',
+        image: ImageAsset.WATCH3,
         label: 'Girrard-Perregaux'
     ),
 
 
     DiscoverItem(
-        image: 'assets/ROLEX.png',
+        image: ImageAsset.WATCH4,
         label: 'Other Brands'
     ),
 

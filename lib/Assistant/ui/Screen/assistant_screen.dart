@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../DrawerMenu/ui/Screen/drawer_menu.dart';
+import '../../../utils/Images/Images.dart';
 import '../../../utils/style/colors.dart';
 
 class AssistantScreen extends StatelessWidget {
@@ -47,7 +48,7 @@ class AssistantScreen extends StatelessWidget {
                 fit: BoxFit.fitWidth,
                 width: double.infinity,
                 height: 500,
-                image: AssetImage('lib/assets/images/watch3.jpg'),
+                image: AssetImage(ImageAsset.WATCH1),
               ),
 
             ],

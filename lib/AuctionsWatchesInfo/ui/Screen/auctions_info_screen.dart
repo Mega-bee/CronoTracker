@@ -51,7 +51,7 @@ class AuctionsInfo extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              width: MediaQuery.of(context).size.width*0.4,
+              width: MediaQuery.of(context).size.width*0.35,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -178,11 +178,15 @@ class AuctionsInfo extends StatelessWidget {
             showDialog(
                 context: context,
                 builder: (BuildContext context) {
-                  return AlertMessageCard(
-                      'Confirm',
-                      'Would you like to be instantly notified when this watch is listed in the next live action ?',
-                      'No',
-                      'Notify Me'
+                  return CustomDeleteDialog(
+                    title: 'Confirm',
+                    content: 'Would you like to be instantly notified when this watch is listed in the next live action ?',
+                    yesBtn: (){
+                      Navigator.pop(context);
+                    },
+                    noBtn: (){
+                      Navigator.pop(context);
+                    },
                   );
                 }
             );
@@ -197,11 +201,15 @@ class AuctionsInfo extends StatelessWidget {
           onPressed: () {   showDialog(
               context: context,
               builder: (BuildContext context) {
-                return AlertMessageCard(
-                    'Confirm',
-                    'Would you like to be instantly notified when this watch is listed in the next live action ?',
-                    'No',
-                    'Notify Me'
+                return CustomDeleteDialog(
+                  title: 'Confirm',
+                  content: 'Would you like to add the watch to you favorites ?',
+                  yesBtn: (){
+                    Navigator.pop(context);
+                  },
+                  noBtn: (){
+                    Navigator.pop(context);
+                  },
                 );
               }
           );

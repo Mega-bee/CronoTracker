@@ -171,11 +171,15 @@ final TrendingModel trendingModel;
             onPressed: () {  showDialog(
                 context: context,
                 builder: (BuildContext context) {
-                  return AlertMessageCard(
-                      'Confirm',
-                      'Would you like to be instantly notified when this watch is listed in the next live action ?',
-                      'No',
-                      'Notify Me'
+                  return CustomDeleteDialog(
+                    title: 'Confirm',
+                    content: 'Would you like to add the watch to you favorites ?',
+                    yesBtn: (){
+                      Navigator.pop(context);
+                    },
+                    noBtn: (){
+                      Navigator.pop(context);
+                    },
                   );
                 }
             );
@@ -190,15 +194,17 @@ final TrendingModel trendingModel;
             onPressed: () {   showDialog(
                 context: context,
                 builder: (BuildContext context) {
-                  return AlertMessageCard(
-                      'Confirm',
-                      'Would you like to be instantly notified when this watch is listed in the next live action ?',
-                      'No',
-                      'Notify Me'
-                  );
-                }
-            );
-            },
+                  return CustomDeleteDialog(
+                  title: 'Confirm',
+                  content: 'Would you like to add the watch to you favorites ?',
+    yesBtn: (){
+    Navigator.pop(context);
+    },
+    noBtn: (){
+    Navigator.pop(context);
+    },
+    );
+            });},
             child: Icon(Icons.favorite),
             backgroundColor: PrimaryColor,
           ),

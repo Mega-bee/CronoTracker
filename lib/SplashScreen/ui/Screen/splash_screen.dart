@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:cronotracker/utils/Images/Images.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
@@ -44,7 +45,7 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Container(
           width: 200,
           height: 200,
-          child: Lottie.network('https://assets6.lottiefiles.com/private_files/lf30_zegucavd.json'),
+          child: Image.asset(ImageAsset.LOGO),
         ),
       ),
 
