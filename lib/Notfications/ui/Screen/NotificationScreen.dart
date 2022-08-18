@@ -1,7 +1,7 @@
 import 'package:cronotracker/Notfications/ui/Widgets/NotificationCard.dart';
 import 'package:flutter/material.dart';
-
 import '../../Model/NotficationModel.dart';
+
 
 class NotificationScreen extends StatefulWidget {
   const NotificationScreen({Key? key}) : super(key: key);
@@ -11,18 +11,18 @@ class NotificationScreen extends StatefulWidget {
 }
 
 class _NotificationScreenState extends State<NotificationScreen> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
-            child: ListView.builder(
-          itemCount: notificationList.length,
-          itemBuilder: (context, index) {
-            return NotificationCard(notificationModel: notificationList[index]);
-          },
-        )),
-      ),
+      body: Container(
+
+          child: ListView.builder(
+        itemCount: notificationList.length,
+        itemBuilder: (context, index) {
+          return NotificationCard(notificationModel: notificationList[index]);
+        },
+      )),
     );
   }
 }
