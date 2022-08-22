@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
-
 import '../../../BottomNavigationBar/ui/screens/bottom_navigation_bar_screen.dart';
 import '../../../DrawerMenu/ui/screens/about_screen.dart';
 import '../../../DrawerMenu/ui/screens/assistant_screen.dart';
@@ -30,12 +29,13 @@ class _ZoomDrawerrState extends State<ZoomDrawerr> {
           builder:(context) => MenuPage(
               currentItem : currentItem,
               onSelectedItem : (item){
-                setState(() => currentItem = item);
+                setState(() {
+                  currentItem = item;
+                });
                 ZoomDrawer.of(context)!.close();
               }
           ),),
-        mainScreen:
-        getScreen()
+        mainScreen: getScreen()
     );
 
   }
