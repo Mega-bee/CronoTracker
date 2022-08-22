@@ -1,32 +1,82 @@
-import 'package:flutter/cupertino.dart';
+import 'package:cronotracker/DrawerMenu/ui/Widgets/drawer_menu_widget.dart';
+import 'package:cronotracker/utils/style/colors.dart';
 import 'package:flutter/material.dart';
-
-import '../../../DrawerMenu/ui/Screen/drawer_menu.dart';
-import '../../../utils/Images/Images.dart';
-import '../../Model/trending_model.dart';
 import '../Widget/trending_watch_card.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
+import '../../../Auctions/ui/screens/auctions_screen.dart';
+import '../../model_classes/watch_card.dart';
 
 class TrendingScreen extends StatelessWidget {
 
   int currentIndex = 0;
 
-  TrendingModel? wc;
+  watchCard? wc;
 
-  List<TrendingModel> watches = [
-    TrendingModel(
-      image: ImageAsset.WATCH1,
+  List<watchCard> watches = [
+
+    watchCard(
+        img: 'assets/images/watch.jpg',
+        brand: 'Omega',
+        modelName: 'SpeedMaster SunSwatch',
+        reference: 'SO7KG33H',
+        nickname: 'Sun',
+        dialColor: 'Brown',
+        caseMaterial: 'ceramic',
+        braceletMaterial: 'Strap',
+        soldMonth: '6',
+        priceTracking: '40'
     ),
 
-    TrendingModel(
-      image: ImageAsset.WATCH2,
+    watchCard(
+        img: 'assets/images/watch2.jpg',
+        brand: 'Rolex',
+        modelName: 'Rolex-2421',
+        reference: 'SO7KG33H',
+        nickname: 'king',
+        dialColor: 'silver',
+        caseMaterial: 'ceramic',
+        braceletMaterial: 'Strap',
+        soldMonth: '12',
+        priceTracking: '32'
     ),
 
-    TrendingModel(
-      image: ImageAsset.WATCH3,
+    watchCard(
+        img: 'assets/images/watch4 (1).jpg',
+        brand: 'Quartz',
+        modelName: 'fancy watch',
+        reference: 'quartz-3421fds',
+        nickname: 'cool watch',
+        dialColor: 'blue',
+        caseMaterial: 'silver',
+        braceletMaterial: 'Strap',
+        soldMonth: '12',
+        priceTracking: '30'
     ),
 
-    TrendingModel(
-      image: ImageAsset.WATCH4,
+    watchCard(
+        img: 'assets/images/watch4 (2).jpg',
+        brand: 'Fossil',
+        modelName: 'fossilWatchCool',
+        reference: 'fossil-6423',
+        nickname: 'hello world',
+        dialColor: 'Brown',
+        caseMaterial: 'gold',
+        braceletMaterial: 'Strap',
+        soldMonth: '12',
+        priceTracking: '10'
+    ),
+
+    watchCard(
+        img: 'assets/images/watch5.jpg',
+        brand: 'Casio',
+        modelName: 'nice watch',
+        reference: 'casio-3453',
+        nickname: 'sweet',
+        dialColor: 'silver',
+        caseMaterial: 'ceramic',
+        braceletMaterial: 'Strap',
+        soldMonth: '12',
+        priceTracking: '8'
     ),
 
 
@@ -35,8 +85,30 @@ class TrendingScreen extends StatelessWidget {
   final GlobalKey<ScaffoldState> _key = GlobalKey();
   @override
   Widget build(BuildContext context) {
-    return Padding(
-        padding: const EdgeInsets.all(8.0),
+    return Scaffold(
+      key: _key,
+      appBar: AppBar(
+        backgroundColor: PrimaryColor,
+        actions: [
+          IconButton(
+            onPressed: () {
+              showSearch(
+                  context: context,
+                  delegate: MysearchDelegate());
+            },
+            icon: Icon(Icons.search),
+          ),
+
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.refresh),
+          ),
+
+        ],
+
+        leading: MenuWidget(),
+      ),
+      body: Container(
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -199,8 +271,26 @@ class TrendingScreen extends StatelessWidget {
 
           ),
         ),
+      ),
+      drawer: DrawerMenu(),
+
+
+
     );
 
 
   }
 }
+  class  MenuWidget extends StatelessWidget{
+  @override
+  Widget build (BuildContext context) => IconButton(
+  icon: Icon(Icons.sort),
+  onPressed: ()=>ZoomDrawer.of(context)!.toggle(),
+  );
+  }
+
+
+
+
+
+

@@ -39,7 +39,10 @@ class AssistantScreen extends StatelessWidget {
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     hintText: 'What are you looking for ?',
-                    suffixIcon: Icon(Icons.mic),
+                    suffixIcon: IconButton(
+                      icon: Icon(Icons.mic),
+                      onPressed: (){},
+                    ),
                   ),
                 ),
               ),
@@ -56,8 +59,6 @@ class AssistantScreen extends StatelessWidget {
         ),
       ),
       // bottomNavigationBar: BottomNavigationBarScreen(),
-      drawer: DrawerMenu(),
-
     );
   }
 }

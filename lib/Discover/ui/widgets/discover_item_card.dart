@@ -2,9 +2,11 @@ import 'package:cronotracker/Discover/models/discoverItem.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../screens/brand_screen.dart';
+
 class DiscoverItemCard extends StatelessWidget {
   
-  DiscoverItem? di;
+  DiscoverItem di;
 
 
   DiscoverItemCard(this.di);
@@ -13,14 +15,17 @@ class DiscoverItemCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-        print('pressed !');
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => BrandScreen(discoverItem: di)),
+        );
       },
       child: Row(
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Image(
-                image: AssetImage('${di?.image}'),
+                image: AssetImage('${di.image}'),
               width: 50,
               height: 50,
             ),
@@ -31,7 +36,7 @@ class DiscoverItemCard extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
-              '${di?.label}',
+              '${di.label}',
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,

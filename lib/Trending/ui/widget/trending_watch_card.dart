@@ -1,12 +1,11 @@
-import 'package:flutter/cupertino.dart';
+import 'package:cronotracker/Trending/model_classes/watch_card.dart';
 import 'package:flutter/material.dart';
 import '../../../WatchInfo/ui/Screen/watch_info_screen.dart';
-import '../../Model/trending_model.dart';
 
 
 class BuildWatchCard extends StatelessWidget {
 
-  final TrendingModel wc;
+  final watchCard? wc;
 
   BuildWatchCard(this.wc);
 
@@ -38,7 +37,7 @@ class BuildWatchCard extends StatelessWidget {
           child: Image(
             width: double.infinity,
             height: double.infinity,
-            image: AssetImage('${wc.image}'),
+            image: AssetImage('${wc!.img}'),
           ),
         ),
       ),
