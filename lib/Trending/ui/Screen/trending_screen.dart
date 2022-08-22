@@ -1,4 +1,3 @@
-import 'package:cronotracker/Auctions/models/auctions_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -9,7 +8,6 @@ import '../Widget/trending_watch_card.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import '../../../Auctions/ui/screens/auctions_screen.dart';
 import '../../model_classes/watch_card.dart';
-import '../widget/build_watch_card.dart';
 
 class TrendingScreen extends StatelessWidget {
 
