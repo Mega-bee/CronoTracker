@@ -25,7 +25,7 @@ class DiscoverItemCard extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Image(
-                image: AssetImage('${di?.image}'),
+                image: AssetImage('${di.image}'),
               width: 50,
               height: 50,
             ),
@@ -36,7 +36,7 @@ class DiscoverItemCard extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
-              '${di?.label}',
+              '${di.label}',
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,

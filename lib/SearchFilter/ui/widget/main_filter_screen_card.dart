@@ -26,7 +26,7 @@ class MainFilterCard extends StatelessWidget {
             );
           },
           child: ListTile(
-            title: Text('${mf?.filterName}'),
+            title: Text('${mf.filterName}'),
             trailing: Icon((Icons.arrow_forward_ios_outlined)),
           ),
         ),

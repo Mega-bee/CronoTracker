@@ -1,11 +1,6 @@
 import 'package:cronotracker/DrawerMenu/ui/Widgets/drawer_menu_widget.dart';
 import 'package:cronotracker/utils/style/colors.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import '../../../DrawerMenu/ui/Screen/drawer_menu.dart';
-import '../../../utils/Images/Images.dart';
-import '../../Model/trending_model.dart';
 import '../Widget/trending_watch_card.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import '../../../Auctions/ui/screens/auctions_screen.dart';

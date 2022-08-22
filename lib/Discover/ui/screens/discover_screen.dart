@@ -27,7 +27,7 @@ class DiscoverScreen extends StatelessWidget {
     ),
 
     DiscoverItem(
-        image: 'assets/ROLEX.png',
+        image: 'assets/OLEX.png',
         label: 'Vacheron Costantin'
     ),
 

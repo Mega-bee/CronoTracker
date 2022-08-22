@@ -1,7 +1,5 @@
 class watchCard {
   String? img,
-
-
       brand,
       modelName,
       reference,
