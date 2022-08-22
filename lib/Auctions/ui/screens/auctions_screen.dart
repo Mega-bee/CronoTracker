@@ -2,13 +2,11 @@ import 'package:flutter/material.dart';
 import '../../../AuctionsWatchInfo/ui/screen/AuctionWatchInfo.dart';
 import '../../../DrawerMenu/ui/widgets/drawer_menu_widget.dart';
 import '../../../SearchFilter/ui/screens/filter_main_screen.dart';
-import '../../../SearchFilter/ui/widget/filter_options_card.dart';
+import '../../../Trending/ui/screens/trending_screen.dart';
 import '../../models/auctions_model.dart';
 import '../widget/auctions_card.dart';
 
 class Auctions extends StatefulWidget {
-  const Auctions({Key? key}) : super(key: key);
-
   @override
   State<Auctions> createState() => _AuctionsState();
 }
@@ -18,27 +16,30 @@ class _AuctionsState extends State<Auctions> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _key,
       appBar: AppBar(
         backgroundColor: Colors.appBarPurple,
         actions: [
-
           IconButton(
-            onPressed: (){},
             icon: Icon(Icons.refresh),
+            onPressed: (){},
           ),
         ],
 
-        leading: IconButton(
-          icon: Icon(Icons.sort),
-          onPressed: () {
-            _key.currentState!.openDrawer();
-          },
-        ),
+        leading: MenuWidget(),
         title: Padding(
           padding: const EdgeInsets.only(right: 1, left: 3),
           child: TextFormField(
-            style: TextStyle(fontSize: 15, color: Colors.black, ),
+            style: TextStyle(fontSize: 15, color: Colors.black),
             decoration: InputDecoration(
+              suffixIcon: IconButton(
+                onPressed: (){
+                  _key.currentState!.openEndDrawer();
+                },
+                icon: Icon(Icons.filter_alt,
+                color: Colors.grey[400],
+                ),
+              ),
               contentPadding: const EdgeInsets.symmetric(vertical: 1,horizontal: 1),
               fillColor: Colors.white,
               hintText: '  Search for Auctions',

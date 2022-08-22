@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../Auctions/ui/screens/auctions_screen.dart';
 import '../../../DrawerMenu/ui/widgets/drawer_menu_widget.dart';
+import '../../../Trending/ui/screens/trending_screen.dart';
 import '../../models/discoverItem.dart';
 import '../widgets/discover_item_card.dart';
 
@@ -53,8 +54,10 @@ class DiscoverScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final GlobalKey<ScaffoldState> _key = GlobalKey();
     return Scaffold(
+      key: _key,
       appBar: AppBar(
       backgroundColor: Colors.appBarPurple,
+      elevation: 0,
       actions: [
         IconButton(
           onPressed: (){
@@ -72,12 +75,7 @@ class DiscoverScreen extends StatelessWidget {
 
       ],
 
-      leading: IconButton(
-        icon: Icon(Icons.sort),
-        onPressed: () {
-          _key.currentState!.openDrawer();
-        },
-      ),
+      leading: MenuWidget(),
     ),
       body: Container(
         child: SingleChildScrollView(

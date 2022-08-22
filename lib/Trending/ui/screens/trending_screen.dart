@@ -1,9 +1,7 @@
-import 'package:cronotracker/Auctions/models/auctions_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import '../../../Auctions/ui/screens/auctions_screen.dart';
-import '../../../AuctionsWatchInfo/ui/screen/AuctionWatchInfo.dart';
-import '../../../DrawerMenu/ui/widgets/drawer_menu_widget.dart';
 import '../../model_classes/watch_card.dart';
 import '../widget/build_watch_card.dart';
 
@@ -63,8 +61,8 @@ class TrendingScreen extends StatelessWidget {
         dialColor: 'Brown',
         caseMaterial: 'gold',
         braceletMaterial: 'Strap',
-      soldMonth: '12',
-      priceTracking: '10'
+        soldMonth: '12',
+        priceTracking: '10'
     ),
 
     watchCard(
@@ -84,36 +82,33 @@ class TrendingScreen extends StatelessWidget {
   ];
 
   final GlobalKey<ScaffoldState> _key = GlobalKey();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.appBarPurple,
-          actions: [
-            IconButton(
-              onPressed: (){
-                showSearch(
-                    context: context,
-                    delegate: MysearchDelegate());
-              },
-              icon: Icon(Icons.search),
-            ),
-
-            IconButton(
-              onPressed: (){},
-              icon: Icon(Icons.refresh),
-            ),
-
-          ],
-
-          leading: IconButton(
-            icon: Icon(Icons.sort),
+      key: _key,
+      appBar: AppBar(
+        backgroundColor: Colors.appBarPurple,
+        actions: [
+          IconButton(
             onPressed: () {
-              _key.currentState!.openDrawer();
+              showSearch(
+                  context: context,
+                  delegate: MysearchDelegate());
             },
+            icon: Icon(Icons.search),
           ),
-        ),
-        body: Container(
+
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.refresh),
+          ),
+
+        ],
+
+        leading: MenuWidget(),
+      ),
+      body: Container(
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -279,12 +274,17 @@ class TrendingScreen extends StatelessWidget {
 
 
       ),
-      drawer: DrawerMenu(),
     );
-
-
   }
 }
+  class  MenuWidget extends StatelessWidget{
+  @override
+  Widget build (BuildContext context) => IconButton(
+  icon: Icon(Icons.sort),
+  onPressed: ()=>ZoomDrawer.of(context)!.toggle(),
+  );
+  }
+
 
 
 

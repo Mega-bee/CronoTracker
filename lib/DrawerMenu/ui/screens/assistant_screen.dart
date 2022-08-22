@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import '../../../Trending/ui/screens/trending_screen.dart';
 import '../widgets/drawer_menu_widget.dart';
 
 class AssistantScreen extends StatelessWidget {
@@ -9,6 +10,7 @@ class AssistantScreen extends StatelessWidget {
     return Scaffold(
       key: _key,
       appBar: AppBar(
+        leading: MenuWidget(),
         backgroundColor: Colors.appBarPurple,
         actions: [
 
@@ -18,12 +20,6 @@ class AssistantScreen extends StatelessWidget {
           ),
         ],
 
-        leading: IconButton(
-          icon: Icon(Icons.sort),
-          onPressed: () {
-            _key.currentState!.openDrawer();
-          },
-        ),
       ),
       body: Container(
         width: double.infinity,
@@ -57,7 +53,6 @@ class AssistantScreen extends StatelessWidget {
         ),
       ),
       // bottomNavigationBar: BottomNavigationBarScreen(),
-      drawer: DrawerMenu(),
 
       );
   }

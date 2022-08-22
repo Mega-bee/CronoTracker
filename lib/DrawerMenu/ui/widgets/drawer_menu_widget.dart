@@ -59,12 +59,14 @@ class DrawerMenu extends StatelessWidget {
             },
           ),
 
-          ListTile(
-            leading: Icon(
-              Icons.share,
-              size: 30,
-            ),
-            title: Text('Share'),
+        ListTileTheme(
+          selectedColor: Colors.white,
+          child: ListTile(
+            selectedTileColor: Colors.black12,
+            selectedColor: Colors.white54,
+            minLeadingWidth: 20,
+            leading: Icon(Icons.share),
+            title: Text("Share"),
             onTap: () {
               void _onShare(BuildContext context) async {
                 final box = context.findRenderObject() as RenderBox?;
@@ -78,6 +80,7 @@ class DrawerMenu extends StatelessWidget {
               print('shared !');
             },
           ),
+        ),
 
           Divider(),
 

@@ -3,6 +3,8 @@ import 'package:cronotracker/BottomNavigationBar/ui/screens/bottom_navigation_ba
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
+import 'DrawerMenu2/ui/screen/zoom_drawer_screen.dart';
+
 class SplashScreenMain extends StatefulWidget {
 
   @override
@@ -31,7 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
             ()=>Navigator.pushReplacement(context,
             MaterialPageRoute(builder:
                 (context) =>
-                BottomNavigationBarScreen(),
+                ZoomDrawerr(),
             )
         )
     );

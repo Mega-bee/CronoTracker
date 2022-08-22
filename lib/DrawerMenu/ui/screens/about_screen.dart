@@ -1,12 +1,20 @@
+import 'package:cronotracker/DrawerMenu2/ui/screen/zoom_drawer_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../BottomNavigationBar/ui/screens/bottom_navigation_bar_screen.dart';
+import '../../../Trending/ui/screens/trending_screen.dart';
 
 class AboutScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+          backgroundColor: Colors.appBarPurple,
+          elevation: 0,
+          title: SafeArea(child: ColoredBox(color: Colors.appBarPurple,),),
+          leading: MenuWidget(),
+      ),
       backgroundColor: Colors.white,
       body: Container(
         width: double.infinity,
@@ -47,7 +55,7 @@ class AboutScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.pushReplacement(
                       context,
-                      MaterialPageRoute(builder: (context) => BottomNavigationBarScreen()),
+                      MaterialPageRoute(builder: (context) => ZoomDrawerr()),
                     );
                   },
                   child: Text(

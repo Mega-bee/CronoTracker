@@ -102,21 +102,26 @@ class WatchDetailsScreen extends StatelessWidget {
             onPressed: (){},
           ),
 
-          PopupMenuButton(itemBuilder: (BuildContext context) => [
-            
-            PopupMenuItem(child: GestureDetector(
+          PopupMenuButton(
+            itemBuilder: (BuildContext context) => [
+
+            PopupMenuItem(
+                child: GestureDetector(
               onTap: (){
                 print('hello');
               },
-              child: Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 3),
-                    child: Icon(Icons.favorite, color: Colors.appBarPurple),
-                  ),
-                  SizedBox(width: 5),
-                  Text('ADD'),
-                ],
+              child: Container(
+                width: 140,
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 3),
+                      child: Icon(Icons.favorite, color: Colors.black),
+                    ),
+                    SizedBox(width: 15),
+                    Text('ADD'),
+                  ],
+                ),
               ),
             )),
 
@@ -128,10 +133,10 @@ class WatchDetailsScreen extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(left: 3),
-                    child: Icon(Icons.credit_card, color: Colors.appBarPurple,
+                    child: Icon(Icons.credit_card, color: Colors.black,
                     ),
                   ),
-                  SizedBox(width: 5),
+                  SizedBox(width: 15),
                   Text('Notify Me'),
                 ],
               ),
