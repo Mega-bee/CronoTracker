@@ -58,7 +58,7 @@ class _MenuPageState extends State<MenuPage> {
   }
 
   Widget buildMenuItem(MenuItemm item) => ListTileTheme(
-      selectedColor: Colors.white54,
+      selectedColor: Colors.white,
       child: ListTile(
           selectedTileColor: Colors.black12,
           selectedColor: Colors.white,
