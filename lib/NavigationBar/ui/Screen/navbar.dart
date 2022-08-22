@@ -24,50 +24,13 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
     DiscoverScreen(),
     Auctions(),
     NotificationScreen(),
-    ProfileScreen()
+    ProfileScreen(),
   ];
 
-  final GlobalKey<ScaffoldState> _key = GlobalKey();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        key: _key,
-        appBar: AppBar(
-        backgroundColor: PrimaryColor,
-          // bottom: PreferredSize(
-          //   preferredSize: const Size.fromHeight(5),
-          //   child: Padding(
-          //     padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-          //     child: SearchWidget(
-          //         text: query,
-          //         onChanged: searchUsers,
-          //         hintText: 'Search'),
-          //   ),
-          // ),
-        actions: [
-          IconButton(
-            onPressed: (){
-              showSearch(
-                  context: context,
-                  delegate: MysearchDelegate());},
-            icon: Icon(Icons.search),
-          ),
 
-          IconButton(
-            onPressed: (){},
-            icon: Icon(Icons.refresh),
-          ),
-
-        ],
-
-        leading: IconButton(
-          icon: Icon(Icons.sort),
-          onPressed: () {
-            _key.currentState!.openDrawer();
-          },
-        ),
-      ),
-      drawer: DrawerMenu(),
       body: screens[currentIndex],
 
       bottomNavigationBar: BottomNavigationBar(

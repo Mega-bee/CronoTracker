@@ -6,27 +6,21 @@ class NotificationModel{
 List <NotificationModel> notificationList = [
   NotificationModel(
     date: "1 August 2022",
-    text: '''Your watch is now live on auction(0mega
-speedmaster moonswatch moon 42mm
-black dial bioceramic strap)'''
+    text: 'Your watch (Rolex 9CA7VX) is now in a live auction, tap here to view Auction LIVE !! or visit our website www.fancywatches.com'
   ),
   NotificationModel(
-      date: "31 july 2022",
-      text: '''Your watch is now live on auction(0mega
-speedmaster moonswatch moon 42mm
-black dial bioceramic strap)'''
+      date: "1 August 2022",
+      text: 'Your watch is now live on auction(0mega speedmaster moonswatch moon 42mmblack dial bioceramic strap'
   ),
   NotificationModel(
-      date: "31 july 2022",
-      text: '''Your watch is now live on auction(0mega
-speedmaster moonswatch moon 42mm
-black dial bioceramic strap)'''),
+      date: "1 August 2022",
+      text: 'Your watch is now live on auction(0mega speedmaster moonswatch moon 42mmblack dial bioceramic strap'
+  ),
 
   NotificationModel(
-      date: "31 july 2022",
-      text: '''Your watch is now live on auction(0mega
-speedmaster moonswatch moon 42mm
-black dial bioceramic strap)'''),
+      date: "1 August 2022",
+      text: 'Your watch is now live on auction(0mega speedmaster moonswatch moon 42mmblack dial bioceramic strap'
+  ),
 
 
 ];
