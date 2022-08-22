@@ -35,6 +35,8 @@ class BidCard extends StatelessWidget {
                   height: 70,
                   width: 70,
                 ),
+
+
                 SizedBox(
                   width: 20,
                 ),
