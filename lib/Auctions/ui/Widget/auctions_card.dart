@@ -1,8 +1,8 @@
 import 'package:cronotracker/Auctions/Model/auctions_model.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../AuctionsWatchInfo/ui/screen/AuctionWatchInfo.dart';
-
 
 class AuctionsCard extends StatelessWidget {
   final AuctionsModel auctionsModel;
@@ -15,7 +15,7 @@ class AuctionsCard extends StatelessWidget {
       onTap: () {
         Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => AuctionsInfo(auctionsModel: auctionsModel,index: 1,)));
+            MaterialPageRoute(builder: (context) => AuctionsInfo(auctionsModel: auctionsModel, index: 1,)));
       },
       child: SizedBox(
         height: MediaQuery
