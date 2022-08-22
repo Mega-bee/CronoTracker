@@ -1,34 +1,23 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../../../WatchDetails/ui/screens/watch_details_screen.dart';
-import '../../model_classes/watch_card.dart';
+import '../../../WatchInfo/ui/Screen/watch_info_screen.dart';
+import '../../Model/trending_model.dart';
 
 
 class BuildWatchCard extends StatelessWidget {
 
-  final watchCard wc;
+  final TrendingModel wc;
 
   BuildWatchCard(this.wc);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
+      onTap: (){
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => WatchDetailsScreen(
-            image: wc.img,
-            brand: wc.brand,
-            modelName: wc.modelName,
-            referece: wc.reference,
-            nickname: wc.nickname,
-            dialColor: wc.dialColor,
-            caseMaterial: wc.caseMaterial,
-            braceletMaterial: wc.braceletMaterial,
-            soldMonth: wc.soldMonth,
-            priceTracking: wc.priceTracking
-
-          )),
+          MaterialPageRoute(builder: (context) => WatchDetailsScreen(  trendingModel: wc,)
+          ),
         );
       },
       child: Padding(
@@ -49,7 +38,7 @@ class BuildWatchCard extends StatelessWidget {
           child: Image(
             width: double.infinity,
             height: double.infinity,
-            image: AssetImage('${wc.img}'),
+            image: AssetImage('${wc.image}'),
           ),
         ),
       ),

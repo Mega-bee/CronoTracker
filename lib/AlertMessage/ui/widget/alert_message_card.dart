@@ -1,3 +1,4 @@
+import 'package:cronotracker/utils/style/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -46,22 +47,22 @@ class CustomDeleteDialog extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                    ElevatedButton(
-                      onPressed: () {
-                        yesBtn();
-                      },
-                      child: Text("  Yes  ",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w400,
-                              fontSize: 12)
-                      ),
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.appBarPurple,
-                          elevation: 0,
-                          side: BorderSide(color: Colors.appBarPurple),
-                          padding: const EdgeInsets.fromLTRB(30, 10, 30, 10)),
+                  ElevatedButton(
+                    onPressed: () {
+                      yesBtn();
+                    },
+                    child: Text("  Yes  ",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 12)
                     ),
+                    style: ElevatedButton.styleFrom(
+                        primary: PrimaryColor,
+                        elevation: 0,
+                        side: BorderSide(color: PrimaryColor),
+                        padding: const EdgeInsets.fromLTRB(30, 10, 30, 10)),
+                  ),
                   ElevatedButton(
                     onPressed: () {
                       noBtn();
@@ -73,7 +74,7 @@ class CustomDeleteDialog extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontSize: 12)     ,               ),
                     style: ElevatedButton.styleFrom(
-                        primary: Colors.appBarPurple,
+                        primary: PrimaryColor,
 
                         elevation: 0,
                         side: BorderSide(color: Theme.of(context).primaryColor),

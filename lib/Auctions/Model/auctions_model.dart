@@ -1,3 +1,5 @@
+import '../../utils/Images/Images.dart';
+
 class AuctionsModel {
   String? text;
   String? status;
@@ -47,11 +49,11 @@ class AuctionsModel {
 List<AuctionsModel> AuctionsList = [
   AuctionsModel(
     text:
-    "Vacheron constantin overseas chronograph steel 42.5mm blue dial 2021 unworn, kuwait",
+        "Vacheron constantin overseas chronograph steel 42.5mm blue dial 2021 unworn, kuwait",
     price1: 3500,
     price2: 4000,
     status: "Sold",
-    image: "assets/watch4 (2).jpg",
+    image: ImageAsset.WATCH1,
     brand: "Vacheron Costantine",
     caseMaterial: "Steel",
     condition: "Unworn",
@@ -70,34 +72,11 @@ List<AuctionsModel> AuctionsList = [
   ),
   AuctionsModel(
     text:
-    "casio watch, metal watch, silver 900 , 4 mm blue dial 2022 unworn , Qatar",
+        "Vacheron constantin overseas chronograph steel",
     price1: 3500,
     price2: 4000,
     status: "Sold",
-    image: "assets/watch4 (2).jpg",
-    brand: "Casio",
-    caseMaterial: "Steel",
-    condition: "Unworn",
-    country: "Qatar",
-    date: "8 august 2022",
-    dialColor: "Blue Dial",
-    fullSet: "Full Set",
-    igAccount: "elite_watches_q8",
-    askingPrice: 0,
-    lastBidder: "khal9ne",
-    model: "Casio Elite",
-    numberOfBidders: 2,
-    referance: "5500V/110A-B148",
-    size: 42.5,
-    year: 2021,
-  ),
-  AuctionsModel(
-    text:
-    "Vacheron constantin overseas chronograph steel 42.5mm blue dial 2021 unworn, kuwait",
-    price1: 3500,
-    price2: 4000,
-    status: "Sold",
-    image: "assets/watch4 (2).jpg",
+    image: ImageAsset.WATCH2,
     brand: "Vacheron Costantine",
     caseMaterial: "Steel",
     condition: "Unworn",
@@ -116,11 +95,11 @@ List<AuctionsModel> AuctionsList = [
   ),
   AuctionsModel(
     text:
-    "Vacheron constantin overseas chronograph steel 42.5mm blue dial 2021 unworn, kuwait",
+        "Vacheron constantin overseas chronograph steel 42.5mm blue dial 2021 unworn, kuwait",
     price1: 3500,
     price2: 4000,
     status: "Sold",
-    image: "assets/watch4 (2).jpg",
+    image: ImageAsset.WATCH3,
     brand: "Vacheron Costantine",
     caseMaterial: "Steel",
     condition: "Unworn",
@@ -139,11 +118,11 @@ List<AuctionsModel> AuctionsList = [
   ),
   AuctionsModel(
     text:
-    "Vacheron constantin overseas chronograph steel 42.5mm blue dial 2021 unworn, kuwait",
+        "Vacheron constantin overseas chronograph steel",
     price1: 3500,
     price2: 4000,
     status: "Sold",
-    image: "assets/watch.jpg",
+    image: ImageAsset.WATCH4,
     brand: "Vacheron Costantine",
     caseMaterial: "Steel",
     condition: "Unworn",
@@ -162,11 +141,11 @@ List<AuctionsModel> AuctionsList = [
   ),
   AuctionsModel(
     text:
-    "Vacheron constantin overseas chronograph steel 42.5mm blue dial 2021 unworn, kuwait",
+        "Vacheron constantin overseas chronograph steel 42.5mm blue dial 2021 unworn, kuwait",
     price1: 3500,
     price2: 4000,
     status: "Sold",
-    image: "assets/watch.jpg",
+    image: ImageAsset.WATCH1,
     brand: "Vacheron Costantine",
     caseMaterial: "Steel",
     condition: "Unworn",
@@ -185,11 +164,11 @@ List<AuctionsModel> AuctionsList = [
   ),
   AuctionsModel(
     text:
-    "Vacheron constantin overseas chronograph steel 42.5mm blue dial 2021 unworn, kuwait",
+        "Vacheron constantin overseas chronograph steel",
     price1: 3500,
     price2: 4000,
     status: "Sold",
-    image: "assets/watch.jpg",
+    image: ImageAsset.WATCH2,
     brand: "Vacheron Costantine",
     caseMaterial: "Steel",
     condition: "Unworn",
@@ -208,11 +187,11 @@ List<AuctionsModel> AuctionsList = [
   ),
   AuctionsModel(
     text:
-    "Vacheron constantin overseas chronograph steel 42.5mm blue dial 2021 unworn, kuwait",
+        "Vacheron constantin overseas chronograph steel 42.5mm blue dial 2021 unworn, kuwait",
     price1: 3500,
     price2: 4000,
     status: "Sold",
-    image: "assets/watch5.jpg",
+    image: ImageAsset.WATCH3,
     brand: "Vacheron Costantine",
     caseMaterial: "Steel",
     condition: "Unworn",
@@ -231,11 +210,11 @@ List<AuctionsModel> AuctionsList = [
   ),
   AuctionsModel(
     text:
-    "Vacheron constantin overseas chronograph steel 42.5mm blue dial 2021 unworn, kuwait",
+        "Vacheron constantin overseas chronograph steel",
     price1: 3500,
     price2: 4000,
     status: "Sold",
-    image: "assets/watch5.jpg",
+    image: ImageAsset.WATCH4,
     brand: "Vacheron Costantine",
     caseMaterial: "Steel",
     condition: "Unworn",
@@ -254,11 +233,11 @@ List<AuctionsModel> AuctionsList = [
   ),
   AuctionsModel(
     text:
-    "Vacheron constantin overseas chronograph steel 42.5mm blue dial 2021 unworn, kuwait",
+        "Vacheron constantin overseas chronograph steel 42.5mm blue dial 2021 unworn, kuwait",
     price1: 3500,
     price2: 4000,
     status: "Sold",
-    image: "assets/watch5.jpg",
+    image: ImageAsset.WATCH1,
     brand: "Vacheron Costantine",
     caseMaterial: "Steel",
     condition: "Unworn",
@@ -277,11 +256,11 @@ List<AuctionsModel> AuctionsList = [
   ),
   AuctionsModel(
     text:
-    "Vacheron constantin overseas chronograph steel 42.5mm blue dial 2021 unworn, kuwait",
+        "Vacheron constantin overseas chronograph steel 42.5mm blue dial 2021 unworn, kuwait",
     price1: 3500,
     price2: 4000,
     status: "Sold",
-    image: "assets/watch4 (2).jpg",
+    image: ImageAsset.WATCH2,
     brand: "Vacheron Costantine",
     caseMaterial: "Steel",
     condition: "Unworn",
@@ -300,11 +279,34 @@ List<AuctionsModel> AuctionsList = [
   ),
   AuctionsModel(
     text:
-    "Vacheron constantin overseas chronograph steel 42.5mm blue dial 2021 unworn, kuwait",
+        "Vacheron constantin overseas chronograph steel",
     price1: 3500,
     price2: 4000,
     status: "Sold",
-    image: "assets/watch4 (1).jpg",
+    image: ImageAsset.WATCH3,
+    brand: "Vacheron Costantine",
+    caseMaterial: "Steel",
+    condition: "Unworn",
+    country: "Kuwait",
+    date: "8 august 2022",
+    dialColor: "Blue Dial",
+    fullSet: "Full Set",
+    igAccount: "elite_watches_q8",
+    askingPrice: 0,
+    lastBidder: "khal9ne",
+    model: "Overseas Chronograph",
+    numberOfBidders: 2,
+    referance: "5500V/110A-B148",
+    size: 42.5,
+    year: 2021,
+  ),
+  AuctionsModel(
+    text:
+        "Vacheron constantin overseas chronograph steel 42.5mm blue dial 2021 unworn, kuwait",
+    price1: 3500,
+    price2: 4000,
+    status: "Sold",
+    image: ImageAsset.WATCH4,
     brand: "Vacheron Costantine",
     caseMaterial: "Steel",
     condition: "Unworn",

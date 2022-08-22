@@ -1,14 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../../../Auctions/models/auctions_model.dart';
-import '../../../Auctions/ui/screens/auctions_screen.dart';
-import '../../../AuctionsWatchInfo/ui/screen/AuctionWatchInfo.dart';
+import '../../../Auctions/ui/Screen/auctions_screen.dart';
 import '../../../Discover/ui/screens/discover_screen.dart';
-import '../../../DrawerMenu/ui/widgets/drawer_menu_widget.dart';
+import '../../../DrawerMenu/ui/Screen/drawer_menu.dart';
 import '../../../Notfications/ui/Screen/NotificationScreen.dart';
 import '../../../Profile/ui/screens/profile_screen.dart';
-import '../../../Trending/ui/screens/trending_screen.dart';
-
+import '../../../Trending/ui/Screen/trending_screen.dart';
+import '../../../utils/style/colors.dart';
+import '../Widgets/items.dart';
 
 class BottomNavigationBarScreen extends StatefulWidget {
 
@@ -31,6 +30,7 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       body: screens[currentIndex],
 
       bottomNavigationBar: BottomNavigationBar(
@@ -39,7 +39,7 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
         unselectedIconTheme: IconThemeData(color:Colors.white38 ),
         selectedIconTheme: IconThemeData(color: Colors.white),
         type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.appBarPurple,
+        backgroundColor: PrimaryColor,
         currentIndex: currentIndex,
         onTap: (index) {
           setState(() {
@@ -80,6 +80,41 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
           ),
         ],
       ),
+
+
     );
+  }
+}
+
+class MysearchDelegate extends SearchDelegate{
+  @override
+  List<Widget>? buildActions(BuildContext context) {
+  [
+    IconButton(
+    onPressed: (){
+      if(query.isEmpty){
+        close(context,null);
+      }
+      else {query="";}
+      },
+    icon: Icon(Icons.clear)),
+  ];
+  }
+
+  @override
+  Widget? buildLeading(BuildContext context) {
+    return IconButton(
+        onPressed: (){close(context,null);},
+        icon: const Icon(Icons.arrow_back));
+  }
+
+  @override
+  Widget buildResults(BuildContext context) {
+    return Container();
+  }
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    return Container();
   }
 }

@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../../../Trending/ui/screens/trending_screen.dart';
-import '../widgets/drawer_menu_widget.dart';
+import '../../../DrawerMenu/ui/Screen/drawer_menu.dart';
+import '../../../utils/Images/Images.dart';
+import '../../../utils/style/colors.dart';
 
 class AssistantScreen extends StatelessWidget {
   final GlobalKey<ScaffoldState> _key = GlobalKey();
@@ -10,8 +11,7 @@ class AssistantScreen extends StatelessWidget {
     return Scaffold(
       key: _key,
       appBar: AppBar(
-        leading: MenuWidget(),
-        backgroundColor: Colors.appBarPurple,
+        backgroundColor: PrimaryColor,
         actions: [
 
           IconButton(
@@ -20,6 +20,12 @@ class AssistantScreen extends StatelessWidget {
           ),
         ],
 
+        leading: IconButton(
+          icon: Icon(Icons.sort),
+          onPressed: () {
+            _key.currentState!.openDrawer();
+          },
+        ),
       ),
       body: Container(
         width: double.infinity,
@@ -45,7 +51,7 @@ class AssistantScreen extends StatelessWidget {
                 fit: BoxFit.fitWidth,
                 width: double.infinity,
                 height: 500,
-                image: AssetImage('assets/watch2.jpg'),
+                image: AssetImage(ImageAsset.WATCH1),
               ),
 
             ],
@@ -53,7 +59,6 @@ class AssistantScreen extends StatelessWidget {
         ),
       ),
       // bottomNavigationBar: BottomNavigationBarScreen(),
-
-      );
+    );
   }
 }

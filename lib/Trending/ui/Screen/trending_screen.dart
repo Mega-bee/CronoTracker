@@ -1,5 +1,11 @@
+import 'package:cronotracker/Auctions/models/auctions_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../../../DrawerMenu/ui/Screen/drawer_menu.dart';
+import '../../../utils/Images/Images.dart';
+import '../../Model/trending_model.dart';
+import '../Widget/trending_watch_card.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import '../../../Auctions/ui/screens/auctions_screen.dart';
 import '../../model_classes/watch_card.dart';
@@ -82,7 +88,6 @@ class TrendingScreen extends StatelessWidget {
   ];
 
   final GlobalKey<ScaffoldState> _key = GlobalKey();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -154,8 +159,6 @@ class TrendingScreen extends StatelessWidget {
                             return BuildWatchCard(watches[index]);
                           },
                           scrollDirection: Axis.horizontal,
-
-
                           itemCount: watches.length,
                           shrinkWrap: true,
                         ),
@@ -273,10 +276,14 @@ class TrendingScreen extends StatelessWidget {
 
           ),
         ),
-
-
       ),
+      drawer: DrawerMenu(),
+
+
+
     );
+
+
   }
 }
   class  MenuWidget extends StatelessWidget{
