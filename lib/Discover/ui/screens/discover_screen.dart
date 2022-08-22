@@ -105,7 +105,6 @@ class DiscoverScreen extends StatelessWidget {
           ),
         ),
       ),
-      drawer: DrawerMenu(),
     );
   }
 }

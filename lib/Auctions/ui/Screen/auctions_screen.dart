@@ -31,7 +31,7 @@ class _AuctionsState extends State<Auctions> {
                         physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
                         itemCount: AuctionsList.length,
                         itemBuilder: (context, index) {
-                          return AuctionsCard( auctionsModel: AuctionsList[index],);
+                          return AuctionsCard( auctionsModel: AuctionsList[index], index: index,);
                         },
                       ),
                     ),

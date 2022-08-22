@@ -34,7 +34,6 @@ class _NotificationScreenState extends State<NotificationScreen> {
           Icon(Icons.search)
         ],
       ),
-      drawer: DrawerMenu(),
       body: Container(
 
           child: ListView.builder(

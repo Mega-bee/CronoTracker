@@ -67,7 +67,6 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
           },
         ),
       ),
-      drawer: DrawerMenu(),
       body: screens[currentIndex],
 
       bottomNavigationBar: BottomNavigationBar(

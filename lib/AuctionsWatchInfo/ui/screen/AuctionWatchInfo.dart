@@ -1,12 +1,19 @@
+import 'package:cronotracker/Favorites/Model/FavoriteModel.dart';
 import 'package:cronotracker/utils/style/colors.dart';
 import 'package:flutter/material.dart';
 import '../../../AlertMessage/ui/widget/alert_message_card.dart';
 import '../../../Auctions/Model/auctions_model.dart';
-class AuctionsInfo extends StatelessWidget {
+class AuctionsInfo extends StatefulWidget {
   final AuctionsModel auctionsModel;
+  int index;
+  AuctionsInfo({Key? key, required this.auctionsModel,required this.index}) : super(key: key);
 
-  const AuctionsInfo({Key? key, required this.auctionsModel}) : super(key: key);
+  @override
+  State<AuctionsInfo> createState() => _AuctionsInfoState();
+}
 
+class _AuctionsInfoState extends State<AuctionsInfo> {
+  Color fav = Colors.white;
   @override
   Widget build(BuildContext context) {
     final GlobalKey<ScaffoldState> _key = GlobalKey();
@@ -39,7 +46,7 @@ class AuctionsInfo extends StatelessWidget {
                 Container(
                     height: MediaQuery.of(context).size.height * 0.35,
                     child: Image.asset(
-                      "${auctionsModel.image}",
+                      "${widget.auctionsModel.image}",
                       fit: BoxFit.cover,
                     )),
                 SizedBox(height: 20,),
@@ -113,54 +120,54 @@ class AuctionsInfo extends StatelessWidget {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text("${auctionsModel.brand}", style: TextStyle(fontSize: 15, color: Colors.black)),
+                                Text("${widget.auctionsModel.brand}", style: TextStyle(fontSize: 15, color: Colors.black)),
                                 Divider(color: Colors.transparent,),
-                                Text("${auctionsModel.model}",
+                                Text("${widget.auctionsModel.model}",
                                     style: TextStyle(fontSize: 15, color: Colors.black)),
                                 Divider(color: Colors.transparent,),
-                                Text("${auctionsModel.referance}",
+                                Text("${widget.auctionsModel.referance}",
                                     style: TextStyle(fontSize: 15, color: Colors.black)),
                                 Divider(color: Colors.transparent,),
-                                Text(auctionsModel.year.toString(),
+                                Text(widget.auctionsModel.year.toString(),
                                     style: TextStyle(fontSize: 15, color: Colors.black)),
                                 Divider(color: Colors.transparent,),
-                                Text("${auctionsModel.size}mm",
+                                Text("${widget.auctionsModel.size}mm",
                                     style: TextStyle(fontSize: 15, color: Colors.black)),
                                 Divider(color: Colors.transparent,),
-                                Text("${auctionsModel.dialColor}",
+                                Text("${widget.auctionsModel.dialColor}",
                                     style: TextStyle(fontSize: 15, color: Colors.black)),
                                 Divider(color: Colors.transparent,),
-                                Text("${auctionsModel.caseMaterial}",
+                                Text("${widget.auctionsModel.caseMaterial}",
                                     style: TextStyle(fontSize: 15, color: Colors.black)),
                                 Divider(color: Colors.transparent,),
-                                Text("${auctionsModel.condition}",
+                                Text("${widget.auctionsModel.condition}",
                                     style: TextStyle(fontSize: 15, color: Colors.black)),
                                 Divider(color: Colors.transparent,),
-                                Text("${auctionsModel.fullSet}",
+                                Text("${widget.auctionsModel.fullSet}",
                                     style: TextStyle(fontSize: 15, color: Colors.black)),
                                 Divider(color: Colors.transparent,height: 55),
-                                Text("${auctionsModel.status}",
+                                Text("${widget.auctionsModel.status}",
                                     style: TextStyle(fontSize: 15, color: Colors.black)),
                                 Divider(color: Colors.transparent,),
-                                Text("${auctionsModel.price1}",
+                                Text("${widget.auctionsModel.price1}",
                                     style: TextStyle(fontSize: 15, color: Colors.black)),
                                 Divider(color: Colors.transparent,),
-                                Text("${auctionsModel.askingPrice}",
+                                Text("${widget.auctionsModel.askingPrice}",
                                     style: TextStyle(fontSize: 15, color: Colors.black)),
                                 Divider(color: Colors.transparent,),
-                                Text("${auctionsModel.lastBidder}",
+                                Text("${widget.auctionsModel.lastBidder}",
                                     style: TextStyle(fontSize: 15, color: Colors.black)),
                                 Divider(color: Colors.transparent,height: 40,),
-                                Text("${auctionsModel.numberOfBidders}",
+                                Text("${widget.auctionsModel.numberOfBidders}",
                                     style: TextStyle(fontSize: 15, color: Colors.black)),
                                 Divider(color: Colors.transparent,height: 30,),
-                                Text("${auctionsModel.date}",
+                                Text("${widget.auctionsModel.date}",
                                     style: TextStyle(fontSize: 15, color: Colors.black)),
                                 Divider(color: Colors.transparent,height: 18,),
-                                Text("${auctionsModel.igAccount}",
+                                Text("${widget.auctionsModel.igAccount}",
                                     style: TextStyle(fontSize: 15, color: Colors.black)),
                                 Divider(color: Colors.transparent,height: 30,),
-                                Text("${auctionsModel.country}",
+                                Text("${widget.auctionsModel.country}",
                                     style: TextStyle(fontSize: 15, color: Colors.black)),
                                 Divider(color: Colors.transparent,),
                               ],
@@ -176,11 +183,15 @@ class AuctionsInfo extends StatelessWidget {
               showDialog(
                   context: context,
                   builder: (BuildContext context) {
-                    return AlertMessageCard(
-                        'Confirm',
-                        'Would you like to be instantly notified when this watch is listed in the next live action ?',
-                        'No',
-                        'Notify Me'
+                    return CustomDeleteDialog(
+                      title: 'Confirm',
+                      content: 'Would you like to be instantly notified when this watch is listed in the next live action ?',
+                      yesBtn: (){
+                        Navigator.pop(context);
+                      },
+                      noBtn: (){
+                        Navigator.pop(context);
+                      },
                     );
                   }
               );
@@ -192,19 +203,27 @@ class AuctionsInfo extends StatelessWidget {
           SizedBox(height: 5),
 
           FloatingActionButton(
-            onPressed: () {   showDialog(
+            onPressed: () {  showDialog(
                 context: context,
                 builder: (BuildContext context) {
-                  return AlertMessageCard(
-                      'Confirm',
-                      'Would you like to be instantly notified when this watch is listed in the next live action ?',
-                      'No',
-                      'Notify Me'
+                  return CustomDeleteDialog(
+                    title: 'Confirm',
+                    content: 'Would you like to add the watch to you favorites ?',
+                    yesBtn: (){
+                      setState(() {
+                        favoriteList.add(AuctionsList[widget.index]);
+                        Navigator.pop(context);
+                        fav = Colors.red;
+                      });
+                    },
+                    noBtn: (){
+                      Navigator.pop(context);
+                    },
                   );
                 }
             );
             },
-            child: Icon(Icons.favorite),
+            child: Icon(Icons.favorite,color: fav,),
             backgroundColor: PrimaryColor,
           ),
         ],

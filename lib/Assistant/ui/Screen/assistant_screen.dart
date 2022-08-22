@@ -56,8 +56,6 @@ class AssistantScreen extends StatelessWidget {
         ),
       ),
       // bottomNavigationBar: BottomNavigationBarScreen(),
-      drawer: DrawerMenu(),
-
     );
   }
 }
