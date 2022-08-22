@@ -154,6 +154,8 @@ class TrendingScreen extends StatelessWidget {
                             return BuildWatchCard(watches[index]);
                           },
                           scrollDirection: Axis.horizontal,
+
+
                           itemCount: watches.length,
                           shrinkWrap: true,
                         ),
