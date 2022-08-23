@@ -10,7 +10,20 @@ class AboutScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-
+      appBar: AppBar(
+        backgroundColor: PrimaryColor,
+        actions: [
+          IconButton(
+            onPressed: (){},
+            icon: Icon(Icons.refresh),
+          ),
+        ],
+        leading: IconButton(
+          icon: Icon(Icons.sort),
+          onPressed: () {
+          },
+        ),
+      ),
       body: Container(
         width: double.infinity,
         child: Column(

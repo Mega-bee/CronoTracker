@@ -1,4 +1,3 @@
-import 'package:cronotracker/DrawerMenu/ui/Widgets/drawer_menu_widget.dart';
 import 'package:cronotracker/utils/style/colors.dart';
 import 'package:flutter/material.dart';
 import '../Widget/trending_watch_card.dart';
@@ -272,10 +271,6 @@ class TrendingScreen extends StatelessWidget {
           ),
         ),
       ),
-      drawer: DrawerMenu(),
-
-
-
     );
 
 

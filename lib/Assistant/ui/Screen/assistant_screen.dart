@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../../../DrawerMenu/ui/Screen/drawer_menu.dart';
 import '../../../utils/Images/Images.dart';
 import '../../../utils/style/colors.dart';
 
@@ -13,17 +12,14 @@ class AssistantScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: PrimaryColor,
         actions: [
-
           IconButton(
             onPressed: (){},
             icon: Icon(Icons.refresh),
           ),
         ],
-
         leading: IconButton(
           icon: Icon(Icons.sort),
           onPressed: () {
-            _key.currentState!.openDrawer();
           },
         ),
       ),

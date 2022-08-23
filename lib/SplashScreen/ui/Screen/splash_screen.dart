@@ -1,10 +1,9 @@
 import 'dart:async';
-import 'package:cronotracker/DrawerMenu2/ui/screen/zoom_drawer_screen.dart';
 import 'package:cronotracker/utils/Images/Images.dart';
 import 'package:flutter/material.dart';
+import '../../../DrawerMenu/ui/screen/zoom_drawer_screen.dart';
 
 class SplashScreenMain extends StatefulWidget {
-
   @override
   State<SplashScreenMain> createState() => _SplashScreenMainState();
 }
@@ -16,9 +15,7 @@ class _SplashScreenMainState extends State<SplashScreenMain> {
   }
 }
 
-
 class SplashScreen extends StatefulWidget {
-
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
@@ -27,15 +24,15 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 3),
-            ()=>Navigator.pushReplacement(context,
-            MaterialPageRoute(builder:
-                (context) =>
-                ZoomDrawerr(),
-            )
-        )
-    );
+    Timer(
+        Duration(seconds: 3),
+        () => Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ZoomDrawerr(),
+            )));
   }
+
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
@@ -46,7 +43,6 @@ class _SplashScreenState extends State<SplashScreen> {
           child: Image.asset(ImageAsset.LOGO),
         ),
       ),
-
     );
   }
 }

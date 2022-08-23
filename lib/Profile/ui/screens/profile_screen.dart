@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import '../../../Favorites/ui/Screen/FavoriteScreen.dart';
 import '../../../utils/style/colors.dart';
 
@@ -19,14 +20,28 @@ class ProfileScreen extends StatelessWidget {
     return DefaultTabController(
         length: 2,
         child:Scaffold(
-          appBar: PreferredSize(
+          appBar: AppBar(
+                backgroundColor: PrimaryColor,
+                actions: [
+                  IconButton(
+                    onPressed: (){},
+                    icon: Icon(Icons.refresh),
+                  ),
+                ],
+                leading: IconButton(
+                  icon: Icon(Icons.sort),
+                  onPressed: () {
+                        ZoomDrawer.of(context)!.toggle();
+                  },
+                ),
+          bottom:PreferredSize(
               preferredSize: _tabBar.preferredSize,
               child:Container(
                 decoration: BoxDecoration(
                     color: PrimaryColor
                 ),
                 child: _tabBar,
-              )),
+              ))),
           body: TabBarView(
             children: [
               Favorites(),

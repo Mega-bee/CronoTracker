@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../Auctions/ui/Screen/auctions_screen.dart';
 import '../../../Discover/ui/screens/discover_screen.dart';
-import '../../../DrawerMenu/ui/Screen/drawer_menu.dart';
 import '../../../Notfications/ui/Screen/NotificationScreen.dart';
 import '../../../Profile/ui/screens/profile_screen.dart';
 import '../../../Trending/ui/Screen/trending_screen.dart';
@@ -80,8 +79,6 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
           ),
         ],
       ),
-
-
     );
   }
 }

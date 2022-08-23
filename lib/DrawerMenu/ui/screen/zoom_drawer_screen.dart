@@ -3,7 +3,7 @@ import 'package:cronotracker/NavigationBar/ui/Screen/navbar.dart';
 import 'package:cronotracker/utils/style/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
-import '../../../DrawerMenu/ui/screens/about_screen.dart';
+import '../../../AboutUs/ui/Screen/about_us_screen.dart';
 import '../model/menu_item_model.dart';
 import 'menu_page_screen.dart';
 

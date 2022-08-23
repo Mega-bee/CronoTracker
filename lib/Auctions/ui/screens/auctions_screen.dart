@@ -3,7 +3,6 @@ import 'package:cronotracker/Trending/ui/Screen/trending_screen.dart';
 import 'package:cronotracker/utils/style/colors.dart';
 import 'package:flutter/material.dart';
 import '../../../AuctionsWatchInfo/ui/screen/AuctionWatchInfo.dart';
-import '../../../DrawerMenu/ui/widgets/drawer_menu_widget.dart';
 import '../../../SearchFilter/ui/screens/filter_main_screen.dart';
 import '../widget/auctions_card.dart';
 
@@ -72,7 +71,7 @@ class _AuctionsState extends State<Auctions> {
                         physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
                         itemCount: AuctionsList.length,
                         itemBuilder: (context, index) {
-                          return AuctionsCard( auctionsModel: AuctionsList[index],);
+                          return AuctionsCard( auctionsModel: AuctionsList[index],index:index);
                         },
                       ),
                     ),
@@ -83,7 +82,6 @@ class _AuctionsState extends State<Auctions> {
           ],
         ),
       ),
-      drawer: DrawerMenu(),
       endDrawer: FilterScreen(),
     );
   }

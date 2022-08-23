@@ -1,7 +1,7 @@
 import 'package:cronotracker/Notfications/ui/Widgets/NotificationCard.dart';
 import 'package:cronotracker/utils/style/colors.dart';
 import 'package:flutter/material.dart';
-import '../../../DrawerMenu/ui/Screen/drawer_menu.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import '../../Model/NotficationModel.dart';
 
 
@@ -26,7 +26,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
           child: IconButton(
             icon: Icon(Icons.sort),
             onPressed: () {
-              _key.currentState!.openDrawer();
+                  ZoomDrawer.of(context)!.toggle();
             },
           ),
         ),
