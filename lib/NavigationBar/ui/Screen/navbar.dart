@@ -23,22 +23,21 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
     DiscoverScreen(),
     Auctions(),
     NotificationScreen(),
-    ProfileScreen(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+      backgroundColor: PrimaryColor,
       body: screens[currentIndex],
 
       bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.white38,
-        unselectedIconTheme: IconThemeData(color:Colors.white38 ),
-        selectedIconTheme: IconThemeData(color: Colors.white),
+        selectedItemColor: BlueColor,
+        unselectedItemColor: Color(0xFF747474),
+        unselectedIconTheme: IconThemeData(color:Color(0xFF747474) ),
+        selectedIconTheme: IconThemeData(color: BlueColor),
         type: BottomNavigationBarType.fixed,
-        backgroundColor: PrimaryColor,
+        backgroundColor: Color(0xFFF9F9F9),
         currentIndex: currentIndex,
         onTap: (index) {
           setState(() {
@@ -60,8 +59,7 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.gavel,
-            ),
+              Icons.gavel,),
             label: 'Auctions',
 
           ),
@@ -71,12 +69,12 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
             ),
             label: 'Notification',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.person,
-            ),
-            label: 'Profile',
-          ),
+          // BottomNavigationBarItem(
+          //   icon: Icon(
+          //     Icons.person,
+          //   ),
+          //   label: 'Profile',
+          // ),
         ],
       ),
     );

@@ -6,8 +6,10 @@ import '../../Model/FavoriteModel.dart';
 
 class FavoriteCard extends StatefulWidget {
   final AuctionsModel auctionsModel;
-int index;
-FavoriteCard({Key? key, required this.auctionsModel,required this.index}) : super(key: key);
+  int index;
+
+  FavoriteCard({Key? key, required this.auctionsModel, required this.index})
+      : super(key: key);
 
   @override
   State<FavoriteCard> createState() => _FavoriteCardState();
@@ -34,18 +36,16 @@ class _FavoriteCardState extends State<FavoriteCard> {
                         fit: BoxFit.cover),
                   ),
                   Positioned(
-                      top:0.0,
+                      top: 0.0,
                       right: 0.0,
-                      child:IconButton(
-                            icon:Icon(Icons.favorite,
+                      child: IconButton(
+                          icon: Icon(
+                            Icons.favorite,
                             color: PrimaryColor,
                           ),
-                            onPressed:
-                            (){
-                              favoriteList
-                                  .remove(favoriteList[widget.index]);
-                            }
-                          ))
+                          onPressed: () {
+                            favoriteList.remove(favoriteList[widget.index]);
+                          }))
                 ],
               ),
               Spacer(),

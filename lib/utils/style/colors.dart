@@ -12,7 +12,8 @@ Map<int, Color> color = const {
   800: Color.fromRGBO(136, 14, 79, .9),
   900: Color.fromRGBO(4, 31, 206, 1.0),
 };
-MaterialColor PrimaryColor = MaterialColor(0xFF0A0652, color);
+MaterialColor PrimaryColor = MaterialColor(0xFFF9F9F9, color);
+MaterialColor BlueColor = MaterialColor(0xFF273045, color);
 
 
 

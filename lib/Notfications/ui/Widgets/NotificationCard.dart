@@ -1,4 +1,5 @@
 import 'package:cronotracker/Notfications/Model/NotficationModel.dart';
+import 'package:cronotracker/utils/style/colors.dart';
 import 'package:flutter/material.dart';
 
 class NotificationCard extends StatelessWidget {
@@ -24,8 +25,21 @@ class NotificationCard extends StatelessWidget {
               Card(
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(50, 29,15 , 29),
-                  child:Text("● "+notificationModel.text.toString()),
-                  ),
+                  child:   RichText(
+                    text: TextSpan(
+                        text:  "●    ",
+                        style: TextStyle(color: BlueColor),
+                        children: <TextSpan>[
+                          TextSpan(
+                            text: "${notificationModel.text.toString()}",
+                            style: TextStyle(
+                                color: Color(0xFF747474),
+                                fontWeight: FontWeight.w400,
+                                fontSize: 14),
+                          ),
+                        ]
+                    ),
+                  ),),
                 elevation: 3,
               )
             ],

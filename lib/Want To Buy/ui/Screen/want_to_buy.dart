@@ -1,60 +1,20 @@
-import 'package:cronotracker/utils/style/colors.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 import '../../../Trending/ui/Screen/trending_screen.dart';
 import '../../../utils/Images/Images.dart';
-import '../../models/discoverItem.dart';
-import '../widgets/discover_item_card.dart';
+import '../../../utils/style/colors.dart';
+class WantToBuy extends StatefulWidget {
+  const WantToBuy({Key? key}) : super(key: key);
 
-class DiscoverScreen extends StatelessWidget {
+  @override
+  State<WantToBuy> createState() => _WantToBuyState();
+}
 
-  DiscoverItem? discoveritem;
-
-  List<DiscoverItem> brands = [
-
-    DiscoverItem(
-        image: 'assets/ROLEX.png',
-      label: 'Rolex'
-    ),
-
-    DiscoverItem(
-        image: 'assets/ROLEX.png',
-        label: 'Audemars Piguet'
-    ),
-
-    DiscoverItem(
-        image: 'assets/ROLEX.png',
-        label: 'Patek philipe'
-    ),
-
-    DiscoverItem(
-        image: 'assets/ROLEX.png',
-        label: 'Vacheron Costantin'
-    ),
-
-    DiscoverItem(
-        image: 'assets/ROLEX.png',
-        label: 'Richard Mille'
-    ),
-
-    DiscoverItem(
-        image: 'assets/ROLEX.png',
-        label: 'Girrard-Perregaux'
-    ),
-
-
-    DiscoverItem(
-        image: 'assets/ROLEX.png',
-        label: 'Other Brands'
-    ),
-
-  ];
+class _WantToBuyState extends State<WantToBuy> {
   TextEditingController _textEditingController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    final GlobalKey<ScaffoldState> _key = GlobalKey();
     return Scaffold(
-      key: _key,
       appBar: AppBar(
         backgroundColor: PrimaryColor,
         elevation: 0,
@@ -103,34 +63,6 @@ class DiscoverScreen extends StatelessWidget {
               )),
         ],
         leading: MenuWidget(),
-      ),      body: SingleChildScrollView(
-        child: Container(
-          width: double.infinity,
-          child: Column(
-            children: [
-              Container(
-                width: double.infinity,
-                color: PrimaryColor,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text('Discover',
-                  style: TextStyle(
-                      fontSize: 24, fontWeight: FontWeight.w500),
-                  ),
-                  ),
-                height: 40,
-              ),
-              ListView.separated(
-                itemBuilder: (context, index) {
-                  return DiscoverItemCard(brands[index]);
-                },
-                itemCount: brands.length,
-                shrinkWrap: true,
-                separatorBuilder: (context, index) => Divider(),
-                ),
-            ],
-          ),
-        ),
       ),
     );
   }

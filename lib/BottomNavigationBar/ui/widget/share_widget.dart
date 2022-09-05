@@ -11,8 +11,12 @@ class ShareWidget extends StatelessWidget {
         selectedTileColor: Colors.black12,
         selectedColor: Colors.white54,
         minLeadingWidth: 20,
-        leading: Icon(Icons.share),
-        title: Text("Share"),
+        leading: Icon(Icons.share,color: Color(0xFF555555),),
+        title: Text("Share",style: TextStyle(
+            color: Color(0xFF555555),
+            fontSize: 16,
+            fontWeight: FontWeight.w400,
+            fontFamily: 'Rubik'),),
         onTap: () {
           void _onShare(BuildContext context) async {
             final box = context.findRenderObject() as RenderBox?;

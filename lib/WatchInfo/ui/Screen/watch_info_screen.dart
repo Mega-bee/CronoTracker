@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import '../../../AlertMessage/ui/widget/alert_message_card.dart';
 import '../../../NavigationBar/ui/Screen/navbar.dart';
 import '../../../Trending/Model/trending_model.dart';
+import '../../../Trending/ui/Screen/trending_screen.dart';
+import '../../../utils/Images/Images.dart';
 import '../../../utils/style/colors.dart';
 
 class WatchDetailsScreen extends StatelessWidget {
@@ -12,38 +14,56 @@ class WatchDetailsScreen extends StatelessWidget {
   // WatchDetails? watchDetails;
   const WatchDetailsScreen({Key? key, required this.trendingModel})
       : super(key: key);
-
   @override
   Widget build(BuildContext context) {
+    TextEditingController _textEditingController = TextEditingController();
     return Scaffold(
       appBar: AppBar(
         backgroundColor: PrimaryColor,
+        elevation: 0,
+        title: PreferredSize(
+          preferredSize: Size(double.infinity, 60),
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
+            child: TextField(
+              controller: _textEditingController,
+              autofocus: false,
+              onChanged: (searchText) {},
+              decoration: InputDecoration(
+                contentPadding: EdgeInsets.all(10),
+                enabledBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(color: Colors.white),
+                    borderRadius: BorderRadius.circular(10)),
+                focusedBorder: OutlineInputBorder(
+                    borderSide:
+                    BorderSide(color: Theme.of(context).primaryColor)),
+                filled: true,
+                fillColor: Color(0xFFF4F4F4),
+                hintText: 'Jump to...',
+                // suffixIcon: const ImageIcon(
+                //   AssetImage("assets/images/down,-filter,-list,-sort.png"),
+                //   color: Color.fromRGBO(18, 108, 242, 1),
+                // ),
+                hintStyle: const TextStyle(
+                    color: Color(0xFF555555),
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400,
+                    fontFamily: 'Rubik'),
+              ),
+            ),
+          ),
+        ),
         actions: [
           IconButton(
-            icon: Icon(Icons.search),
             onPressed: () {},
+            icon: Image.asset(
+              ImageAsset.LOGO,
+              height: double.infinity,
+              width: double.infinity,
+            ),
           ),
-          IconButton(
-            icon: Icon(Icons.refresh),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: Icon(Icons.more_vert),
-            onPressed: () {},
-          )
         ],
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => BottomNavigationBarScreen()),
-            );
-          },
-        ),
-      ),
-      body: Container(
+      ),      body: Container(
         width: double.infinity,
         child: Column(
           children: [
@@ -184,7 +204,7 @@ class WatchDetailsScreen extends StatelessWidget {
                   }
               );
             },
-            child: Icon(Icons.credit_card),
+            child: Icon(Icons.credit_card,color: BlueColor,),
             backgroundColor: PrimaryColor,
           ),
           SizedBox(height: 5),
@@ -206,7 +226,7 @@ class WatchDetailsScreen extends StatelessWidget {
                     );
                   });
             },
-            child: Icon(Icons.favorite),
+            child: Icon(Icons.favorite,color: BlueColor,),
             backgroundColor: PrimaryColor,
           ),
         ],
