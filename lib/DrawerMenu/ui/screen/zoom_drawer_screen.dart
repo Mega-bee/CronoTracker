@@ -1,11 +1,9 @@
-import 'package:cronotracker/Assistant/ui/Screen/assistant_screen.dart';
 import 'package:cronotracker/Favorites/ui/Screen/FavoriteScreen.dart';
 import 'package:cronotracker/NavigationBar/ui/Screen/navbar.dart';
 import 'package:cronotracker/Want%20To%20Buy/ui/Screen/want_to_buy.dart';
 import 'package:cronotracker/utils/style/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
-import '../../../AboutUs/ui/Screen/about_us_screen.dart';
 import '../model/menu_item_model.dart';
 import 'menu_page_screen.dart';
 
@@ -25,6 +23,7 @@ class _ZoomDrawerrState extends State<ZoomDrawerr> {
         angle: -10,
         slideWidth: MediaQuery.of(context).size.width*0.7,
         showShadow: true,
+        mainScreenTapClose: true,
         // shadowLayer1Color: Colors.,
         shadowLayer2Color: BlueColor,
         menuBackgroundColor:PrimaryColor,
@@ -40,7 +39,6 @@ class _ZoomDrawerrState extends State<ZoomDrawerr> {
           ),),
         mainScreen: getScreen()
     );
-
   }
   Widget getScreen() {
     switch (currentItem) {

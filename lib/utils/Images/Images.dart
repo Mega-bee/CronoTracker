@@ -6,4 +6,9 @@ class ImageAsset {
   static const WATCH3 = ROOT +'watch4 (1).jpg';
   static const WATCH4 = ROOT +'watch4 (2).jpg';
   static const WATCH5 = ROOT +'watch5.jpg.jpg';
+  static const ROLEX = ROOT +"ROLEX.png";
+  static const RECHARD = ROOT +"rechard.png";
+  static const PATEKPHILIPE = ROOT +"patekPhilipe.png";
+  static const GIRARD = ROOT +"girard.png";
+  static const AUDEMARSPIGUET = ROOT +"AudemarsPiguet.png";
 }

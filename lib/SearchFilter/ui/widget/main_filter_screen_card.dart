@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../model/filter_model.dart';
 import '../screens/selected_filter_screen.dart';

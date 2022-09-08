@@ -4,7 +4,7 @@ import '../../model/filter_model.dart';
 
 class SelectedFilterScreen extends StatefulWidget {
   final FilterModel filter;
-  SelectedFilterScreen({required Key key, required this.filter}) : super(key: key);
+  const SelectedFilterScreen({required Key key, required this.filter}) : super(key: key);
 
 
   @override

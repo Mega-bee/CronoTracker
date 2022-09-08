@@ -3,7 +3,6 @@ import 'package:cronotracker/utils/style/colors.dart';
 import 'package:flutter/material.dart';
 import '../Widget/trending_watch_card.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
-import '../../../Auctions/ui/screens/auctions_screen.dart';
 import '../../model_classes/watch_card.dart';
 
 class TrendingScreen extends StatelessWidget {
@@ -22,7 +21,7 @@ class TrendingScreen extends StatelessWidget {
         caseMaterial: 'ceramic',
         braceletMaterial: 'Strap',
         soldMonth: '6',
-        priceTracking: '40'),
+        priceTracking: '40',sellingPrice: "20"),
     watchCard(
         img: 'assets/images/watch2.jpg',
         brand: 'Rolex',
@@ -33,7 +32,7 @@ class TrendingScreen extends StatelessWidget {
         caseMaterial: 'ceramic',
         braceletMaterial: 'Strap',
         soldMonth: '12',
-        priceTracking: '32'),
+        priceTracking: '32',sellingPrice: "20"),
     watchCard(
         img: 'assets/images/watch4 (1).jpg',
         brand: 'Quartz',
@@ -44,7 +43,7 @@ class TrendingScreen extends StatelessWidget {
         caseMaterial: 'silver',
         braceletMaterial: 'Strap',
         soldMonth: '12',
-        priceTracking: '30'),
+        priceTracking: '30',sellingPrice: "20"),
     watchCard(
         img: 'assets/images/watch4 (2).jpg',
         brand: 'Fossil',
@@ -55,7 +54,7 @@ class TrendingScreen extends StatelessWidget {
         caseMaterial: 'gold',
         braceletMaterial: 'Strap',
         soldMonth: '12',
-        priceTracking: '10'),
+        priceTracking: '10',sellingPrice: "20"),
     watchCard(
         img: 'assets/images/watch5.jpg',
         brand: 'Casio',
@@ -66,7 +65,7 @@ class TrendingScreen extends StatelessWidget {
         caseMaterial: 'ceramic',
         braceletMaterial: 'Strap',
         soldMonth: '12',
-        priceTracking: '8'),
+        priceTracking: '8',sellingPrice: "20"),
     watchCard(
         img: 'assets/images/watch.jpg',
         brand: 'Omega',
@@ -77,7 +76,8 @@ class TrendingScreen extends StatelessWidget {
         caseMaterial: 'ceramic',
         braceletMaterial: 'Strap',
         soldMonth: '6',
-        priceTracking: '40'),
+        priceTracking: '40',
+    sellingPrice: "20",),
     watchCard(
         img: 'assets/images/watch2.jpg',
         brand: 'Rolex',
@@ -88,7 +88,7 @@ class TrendingScreen extends StatelessWidget {
         caseMaterial: 'ceramic',
         braceletMaterial: 'Strap',
         soldMonth: '12',
-        priceTracking: '32'),
+        priceTracking: '32',sellingPrice: "20"),
     watchCard(
         img: 'assets/images/watch4 (1).jpg',
         brand: 'Quartz',
@@ -99,7 +99,7 @@ class TrendingScreen extends StatelessWidget {
         caseMaterial: 'silver',
         braceletMaterial: 'Strap',
         soldMonth: '12',
-        priceTracking: '30'),
+        priceTracking: '30',sellingPrice: "20"),
     watchCard(
         img: 'assets/images/watch4 (2).jpg',
         brand: 'Fossil',
@@ -110,7 +110,7 @@ class TrendingScreen extends StatelessWidget {
         caseMaterial: 'gold',
         braceletMaterial: 'Strap',
         soldMonth: '12',
-        priceTracking: '10'),
+        priceTracking: '10',sellingPrice: "20"),
     watchCard(
         img: 'assets/images/watch5.jpg',
         brand: 'Casio',
@@ -121,64 +121,82 @@ class TrendingScreen extends StatelessWidget {
         caseMaterial: 'ceramic',
         braceletMaterial: 'Strap',
         soldMonth: '12',
-        priceTracking: '8'),
+        priceTracking: '8',sellingPrice: "20"),
   ];
 
   final GlobalKey<ScaffoldState> _key = GlobalKey();
-  TextEditingController _textEditingController = TextEditingController();
+  final TextEditingController _textEditingController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: _key,
       appBar: AppBar(
-        backgroundColor: PrimaryColor,
-        elevation: 0,
-        title: PreferredSize(
-          preferredSize: Size(double.infinity, 60),
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
-        child: TextField(
-          controller: _textEditingController,
-          autofocus: false,
-          onChanged: (searchText) {},
-          decoration: InputDecoration(
-            contentPadding: EdgeInsets.all(10),
-            enabledBorder: OutlineInputBorder(
-                borderSide: const BorderSide(color: Colors.white),
-                borderRadius: BorderRadius.circular(10)),
-            focusedBorder: OutlineInputBorder(
-                borderSide:
-                BorderSide(color: Theme.of(context).primaryColor)),
-            filled: true,
-            fillColor: Color(0xFFF4F4F4),
-            hintText: 'Jump to...',
-            // suffixIcon: const ImageIcon(
-            //   AssetImage("assets/images/down,-filter,-list,-sort.png"),
-            //   color: Color.fromRGBO(18, 108, 242, 1),
-            // ),
-            hintStyle: const TextStyle(
-                color: Color(0xFF555555),
-                fontSize: 16,
-                fontWeight: FontWeight.w400,
-                fontFamily: 'Rubik'),
-          ),
-        ),
-      ),
-    ),
-        actions:<Widget>[
-      Transform.scale(
-      scale: 2.5,
-          child:IconButton(
-            onPressed: () {},
-            icon: Image.asset(
-              ImageAsset.LOGO,
-              height: double.infinity,
-              width: double.infinity,
+          backgroundColor: PrimaryColor,
+          titleSpacing: 0,
+          toolbarHeight: 70,          centerTitle: true,
+          elevation: 0,
+          title:SizedBox(
+            width: 35,
+            height: 60,
+            child: InkWell(
+              onTap: () {},
+              child: Transform.scale(
+                scale: 3,
+                child:
+                Image.asset(
+                  ImageAsset.LOGO,
+                  alignment: Alignment(0.0,0.0),
+                ),
+              ),
             ),
-          )),
-        ],
-        leading: MenuWidget(),
-      ),
+          ),
+          // TextField(
+          //   controller: _textEditingController,
+          //   autofocus: false,
+          //   onChanged: (searchText) {},
+          //   decoration: InputDecoration(
+          //     contentPadding: EdgeInsets.all(10),
+          //     enabledBorder: OutlineInputBorder(
+          //         borderSide: const BorderSide(color: Colors.white),
+          //         borderRadius: BorderRadius.circular(10)),
+          //     focusedBorder: OutlineInputBorder(
+          //         borderSide:
+          //         BorderSide(color: Theme.of(context).primaryColor)),
+          //     filled: true,
+          //     fillColor: Color(0xFFF4F4F4),
+          //     hintText: 'Jump to...',
+          //     // suffixIcon: const ImageIcon(
+          //     //   AssetImage("assets/images/down,-filter,-list,-sort.png"),
+          //     //   color: Color.fromRGBO(18, 108, 242, 1),
+          //     // ),
+          //     hintStyle: const TextStyle(
+          //         color: Color(0xFF555555),
+          //         fontSize: 16,
+          //         fontWeight: FontWeight.w400,
+          //         fontFamily: 'Rubik'),
+          //   ),
+          // ),
+               actions:[
+                 IconButton(onPressed:(){} ,icon: Icon(Icons.search),iconSize: 35,)
+              // Center(
+              //   child: SizedBox(
+              //     width: 35,
+              //       height: 40,
+              //       child: InkWell(
+              //         onTap: () {},
+              //         child: Transform.scale(
+              //             scale: 2.5,
+              //             child:
+              //               Image.asset(
+              //                 ImageAsset.LOGO,
+              //                 alignment: Alignment(0.0,0.0),
+              //               ),
+              //             ),
+              //       ),
+              //   ),
+              // ),
+            ],
+          leading: MenuWidget()),
       body: SingleChildScrollView(
         child: Container(
           child: SingleChildScrollView(
@@ -186,7 +204,7 @@ class TrendingScreen extends StatelessWidget {
               children: [
                 Stack(
                   children: [
-                    Container(
+                    SizedBox(
                       width: double.infinity,
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
@@ -213,12 +231,12 @@ class TrendingScreen extends StatelessWidget {
                     Positioned.fill(
                       child: Align(
                         alignment: Alignment.bottomLeft,
-                        child: Container(
+                        child: SizedBox(
                           width: double.infinity,
                           height: MediaQuery.of(context).size.height * 0.3,
                           child: ListView.builder(
                             itemBuilder: (context, index) {
-                              return BuildWatchCard(watches[index]);
+                              return BuildWatchCard(watches[index],index);
                             },
                             scrollDirection: Axis.horizontal,
                             itemCount: watches.length,
@@ -232,7 +250,7 @@ class TrendingScreen extends StatelessWidget {
                 SizedBox(height: 10),
                 Stack(
                   children: [
-                    Container(
+                    SizedBox(
                       width: double.infinity,
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
@@ -259,12 +277,12 @@ class TrendingScreen extends StatelessWidget {
                     Positioned.fill(
                       child: Align(
                         alignment: Alignment.bottomLeft,
-                        child: Container(
+                        child: SizedBox(
                           width: double.infinity,
                           height: MediaQuery.of(context).size.height * 0.3,
                           child: ListView.builder(
                             itemBuilder: (context, index) {
-                              return BuildWatchCard(watches[index]);
+                              return BuildWatchCard(watches[index],index);
                             },
                             scrollDirection: Axis.horizontal,
                             itemCount: watches.length,
@@ -278,7 +296,7 @@ class TrendingScreen extends StatelessWidget {
                 SizedBox(height: 10),
                 Stack(
                   children: [
-                    Container(
+                    SizedBox(
                       width: double.infinity,
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
@@ -305,12 +323,12 @@ class TrendingScreen extends StatelessWidget {
                     Positioned.fill(
                       child: Align(
                         alignment: Alignment.bottomLeft,
-                        child: Container(
+                        child: SizedBox(
                           width: double.infinity,
                           height: MediaQuery.of(context).size.height * 0.3,
                           child: ListView.builder(
                             itemBuilder: (context, index) {
-                              return BuildWatchCard(watches[index]);
+                              return BuildWatchCard(watches[index],index);
                             },
                             scrollDirection: Axis.horizontal,
                             itemCount: watches.length,
@@ -321,6 +339,145 @@ class TrendingScreen extends StatelessWidget {
                     ),
                   ],
                 ),
+                SizedBox(height: 10),
+                Stack(
+                  children: [
+                    SizedBox(
+                      width: double.infinity,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          'Most Trending Yellow Gold Watches',
+                          style: TextStyle(
+                              fontSize: 17, fontWeight: FontWeight.w500),
+                        ),
+                      ),
+                      height: MediaQuery.of(context).size.height * 0.35,
+                      // decoration: BoxDecoration(
+                      //   borderRadius: BorderRadius.circular(1.0),
+                      //   color: Colors.white,
+                      //   boxShadow: [
+                      //     BoxShadow(
+                      //       color: Colors.grey,
+                      //       blurRadius: 2.0,
+                      //       spreadRadius: 0.0,
+                      //       offset: Offset(1.0, 1.0),
+                      //     )
+                      //   ],
+                      // ),
+                    ),
+                    Positioned.fill(
+                      child: Align(
+                        alignment: Alignment.bottomLeft,
+                        child: SizedBox(
+                          width: double.infinity,
+                          height: MediaQuery.of(context).size.height * 0.3,
+                          child: ListView.builder(
+                            itemBuilder: (context, index) {
+                              return BuildWatchCard(watches[index],index);
+                            },
+                            scrollDirection: Axis.horizontal,
+                            itemCount: watches.length,
+                            shrinkWrap: true,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 10),
+                Stack(
+                  children: [
+                    SizedBox(
+                      width: double.infinity,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          'Most Trending Yellow Platinum Watches',
+                          style: TextStyle(
+                              fontSize: 17, fontWeight: FontWeight.w500),
+                        ),
+                      ),
+                      height: MediaQuery.of(context).size.height * 0.35,
+                      // decoration: BoxDecoration(
+                      //   borderRadius: BorderRadius.circular(1.0),
+                      //   color: Colors.white,
+                      //   boxShadow: [
+                      //     BoxShadow(
+                      //       color: Colors.grey,
+                      //       blurRadius: 2.0,
+                      //       spreadRadius: 0.0,
+                      //       offset: Offset(1.0, 1.0),
+                      //     )
+                      //   ],
+                      // ),
+                    ),
+                    Positioned.fill(
+                      child: Align(
+                        alignment: Alignment.bottomLeft,
+                        child: SizedBox(
+                          width: double.infinity,
+                          height: MediaQuery.of(context).size.height * 0.3,
+                          child: ListView.builder(
+                            itemBuilder: (context, index) {
+                              return BuildWatchCard(watches[index],index);
+                            },
+                            scrollDirection: Axis.horizontal,
+                            itemCount: watches.length,
+                            shrinkWrap: true,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 10),
+                Stack(
+                  children: [
+                    SizedBox(
+                      width: double.infinity,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          'Most Trending Yellow White Gold Watches',
+                          style: TextStyle(
+                              fontSize: 17, fontWeight: FontWeight.w500),
+                        ),
+                      ),
+                      height: MediaQuery.of(context).size.height * 0.35,
+                      // decoration: BoxDecoration(
+                      //   borderRadius: BorderRadius.circular(1.0),
+                      //   color: Colors.white,
+                      //   boxShadow: [
+                      //     BoxShadow(
+                      //       color: Colors.grey,
+                      //       blurRadius: 2.0,
+                      //       spreadRadius: 0.0,
+                      //       offset: Offset(1.0, 1.0),
+                      //     )
+                      //   ],
+                      // ),
+                    ),
+                    Positioned.fill(
+                      child: Align(
+                        alignment: Alignment.bottomLeft,
+                        child: SizedBox(
+                          width: double.infinity,
+                          height: MediaQuery.of(context).size.height * 0.3,
+                          child: ListView.builder(
+                            itemBuilder: (context, index) {
+                              return BuildWatchCard(watches[index],index);
+                            },
+                            scrollDirection: Axis.horizontal,
+                            itemCount: watches.length,
+                            shrinkWrap: true,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 10),
               ],
             ),
           ),
@@ -332,8 +489,9 @@ class TrendingScreen extends StatelessWidget {
 
 class MenuWidget extends StatelessWidget {
   @override
-  Widget build(BuildContext context) => IconButton(
-        icon: Icon(Icons.sort),
-        onPressed: () => ZoomDrawer.of(context)!.toggle(),
-      );
+  Widget build(BuildContext context) =>
+      IconButton(
+            icon: Icon(Icons.person,size: 35,),
+            onPressed: () => ZoomDrawer.of(context)!.toggle(),
+          );
 }

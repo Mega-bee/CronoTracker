@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../AuctionsWatchInfo/ui/screen/AuctionWatchInfo.dart';
 import '../../Model/auctions_model.dart';

@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import '../../../Favorites/ui/Screen/FavoriteScreen.dart';
@@ -10,7 +9,7 @@ class ProfileScreen extends StatelessWidget {
   TabBar get _tabBar=> TabBar(
     indicatorColor: PrimaryColor,
     isScrollable: true,
-    tabs:  [
+    tabs:  const [
       Tab(text: "Favorites"),
       Tab(text: "Want to buy",)
     ],
@@ -43,7 +42,7 @@ class ProfileScreen extends StatelessWidget {
                 child: _tabBar,
               ))),
           body: TabBarView(
-            children: [
+            children: const [
               Favorites(),
               Icon(Icons.directions_car),
             ],

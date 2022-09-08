@@ -4,19 +4,20 @@ import '../../../WatchInfo/ui/Screen/watch_info_screen.dart';
 import '../../../utils/style/colors.dart';
 
 class BuildWatchCard extends StatelessWidget {
-  final watchCard? wc;
-
-  BuildWatchCard(this.wc);
+  final watchCard wc;
+  int index;
+  BuildWatchCard(this.wc,this.index);
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
       onTap: () {
         Navigator.push(
           context,
           MaterialPageRoute(
               builder: (context) => WatchDetailsScreen(
                     trendingModel: wc,
+                index: index,
                   )),
         );
       },
@@ -27,7 +28,7 @@ class BuildWatchCard extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8.0),
             color: Colors.white,
-            boxShadow: [
+            boxShadow:  [
               BoxShadow(
                 color: Colors.white70,
                 blurRadius: 2.0,
@@ -44,7 +45,7 @@ class BuildWatchCard extends StatelessWidget {
                   height: MediaQuery.of(context).size.height * 0.15,
                   width: double.infinity,
                   child: Image.asset(
-                    '${wc!.img}',
+                    '${wc.img}',
                     fit: BoxFit.contain,
                   )),
             Spacer(),
@@ -53,11 +54,11 @@ class BuildWatchCard extends StatelessWidget {
             ),
                   RichText(
                     text: TextSpan(
-                        text:  "● ",
+                        text:  " ",
                         style: TextStyle(color: BlueColor),
                         children: <TextSpan>[
                           TextSpan(
-                            text: "${wc?.brand}",
+                            text: "${wc.brand}",
                             style: TextStyle(
                                 color: Color(0xFF747474),
                                 fontWeight: FontWeight.w400,
@@ -68,11 +69,11 @@ class BuildWatchCard extends StatelessWidget {
         ),
         RichText(
             text: TextSpan(
-                  text:  "● ",
+                  text:  " ",
                   style: TextStyle(color: BlueColor),
                   children: <TextSpan>[
                     TextSpan(
-                      text: "${wc?.modelName}",
+                      text: "${wc.sellingPrice}",
                       style: TextStyle(
                           color: Color(0xFF747474),
                           fontWeight: FontWeight.w400,

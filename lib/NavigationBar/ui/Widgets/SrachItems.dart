@@ -7,13 +7,13 @@ class SearchItems extends StatelessWidget {
   const SearchItems({Key? key, required this.auctionsModel}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: MediaQuery.of(context).size.height*0.1,
       width: MediaQuery.of(context).size.width*0.1,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Container(
+          SizedBox(
             height: MediaQuery.of(context).size.height*0.1,
             width: MediaQuery.of(context).size.width*0.1,
             child:Image.asset("${auctionsModel.image}",fit: BoxFit.contain,)

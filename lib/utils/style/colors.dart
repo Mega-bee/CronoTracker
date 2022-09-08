@@ -14,6 +14,7 @@ Map<int, Color> color = const {
 };
 MaterialColor PrimaryColor = MaterialColor(0xFFF9F9F9, color);
 MaterialColor BlueColor = MaterialColor(0xFF273045, color);
+MaterialColor DividerColor = MaterialColor(0xFF273045, color);
 
 
 

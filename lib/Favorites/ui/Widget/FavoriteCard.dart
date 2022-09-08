@@ -22,7 +22,7 @@ class _FavoriteCardState extends State<FavoriteCard> {
       elevation: 2,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Container(
+        child: SizedBox(
           height: 200,
           width: 200,
           child: Column(
@@ -30,7 +30,7 @@ class _FavoriteCardState extends State<FavoriteCard> {
               Stack(
                 alignment: Alignment.topRight,
                 children: [
-                  Container(
+                  SizedBox(
                     height: 100,
                     child: Image.asset("${widget.auctionsModel.image}",
                         fit: BoxFit.cover),
