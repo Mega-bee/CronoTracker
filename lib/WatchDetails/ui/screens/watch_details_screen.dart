@@ -1,9 +1,9 @@
 import 'package:cronotracker/AlertMessage/ui/widget/alert_message_card.dart';
-import 'package:cronotracker/NavigationBar/ui/Screen/navbar.dart';
 import 'package:cronotracker/Trending/model_classes/watch_card.dart';
 import 'package:cronotracker/utils/style/colors.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import '../../../Trending/ui/Screen/trending_screen.dart';
+import '../../../utils/Images/Images.dart';
 import '../widget/bid_card.dart';
 
 class WatchDetailsScreen extends StatelessWidget {
@@ -85,92 +85,75 @@ class WatchDetailsScreen extends StatelessWidget {
     ),
 
   ];
-
+  final TextEditingController _textEditingController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: PrimaryColor,
-        actions: [
-
-          IconButton(
-            icon: Icon(Icons.search),
-            onPressed: (){
-            },
+          leadingWidth: 10,
+          titleSpacing: 10,
+          backgroundColor: PrimaryColor,
+          elevation: 0,
+          title: Padding(
+            padding: const EdgeInsets.fromLTRB(20, 8, 0, 16),
+            child: TextField(
+              controller: _textEditingController,
+              autofocus: false,
+              onChanged: (searchText) {},
+              decoration: InputDecoration(
+                contentPadding: EdgeInsets.all(10),
+                enabledBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(color: Colors.white),
+                    borderRadius: BorderRadius.circular(10)),
+                focusedBorder: OutlineInputBorder(
+                    borderSide:
+                    BorderSide(color: Theme.of(context).primaryColor)),
+                filled: true,
+                fillColor: Color(0xFFF4F4F4),
+                hintText: 'Jump to...',
+                // suffixIcon: const ImageIcon(
+                //   AssetImage("assets/images/down,-filter,-list,-sort.png"),
+                //   color: Color.fromRGBO(18, 108, 242, 1),
+                // ),
+                hintStyle: const TextStyle(
+                    color: Color(0xFF555555),
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400,
+                    fontFamily: 'Rubik'),
+              ),
+            ),
           ),
-          IconButton(
-            icon: Icon(Icons.refresh),
-            onPressed: (){},
-          ),
-
-          PopupMenuButton(
-            itemBuilder: (BuildContext context) => [
-
-            PopupMenuItem(
-                child: GestureDetector(
-              onTap: (){
-                print('hello');
-              },
-              child: Container(
-                width: 140,
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 3),
-                      child: Icon(Icons.favorite, color: Colors.black),
+               actions:[
+              Center(
+                child: SizedBox(
+                  width: 35,
+                    height: 40,
+                    child: InkWell(
+                      onTap: () {},
+                      child: Transform.scale(
+                          scale: 2.5,
+                          child:
+                            Image.asset(
+                              ImageAsset.LOGO,
+                              alignment: Alignment(0.0,0.0),
+                            ),
+                          ),
                     ),
-                    SizedBox(width: 15),
-                    Text('ADD'),
-                  ],
                 ),
               ),
-            )),
-
-            PopupMenuItem(child: GestureDetector(
-              onTap: (){
-                print('Hello');
-              },
-              child: Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 3),
-                    child: Icon(Icons.credit_card, color: Colors.black,
-                    ),
-                  ),
-                  SizedBox(width: 15),
-                  Text('Notify Me'),
-                ],
-              ),
-            )),
-
-
-          ],
-          ),
-
-
-
-        ],
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          onPressed: (){
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => BottomNavigationBarScreen()),
-            );
-          },
-        ),
-      ),
-      body: Container(
+            ],
+          leading: MenuWidget()),
+      body: SizedBox(
         width: double.infinity,
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
+              SizedBox(
                 width: double.infinity,
                 height: 300,
                 child: Image(
-                  image: AssetImage('${this.image}'),
+                  image: AssetImage('$image'),
                   fit: BoxFit.cover,
                   width: double.infinity,
                 ),
@@ -180,16 +163,16 @@ class WatchDetailsScreen extends StatelessWidget {
 
               Row(
                 children: [
-                  Container(
+                  SizedBox(
                     width: 140,
                     child: Column(
                       children: [
 
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
+                          children: const [
                             Padding(
-                              padding: const EdgeInsets.all(12.0),
+                              padding: EdgeInsets.all(12.0),
                               child: Text(
                                 'Brand',
                                 style: TextStyle(
@@ -202,9 +185,9 @@ class WatchDetailsScreen extends StatelessWidget {
                           ],
                         ),
                         Row(
-                          children: [
+                          children: const [
                             Padding(
-                              padding: const EdgeInsets.all(12.0),
+                              padding: EdgeInsets.all(12.0),
                               child: Text(
                                 'Model Name',
                                 style: TextStyle(
@@ -217,9 +200,9 @@ class WatchDetailsScreen extends StatelessWidget {
                           ],
                         ),
                         Row(
-                          children: [
+                          children: const [
                             Padding(
-                              padding: const EdgeInsets.all(12.0),
+                              padding: EdgeInsets.all(12.0),
                               child: Text(
                                 'Reference',
                                 style: TextStyle(
@@ -232,9 +215,9 @@ class WatchDetailsScreen extends StatelessWidget {
                           ],
                         ),
                         Row(
-                          children: [
+                          children: const [
                             Padding(
-                              padding: const EdgeInsets.all(12.0),
+                              padding: EdgeInsets.all(12.0),
                               child: Text(
                                 'Nickname',
                                 style: TextStyle(
@@ -247,9 +230,9 @@ class WatchDetailsScreen extends StatelessWidget {
                           ],
                         ),
                         Row(
-                          children: [
+                          children: const [
                             Padding(
-                              padding: const EdgeInsets.all(12.0),
+                              padding: EdgeInsets.all(12.0),
                               child: Text(
                                 'Dial Color',
                                 style: TextStyle(
@@ -261,9 +244,9 @@ class WatchDetailsScreen extends StatelessWidget {
                           ],
                         ),
                         Row(
-                          children: [
+                          children: const [
                             Padding(
-                              padding: const EdgeInsets.all(12.0),
+                              padding: EdgeInsets.all(12.0),
                               child: Text(
                                 'Case Material',
                                 style: TextStyle(
@@ -276,9 +259,9 @@ class WatchDetailsScreen extends StatelessWidget {
                           ],
                         ),
                         Row(
-                          children: [
+                          children: const [
                             Padding(
-                              padding: const EdgeInsets.all(12.0),
+                              padding: EdgeInsets.all(12.0),
                               child: Text(
                                 'Bracelet Material',
                                 style: TextStyle(
@@ -291,9 +274,9 @@ class WatchDetailsScreen extends StatelessWidget {
                           ],
                         ),
                         Row(
-                          children: [
+                          children: const [
                             Padding(
-                              padding: const EdgeInsets.all(12.0),
+                              padding: EdgeInsets.all(12.0),
                               child: Text(
                                 'Sold/Month',
                                 style: TextStyle(
@@ -306,9 +289,9 @@ class WatchDetailsScreen extends StatelessWidget {
                         ),
                         Divider(),
                         Row(
-                          children: [
+                          children: const [
                             Padding(
-                              padding: const EdgeInsets.all(12.0),
+                              padding: EdgeInsets.all(12.0),
                               child: Text(
                                 'Price Tracking',
                                 style: TextStyle(
@@ -323,7 +306,7 @@ class WatchDetailsScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Container(
+                  SizedBox(
                     width: 220,
                     child: Column(
                       children: [
@@ -334,7 +317,7 @@ class WatchDetailsScreen extends StatelessWidget {
                             Padding(
                               padding: const EdgeInsets.all(12.0),
                               child: Text(
-                                '${this.brand}',
+                                '$brand',
                                   maxLines: 3
 
                               ),
@@ -348,7 +331,7 @@ class WatchDetailsScreen extends StatelessWidget {
                             Padding(
                               padding: const EdgeInsets.all(12.0),
                               child: Text(
-                                '${this.modelName}',
+                                '$modelName',
                                 maxLines: 2,
                                 style: TextStyle(
                                 ),
@@ -363,7 +346,7 @@ class WatchDetailsScreen extends StatelessWidget {
                             Padding(
                               padding: const EdgeInsets.all(12.0),
                               child: Text(
-                                '${this.referece}',
+                                '$referece',
 
                               ),
                             ),
@@ -376,7 +359,7 @@ class WatchDetailsScreen extends StatelessWidget {
                             Padding(
                               padding: const EdgeInsets.all(12.0),
                               child: Text(
-                                '${this.nickname}',
+                                '$nickname',
 
                               ),
                             ),
@@ -389,7 +372,7 @@ class WatchDetailsScreen extends StatelessWidget {
                             Padding(
                               padding: const EdgeInsets.all(12.0),
                               child: Text(
-                                '${this.dialColor}',
+                                '$dialColor',
 
                               ),
                             ),
@@ -401,20 +384,7 @@ class WatchDetailsScreen extends StatelessWidget {
                             Padding(
                               padding: const EdgeInsets.all(12.0),
                               child: Text(
-                                '${this.caseMaterial}',
-
-                              ),
-                            ),
-                            Spacer(),
-
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(12.0),
-                              child: Text(
-                                '${this.braceletMaterial}',
+                                '$caseMaterial',
 
                               ),
                             ),
@@ -427,7 +397,20 @@ class WatchDetailsScreen extends StatelessWidget {
                             Padding(
                               padding: const EdgeInsets.all(12.0),
                               child: Text(
-                                '${this.soldMonth}',
+                                '$braceletMaterial',
+
+                              ),
+                            ),
+                            Spacer(),
+
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(12.0),
+                              child: Text(
+                                '$soldMonth',
                               ),
                             ),
                             Spacer(),
@@ -439,7 +422,7 @@ class WatchDetailsScreen extends StatelessWidget {
                             Padding(
                               padding: const EdgeInsets.all(12.0),
                               child: Text(
-                                '${this.priceTracking}',
+                                '$priceTracking',
                               ),
                             ),
                             Spacer(),

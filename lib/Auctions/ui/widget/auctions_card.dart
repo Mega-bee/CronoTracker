@@ -1,13 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import '../../../AuctionsWatchInfo/ui/screen/AuctionWatchInfo.dart';
-import '../../models/auctions_model.dart';
+import '../../Model/auctions_model.dart';
 
 class AuctionsCard extends StatelessWidget {
   final AuctionsModel auctionsModel;
-
-  const AuctionsCard({Key? key, required this.auctionsModel}) : super(key: key);
+  int index;
+  AuctionsCard({Key? key, required this.auctionsModel,required this.index}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +13,7 @@ class AuctionsCard extends StatelessWidget {
       onTap: () {
         Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => AuctionsInfo(auctionsModel: auctionsModel)));
+            MaterialPageRoute(builder: (context) => AuctionsInfo(auctionsModel: auctionsModel, index: index,)));
       },
       child: SizedBox(
         height: MediaQuery

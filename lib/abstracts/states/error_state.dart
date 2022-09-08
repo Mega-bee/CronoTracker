@@ -41,7 +41,7 @@ class ErrorState extends States {
               ),
               // color: AppColors.greenBasic,
               elevation: 5.0,
-              shape:const RoundedRectangleBorder(
+              shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(20.0))))
         ],
       ),

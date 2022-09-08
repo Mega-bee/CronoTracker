@@ -1,25 +1,18 @@
 import 'package:cronotracker/utils/style/colors.dart';
 import 'package:flutter/material.dart';
 
-import '../../../BottomNavigationBar/ui/widget/share_widget.dart';
 import '../model/menu_item_model.dart';
 
 
 class MenuItems {
-  static const assistant = MenuItemm(icon: Icons.mic, title: "Assistant");
-  static const about = MenuItemm(icon: Icons.info_outline, title: "About");
-  static const appGallery = MenuItemm(icon: Icons.image, title: "App Gallery");
-  static const addShortcut =
-  MenuItemm(icon: Icons.push_pin, title: "Add Shortcut");
-  static const mainScreen =
-  MenuItemm(icon: Icons.home_filled, title: "Main Page");
+  static const mainScreen = MenuItemm(icon: Icons.home_filled, title: "Main Page");
+  static const favorites = MenuItemm(icon: Icons.star_border_outlined, title: "Favorites");
+  static const wantToBuy = MenuItemm(icon: Icons.shopping_bag_outlined, title: "Want To Buy");
 
   static const all = <MenuItemm>[
     mainScreen,
-    assistant,
-    about,
-    appGallery,
-    addShortcut
+    favorites,
+    wantToBuy
   ];
 }
 
@@ -48,7 +41,6 @@ class _MenuPageState extends State<MenuPage> {
               children: <Widget>[
                 const Spacer(),
                 ...MenuItems.all.map(buildMenuItem).toList(),
-                ShareWidget(),
                 const Spacer(
                   flex: 2,
                 )
@@ -59,14 +51,18 @@ class _MenuPageState extends State<MenuPage> {
   }
 
   Widget buildMenuItem(MenuItemm item) => ListTileTheme(
-      selectedColor: Colors.white,
+      selectedColor: Colors.black,
       child: ListTile(
           selectedTileColor: Colors.black12,
-          selectedColor: Colors.white,
+          selectedColor: Colors.black,
           selected: widget.currentItem == item,
           minLeadingWidth: 20,
-          leading: Icon(item.icon),
-          title: Text(item.title.toString()),
+          leading: Icon(item.icon,color: Color(0xFF555555),),
+          title: Text(item.title.toString(),style: TextStyle(
+              color: Color(0xFF555555),
+              fontSize: 16,
+              fontWeight: FontWeight.w400,
+              fontFamily: 'Rubik'),),
 
 
           onTap: () => widget.onSelectedItem(item)));

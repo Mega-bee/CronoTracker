@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../Trending/model_classes/watch_card.dart';
 
@@ -10,7 +9,7 @@ class BidCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: double.infinity,
       child: Column(
         children: [
@@ -25,7 +24,7 @@ class BidCard extends StatelessWidget {
               ),
             ),
           ),
-          Container(
+          SizedBox(
             height: 60,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -76,22 +75,22 @@ class BidCard extends StatelessWidget {
                             mainAxisSize: MainAxisSize.min,
                             children: <Widget>[
                               ListTile(
-                                leading: new Icon(Icons.favorite),
-                                title: new Text('ADD'),
+                                leading: Icon(Icons.favorite),
+                                title: Text('ADD'),
                                 onTap: () {
                                   print('pressed !');
                                 },
                               ),
                               ListTile(
-                                leading: new Icon(Icons.campaign),
-                                title: new Text('Notify Me'),
+                                leading: Icon(Icons.campaign),
+                                title: Text('Notify Me'),
                                 onTap: () {
                                   print('pressed !');
                                 },
                               ),
                               ListTile(
-                                leading: new Icon(Icons.open_in_new),
-                                title: new Text('Open URL (Photo)'),
+                                leading: Icon(Icons.open_in_new),
+                                title: Text('Open URL (Photo)'),
                                 onTap: () {
                                   print('pressed !');
                                 },

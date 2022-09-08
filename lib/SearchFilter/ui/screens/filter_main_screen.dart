@@ -1,5 +1,4 @@
 import 'package:cronotracker/utils/style/colors.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../model/filter_model.dart';
 import '../widget/main_filter_screen_card.dart';

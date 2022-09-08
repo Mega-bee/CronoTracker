@@ -1,5 +1,4 @@
 import 'package:cronotracker/utils/style/colors.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CustomDeleteDialog extends StatelessWidget {
@@ -53,12 +52,12 @@ class CustomDeleteDialog extends StatelessWidget {
                     },
                     child: Text("  Yes  ",
                         style: TextStyle(
-                            color: Colors.white,
+                            color: PrimaryColor,
                             fontWeight: FontWeight.w400,
                             fontSize: 12)
                     ),
                     style: ElevatedButton.styleFrom(
-                        primary: PrimaryColor,
+                        primary: BlueColor,
                         elevation: 0,
                         side: BorderSide(color: PrimaryColor),
                         padding: const EdgeInsets.fromLTRB(30, 10, 30, 10)),
@@ -70,11 +69,11 @@ class CustomDeleteDialog extends StatelessWidget {
                     child: Text(
                       "Cancel",
                       style: TextStyle(
-                          color: Colors.white,
+                          color: PrimaryColor,
                           fontWeight: FontWeight.w400,
                           fontSize: 12)     ,               ),
                     style: ElevatedButton.styleFrom(
-                        primary: PrimaryColor,
+                        primary: BlueColor,
 
                         elevation: 0,
                         side: BorderSide(color: Theme.of(context).primaryColor),
