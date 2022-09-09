@@ -198,289 +198,286 @@ class TrendingScreen extends StatelessWidget {
             ],
           leading: MenuWidget()),
       body: SingleChildScrollView(
-        child: Container(
-          child: SingleChildScrollView(
-            child: Column(
+        child: Column(
+          children: [
+            SizedBox(height: MediaQuery.of(context).size.height*0.03,),
+            Stack(
               children: [
-                Stack(
-                  children: [
-                    SizedBox(
-                      width: double.infinity,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          'Trending Watches below 10,000\$',
-                          style: TextStyle(
-                              fontSize: 17, fontWeight: FontWeight.w500),
-                        ),
-                      ),
-                      height: MediaQuery.of(context).size.height * 0.35,
-                      // decoration: BoxDecoration(
-                      //   borderRadius: BorderRadius.circular(1.0),
-                      //   color: Colors.white,
-                      //   boxShadow: [
-                      //     BoxShadow(
-                      //       color: Colors.grey,
-                      //       blurRadius: 2.0,
-                      //       spreadRadius: 0.0,
-                      //       offset: Offset(1.0, 1.0),
-                      //     )
-                      //   ],
-                      // ),
+                SizedBox(
+                  width: double.infinity,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      'Trending Watches below 10,000\$',
+                      style: TextStyle(
+                          fontSize: 17, fontWeight: FontWeight.w500),
                     ),
-                    Positioned.fill(
-                      child: Align(
-                        alignment: Alignment.bottomLeft,
-                        child: SizedBox(
-                          width: double.infinity,
-                          height: MediaQuery.of(context).size.height * 0.3,
-                          child: ListView.builder(
-                            itemBuilder: (context, index) {
-                              return BuildWatchCard(watches[index],index);
-                            },
-                            scrollDirection: Axis.horizontal,
-                            itemCount: watches.length,
-                            shrinkWrap: true,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
+                  ),
+                  height: MediaQuery.of(context).size.height * 0.3,
+                  // decoration: BoxDecoration(
+                  //   borderRadius: BorderRadius.circular(1.0),
+                  //   color: Colors.white,
+                  //   boxShadow: [
+                  //     BoxShadow(
+                  //       color: Colors.grey,
+                  //       blurRadius: 2.0,
+                  //       spreadRadius: 0.0,
+                  //       offset: Offset(1.0, 1.0),
+                  //     )
+                  //   ],
+                  // ),
                 ),
-                SizedBox(height: 10),
-                Stack(
-                  children: [
-                    SizedBox(
+                Positioned.fill(
+                  child: Align(
+                    alignment: Alignment.bottomLeft,
+                    child: SizedBox(
                       width: double.infinity,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          'Trending Watches Watches',
-                          style: TextStyle(
-                              fontSize: 17, fontWeight: FontWeight.w500),
-                        ),
-                      ),
-                      height: MediaQuery.of(context).size.height * 0.35,
-                      // decoration: BoxDecoration(
-                      //   borderRadius: BorderRadius.circular(1.0),
-                      //   color: Colors.white,
-                      //   boxShadow: [
-                      //     BoxShadow(
-                      //       color: Colors.grey,
-                      //       blurRadius: 2.0,
-                      //       spreadRadius: 0.0,
-                      //       offset: Offset(1.0, 1.0),
-                      //     )
-                      //   ],
-                      // ),
-                    ),
-                    Positioned.fill(
-                      child: Align(
-                        alignment: Alignment.bottomLeft,
-                        child: SizedBox(
-                          width: double.infinity,
-                          height: MediaQuery.of(context).size.height * 0.3,
-                          child: ListView.builder(
-                            itemBuilder: (context, index) {
-                              return BuildWatchCard(watches[index],index);
-                            },
-                            scrollDirection: Axis.horizontal,
-                            itemCount: watches.length,
-                            shrinkWrap: true,
-                          ),
-                        ),
+                      height: MediaQuery.of(context).size.height * 0.25,
+                      child: ListView.builder(
+                        itemBuilder: (context, index) {
+                          return BuildWatchCard(watches[index],index);
+                        },
+                        scrollDirection: Axis.horizontal,
+                        itemCount: watches.length,
+                        shrinkWrap: true,
                       ),
                     ),
-                  ],
+                  ),
                 ),
-                SizedBox(height: 10),
-                Stack(
-                  children: [
-                    SizedBox(
-                      width: double.infinity,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          'Most Trending Rose Gold Watches',
-                          style: TextStyle(
-                              fontSize: 17, fontWeight: FontWeight.w500),
-                        ),
-                      ),
-                      height: MediaQuery.of(context).size.height * 0.35,
-                      // decoration: BoxDecoration(
-                      //   borderRadius: BorderRadius.circular(1.0),
-                      //   color: Colors.white,
-                      //   boxShadow: [
-                      //     BoxShadow(
-                      //       color: Colors.grey,
-                      //       blurRadius: 2.0,
-                      //       spreadRadius: 0.0,
-                      //       offset: Offset(1.0, 1.0),
-                      //     )
-                      //   ],
-                      // ),
-                    ),
-                    Positioned.fill(
-                      child: Align(
-                        alignment: Alignment.bottomLeft,
-                        child: SizedBox(
-                          width: double.infinity,
-                          height: MediaQuery.of(context).size.height * 0.3,
-                          child: ListView.builder(
-                            itemBuilder: (context, index) {
-                              return BuildWatchCard(watches[index],index);
-                            },
-                            scrollDirection: Axis.horizontal,
-                            itemCount: watches.length,
-                            shrinkWrap: true,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 10),
-                Stack(
-                  children: [
-                    SizedBox(
-                      width: double.infinity,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          'Most Trending Yellow Gold Watches',
-                          style: TextStyle(
-                              fontSize: 17, fontWeight: FontWeight.w500),
-                        ),
-                      ),
-                      height: MediaQuery.of(context).size.height * 0.35,
-                      // decoration: BoxDecoration(
-                      //   borderRadius: BorderRadius.circular(1.0),
-                      //   color: Colors.white,
-                      //   boxShadow: [
-                      //     BoxShadow(
-                      //       color: Colors.grey,
-                      //       blurRadius: 2.0,
-                      //       spreadRadius: 0.0,
-                      //       offset: Offset(1.0, 1.0),
-                      //     )
-                      //   ],
-                      // ),
-                    ),
-                    Positioned.fill(
-                      child: Align(
-                        alignment: Alignment.bottomLeft,
-                        child: SizedBox(
-                          width: double.infinity,
-                          height: MediaQuery.of(context).size.height * 0.3,
-                          child: ListView.builder(
-                            itemBuilder: (context, index) {
-                              return BuildWatchCard(watches[index],index);
-                            },
-                            scrollDirection: Axis.horizontal,
-                            itemCount: watches.length,
-                            shrinkWrap: true,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 10),
-                Stack(
-                  children: [
-                    SizedBox(
-                      width: double.infinity,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          'Most Trending Yellow Platinum Watches',
-                          style: TextStyle(
-                              fontSize: 17, fontWeight: FontWeight.w500),
-                        ),
-                      ),
-                      height: MediaQuery.of(context).size.height * 0.35,
-                      // decoration: BoxDecoration(
-                      //   borderRadius: BorderRadius.circular(1.0),
-                      //   color: Colors.white,
-                      //   boxShadow: [
-                      //     BoxShadow(
-                      //       color: Colors.grey,
-                      //       blurRadius: 2.0,
-                      //       spreadRadius: 0.0,
-                      //       offset: Offset(1.0, 1.0),
-                      //     )
-                      //   ],
-                      // ),
-                    ),
-                    Positioned.fill(
-                      child: Align(
-                        alignment: Alignment.bottomLeft,
-                        child: SizedBox(
-                          width: double.infinity,
-                          height: MediaQuery.of(context).size.height * 0.3,
-                          child: ListView.builder(
-                            itemBuilder: (context, index) {
-                              return BuildWatchCard(watches[index],index);
-                            },
-                            scrollDirection: Axis.horizontal,
-                            itemCount: watches.length,
-                            shrinkWrap: true,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 10),
-                Stack(
-                  children: [
-                    SizedBox(
-                      width: double.infinity,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          'Most Trending Yellow White Gold Watches',
-                          style: TextStyle(
-                              fontSize: 17, fontWeight: FontWeight.w500),
-                        ),
-                      ),
-                      height: MediaQuery.of(context).size.height * 0.35,
-                      // decoration: BoxDecoration(
-                      //   borderRadius: BorderRadius.circular(1.0),
-                      //   color: Colors.white,
-                      //   boxShadow: [
-                      //     BoxShadow(
-                      //       color: Colors.grey,
-                      //       blurRadius: 2.0,
-                      //       spreadRadius: 0.0,
-                      //       offset: Offset(1.0, 1.0),
-                      //     )
-                      //   ],
-                      // ),
-                    ),
-                    Positioned.fill(
-                      child: Align(
-                        alignment: Alignment.bottomLeft,
-                        child: SizedBox(
-                          width: double.infinity,
-                          height: MediaQuery.of(context).size.height * 0.3,
-                          child: ListView.builder(
-                            itemBuilder: (context, index) {
-                              return BuildWatchCard(watches[index],index);
-                            },
-                            scrollDirection: Axis.horizontal,
-                            itemCount: watches.length,
-                            shrinkWrap: true,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 10),
               ],
             ),
-          ),
+            SizedBox(height: 10),
+            Stack(
+              children: [
+                SizedBox(
+                  width: double.infinity,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      'Trending Watches Watches',
+                      style: TextStyle(
+                          fontSize: 17, fontWeight: FontWeight.w500),
+                    ),
+                  ),
+                  height: MediaQuery.of(context).size.height * 0.3,
+                  // decoration: BoxDecoration(
+                  //   borderRadius: BorderRadius.circular(1.0),
+                  //   color: Colors.white,
+                  //   boxShadow: [
+                  //     BoxShadow(
+                  //       color: Colors.grey,
+                  //       blurRadius: 2.0,
+                  //       spreadRadius: 0.0,
+                  //       offset: Offset(1.0, 1.0),
+                  //     )
+                  //   ],
+                  // ),
+                ),
+                Positioned.fill(
+                  child: Align(
+                    alignment: Alignment.bottomLeft,
+                    child: SizedBox(
+                      width: double.infinity,
+                      height: MediaQuery.of(context).size.height * 0.25,
+                      child: ListView.builder(
+                        itemBuilder: (context, index) {
+                          return BuildWatchCard(watches[index],index);
+                        },
+                        scrollDirection: Axis.horizontal,
+                        itemCount: watches.length,
+                        shrinkWrap: true,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 10),
+            Stack(
+              children: [
+                SizedBox(
+                  width: double.infinity,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      'Most Trending Rose Gold Watches',
+                      style: TextStyle(
+                          fontSize: 17, fontWeight: FontWeight.w500),
+                    ),
+                  ),
+                  height: MediaQuery.of(context).size.height * 0.3,
+                  // decoration: BoxDecoration(
+                  //   borderRadius: BorderRadius.circular(1.0),
+                  //   color: Colors.white,
+                  //   boxShadow: [
+                  //     BoxShadow(
+                  //       color: Colors.grey,
+                  //       blurRadius: 2.0,
+                  //       spreadRadius: 0.0,
+                  //       offset: Offset(1.0, 1.0),
+                  //     )
+                  //   ],
+                  // ),
+                ),
+                Positioned.fill(
+                  child: Align(
+                    alignment: Alignment.bottomLeft,
+                    child: SizedBox(
+                      width: double.infinity,
+                      height: MediaQuery.of(context).size.height * 0.25,
+                      child: ListView.builder(
+                        itemBuilder: (context, index) {
+                          return BuildWatchCard(watches[index],index);
+                        },
+                        scrollDirection: Axis.horizontal,
+                        itemCount: watches.length,
+                        shrinkWrap: true,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 10),
+            Stack(
+              children: [
+                SizedBox(
+                  width: double.infinity,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      'Most Trending Yellow Gold Watches',
+                      style: TextStyle(
+                          fontSize: 17, fontWeight: FontWeight.w500),
+                    ),
+                  ),
+                  height: MediaQuery.of(context).size.height * 0.3,
+                  // decoration: BoxDecoration(
+                  //   borderRadius: BorderRadius.circular(1.0),
+                  //   color: Colors.white,
+                  //   boxShadow: [
+                  //     BoxShadow(
+                  //       color: Colors.grey,
+                  //       blurRadius: 2.0,
+                  //       spreadRadius: 0.0,
+                  //       offset: Offset(1.0, 1.0),
+                  //     )
+                  //   ],
+                  // ),
+                ),
+                Positioned.fill(
+                  child: Align(
+                    alignment: Alignment.bottomLeft,
+                    child: SizedBox(
+                      width: double.infinity,
+                      height: MediaQuery.of(context).size.height * 0.25,
+                      child: ListView.builder(
+                        itemBuilder: (context, index) {
+                          return BuildWatchCard(watches[index],index);
+                        },
+                        scrollDirection: Axis.horizontal,
+                        itemCount: watches.length,
+                        shrinkWrap: true,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 10),
+            Stack(
+              children: [
+                SizedBox(
+                  width: double.infinity,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      'Most Trending Yellow Platinum Watches',
+                      style: TextStyle(
+                          fontSize: 17, fontWeight: FontWeight.w500),
+                    ),
+                  ),
+                  height: MediaQuery.of(context).size.height * 0.3,
+                  // decoration: BoxDecoration(
+                  //   borderRadius: BorderRadius.circular(1.0),
+                  //   color: Colors.white,
+                  //   boxShadow: [
+                  //     BoxShadow(
+                  //       color: Colors.grey,
+                  //       blurRadius: 2.0,
+                  //       spreadRadius: 0.0,
+                  //       offset: Offset(1.0, 1.0),
+                  //     )
+                  //   ],
+                  // ),
+                ),
+                Positioned.fill(
+                  child: Align(
+                    alignment: Alignment.bottomLeft,
+                    child: SizedBox(
+                      width: double.infinity,
+                      height: MediaQuery.of(context).size.height * 0.25,
+                      child: ListView.builder(
+                        itemBuilder: (context, index) {
+                          return BuildWatchCard(watches[index],index);
+                        },
+                        scrollDirection: Axis.horizontal,
+                        itemCount: watches.length,
+                        shrinkWrap: true,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 10),
+            Stack(
+              children: [
+                SizedBox(
+                  width: double.infinity,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      'Most Trending Yellow White Gold Watches',
+                      style: TextStyle(
+                          fontSize: 17, fontWeight: FontWeight.w500),
+                    ),
+                  ),
+                  height: MediaQuery.of(context).size.height * 0.3,
+                  // decoration: BoxDecoration(
+                  //   borderRadius: BorderRadius.circular(1.0),
+                  //   color: Colors.white,
+                  //   boxShadow: [
+                  //     BoxShadow(
+                  //       color: Colors.grey,
+                  //       blurRadius: 2.0,
+                  //       spreadRadius: 0.0,
+                  //       offset: Offset(1.0, 1.0),
+                  //     )
+                  //   ],
+                  // ),
+                ),
+                Positioned.fill(
+                  child: Align(
+                    alignment: Alignment.bottomLeft,
+                    child: SizedBox(
+                      width: double.infinity,
+                      height: MediaQuery.of(context).size.height * 0.25,
+                      child: ListView.builder(
+                        itemBuilder: (context, index) {
+                          return BuildWatchCard(watches[index],index);
+                        },
+                        scrollDirection: Axis.horizontal,
+                        itemCount: watches.length,
+                        shrinkWrap: true,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 10),
+          ],
         ),
       ),
     );

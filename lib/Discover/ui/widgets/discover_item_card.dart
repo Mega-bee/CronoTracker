@@ -12,40 +12,39 @@ class DiscoverItemCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: (){
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => BrandScreen(discoverItem: di)),
-        );
-      },
-      child: Container(
-        width: MediaQuery.of(context).size.width*0.4,
-        height: MediaQuery.of(context).size.height*0.2,
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Image(
-                  image: AssetImage('${di.image}'),
-                width: 100,
-                height: 100,
-              ),
-            ),
-            SizedBox(
-              width: 20,
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                '${di.label}',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 20),
+      child: SizedBox(
+        child: InkWell(
+          onTap: (){
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => BrandScreen(discoverItem: di)),
+            );
+          },
+          child:Column(
+              children: [
+          SizedBox(
+          width: MediaQuery.of(context).size.width*0.45,
+          height: MediaQuery.of(context).size.height*0.15,
+          child: Image.asset(
+              '${di.image}',fit: BoxFit.fill,
+          ),),
+                SizedBox(
+                  width: 20,
                 ),
-              ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+                  child: Text(
+                    '${di.label}',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ],
             ),
-          ],
         ),
       ),
     );

@@ -82,9 +82,10 @@ class BrandScreen extends StatelessWidget {
       body: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-            child: ListView.builder(
+            child: ListView.separated(
                 itemCount: filterList.length,
                 shrinkWrap: true,
+                separatorBuilder: (BuildContext context, int index) => const Divider(),
                 itemBuilder: (BuildContext context, int index) {
                   return DiscoverFilterWidget(
                     discoverFilter: filterList[index],

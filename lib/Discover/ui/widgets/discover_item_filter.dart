@@ -11,7 +11,7 @@ class DiscoverFilterWidget extends StatelessWidget {
     return InkWell(
       onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => BrandScreen2(),));},
       child: SizedBox(
-        height: 50,
+        height: 30,
         child: Card(
           color: PrimaryColor,
           elevation: 0,
@@ -19,9 +19,8 @@ class DiscoverFilterWidget extends StatelessWidget {
             children: [
               Text(discoverFilter.Filter),
               Spacer(),
-              IconButton(
-                  onPressed: (){},
-                  icon: Icon(Icons.arrow_forward_ios_rounded),iconSize: 14,)
+              Icon(
+                  Icons.arrow_forward_ios_rounded,size: 14,),
             ],
           ),
         ),

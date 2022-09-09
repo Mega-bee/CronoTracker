@@ -88,12 +88,21 @@ class _NotificationScreenState extends State<NotificationScreen> {
               // ),
             ],
           leading: MenuWidget()),
-      body: ListView.builder(
-        itemCount: notificationList.length,
-        shrinkWrap: false,
-        itemBuilder: (context, index) {
-      return NotificationCard(notificationModel: notificationList[index]);
-        },
+      body: Column(
+        children:[
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Align(
+              alignment: Alignment.topLeft,
+                child: Text("Notifications",style: TextStyle(color: Colors.black,fontWeight: FontWeight.w500,fontSize:24 ),)),
+          ),
+          ListView.builder(
+          itemCount: notificationList.length,
+          shrinkWrap: true,
+          itemBuilder: (context, index) {
+        return NotificationCard(notificationModel: notificationList[index]);
+          },
+        )],
       ),
     );
   }

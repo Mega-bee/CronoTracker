@@ -11,4 +11,5 @@ class ImageAsset {
   static const PATEKPHILIPE = ROOT +"patekPhilipe.png";
   static const GIRARD = ROOT +"girard.png";
   static const AUDEMARSPIGUET = ROOT +"AudemarsPiguet.png";
+  static const SOLDOUT = ROOT +"Sold_out_label.png";
 }

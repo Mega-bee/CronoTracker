@@ -81,15 +81,36 @@ class BrandScreen3 extends StatelessWidget {
       body: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-            child: ListView.builder(
-                itemCount: 1,
+            child:
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "Black Dial",
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              softWrap: false,
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500
+              ),
+            ),
+            SizedBox(height: 10,),
+            GridView.builder(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 0,
+                    mainAxisSpacing: 0),
+                itemCount: 5,
                 shrinkWrap: true,
                 itemBuilder: (BuildContext context, int index) {
                   return DiscoverFilterWidget3(
                     auctionsModel: AuctionsList[index], index: index,
                   );
                 }),
-          )),
-    );
+          ],
+        )
+    )));
   }
 }

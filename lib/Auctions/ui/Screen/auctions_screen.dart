@@ -100,18 +100,8 @@ class _AuctionsState extends State<Auctions> {
                     parent: AlwaysScrollableScrollPhysics()),
                 itemCount: AuctionsList.length,
                 itemBuilder: (context, index) {
-                  return Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                  Padding(
-                  padding: const EdgeInsets.only(
-                      left: 11, right: 11, top: 13, bottom: 10),
-                  child: Text(
-                  "2 July 2022",
-                  style: TextStyle(fontSize: 25, color: Color(0xFF707070)),
-                  )),
-                  AuctionsCard(
-                      auctionsModel: AuctionsList[index], index: index)]);
+                  return AuctionsCard(
+                      auctionsModel: AuctionsList[index], index: index);
                 },
               ),
             ),
