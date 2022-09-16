@@ -243,7 +243,7 @@ class _WatchDetailsScreenState extends State<WatchDetailsScreen> {
                               height: 12,
                             ),
                             Padding(
-                              padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
+                              padding: EdgeInsets.fromLTRB(9, 0, 0, 0),
                               child: ListView.builder(
                                 physics: NeverScrollableScrollPhysics(),
                                 itemCount: details.length,

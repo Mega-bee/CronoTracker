@@ -21,6 +21,7 @@ class TrendingScreen extends StatelessWidget {
         caseMaterial: 'ceramic',
         braceletMaterial: 'Strap',
         soldMonth: '6',
+        bidDate: "26/3/2020",
         priceTracking: '40',sellingPrice: "20"),
     watchCard(
         img: 'assets/images/watch2.jpg',
@@ -31,7 +32,7 @@ class TrendingScreen extends StatelessWidget {
         dialColor: 'silver',
         caseMaterial: 'ceramic',
         braceletMaterial: 'Strap',
-        soldMonth: '12',
+                bidDate: "26/3/2020",
         priceTracking: '32',sellingPrice: "20"),
     watchCard(
         img: 'assets/images/watch4 (1).jpg',
@@ -42,7 +43,7 @@ class TrendingScreen extends StatelessWidget {
         dialColor: 'blue',
         caseMaterial: 'silver',
         braceletMaterial: 'Strap',
-        soldMonth: '12',
+                soldMonth: '12',bidDate: "26/3/2020",
         priceTracking: '30',sellingPrice: "20"),
     watchCard(
         img: 'assets/images/watch4 (2).jpg',
@@ -53,7 +54,7 @@ class TrendingScreen extends StatelessWidget {
         dialColor: 'Brown',
         caseMaterial: 'gold',
         braceletMaterial: 'Strap',
-        soldMonth: '12',
+                soldMonth: '12',bidDate: "26/3/2020",
         priceTracking: '10',sellingPrice: "20"),
     watchCard(
         img: 'assets/images/watch5.jpg',
@@ -64,7 +65,7 @@ class TrendingScreen extends StatelessWidget {
         dialColor: 'silver',
         caseMaterial: 'ceramic',
         braceletMaterial: 'Strap',
-        soldMonth: '12',
+                soldMonth: '12',bidDate: "26/3/2020",
         priceTracking: '8',sellingPrice: "20"),
     watchCard(
         img: 'assets/images/watch.jpg',
@@ -87,7 +88,7 @@ class TrendingScreen extends StatelessWidget {
         dialColor: 'silver',
         caseMaterial: 'ceramic',
         braceletMaterial: 'Strap',
-        soldMonth: '12',
+                soldMonth: '12',bidDate: "26/3/2020",
         priceTracking: '32',sellingPrice: "20"),
     watchCard(
         img: 'assets/images/watch4 (1).jpg',
@@ -98,7 +99,7 @@ class TrendingScreen extends StatelessWidget {
         dialColor: 'blue',
         caseMaterial: 'silver',
         braceletMaterial: 'Strap',
-        soldMonth: '12',
+                soldMonth: '12',bidDate: "26/3/2020",
         priceTracking: '30',sellingPrice: "20"),
     watchCard(
         img: 'assets/images/watch4 (2).jpg',
@@ -109,7 +110,7 @@ class TrendingScreen extends StatelessWidget {
         dialColor: 'Brown',
         caseMaterial: 'gold',
         braceletMaterial: 'Strap',
-        soldMonth: '12',
+                soldMonth: '12',bidDate: "26/3/2020",
         priceTracking: '10',sellingPrice: "20"),
     watchCard(
         img: 'assets/images/watch5.jpg',
@@ -120,7 +121,7 @@ class TrendingScreen extends StatelessWidget {
         dialColor: 'silver',
         caseMaterial: 'ceramic',
         braceletMaterial: 'Strap',
-        soldMonth: '12',
+                soldMonth: '12',bidDate: "26/3/2020",
         priceTracking: '8',sellingPrice: "20"),
   ];
 
@@ -177,8 +178,13 @@ class TrendingScreen extends StatelessWidget {
           //   ),
           // ),
                actions:[
-                 IconButton(onPressed:(){} ,icon: Icon(Icons.search),iconSize: 35,)
-              // Center(
+                 Padding(
+                   padding: const EdgeInsets.only(right: 6.0),
+                   child: SizedBox(
+                     height: MediaQuery.of(context).size.height*0.1,
+                     width: MediaQuery.of(context).size.width*0.1,
+                       child: IconButton(onPressed:(){} ,icon:Image.asset(ImageAsset.SEARCH,fit: BoxFit.cover,))),
+                 ) // Center(
               //   child: SizedBox(
               //     width: 35,
               //       height: 40,
@@ -200,20 +206,20 @@ class TrendingScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: MediaQuery.of(context).size.height*0.03,),
+            // SizedBox(height: MediaQuery.of(context).size.height*0.03,),
             Stack(
               children: [
                 SizedBox(
                   width: double.infinity,
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(15),
                     child: Text(
                       'Trending Watches below 10,000\$',
                       style: TextStyle(
                           fontSize: 17, fontWeight: FontWeight.w500),
                     ),
                   ),
-                  height: MediaQuery.of(context).size.height * 0.3,
+                  height: MediaQuery.of(context).size.height * 0.31,
                   // decoration: BoxDecoration(
                   //   borderRadius: BorderRadius.circular(1.0),
                   //   color: Colors.white,
@@ -232,7 +238,7 @@ class TrendingScreen extends StatelessWidget {
                     alignment: Alignment.bottomLeft,
                     child: SizedBox(
                       width: double.infinity,
-                      height: MediaQuery.of(context).size.height * 0.25,
+                      height: MediaQuery.of(context).size.height * 0.26,
                       child: ListView.builder(
                         itemBuilder: (context, index) {
                           return BuildWatchCard(watches[index],index);
@@ -252,14 +258,14 @@ class TrendingScreen extends StatelessWidget {
                 SizedBox(
                   width: double.infinity,
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(15),
                     child: Text(
                       'Trending Watches Watches',
                       style: TextStyle(
                           fontSize: 17, fontWeight: FontWeight.w500),
                     ),
                   ),
-                  height: MediaQuery.of(context).size.height * 0.3,
+                  height: MediaQuery.of(context).size.height * 0.31,
                   // decoration: BoxDecoration(
                   //   borderRadius: BorderRadius.circular(1.0),
                   //   color: Colors.white,
@@ -278,7 +284,7 @@ class TrendingScreen extends StatelessWidget {
                     alignment: Alignment.bottomLeft,
                     child: SizedBox(
                       width: double.infinity,
-                      height: MediaQuery.of(context).size.height * 0.25,
+                      height: MediaQuery.of(context).size.height * 0.26,
                       child: ListView.builder(
                         itemBuilder: (context, index) {
                           return BuildWatchCard(watches[index],index);
@@ -298,14 +304,14 @@ class TrendingScreen extends StatelessWidget {
                 SizedBox(
                   width: double.infinity,
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(15),
                     child: Text(
                       'Most Trending Rose Gold Watches',
                       style: TextStyle(
                           fontSize: 17, fontWeight: FontWeight.w500),
                     ),
                   ),
-                  height: MediaQuery.of(context).size.height * 0.3,
+                  height: MediaQuery.of(context).size.height * 0.31,
                   // decoration: BoxDecoration(
                   //   borderRadius: BorderRadius.circular(1.0),
                   //   color: Colors.white,
@@ -324,7 +330,7 @@ class TrendingScreen extends StatelessWidget {
                     alignment: Alignment.bottomLeft,
                     child: SizedBox(
                       width: double.infinity,
-                      height: MediaQuery.of(context).size.height * 0.25,
+                      height: MediaQuery.of(context).size.height * 0.26,
                       child: ListView.builder(
                         itemBuilder: (context, index) {
                           return BuildWatchCard(watches[index],index);
@@ -344,14 +350,14 @@ class TrendingScreen extends StatelessWidget {
                 SizedBox(
                   width: double.infinity,
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(15),
                     child: Text(
                       'Most Trending Yellow Gold Watches',
                       style: TextStyle(
                           fontSize: 17, fontWeight: FontWeight.w500),
                     ),
                   ),
-                  height: MediaQuery.of(context).size.height * 0.3,
+                  height: MediaQuery.of(context).size.height * 0.31,
                   // decoration: BoxDecoration(
                   //   borderRadius: BorderRadius.circular(1.0),
                   //   color: Colors.white,
@@ -370,7 +376,7 @@ class TrendingScreen extends StatelessWidget {
                     alignment: Alignment.bottomLeft,
                     child: SizedBox(
                       width: double.infinity,
-                      height: MediaQuery.of(context).size.height * 0.25,
+                      height: MediaQuery.of(context).size.height * 0.26,
                       child: ListView.builder(
                         itemBuilder: (context, index) {
                           return BuildWatchCard(watches[index],index);
@@ -390,14 +396,14 @@ class TrendingScreen extends StatelessWidget {
                 SizedBox(
                   width: double.infinity,
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(15),
                     child: Text(
                       'Most Trending Yellow Platinum Watches',
                       style: TextStyle(
                           fontSize: 17, fontWeight: FontWeight.w500),
                     ),
                   ),
-                  height: MediaQuery.of(context).size.height * 0.3,
+                  height: MediaQuery.of(context).size.height * 0.31,
                   // decoration: BoxDecoration(
                   //   borderRadius: BorderRadius.circular(1.0),
                   //   color: Colors.white,
@@ -416,7 +422,7 @@ class TrendingScreen extends StatelessWidget {
                     alignment: Alignment.bottomLeft,
                     child: SizedBox(
                       width: double.infinity,
-                      height: MediaQuery.of(context).size.height * 0.25,
+                      height: MediaQuery.of(context).size.height * 0.26,
                       child: ListView.builder(
                         itemBuilder: (context, index) {
                           return BuildWatchCard(watches[index],index);
@@ -436,14 +442,14 @@ class TrendingScreen extends StatelessWidget {
                 SizedBox(
                   width: double.infinity,
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(15),
                     child: Text(
                       'Most Trending Yellow White Gold Watches',
                       style: TextStyle(
                           fontSize: 17, fontWeight: FontWeight.w500),
                     ),
                   ),
-                  height: MediaQuery.of(context).size.height * 0.3,
+                  height: MediaQuery.of(context).size.height * 0.31,
                   // decoration: BoxDecoration(
                   //   borderRadius: BorderRadius.circular(1.0),
                   //   color: Colors.white,
@@ -462,7 +468,7 @@ class TrendingScreen extends StatelessWidget {
                     alignment: Alignment.bottomLeft,
                     child: SizedBox(
                       width: double.infinity,
-                      height: MediaQuery.of(context).size.height * 0.25,
+                      height: MediaQuery.of(context).size.height * 0.26,
                       child: ListView.builder(
                         itemBuilder: (context, index) {
                           return BuildWatchCard(watches[index],index);
@@ -488,7 +494,7 @@ class MenuWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) =>
       IconButton(
-            icon: Icon(Icons.person,size: 35,),
+            icon: Image.asset(ImageAsset.USER),
             onPressed: () => ZoomDrawer.of(context)!.toggle(),
           );
 }

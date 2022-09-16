@@ -12,7 +12,7 @@ class AuctionsCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: MediaQuery.of(context).size.height * 0.38,
       child: InkWell(
         onTap: () {

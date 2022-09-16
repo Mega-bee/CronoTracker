@@ -35,7 +35,7 @@ class DiscoverScreen extends StatelessWidget {
         label: 'Girard-Parregaux'
     ),
     DiscoverItem(
-        image: ImageAsset.LOGO,
+        image: ImageAsset.OTHERBRAND,
         label: 'Other Brands'
     ),
 
@@ -94,7 +94,13 @@ class DiscoverScreen extends StatelessWidget {
           //   ),
           // ),
           actions:[
-            IconButton(onPressed:(){} ,icon: Icon(Icons.search),iconSize: 35,)
+           Padding(
+                   padding: const EdgeInsets.only(right: 6.0),
+                   child: SizedBox(
+                     height: MediaQuery.of(context).size.height*0.1,
+                     width: MediaQuery.of(context).size.width*0.1,
+                       child: IconButton(onPressed:(){} ,icon:Image.asset(ImageAsset.SEARCH,fit: BoxFit.cover,))),
+                 ) 
             // Center(
             //   child: SizedBox(
             //     width: 35,
@@ -136,8 +142,8 @@ class DiscoverScreen extends StatelessWidget {
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       childAspectRatio: 1,
-                      crossAxisSpacing: 30,
-                      mainAxisSpacing: 0),
+                      crossAxisSpacing: 10,
+                      mainAxisSpacing: 10),
                   shrinkWrap: true,
                   itemCount: brands.length,
                   itemBuilder: (BuildContext context, int index) {

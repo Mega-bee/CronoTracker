@@ -44,25 +44,25 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
         items: const [
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.trending_up_sharp,
+              Icons.trending_up_sharp,size: 20,
             ),
             label: 'Trending',
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.search,
+              Icons.search,size: 20,
             ),
             label: 'Discover',
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.gavel,),
+              Icons.gavel,size: 20,),
             label: 'Auctions',
 
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.notifications,
+              Icons.notifications,size: 20,
             ),
             label: 'Notification',
           ),

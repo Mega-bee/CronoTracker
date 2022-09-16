@@ -12,24 +12,24 @@ class BuildWatchCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(right: 8.0),
-      child: SizedBox(
-        height: MediaQuery.of(context).size.height*25,
-        width: MediaQuery.of(context).size.width*0.45,
-        child: InkWell(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => WatchDetailsScreen(
-                          trendingModel: wc,
-                          index: index,
-                        )),
-              );
-            },
-            child: Padding(
-                padding: const EdgeInsets.all(10.0),
+    return SizedBox(
+      height: MediaQuery.of(context).size.height*0.26,
+      width: MediaQuery.of(context).size.width*0.45,
+      child: InkWell(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => WatchDetailsScreen(
+                        trendingModel: wc,
+                        index: index,
+                      )),
+            );
+          },
+          child: Padding(
+              padding: const EdgeInsets.all(5),
+              child: Card(
+                elevation: 4,
                 child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -47,28 +47,48 @@ class BuildWatchCard extends StatelessWidget {
                                 )
                               ],
                             ),
-                            child: Center(
+                            child:
+                            Padding(
+                              padding: const EdgeInsets.only(left: 8.0,right: 8.0),
+                              child: Center(
                           child: Image.asset(
-                            '${wc.img}',
-                            fit: BoxFit.contain,
+                              '${wc.img}',
+                              fit: BoxFit.contain,
                           ),
-                        ),),
+                        ),
+                            ),),
                     SizedBox(
                       height: 10,
                     ),
-                    Text(
-                      "${wc.brand}",
-                      style: TextStyle(
-                          color: Color(0xFF747474),
-                          fontWeight: FontWeight.w500,
-                          fontSize: 16),),
-                    Text(
-                       "${wc.sellingPrice}",
-                      style: TextStyle(
-                          color: Color(0xFF747474),
-                          fontWeight: FontWeight.w500,
-                          fontSize: 15),
-                    )
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8.0,right: 8.0),
+                      child: Text(
+                        "${wc.brand}",
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFF000000)),
+                    ),
+                    ),
+                    SizedBox(height: 3,),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8.0,right: 8.0),
+                      child: Text(
+                         "${wc.sellingPrice}\$",
+                          style: TextStyle(
+                              fontSize: 13,
+                              color: Color(0xFF777777))
+                      ),
+                    ),
+                        SizedBox(height: 3,),
+                        Padding(
+                      padding: const EdgeInsets.only(left: 8.0,right: 8.0),
+                      child: Text(
+                         "${wc.bidDate}",
+                        style: TextStyle(
+                          fontSize: 10, color: Color(0xFF777777))
+                      ),
+                    ),
                     // RichText(
                     //   text: TextSpan(
                     //       text: "${wc.brand}    ",
@@ -98,8 +118,8 @@ class BuildWatchCard extends StatelessWidget {
                     //       ]),
                     // ),
                   ],
-                ))),
-      ),
+                ),
+              ))),
     );
   }
 }
