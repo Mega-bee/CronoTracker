@@ -137,18 +137,23 @@ class DiscoverScreen extends StatelessWidget {
                   ),
                 height: 40,
               ),
-              SizedBox(height: 20,),
-              GridView.builder(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      childAspectRatio: 1,
-                      crossAxisSpacing: 10,
-                      mainAxisSpacing: 10),
-                  shrinkWrap: true,
-                  itemCount: brands.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return DiscoverItemCard(brands[index]);
-                  })
+              Column(
+                children: [
+                  SizedBox(height: 20,),
+                  GridView.builder(
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                          childAspectRatio: 1,
+                          crossAxisSpacing: 10,
+                          mainAxisSpacing: 10),
+                      physics: ScrollPhysics(),
+                      shrinkWrap: true,
+                      itemCount: brands.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return DiscoverItemCard(brands[index]);
+                      }),
+                ],
+              ),
             ],
           ),
         ),
