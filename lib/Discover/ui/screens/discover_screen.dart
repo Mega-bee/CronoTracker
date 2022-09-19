@@ -1,5 +1,6 @@
 import 'package:cronotracker/utils/style/colors.dart';
 import 'package:flutter/material.dart';
+import '../../../SearchPage/ui/Screen/SearchPage.dart';
 import '../../../Trending/ui/Screen/trending_screen.dart';
 import '../../../utils/Images/Images.dart';
 import '../../models/discoverItem.dart';
@@ -93,15 +94,21 @@ class DiscoverScreen extends StatelessWidget {
           //         fontFamily: 'Rubik'),
           //   ),
           // ),
-          actions:[
-           Padding(
-                   padding: const EdgeInsets.only(right: 6.0),
-                   child: SizedBox(
-                     height: MediaQuery.of(context).size.height*0.1,
-                     width: MediaQuery.of(context).size.width*0.1,
-                       child: IconButton(onPressed:(){} ,icon:Image.asset(ImageAsset.SEARCH,fit: BoxFit.cover,))),
-                 ) 
-            // Center(
+          actions: [
+            Padding(
+              padding: const EdgeInsets.only(right: 6.0),
+              child: SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.1,
+                  width: MediaQuery.of(context).size.width * 0.1,
+                  child: IconButton(
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => SearchPage(),));
+                      },
+                      icon: Image.asset(
+                        ImageAsset.SEARCH,
+                        fit: BoxFit.cover,
+                      ))),
+            ) // Center(
             //   child: SizedBox(
             //     width: 35,
             //       height: 40,
