@@ -1,6 +1,7 @@
 import 'package:cronotracker/Discover/ui/widgets/discover_item_filter_2.dart';
 import 'package:flutter/material.dart';
 
+import '../../../SearchPage/ui/Screen/SearchPage.dart';
 import '../../../utils/Images/Images.dart';
 import '../../../utils/style/colors.dart';
 import '../../models/discoverItem.dart';

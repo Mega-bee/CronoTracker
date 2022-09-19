@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../SearchPage/ui/Screen/SearchPage.dart';
 import '../../../Trending/ui/Screen/trending_screen.dart';
 import '../../../utils/Images/Images.dart';
 import '../../../utils/style/colors.dart';

@@ -2,6 +2,7 @@ import 'package:cronotracker/Auctions/Model/auctions_model.dart';
 import 'package:cronotracker/Discover/ui/widgets/discover_item_filter_3.dart';
 import 'package:flutter/material.dart';
 
+import '../../../SearchPage/ui/Screen/SearchPage.dart';
 import '../../../utils/Images/Images.dart';
 import '../../../utils/style/colors.dart';
 class BrandScreen3 extends StatelessWidget {
