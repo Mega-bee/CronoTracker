@@ -14,8 +14,7 @@ class BrandScreen2 extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: PrimaryColor,
         titleSpacing: 0,
-        toolbarHeight: 100,
-        centerTitle: true,
+        toolbarHeight: 70,          centerTitle: true,
         elevation: 0,
         title:SizedBox(
           width: 35,
@@ -59,13 +58,13 @@ class BrandScreen2 extends StatelessWidget {
         //   ),
         // ),
         actions:[
-         Padding(
-                   padding: const EdgeInsets.only(right: 6.0),
-                   child: SizedBox(
-                     height: MediaQuery.of(context).size.height*0.1,
-                     width: MediaQuery.of(context).size.width*0.1,
-                       child: IconButton(onPressed:(){} ,icon:Image.asset(ImageAsset.SEARCH,fit: BoxFit.cover,))),
-                 ) 
+          Padding(
+            padding: const EdgeInsets.only(right: 6.0),
+            child: SizedBox(
+                height: MediaQuery.of(context).size.height*0.1,
+                width: MediaQuery.of(context).size.width*0.1,
+                child: IconButton(onPressed:(){} ,icon:Image.asset(ImageAsset.SEARCH,fit: BoxFit.cover,))),
+          )
           // Center(
           //   child: SizedBox(
           //     width: 35,

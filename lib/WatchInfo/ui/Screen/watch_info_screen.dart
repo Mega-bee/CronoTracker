@@ -30,299 +30,423 @@ class _WatchDetailsScreenState extends State<WatchDetailsScreen> {
   Widget build(BuildContext context) {
     TextEditingController _textEditingController = TextEditingController();
     return Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          elevation: 0,
-          backgroundColor: PrimaryColor,
-          actions: [
-            Transform.scale(
-                scale: 2.5,
-                child: IconButton(
-                  onPressed: () {},
-                  icon: Image.asset(
-                    ImageAsset.LOGO,
-                    alignment: Alignment(0.0, 0.0),
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: PrimaryColor,
+        actions: [
+          Transform.scale(
+              scale: 2.5,
+              child: IconButton(
+                onPressed: () {},
+                icon: Image.asset(
+                  ImageAsset.LOGO,
+                  alignment: Alignment(0.0, 0.0),
+                ),
+              )),
+        ],
+      ),
+      body: CustomScrollView(slivers: [
+        SliverFillRemaining(
+            hasScrollBody: true,
+            child: Column(
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: Image(
+                    image: AssetImage(widget.trendingModel.img.toString()),
+                    fit: BoxFit.cover,
+                    width: double.infinity,
                   ),
-                )),
-          ],
-        ),
-        body: CustomScrollView(slivers: [
-          SliverFillRemaining(
-              hasScrollBody: true,
-              child: Column(
-                children: [
-                  Expanded(
-                    flex: 1,
-                    child: Image(
-                      image: AssetImage(widget.trendingModel.img.toString()),
-                      fit: BoxFit.cover,
-                      width: double.infinity,
-                    ),
-                  ),
-                  Expanded(
-                    flex: 2,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: PrimaryColor,
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(40),
-                          topRight: Radius.circular(40),
-                        ),
+                ),
+                Expanded(
+                  flex: 2,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: PrimaryColor,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(40),
+                        topRight: Radius.circular(40),
                       ),
-                      child: SingleChildScrollView(
-                        child: Column(
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.fromLTRB(30, 30, 30, 0),
-                              child: Row(
-                                children: [
-                                  Text(
-                                    "${widget.trendingModel.modelName}",
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 18),
-                                  ),
-                                  Spacer(),
-                                  Text(
-                                    "${widget.trendingModel.sellingPrice}\$",
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 18),
-                                  )
-                                ],
-                              ),
-                            ),
-                            // Padding(
-                            //   padding: const EdgeInsets.only(bottom: 20),
-                            //   child: Text(
-                            //     "${widget.trendingModel.nickname}",
-                            //     style: TextStyle(
-                            //     fontSize: 15, color: Colors.grey)),
-                            //   ),
-                            // ),
-                            SizedBox(
-                              height: 15,
-                            ),
-                            Align(
-                              alignment: Alignment.topLeft,
-                              child: Padding(
-                                padding: EdgeInsets.fromLTRB(30, 20, 30, 0),
-                                child: Text(
-                                  "Description",
+                    ),
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(30, 30, 30, 0),
+                            child: Row(
+                              children: [
+                                Text(
+                                  "${widget.trendingModel.modelName}",
                                   style: TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.w500,
                                       fontSize: 18),
                                 ),
+                                Spacer(),
+                                Text(
+                                  "${widget.trendingModel.sellingPrice}\$",
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 18),
+                                )
+                              ],
+                            ),
+                          ),
+                          // Padding(
+                          //   padding: const EdgeInsets.only(bottom: 20),
+                          //   child: Text(
+                          //     "${widget.trendingModel.nickname}",
+                          //     style: TextStyle(
+                          //     fontSize: 15, color: Colors.grey)),
+                          //   ),
+                          // ),
+                          SizedBox(
+                            height: 15,
+                          ),
+                          Align(
+                            alignment: Alignment.topLeft,
+                            child: Padding(
+                              padding: EdgeInsets.fromLTRB(30, 20, 30, 0),
+                              child: Text(
+                                "Description",
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 18),
                               ),
                             ),
-                            Align(
-                              alignment: Alignment.topLeft,
-                              child: Padding(
-                                  padding: EdgeInsets.fromLTRB(30, 10, 30, 0),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                          "- Brand: ${widget.trendingModel.brand}",
-                                          style: TextStyle(
+                          ),
+                          Align(
+                            alignment: Alignment.topLeft,
+                            child: Padding(
+                                padding: EdgeInsets.fromLTRB(30, 10, 30, 0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    RichText(
+                                      text: TextSpan(children: [
+                                        TextSpan(
+                                          text:
+                                              ("- Brand: "),
+                                          style:TextStyle(
                                               fontWeight: FontWeight.w500,
                                               fontSize: 15,
-                                              color: Colors.grey)),
-                                      Divider(
-                                        color: Colors.transparent,
-                                        height: 5,
-                                      ),
-                                      Text(
-                                          "- Nickname: ${widget.trendingModel.nickname}",
+                                              color: Colors.grey),
+                                        ),
+                                        TextSpan(
+                                          text:"${widget.trendingModel.brand}",
                                           style: TextStyle(
+                                              fontSize: 15,
+                                              color: Colors.black),
+                                        ),
+                                      ]),
+                                    ),
+                                    Divider(
+                                      color: Colors.transparent,
+                                      height: 5,
+                                    ),
+                                    RichText(
+                                      text: TextSpan(children: [
+                                        TextSpan(
+                                          text:
+                                          ("- Nickname: "),
+                                          style:TextStyle(
                                               fontWeight: FontWeight.w500,
                                               fontSize: 15,
-                                              color: Colors.grey)),
-                                      Divider(
-                                        color: Colors.transparent,
-                                        height: 5,
-                                      ),
-                                      Text(
-                                          "- Case Material: ${widget.trendingModel.caseMaterial}",
+                                              color: Colors.grey),
+                                        ),
+                                        TextSpan(
+                                          text:"${widget.trendingModel.nickname}",
                                           style: TextStyle(
+                                              fontSize: 15,
+                                              color: Colors.black),
+                                        ),
+                                      ]),
+                                    ),
+                                    Divider(
+                                      color: Colors.transparent,
+                                      height: 5,
+                                    ),
+                                    RichText(
+                                      text: TextSpan(children: [
+                                        TextSpan(
+                                          text:
+                                          ("- Case Material: "),
+                                          style:TextStyle(
                                               fontWeight: FontWeight.w500,
                                               fontSize: 15,
-                                              color: Colors.grey)),
-                                      Divider(
-                                        color: Colors.transparent,
-                                        height: 5,
-                                      ),
-                                      Text(
-                                          "- Dial color: ${widget.trendingModel.dialColor}",
+                                              color: Colors.grey),
+                                        ),
+                                        TextSpan(
+                                          text:"${widget.trendingModel.caseMaterial}",
                                           style: TextStyle(
+                                              fontSize: 15,
+                                              color: Colors.black),
+                                        ),
+                                      ]),
+                                    ),
+                                    Divider(
+                                      color: Colors.transparent,
+                                      height: 5,
+                                    ),
+                                    RichText(
+                                      text: TextSpan(children: [
+                                        TextSpan(
+                                          text:
+                                          ("- Dial color: "),
+                                          style:TextStyle(
                                               fontWeight: FontWeight.w500,
                                               fontSize: 15,
-                                              color: Colors.grey)),
-                                      Divider(
-                                        color: Colors.transparent,
-                                        height: 5,
-                                      ),
-                                      Text(
-                                          "- Bid Date: ${widget.trendingModel.bidDate}",
+                                              color: Colors.grey),
+                                        ),
+                                        TextSpan(
+                                          text:"${widget.trendingModel.dialColor}",
                                           style: TextStyle(
+                                              fontSize: 15,
+                                              color: Colors.black),
+                                        ),
+                                      ]),
+                                    ),
+                                    // Text(
+                                    //     "- Dial color: ${widget.trendingModel.dialColor}",
+                                    //     style: TextStyle(
+                                    //         fontWeight: FontWeight.w500,
+                                    //         fontSize: 15,
+                                    //         color: Colors.grey)),
+                                    Divider(
+                                      color: Colors.transparent,
+                                      height: 5,
+                                    ),
+                                    RichText(
+                                      text: TextSpan(children: [
+                                        TextSpan(
+                                          text:
+                                          ("- Bid Date: "),
+                                          style:TextStyle(
                                               fontWeight: FontWeight.w500,
                                               fontSize: 15,
-                                              color: Colors.grey)),
-                                      Divider(
-                                        color: Colors.transparent,
-                                        height: 5,
-                                      ),
-                                      Text(
-                                          "- Bracelet Material: ${widget.trendingModel.braceletMaterial}",
+                                              color: Colors.grey),
+                                        ),
+                                        TextSpan(
+                                          text:"${widget.trendingModel.bidDate}",
                                           style: TextStyle(
+                                              fontSize: 15,
+                                              color: Colors.black),
+                                        ),
+                                      ]),
+                                    ),
+                                    // Text(
+                                    //     "- Bid Date: ${widget.trendingModel.bidDate}",
+                                    //     style: TextStyle(
+                                    //         fontWeight: FontWeight.w500,
+                                    //         fontSize: 15,
+                                    //         color: Colors.grey)),
+                                    Divider(
+                                      color: Colors.transparent,
+                                      height: 5,
+                                    ),
+                                    RichText(
+                                      text: TextSpan(children: [
+                                        TextSpan(
+                                          text:
+                                          ("- Bracelet Material: "),
+                                          style:TextStyle(
                                               fontWeight: FontWeight.w500,
                                               fontSize: 15,
-                                              color: Colors.grey)),
-                                      Divider(
-                                        color: Colors.transparent,
-                                        height: 5,
-                                      ),
-                                      Text(
-                                          "- Referance: ${widget.trendingModel.reference}",
+                                              color: Colors.grey),
+                                        ),
+                                        TextSpan(
+                                          text:"${widget.trendingModel.braceletMaterial}",
                                           style: TextStyle(
+                                              fontSize: 15,
+                                              color: Colors.black),
+                                        ),
+                                      ]),
+                                    ),
+                                    // Text(
+                                    //     "- Bracelet Material: ${widget.trendingModel.braceletMaterial}",
+                                    //     style: TextStyle(
+                                    //         fontWeight: FontWeight.w500,
+                                    //         fontSize: 15,
+                                    //         color: Colors.grey)),
+                                    Divider(
+                                      color: Colors.transparent,
+                                      height: 5,
+                                    ),
+                                    RichText(
+                                      text: TextSpan(children: [
+                                        TextSpan(
+                                          text:
+                                          ("- Referance: "),
+                                          style:TextStyle(
                                               fontWeight: FontWeight.w500,
                                               fontSize: 15,
-                                              color: Colors.grey)),
-                                      Divider(
-                                        color: Colors.transparent,
-                                        height: 5,
-                                      ),
-                                      Text(
-                                          "- Sold Month: ${widget.trendingModel.soldMonth}",
+                                              color: Colors.grey),
+                                        ),
+                                        TextSpan(
+                                          text:"${widget.trendingModel.reference}",
                                           style: TextStyle(
+                                              fontSize: 15,
+                                              color: Colors.black),
+                                        ),
+                                      ]),
+                                    ),
+                                    // Text(
+                                    //     "- Referance: ${widget.trendingModel.reference}",
+                                    //     style: TextStyle(
+                                    //         fontWeight: FontWeight.w500,
+                                    //         fontSize: 15,
+                                    //         color: Colors.grey)),
+                                    Divider(
+                                      color: Colors.transparent,
+                                      height: 5,
+                                    ),
+                                    RichText(
+                                      text: TextSpan(children: [
+                                        TextSpan(
+                                          text:
+                                          ("- Sold Month: "),
+                                          style:TextStyle(
                                               fontWeight: FontWeight.w500,
                                               fontSize: 15,
-                                              color: Colors.grey)),
-                                      Divider(
-                                        color: Colors.transparent,
-                                        height: 5,
-                                      ),
-                                    ],
-                                  )),
-                            ),
-                            SizedBox(
-                              height: 25,
-                            ),
-                            Align(
-                              alignment: Alignment.topLeft,
-                              child: Padding(
-                                  padding: EdgeInsets.fromLTRB(30, 10, 30, 0),
-                                  child: Row(children: [
-                                    Text(
-                                      "Price Tracking",
+                                              color: Colors.grey),
+                                        ),
+                                        TextSpan(
+                                          text:"${widget.trendingModel.soldMonth}",
+                                          style: TextStyle(
+                                              fontSize: 15,
+                                              color: Colors.black),
+                                        ),
+                                      ]),
+                                    ),
+                                    // Text(
+                                    //     "- Sold Month: ${widget.trendingModel.soldMonth}",
+                                    //     style: TextStyle(
+                                    //         fontWeight: FontWeight.w500,
+                                    //         fontSize: 15,
+                                    //         color: Colors.grey)),
+                                    Divider(
+                                      color: Colors.transparent,
+                                      height: 5,
+                                    ),
+                                  ],
+                                )),
+                          ),
+                          SizedBox(
+                            height: 25,
+                          ),
+                          Align(
+                            alignment: Alignment.topLeft,
+                            child: Padding(
+                                padding: EdgeInsets.fromLTRB(30, 10, 30, 0),
+                                child: Row(children: [
+                                  Text(
+                                    "Price Tracking",
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 18),
+                                  ),
+                                  SizedBox(
+                                    width: 15,
+                                  ),
+                                  Text("${widget.trendingModel.priceTracking}",
                                       style: TextStyle(
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 18),
-                                    ),
-                                    SizedBox(
-                                      width: 15,
-                                    ),
-                                    Text(
-                                        "${widget.trendingModel.priceTracking}",
-                                        style: TextStyle(
-                                            fontSize: 9.0,
-                                            color: Colors.white,
-                                            background: Paint()
-                                              ..strokeWidth = 12.0
-                                              ..color = Colors.grey
-                                              ..style = PaintingStyle.stroke
-                                              ..strokeJoin = StrokeJoin.round)),
-                                  ])),
+                                          fontSize: 9.0,
+                                          color: Colors.white,
+                                          background: Paint()
+                                            ..strokeWidth = 12.0
+                                            ..color = Colors.grey
+                                            ..style = PaintingStyle.stroke
+                                            ..strokeJoin = StrokeJoin.round)),
+                                ])),
+                          ),
+                          SizedBox(
+                            height: 12,
+                          ),
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(9, 0, 0, 0),
+                            child: ListView.builder(
+                              physics: NeverScrollableScrollPhysics(),
+                              itemCount: details.length,
+                              shrinkWrap: true,
+                              itemBuilder: (context, index) {
+                                return WatchInfoCard(
+                                  watchDetails: details[index],
+                                  trendingModel: widget.trendingModel,
+                                );
+                              },
                             ),
-                            SizedBox(
-                              height: 12,
-                            ),
-                            Padding(
-                              padding: EdgeInsets.fromLTRB(9, 0, 0, 0),
-                              child: ListView.builder(
-                                physics: NeverScrollableScrollPhysics(),
-                                itemCount: details.length,
-                                shrinkWrap: true,
-                                itemBuilder: (context, index) {
-                                  return WatchInfoCard(
-                                    watchDetails: details[index],
-                                    trendingModel: widget.trendingModel,
-                                  );
-                                },
-                              ),
-                            ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
-                ],
-              ))
-        ]),
+                ),
+              ],
+            ))
+      ]),
       floatingActionButton: Column(
-      crossAxisAlignment: CrossAxisAlignment.end,
-      mainAxisAlignment: MainAxisAlignment.end,
-      children: [
-        FloatingActionButton(
-          onPressed: () {
-            showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  return CustomDeleteDialog(
-                    title: 'Confirm',
-                    content:
-                    'Would you like to be instantly notified when this watch is listed in the next live action ?',
-                    yesBtn: () {
-                      Navigator.pop(context);
-                    },
-                    noBtn: () {
-                      Navigator.pop(context);
-                    },
-                  );
-                });
-          },
-          child: Icon(
-            Icons.credit_card,
-            color: BlueColor,
-          ),
-          backgroundColor: PrimaryColor,
-        ),
-        SizedBox(height: 5),
-        FloatingActionButton(
-          onPressed: () {
-            showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  return CustomDeleteDialog(
-                    title: 'Confirm',
-                    content:
-                    'Would you like to add the watch to you favorites ?',
-                    yesBtn: () {
-                      setState(() {
-                        favoriteList.add(AuctionsList[widget.index]);
+        crossAxisAlignment: CrossAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          FloatingActionButton(
+            onPressed: () {
+              showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return CustomDeleteDialog(
+                      title: 'Confirm',
+                      content:
+                          'Would you like to be instantly notified when this watch is listed in the next live action ?',
+                      yesBtn: () {
                         Navigator.pop(context);
-                        fav = Colors.red;
-                      });
-                    },
-                    noBtn: () {
-                      Navigator.pop(context);
-                    },
-                  );
-                });
-          },
-          child: Icon(
-            Icons.favorite,
-            color: fav,
+                      },
+                      noBtn: () {
+                        Navigator.pop(context);
+                      },
+                    );
+                  });
+            },
+            child: Icon(
+              Icons.credit_card,
+              color: BlueColor,
+            ),
+            backgroundColor: PrimaryColor,
           ),
-          backgroundColor: PrimaryColor,
-        ),
-      ],
-    ),
+          SizedBox(height: 5),
+          FloatingActionButton(
+            onPressed: () {
+              showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return CustomDeleteDialog(
+                      title: 'Confirm',
+                      content:
+                          'Would you like to add the watch to you favorites ?',
+                      yesBtn: () {
+                        setState(() {
+                          favoriteList.add(AuctionsList[widget.index]);
+                          Navigator.pop(context);
+                          fav = Colors.red;
+                        });
+                      },
+                      noBtn: () {
+                        Navigator.pop(context);
+                      },
+                    );
+                  });
+            },
+            child: Icon(
+              Icons.favorite,
+              color: fav,
+            ),
+            backgroundColor: PrimaryColor,
+          ),
+        ],
+      ),
     );
 
     //   SingleChildScrollView(

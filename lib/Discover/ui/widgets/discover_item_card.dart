@@ -37,7 +37,7 @@ class DiscoverItemCard extends StatelessWidget {
                 child: Text(
                   '${di.label}',
                   style: TextStyle(
-                    fontSize: 20,
+                    fontSize: 16,
                     fontWeight: FontWeight.bold,
                   ),
                 ),

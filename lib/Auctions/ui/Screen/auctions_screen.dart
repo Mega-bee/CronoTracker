@@ -72,7 +72,7 @@ class _AuctionsState extends State<Auctions> {
                      height: MediaQuery.of(context).size.height*0.1,
                      width: MediaQuery.of(context).size.width*0.1,
                        child: IconButton(onPressed:(){} ,icon:Image.asset(ImageAsset.SEARCH,fit: BoxFit.cover,))),
-                 ) 
+                 )
               // Center(
               //   child: SizedBox(
               //     width: 35,
@@ -107,7 +107,7 @@ class _AuctionsState extends State<Auctions> {
                 itemCount: AuctionsList.length,
                 itemBuilder: (context, index) {
                   return AuctionsCard(
-                      auctionsModel: AuctionsList[index], index: index);
+                      auctionsModel: AuctionsList[index], index: index,);
                 },
               ),
             ),

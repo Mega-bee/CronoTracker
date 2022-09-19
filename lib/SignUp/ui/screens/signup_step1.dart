@@ -170,7 +170,7 @@ class _SignUpStep1State extends State<SignUpStep1> {
                 ),
                 SizedBox(height: MediaQuery.of(context).size.height * 0.10),
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 12, left: 15, top: 20),
+                  padding: const EdgeInsets.only(bottom: 5, left: 15, top: 30),
                   child: Container(
                     alignment: Alignment.topLeft,
                     child: Text(
@@ -192,7 +192,7 @@ class _SignUpStep1State extends State<SignUpStep1> {
                 ),
 
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 12, left: 15, top: 20),
+                  padding: const EdgeInsets.only(bottom: 5, left: 15, top: 30),
                   child: Container(
                     alignment: Alignment.topLeft,
                     child: Text(
@@ -213,7 +213,7 @@ class _SignUpStep1State extends State<SignUpStep1> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 12, left: 15, top: 20),
+                  padding: const EdgeInsets.only(bottom: 5, left: 15, top: 30),
                   child: Container(
                     alignment: Alignment.topLeft,
                     child: Text(
@@ -243,7 +243,7 @@ class _SignUpStep1State extends State<SignUpStep1> {
                 ),
 
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 12, left: 15, top: 20),
+                  padding: const EdgeInsets.only(bottom: 5, left: 15, top: 30),
                   child: Container(
                     alignment: Alignment.topLeft,
                     child: Text(
@@ -275,7 +275,7 @@ class _SignUpStep1State extends State<SignUpStep1> {
                 ),
                 SizedBox(height: 10),
                 // Padding(
-                //   padding: const EdgeInsets.only(bottom: 12, left: 15, top: 20),
+                //   padding: const EdgeInsets.only(bottom: 5, left: 15, top: 30),
                 //   child: Container(
                 //     alignment: Alignment.topLeft,
                 //     child: Text(

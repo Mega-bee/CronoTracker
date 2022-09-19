@@ -67,11 +67,28 @@ class _WatchInfoCardState extends State<WatchInfoCard> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            "2022 Unworn - ${widget.watchDetails.status}",
-                            style: TextStyle(
-                                color: Colors.lightGreenAccent, fontSize: 16),
+                          RichText(
+                            text: TextSpan(children: [
+                              TextSpan(
+                                text:
+                                ("2022 Unworn - "),
+                                style:TextStyle(
+                                    color: Colors.black, fontSize: 18),
+                              ),
+                              TextSpan(
+                                text:
+                                widget.watchDetails.status==true?"Sold":"Not Sold",
+                                // "${widget.watchDetails.dialColor}",
+                                style: TextStyle(
+                                    color: widget.watchDetails.status ? Color(0xFF008000) : Colors.red , fontSize: 18),
+                              ),
+                            ]),
                           ),
+                          // Text(
+                          //   "2022 Unworn - ${widget.watchDetails.status}",
+                          //   style: TextStyle(
+                          //       color: Color(0xFF008000), fontSize: 16),
+                          // ),
                           Padding(
                             padding: const EdgeInsets.fromLTRB(0, 5, 0, 5),
                             child: Text(

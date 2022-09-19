@@ -125,7 +125,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 ),
                 SizedBox(height: MediaQuery.of(context).size.height * 0.10),
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 12, left: 15),
+                  padding: const EdgeInsets.only(bottom: 5, left: 15),
                   child: Container(
                     alignment: Alignment.topLeft,
                     child: Text(
@@ -151,7 +151,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 12, left: 15, top: 20),
+                  padding: const EdgeInsets.only(bottom: 5, left: 15, top: 30),
                   child: Container(
                     alignment: Alignment.topLeft,
                     child: Text(
@@ -277,7 +277,7 @@ class _SignInScreenState extends State<SignInScreen> {
                               builder: (context) => SignUpStep1()),
                         );
                       },
-                      child: Text('Sign Up', style: TextStyle(color: Colors.blueAccent, decoration: TextDecoration.underline,),
+                      Widget: Text('Sign Up', style: TextStyle(color: Colors.blueAccent, decoration: TextDecoration.underline,),
                       ),
                     ),
                   ],

@@ -92,7 +92,7 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
                         // Padding(
                         //   padding: const EdgeInsets.only(bottom: 20),
                         //   child: Text(
-                        //     "${widget.trendingModel.nickname}",
+                        //     "${widget.auctionsModel.nickname}",
                         //     style: TextStyle(
                         //     fontSize: 15, color: Colors.grey)),
                         //   ),
@@ -120,144 +120,518 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text("- Brand: ${widget.auctionsModel.brand}",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 15,
-                                          color: Colors.grey)),
+                                  RichText(
+                                    text: TextSpan(children: [
+                                      TextSpan(
+                                        text:
+                                        ("- Brand: "),
+                                        style:TextStyle(
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 15,
+                                            color: Colors.grey),
+                                      ),
+                                      TextSpan(
+                                        text:"${widget.auctionsModel.brand}",
+                                        style: TextStyle(
+                                            fontSize: 15,
+                                            color: Colors.black),
+                                      ),
+                                    ]),
+                                  ),
                                   Divider(
                                     color: Colors.transparent,
                                     height: 5,
                                   ),
-                                  Text(
-                                      "- Referance: ${widget.auctionsModel.referance}",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 15,
-                                          color: Colors.grey)),
+                                  RichText(
+                                    text: TextSpan(children: [
+                                      TextSpan(
+                                        text:
+                                        ("- Reference: "),
+                                        style:TextStyle(
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 15,
+                                            color: Colors.grey),
+                                      ),
+                                      TextSpan(
+                                        text:"${widget.auctionsModel.referance}",
+                                        style: TextStyle(
+                                            fontSize: 15,
+                                            color: Colors.black),
+                                      ),
+                                    ]),
+                                  ),
                                   Divider(
                                     color: Colors.transparent,
                                     height: 5,
                                   ),
-                                  Text(
-                                      "- Year : ${widget.auctionsModel.year.toString()}",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 15,
-                                          color: Colors.grey)),
+                                  RichText(
+                                    text: TextSpan(children: [
+                                      TextSpan(
+                                        text:
+                                        ("- Year: "),
+                                        style:TextStyle(
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 15,
+                                            color: Colors.grey),
+                                      ),
+                                      TextSpan(
+                                        text:"${widget.auctionsModel.year}",
+                                        style: TextStyle(
+                                            fontSize: 15,
+                                            color: Colors.black),
+                                      ),
+                                    ]),
+                                  ),
                                   Divider(
                                     color: Colors.transparent,
                                     height: 5,
                                   ),
-                                  Text(
-                                      "- Size : ${widget.auctionsModel.size}mm",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 15,
-                                          color: Colors.grey)),
+                                  RichText(
+                                    text: TextSpan(children: [
+                                      TextSpan(
+                                        text:
+                                        ("- Size: "),
+                                        style:TextStyle(
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 15,
+                                            color: Colors.grey),
+                                      ),
+                                      TextSpan(
+                                        text:"${widget.auctionsModel.size}",
+                                        style: TextStyle(
+                                            fontSize: 15,
+                                            color: Colors.black),
+                                      ),
+                                    ]),
+                                  ),
+                                  // Text(
+                                  //     "- Dial color: ${widget.auctionsModel.dialColor}",
+                                  //     style: TextStyle(
+                                  //         fontWeight: FontWeight.w500,
+                                  //         fontSize: 15,
+                                  //         color: Colors.grey)),
                                   Divider(
                                     color: Colors.transparent,
                                     height: 5,
                                   ),
-                                  Text(
-                                      "- Dial Color : ${widget.auctionsModel.dialColor}",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 15,
-                                          color: Colors.grey)),
+                                  RichText(
+                                    text: TextSpan(children: [
+                                      TextSpan(
+                                        text:
+                                        ("- Dial Color: "),
+                                        style:TextStyle(
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 15,
+                                            color: Colors.grey),
+                                      ),
+                                      TextSpan(
+                                        text:"${widget.auctionsModel.dialColor}",
+                                        style: TextStyle(
+                                            fontSize: 15,
+                                            color: Colors.black),
+                                      ),
+                                    ]),
+                                  ),
+                                  // Text(
+                                  //     "- Bid Date: ${widget.auctionsModel.bidDate}",
+                                  //     style: TextStyle(
+                                  //         fontWeight: FontWeight.w500,
+                                  //         fontSize: 15,
+                                  //         color: Colors.grey)),
                                   Divider(
                                     color: Colors.transparent,
                                     height: 5,
                                   ),
-                                  Text(
-                                      "- Case Material : ${widget.auctionsModel.caseMaterial}",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 15,
-                                          color: Colors.grey)),
+                                  RichText(
+                                    text: TextSpan(children: [
+                                      TextSpan(
+                                        text:
+                                        ("- Case Material: "),
+                                        style:TextStyle(
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 15,
+                                            color: Colors.grey),
+                                      ),
+                                      TextSpan(
+                                        text:"${widget.auctionsModel.caseMaterial}",
+                                        style: TextStyle(
+                                            fontSize: 15,
+                                            color: Colors.black),
+                                      ),
+                                    ]),
+                                  ),
+                                  // Text(
+                                  //     "- Bracelet Material: ${widget.auctionsModel.braceletMaterial}",
+                                  //     style: TextStyle(
+                                  //         fontWeight: FontWeight.w500,
+                                  //         fontSize: 15,
+                                  //         color: Colors.grey)),
                                   Divider(
                                     color: Colors.transparent,
                                     height: 5,
                                   ),
-                                  Text(
-                                      "- Condition : ${widget.auctionsModel.condition}",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 15,
-                                          color: Colors.grey)),
+                                  RichText(
+                                    text: TextSpan(children: [
+                                      TextSpan(
+                                        text:
+                                        ("- Condition: "),
+                                        style:TextStyle(
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 15,
+                                            color: Colors.grey),
+                                      ),
+                                      TextSpan(
+                                        text:"${widget.auctionsModel.condition}",
+                                        style: TextStyle(
+                                            fontSize: 15,
+                                            color: Colors.black),
+                                      ),
+                                    ]),
+                                  ),
+                                  // Text(
+                                  //     "- Referance: ${widget.auctionsModel.reference}",
+                                  //     style: TextStyle(
+                                  //         fontWeight: FontWeight.w500,
+                                  //         fontSize: 15,
+                                  //         color: Colors.grey)),
                                   Divider(
                                     color: Colors.transparent,
                                     height: 5,
                                   ),
-                                  Text(
-                                      "- Full Set : ${widget.auctionsModel.fullSet}",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 15,
-                                          color: Colors.grey)),
+                                  RichText(
+                                    text: TextSpan(children: [
+                                      TextSpan(
+                                        text:
+                                        ("- Full set: "),
+                                        style:TextStyle(
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 15,
+                                            color: Colors.grey),
+                                      ),
+                                      TextSpan(
+                                        text:"${widget.auctionsModel.fullSet}",
+                                        style: TextStyle(
+                                            fontSize: 15,
+                                            color: Colors.black),
+                                      ),
+                                    ]),
+                                  ),
+                                  // Text(
+                                  //     "- Sold Month: ${widget.auctionsModel.soldMonth}",
+                                  //     style: TextStyle(
+                                  //         fontWeight: FontWeight.w500,
+                                  //         fontSize: 15,
+                                  //         color: Colors.grey)),
                                   Divider(
                                     color: Colors.transparent,
                                     height: 5,
                                   ),
-                                  Text(
-                                      "- Status : ${widget.auctionsModel.status}",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 15,
-                                          color: Colors.grey)),
+                                  RichText(
+                                    text: TextSpan(children: [
+                                      TextSpan(
+                                        text:
+                                        ("- Status: "),
+                                        style:TextStyle(
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 15,
+                                            color: Colors.grey),
+                                      ),
+                                      TextSpan(
+                                        text: widget.auctionsModel.status == true?"Sold":"Not Sold",
+                                        style: TextStyle(
+                                            fontSize: 15,
+                                            color: Colors.black),
+                                      ),
+                                    ]),
+                                  ),
+                                  // Text(
+                                  //     "- Sold Month: ${widget.auctionsModel.soldMonth}",
+                                  //     style: TextStyle(
+                                  //         fontWeight: FontWeight.w500,
+                                  //         fontSize: 15,
+                                  //         color: Colors.grey)),
                                   Divider(
                                     color: Colors.transparent,
                                     height: 5,
                                   ),
-                                  Text(
-                                      "- Last Bidder : ${widget.auctionsModel.lastBidder}",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 15,
-                                          color: Colors.grey)),
+                                  RichText(
+                                    text: TextSpan(children: [
+                                      TextSpan(
+                                        text:
+                                        ("- Last Bidder: "),
+                                        style:TextStyle(
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 15,
+                                            color: Colors.grey),
+                                      ),
+                                      TextSpan(
+                                        text:"${widget.auctionsModel.lastBidder}",
+                                        style: TextStyle(
+                                            fontSize: 15,
+                                            color: Colors.black),
+                                      ),
+                                    ]),
+                                  ),
+                                  // Text(
+                                  //     "- Sold Month: ${widget.auctionsModel.soldMonth}",
+                                  //     style: TextStyle(
+                                  //         fontWeight: FontWeight.w500,
+                                  //         fontSize: 15,
+                                  //         color: Colors.grey)),
                                   Divider(
                                     color: Colors.transparent,
                                     height: 5,
                                   ),
-                                  Text(
-                                      "- Number of bidders : ${widget.auctionsModel.numberOfBidders}",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 15,
-                                          color: Colors.grey)),
+                                  // Text("- Status : ${widget.auctionsModel.brand}",
+                                  //     style: TextStyle(
+                                  //         fontWeight: FontWeight.w500,
+                                  //         fontSize: 15,
+                                  //         color: Colors.grey)),
+                                  RichText(
+                                    text: TextSpan(children: [
+                                      TextSpan(
+                                        text:
+                                        ("- Number of Bidders: "),
+                                        style:TextStyle(
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 15,
+                                            color: Colors.grey),
+                                      ),
+                                      TextSpan(
+                                        text:"${widget.auctionsModel.numberOfBidders}",
+                                        style: TextStyle(
+                                            fontSize: 15,
+                                            color: Colors.black),
+                                      ),
+                                    ]),
+                                  ),
+                                  // Text(
+                                  //     "- Sold Month: ${widget.auctionsModel.soldMonth}",
+                                  //     style: TextStyle(
+                                  //         fontWeight: FontWeight.w500,
+                                  //         fontSize: 15,
+                                  //         color: Colors.grey)),
                                   Divider(
                                     color: Colors.transparent,
                                     height: 5,
                                   ),
-                                  Text("- Date : ${widget.auctionsModel.date}",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 15,
-                                          color: Colors.grey)),
+                                  RichText(
+                                    text: TextSpan(children: [
+                                      TextSpan(
+                                        text:
+                                        ("- Date: "),
+                                        style:TextStyle(
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 15,
+                                            color: Colors.grey),
+                                      ),
+                                      TextSpan(
+                                        text:"${widget.auctionsModel.date}",
+                                        style: TextStyle(
+                                            fontSize: 15,
+                                            color: Colors.black),
+                                      ),
+                                    ]),
+                                  ),
+                                  // Text(
+                                  //     "- Sold Month: ${widget.auctionsModel.soldMonth}",
+                                  //     style: TextStyle(
+                                  //         fontWeight: FontWeight.w500,
+                                  //         fontSize: 15,
+                                  //         color: Colors.grey)),
                                   Divider(
                                     color: Colors.transparent,
                                     height: 5,
                                   ),
-                                  Text(
-                                      "- Ig account : ${widget.auctionsModel.igAccount}",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 15,
-                                          color: Colors.grey)),
+                                  RichText(
+                                    text: TextSpan(children: [
+                                      TextSpan(
+                                        text:
+                                        ("- Ig account: "),
+                                        style:TextStyle(
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 15,
+                                            color: Colors.grey),
+                                      ),
+                                      TextSpan(
+                                        text:"${widget.auctionsModel.igAccount}",
+                                        style: TextStyle(
+                                            fontSize: 15,
+                                            color: Colors.black),
+                                      ),
+                                    ]),
+                                  ),
+                                  // Text(
+                                  //     "- Sold Month: ${widget.auctionsModel.soldMonth}",
+                                  //     style: TextStyle(
+                                  //         fontWeight: FontWeight.w500,
+                                  //         fontSize: 15,
+                                  //         color: Colors.grey)),
                                   Divider(
                                     color: Colors.transparent,
                                     height: 5,
                                   ),
-                                  Text(
-                                      "- Country : ${widget.auctionsModel.country}",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 15,
-                                          color: Colors.grey)),
+                                  RichText(
+                                    text: TextSpan(children: [
+                                      TextSpan(
+                                        text:
+                                        ("- Country: "),
+                                        style:TextStyle(
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 15,
+                                            color: Colors.grey),
+                                      ),
+                                      TextSpan(
+                                        text:"${widget.auctionsModel.country}",
+                                        style: TextStyle(
+                                            fontSize: 15,
+                                            color: Colors.black),
+                                      ),
+                                    ]),
+                                  ),
+                                  // Text(
+                                  //     "- Sold Month: ${widget.auctionsModel.soldMonth}",
+                                  //     style: TextStyle(
+                                  //         fontWeight: FontWeight.w500,
+                                  //         fontSize: 15,
+                                  //         color: Colors.grey)),
                                   Divider(
                                     color: Colors.transparent,
                                     height: 5,
                                   ),
+                                  // Divider(
+                                  //   color: Colors.transparent,
+                                  //   height: 5,
+                                  // ),
+                                  // Text(
+                                  //     "- Referance: ${widget.auctionsModel.referance}",
+                                  //     style: TextStyle(
+                                  //         fontWeight: FontWeight.w500,
+                                  //         fontSize: 15,
+                                  //         color: Colors.grey)),
+                                  // Divider(
+                                  //   color: Colors.transparent,
+                                  //   height: 5,
+                                  // ),
+                                  // Text(
+                                  //     "- Year : ${widget.auctionsModel.year.toString()}",
+                                  //     style: TextStyle(
+                                  //         fontWeight: FontWeight.w500,
+                                  //         fontSize: 15,
+                                  //         color: Colors.grey)),
+                                  // Divider(
+                                  //   color: Colors.transparent,
+                                  //   height: 5,
+                                  // ),
+                                  // Text(
+                                  //     "- Size : ${widget.auctionsModel.size}mm",
+                                  //     style: TextStyle(
+                                  //         fontWeight: FontWeight.w500,
+                                  //         fontSize: 15,
+                                  //         color: Colors.grey)),
+                                  // Divider(
+                                  //   color: Colors.transparent,
+                                  //   height: 5,
+                                  // ),
+                                  // Text(
+                                  //     "- Dial Color : ${widget.auctionsModel.dialColor}",
+                                  //     style: TextStyle(
+                                  //         fontWeight: FontWeight.w500,
+                                  //         fontSize: 15,
+                                  //         color: Colors.grey)),
+                                  // Divider(
+                                  //   color: Colors.transparent,
+                                  //   height: 5,
+                                  // ),
+                                  // Text(
+                                  //     "- Case Material : ${widget.auctionsModel.caseMaterial}",
+                                  //     style: TextStyle(
+                                  //         fontWeight: FontWeight.w500,
+                                  //         fontSize: 15,
+                                  //         color: Colors.grey)),
+                                  // Divider(
+                                  //   color: Colors.transparent,
+                                  //   height: 5,
+                                  // ),
+                                  // Text(
+                                  //     "- Condition : ${widget.auctionsModel.condition}",
+                                  //     style: TextStyle(
+                                  //         fontWeight: FontWeight.w500,
+                                  //         fontSize: 15,
+                                  //         color: Colors.grey)),
+                                  // Divider(
+                                  //   color: Colors.transparent,
+                                  //   height: 5,
+                                  // ),
+                                  // Text(
+                                  //     "- Full Set : ${widget.auctionsModel.fullSet}",
+                                  //     style: TextStyle(
+                                  //         fontWeight: FontWeight.w500,
+                                  //         fontSize: 15,
+                                  //         color: Colors.grey)),
+                                  // Divider(
+                                  //   color: Colors.transparent,
+                                  //   height: 5,
+                                  // ),
+                                  // Text(
+                                  //     "- Status : ${widget.auctionsModel.status}",
+                                  //     style: TextStyle(
+                                  //         fontWeight: FontWeight.w500,
+                                  //         fontSize: 15,
+                                  //         color: Colors.grey)),
+                                  // Divider(
+                                  //   color: Colors.transparent,
+                                  //   height: 5,
+                                  // ),
+                                  // Text(
+                                  //     "- Last Bidder : ${widget.auctionsModel.lastBidder}",
+                                  //     style: TextStyle(
+                                  //         fontWeight: FontWeight.w500,
+                                  //         fontSize: 15,
+                                  //         color: Colors.grey)),
+                                  // Divider(
+                                  //   color: Colors.transparent,
+                                  //   height: 5,
+                                  // ),
+                                  // Text(
+                                  //     "- Number of bidders : ${widget.auctionsModel.numberOfBidders}",
+                                  //     style: TextStyle(
+                                  //         fontWeight: FontWeight.w500,
+                                  //         fontSize: 15,
+                                  //         color: Colors.grey)),
+                                  // Divider(
+                                  //   color: Colors.transparent,
+                                  //   height: 5,
+                                  // ),
+                                  // Text("- Date : ${widget.auctionsModel.date}",
+                                  //     style: TextStyle(
+                                  //         fontWeight: FontWeight.w500,
+                                  //         fontSize: 15,
+                                  //         color: Colors.grey)),
+                                  // Divider(
+                                  //   color: Colors.transparent,
+                                  //   height: 5,
+                                  // ),
+                                  // Text(
+                                  //     "- Ig account : ${widget.auctionsModel.igAccount}",
+                                  //     style: TextStyle(
+                                  //         fontWeight: FontWeight.w500,
+                                  //         fontSize: 15,
+                                  //         color: Colors.grey)),
+                                  // Divider(
+                                  //   color: Colors.transparent,
+                                  //   height: 5,
+                                  // ),
+                                  // Text(
+                                  //     "- Country : ${widget.auctionsModel.country}",
+                                  //     style: TextStyle(
+                                  //         fontWeight: FontWeight.w500,
+                                  //         fontSize: 15,
+                                  //         color: Colors.grey)),
+                                  // Divider(
+                                  //   color: Colors.transparent,
+                                  //   height: 5,
+                                  // ),
                                 ],
                               )),
                         ),
@@ -453,7 +827,7 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
 // Flexible(
 // flex: 1,
 // child: Image(
-// image: AssetImage(widget.trendingModel.img.toString()),
+// image: AssetImage(widget.auctionsModel.img.toString()),
 // fit: BoxFit.cover,
 // width: double.infinity,
 // ),
@@ -476,7 +850,7 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
 // child: Row(
 // children: [
 // Text(
-// "${widget.trendingModel.modelName}",
+// "${widget.auctionsModel.modelName}",
 // style: TextStyle(
 // color: Colors.black,
 // fontWeight: FontWeight.w500,
@@ -484,7 +858,7 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
 // ),
 // Spacer(),
 // Text(
-// "${widget.trendingModel.sellingPrice}\$",
+// "${widget.auctionsModel.sellingPrice}\$",
 // style: TextStyle(
 // color: Colors.black,
 // fontWeight: FontWeight.w500,
@@ -496,7 +870,7 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
 // // Padding(
 // //   padding: const EdgeInsets.only(bottom: 20),
 // //   child: Text(
-// //     "${widget.trendingModel.nickname}",
+// //     "${widget.auctionsModel.nickname}",
 // //     style: TextStyle(
 // //     fontSize: 15, color: Colors.grey)),
 // //   ),
@@ -524,7 +898,7 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
 // child: Column(
 // crossAxisAlignment: CrossAxisAlignment.start,
 // children: [
-// Text("- Brand: ${widget.trendingModel.brand}",
+// Text("- Brand: ${widget.auctionsModel.brand}",
 // style: TextStyle(
 // fontWeight: FontWeight.w500,
 // fontSize: 15,
@@ -534,7 +908,7 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
 // height: 5,
 // ),
 // Text(
-// "- Nickname: ${widget.trendingModel.nickname}",
+// "- Nickname: ${widget.auctionsModel.nickname}",
 // style: TextStyle(
 // fontWeight: FontWeight.w500,
 // fontSize: 15,
@@ -544,7 +918,7 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
 // height: 5,
 // ),
 // Text(
-// "- Case Material: ${widget.trendingModel.caseMaterial}",
+// "- Case Material: ${widget.auctionsModel.caseMaterial}",
 // style: TextStyle(
 // fontWeight: FontWeight.w500,
 // fontSize: 15,
@@ -554,7 +928,7 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
 // height: 5,
 // ),
 // Text(
-// "- Dial color: ${widget.trendingModel.dialColor}",
+// "- Dial color: ${widget.auctionsModel.dialColor}",
 // style: TextStyle(
 // fontWeight: FontWeight.w500,
 // fontSize: 15,
@@ -564,7 +938,7 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
 // height: 5,
 // ),
 // Text(
-// "- Bid Date: ${widget.trendingModel.bidDate}",
+// "- Bid Date: ${widget.auctionsModel.bidDate}",
 // style: TextStyle(
 // fontWeight: FontWeight.w500,
 // fontSize: 15,
@@ -574,7 +948,7 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
 // height: 5,
 // ),
 // Text(
-// "- Bracelet Material: ${widget.trendingModel.braceletMaterial}",
+// "- Bracelet Material: ${widget.auctionsModel.braceletMaterial}",
 // style: TextStyle(
 // fontWeight: FontWeight.w500,
 // fontSize: 15,
@@ -584,7 +958,7 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
 // height: 5,
 // ),
 // Text(
-// "- Referance: ${widget.trendingModel.reference}",
+// "- Referance: ${widget.auctionsModel.reference}",
 // style: TextStyle(
 // fontWeight: FontWeight.w500,
 // fontSize: 15,
@@ -594,7 +968,7 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
 // height: 5,
 // ),
 // Text(
-// "- Sold Month: ${widget.trendingModel.soldMonth}",
+// "- Sold Month: ${widget.auctionsModel.soldMonth}",
 // style: TextStyle(
 // fontWeight: FontWeight.w500,
 // fontSize: 15,
@@ -621,7 +995,7 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
 // fontSize: 18),),
 // SizedBox(width: 15,),
 // Text(
-// "${widget.trendingModel.priceTracking}",
+// "${widget.auctionsModel.priceTracking}",
 // style: TextStyle(
 // fontSize: 9.0,
 // color: Colors.white,
