@@ -277,7 +277,7 @@ class _SignInScreenState extends State<SignInScreen> {
                               builder: (context) => SignUpStep1()),
                         );
                       },
-                      Widget: Text('Sign Up', style: TextStyle(color: Colors.blueAccent, decoration: TextDecoration.underline,),
+                      child: Text('Sign Up', style: TextStyle(color: Colors.blueAccent, decoration: TextDecoration.underline,),
                       ),
                     ),
                   ],
