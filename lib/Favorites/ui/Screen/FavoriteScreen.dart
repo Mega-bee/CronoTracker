@@ -75,7 +75,7 @@ class _FavoritesState extends State<Favorites> {
               padding: const EdgeInsets.all(8.0),
               child: Align(
                   alignment: Alignment.topLeft,
-                  child: Text("Favorites",style: TextStyle(color: Colors.black,fontWeight: FontWeight.w500,fontSize:24 ),)),
+                  child: Text("My Collection",style: TextStyle(color: Colors.black,fontWeight: FontWeight.w500,fontSize:24 ),)),
             ),
             Padding(
             padding: EdgeInsets.all(8),

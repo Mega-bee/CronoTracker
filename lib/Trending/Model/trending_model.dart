@@ -1,14 +1,35 @@
-class TrendingModel {
-  String? image, brand, modelName, reference, nickname, size, dialColor, caseMaterial;
+class watchCard {
+  String? img,
+      brand,
+      modelName,
+      reference,
+      nickname,
+      dialColor,
+      caseMaterial,
+      braceletMaterial,
+      soldMonth,
+      priceTracking,
+      bidDate,
+      soldStatus,
+      priceRange,RetailPrice,SellingRate,
+      sellingPrice;
 
-  TrendingModel({
-    this.image,
+  watchCard({
+    this.img,
     this.brand,
     this.modelName,
     this.reference,
     this.nickname,
-    this.size,
     this.dialColor,
-    this.caseMaterial
+    this.caseMaterial,
+    this.braceletMaterial,
+    this.soldMonth,
+    this.priceTracking,
+    this.bidDate,
+    this.soldStatus,
+    this.sellingPrice,
+    this.priceRange,
+    this.RetailPrice,
+    this.SellingRate
   });
 }

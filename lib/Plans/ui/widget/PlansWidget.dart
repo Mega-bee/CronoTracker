@@ -35,23 +35,14 @@ class PlansWidget extends StatelessWidget {
                     bottom: 0, right: 8.0, top: 10, left: 30.0),
                 child: Align(
                     alignment: Alignment.topLeft,
-                    child: RichText(
-                      text: TextSpan(children: [
-                        TextSpan(
-                          text: ("${plansModel.Price.toString()}\$"),
+                    child:
+                        Text(
+                          ("${plansModel.Price}"),
                           style: TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.w500,
                               fontSize: 30),
                         ),
-                        TextSpan(
-                          text: " / Month",
-                          style: TextStyle(
-                              color: Colors.grey,
-                              fontWeight: FontWeight.w400,
-                              fontSize: 20),
-                        ),
-                      ]),
                     )
 
                     // Text(
@@ -61,7 +52,6 @@ class PlansWidget extends StatelessWidget {
                     //       fontWeight: FontWeight.w500,
                     //       fontSize: 30),
                     // ),
-                    ),
               ),
               SizedBox(
                   height: MediaQuery.of(context).size.height * 0.1,
@@ -112,11 +102,11 @@ class PlansWidget extends StatelessWidget {
                                     style: TextStyle(color: Colors.white),
                                   ),
                             style: ElevatedButton.styleFrom(
+                              primary: BlueColor,
                                 elevation: 0.5,
                                 shape: RoundedRectangleBorder(
                                     borderRadius:
-                                        BorderRadius.all(Radius.circular(8.0))),
-                                primary: BlueColor),
+                                        BorderRadius.all(Radius.circular(8.0)))),
                           ),
                         )
                       ],

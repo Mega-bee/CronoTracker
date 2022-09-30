@@ -2,9 +2,9 @@ import 'package:cronotracker/SearchPage/ui/Screen/SearchPage.dart';
 import 'package:cronotracker/utils/Images/Images.dart';
 import 'package:cronotracker/utils/style/colors.dart';
 import 'package:flutter/material.dart';
+import '../../Model/trending_model.dart';
 import '../Widget/trending_watch_card.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
-import '../../model_classes/watch_card.dart';
 
 class TrendingScreen extends StatelessWidget {
   int currentIndex = 0;
@@ -240,7 +240,7 @@ class TrendingScreen extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(15),
                     child: Text(
-                      'Trending Watches below 10,000\$',
+                      'Most Sold Watches',
                       style:
                           TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
                     ),
@@ -286,7 +286,7 @@ class TrendingScreen extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(15),
                     child: Text(
-                      'Trending Watches Watches',
+                      'Most Sold Rose Gold Watches',
                       style:
                           TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
                     ),
@@ -332,7 +332,7 @@ class TrendingScreen extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(15),
                     child: Text(
-                      'Most Trending Rose Gold Watches',
+                      'Most Sold WHITE GOLD Watches',
                       style:
                           TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
                     ),
@@ -378,7 +378,7 @@ class TrendingScreen extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(15),
                     child: Text(
-                      'Most Trending Yellow Gold Watches',
+                      'Most Sold Yellow Gold Watches',
                       style:
                           TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
                     ),
@@ -424,53 +424,7 @@ class TrendingScreen extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(15),
                     child: Text(
-                      'Most Trending Yellow Platinum Watches',
-                      style:
-                          TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
-                    ),
-                  ),
-                  height: MediaQuery.of(context).size.height * 0.31,
-                  // decoration: BoxDecoration(
-                  //   borderRadius: BorderRadius.circular(1.0),
-                  //   color: Colors.white,
-                  //   boxShadow: [
-                  //     BoxShadow(
-                  //       color: Colors.grey,
-                  //       blurRadius: 2.0,
-                  //       spreadRadius: 0.0,
-                  //       offset: Offset(1.0, 1.0),
-                  //     )
-                  //   ],
-                  // ),
-                ),
-                Positioned.fill(
-                  child: Align(
-                    alignment: Alignment.bottomLeft,
-                    child: SizedBox(
-                      width: double.infinity,
-                      height: MediaQuery.of(context).size.height * 0.26,
-                      child: ListView.builder(
-                        itemBuilder: (context, index) {
-                          return BuildWatchCard(watches[index], index);
-                        },
-                        scrollDirection: Axis.horizontal,
-                        itemCount: watches.length,
-                        shrinkWrap: true,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 10),
-            Stack(
-              children: [
-                SizedBox(
-                  width: double.infinity,
-                  child: Padding(
-                    padding: const EdgeInsets.all(15),
-                    child: Text(
-                      'Most Trending Yellow White Gold Watches',
+                      'Sold PLATINUM Watches',
                       style:
                           TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
                     ),

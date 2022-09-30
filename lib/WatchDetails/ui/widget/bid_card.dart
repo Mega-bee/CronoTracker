@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../Trending/model_classes/watch_card.dart';
+
+import '../../../Trending/Model/trending_model.dart';
 
 class BidCard extends StatelessWidget {
 

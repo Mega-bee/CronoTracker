@@ -1,4 +1,3 @@
-import 'package:cronotracker/Trending/model_classes/watch_card.dart';
 import 'package:cronotracker/WatchInfo/Model/watch_info_model.dart';
 import 'package:cronotracker/WatchInfo/ui/Widget/watch_info_card.dart';
 import 'package:flutter/cupertino.dart';
@@ -6,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../../../AlertMessage/ui/widget/alert_message_card.dart';
 import '../../../Auctions/Model/auctions_model.dart';
 import '../../../Favorites/Model/FavoriteModel.dart';
+import '../../../Trending/Model/trending_model.dart';
 import '../../../utils/Images/Images.dart';
 import '../../../utils/style/colors.dart' as prefix;
 import '../../../utils/style/colors.dart';
@@ -46,348 +46,492 @@ class _WatchDetailsScreenState extends State<WatchDetailsScreen> {
               )),
         ],
       ),
-      body: CustomScrollView(slivers: [
-        SliverFillRemaining(
-            hasScrollBody: true,
-            child: Column(
-              children: [
-                Expanded(
-                  flex: 1,
-                  child: Image(
-                    image: AssetImage(widget.trendingModel.img.toString()),
-                    fit: BoxFit.cover,
-                    width: double.infinity,
-                  ),
-                ),
-                Expanded(
-                  flex: 2,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: PrimaryColor,
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(40),
-                        topRight: Radius.circular(40),
-                      ),
+      body: DefaultTabController(
+        length: 3,
+        child: (CustomScrollView(slivers: [
+          SliverFillRemaining(
+              hasScrollBody: true,
+              child: Column(
+                children: [
+                  Expanded(
+                    flex: 1,
+                    child: Image(
+                      image: AssetImage(widget.trendingModel.img.toString()),
+                      fit: BoxFit.cover,
+                      width: double.infinity,
                     ),
-                    child: SingleChildScrollView(
-                      child: Column(
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.fromLTRB(30, 30, 30, 0),
-                            child: Row(
-                              children: [
-                                Text(
-                                  "${widget.trendingModel.modelName}",
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 18),
-                                ),
-                                Spacer(),
-                                Text(
-                                  "${widget.trendingModel.sellingPrice}\$",
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 18),
-                                )
-                              ],
-                            ),
-                          ),
-                          // Padding(
-                          //   padding: const EdgeInsets.only(bottom: 20),
-                          //   child: Text(
-                          //     "${widget.trendingModel.nickname}",
-                          //     style: TextStyle(
-                          //     fontSize: 15, color: Colors.grey)),
-                          //   ),
-                          // ),
-                          SizedBox(
-                            height: 15,
-                          ),
-                          Align(
-                            alignment: Alignment.topLeft,
-                            child: Padding(
-                              padding: EdgeInsets.fromLTRB(30, 20, 30, 0),
-                              child: Text(
-                                "Description",
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 18),
-                              ),
-                            ),
-                          ),
-                          Align(
-                            alignment: Alignment.topLeft,
-                            child: Padding(
-                                padding: EdgeInsets.fromLTRB(30, 10, 30, 0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    RichText(
-                                      text: TextSpan(children: [
-                                        TextSpan(
-                                          text:
-                                              ("- Brand: "),
-                                          style:TextStyle(
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: 15,
-                                              color: Colors.grey),
-                                        ),
-                                        TextSpan(
-                                          text:"${widget.trendingModel.brand}",
-                                          style: TextStyle(
-                                              fontSize: 15,
-                                              color: Colors.black),
-                                        ),
-                                      ]),
-                                    ),
-                                    Divider(
-                                      color: Colors.transparent,
-                                      height: 5,
-                                    ),
-                                    RichText(
-                                      text: TextSpan(children: [
-                                        TextSpan(
-                                          text:
-                                          ("- Nickname: "),
-                                          style:TextStyle(
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: 15,
-                                              color: Colors.grey),
-                                        ),
-                                        TextSpan(
-                                          text:"${widget.trendingModel.nickname}",
-                                          style: TextStyle(
-                                              fontSize: 15,
-                                              color: Colors.black),
-                                        ),
-                                      ]),
-                                    ),
-                                    Divider(
-                                      color: Colors.transparent,
-                                      height: 5,
-                                    ),
-                                    RichText(
-                                      text: TextSpan(children: [
-                                        TextSpan(
-                                          text:
-                                          ("- Case Material: "),
-                                          style:TextStyle(
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: 15,
-                                              color: Colors.grey),
-                                        ),
-                                        TextSpan(
-                                          text:"${widget.trendingModel.caseMaterial}",
-                                          style: TextStyle(
-                                              fontSize: 15,
-                                              color: Colors.black),
-                                        ),
-                                      ]),
-                                    ),
-                                    Divider(
-                                      color: Colors.transparent,
-                                      height: 5,
-                                    ),
-                                    RichText(
-                                      text: TextSpan(children: [
-                                        TextSpan(
-                                          text:
-                                          ("- Dial color: "),
-                                          style:TextStyle(
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: 15,
-                                              color: Colors.grey),
-                                        ),
-                                        TextSpan(
-                                          text:"${widget.trendingModel.dialColor}",
-                                          style: TextStyle(
-                                              fontSize: 15,
-                                              color: Colors.black),
-                                        ),
-                                      ]),
-                                    ),
-                                    // Text(
-                                    //     "- Dial color: ${widget.trendingModel.dialColor}",
-                                    //     style: TextStyle(
-                                    //         fontWeight: FontWeight.w500,
-                                    //         fontSize: 15,
-                                    //         color: Colors.grey)),
-                                    Divider(
-                                      color: Colors.transparent,
-                                      height: 5,
-                                    ),
-                                    RichText(
-                                      text: TextSpan(children: [
-                                        TextSpan(
-                                          text:
-                                          ("- Bid Date: "),
-                                          style:TextStyle(
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: 15,
-                                              color: Colors.grey),
-                                        ),
-                                        TextSpan(
-                                          text:"${widget.trendingModel.bidDate}",
-                                          style: TextStyle(
-                                              fontSize: 15,
-                                              color: Colors.black),
-                                        ),
-                                      ]),
-                                    ),
-                                    // Text(
-                                    //     "- Bid Date: ${widget.trendingModel.bidDate}",
-                                    //     style: TextStyle(
-                                    //         fontWeight: FontWeight.w500,
-                                    //         fontSize: 15,
-                                    //         color: Colors.grey)),
-                                    Divider(
-                                      color: Colors.transparent,
-                                      height: 5,
-                                    ),
-                                    RichText(
-                                      text: TextSpan(children: [
-                                        TextSpan(
-                                          text:
-                                          ("- Bracelet Material: "),
-                                          style:TextStyle(
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: 15,
-                                              color: Colors.grey),
-                                        ),
-                                        TextSpan(
-                                          text:"${widget.trendingModel.braceletMaterial}",
-                                          style: TextStyle(
-                                              fontSize: 15,
-                                              color: Colors.black),
-                                        ),
-                                      ]),
-                                    ),
-                                    // Text(
-                                    //     "- Bracelet Material: ${widget.trendingModel.braceletMaterial}",
-                                    //     style: TextStyle(
-                                    //         fontWeight: FontWeight.w500,
-                                    //         fontSize: 15,
-                                    //         color: Colors.grey)),
-                                    Divider(
-                                      color: Colors.transparent,
-                                      height: 5,
-                                    ),
-                                    RichText(
-                                      text: TextSpan(children: [
-                                        TextSpan(
-                                          text:
-                                          ("- Referance: "),
-                                          style:TextStyle(
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: 15,
-                                              color: Colors.grey),
-                                        ),
-                                        TextSpan(
-                                          text:"${widget.trendingModel.reference}",
-                                          style: TextStyle(
-                                              fontSize: 15,
-                                              color: Colors.black),
-                                        ),
-                                      ]),
-                                    ),
-                                    // Text(
-                                    //     "- Referance: ${widget.trendingModel.reference}",
-                                    //     style: TextStyle(
-                                    //         fontWeight: FontWeight.w500,
-                                    //         fontSize: 15,
-                                    //         color: Colors.grey)),
-                                    Divider(
-                                      color: Colors.transparent,
-                                      height: 5,
-                                    ),
-                                    RichText(
-                                      text: TextSpan(children: [
-                                        TextSpan(
-                                          text:
-                                          ("- Sold Month: "),
-                                          style:TextStyle(
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: 15,
-                                              color: Colors.grey),
-                                        ),
-                                        TextSpan(
-                                          text:"${widget.trendingModel.soldMonth}",
-                                          style: TextStyle(
-                                              fontSize: 15,
-                                              color: Colors.black),
-                                        ),
-                                      ]),
-                                    ),
-                                    // Text(
-                                    //     "- Sold Month: ${widget.trendingModel.soldMonth}",
-                                    //     style: TextStyle(
-                                    //         fontWeight: FontWeight.w500,
-                                    //         fontSize: 15,
-                                    //         color: Colors.grey)),
-                                    Divider(
-                                      color: Colors.transparent,
-                                      height: 5,
-                                    ),
-                                  ],
-                                )),
-                          ),
-                          SizedBox(
-                            height: 25,
-                          ),
-                          Align(
-                            alignment: Alignment.topLeft,
-                            child: Padding(
-                                padding: EdgeInsets.fromLTRB(30, 10, 30, 0),
-                                child: Row(children: [
+                  ),
+                  Expanded(
+                    flex: 2,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: PrimaryColor,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(40),
+                          topRight: Radius.circular(40),
+                        ),
+                      ),
+                      child: SingleChildScrollView(
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.fromLTRB(30, 30, 30, 0),
+                              child: Row(
+                                children: [
                                   Text(
-                                    "Price Tracking",
+                                    "${widget.trendingModel.modelName}",
                                     style: TextStyle(
                                         color: Colors.black,
                                         fontWeight: FontWeight.w500,
                                         fontSize: 18),
                                   ),
-                                  SizedBox(
-                                    width: 15,
-                                  ),
-                                  Text("${widget.trendingModel.priceTracking}",
-                                      style: TextStyle(
-                                          fontSize: 9.0,
-                                          color: Colors.white,
-                                          background: Paint()
-                                            ..strokeWidth = 12.0
-                                            ..color = Colors.grey
-                                            ..style = PaintingStyle.stroke
-                                            ..strokeJoin = StrokeJoin.round)),
-                                ])),
-                          ),
-                          SizedBox(
-                            height: 12,
-                          ),
-                          Padding(
-                            padding: EdgeInsets.fromLTRB(9, 0, 0, 0),
-                            child: ListView.builder(
-                              physics: NeverScrollableScrollPhysics(),
-                              itemCount: details.length,
-                              shrinkWrap: true,
-                              itemBuilder: (context, index) {
-                                return WatchInfoCard(
-                                  watchDetails: details[index],
-                                  trendingModel: widget.trendingModel,
-                                );
-                              },
+                                  Spacer(),
+                                  Text(
+                                    "${widget.trendingModel.sellingPrice}\$",
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 18),
+                                  )
+                                ],
+                              ),
                             ),
-                          ),
-                        ],
+                            // Padding(
+                            //   padding: const EdgeInsets.only(bottom: 20),
+                            //   child: Text(
+                            //     "${widget.trendingModel.nickname}",
+                            //     style: TextStyle(
+                            //     fontSize: 15, color: Colors.grey)),
+                            //   ),
+                            // ),
+                            SizedBox(
+                              height: 15,
+                            ),
+                            // Align(
+                            //   alignment: Alignment.topLeft,
+                            //   child: Padding(
+                            //     padding: EdgeInsets.fromLTRB(30, 20, 30, 0),
+                            //     child:
+                            //   ),
+                            // ),
+                            TabBar(
+                              tabs: [
+                                Tab(
+                                  text: "Description",
+                                  // style: TextStyle(
+                                  //     color: Colors.black,
+                                  //     fontWeight: FontWeight.w500,
+                                  //     fontSize: 18),
+                                ),
+                                Tab(
+                                  text: "Analysis",
+                                ),
+                                Tab(
+                                  text: "Graph",
+                                ),
+                              ],
+                            ),
+                            Container(
+                              height: MediaQuery.of(context).size.height * 0.25,
+                              child: TabBarView(
+                                children: [
+                                  Align(
+                                    alignment: Alignment.centerLeft,
+                                    child: Padding(
+                                        padding:
+                                            EdgeInsets.fromLTRB(30, 10, 30, 0),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            SizedBox(
+                                              height: 15,
+                                            ),
+                                            RichText(
+                                              text: TextSpan(children: [
+                                                TextSpan(
+                                                  text: ("- Brand: "),
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontSize: 15,
+                                                      color: Colors.grey),
+                                                ),
+                                                TextSpan(
+                                                  text:
+                                                      "${widget.trendingModel.brand}",
+                                                  style: TextStyle(
+                                                      fontSize: 15,
+                                                      color: Colors.black),
+                                                ),
+                                              ]),
+                                            ),
+                                            Divider(
+                                              color: Colors.transparent,
+                                              height: 15,
+                                            ),
+                                            // RichText(
+                                            //   text: TextSpan(children: [
+                                            //     TextSpan(
+                                            //       text:
+                                            //       ("- Nickname: "),
+                                            //       style:TextStyle(
+                                            //           fontWeight: FontWeight.w500,
+                                            //           fontSize: 15,
+                                            //           color: Colors.grey),
+                                            //     ),
+                                            //     TextSpan(
+                                            //       text:"${widget.trendingModel.nickname}",
+                                            //       style: TextStyle(
+                                            //           fontSize: 15,
+                                            //           color: Colors.black),
+                                            //     ),
+                                            //   ]),
+                                            // ),
+                                            // Divider(
+                                            //   color: Colors.transparent,
+                                            //   height: 5,
+                                            // ),
+                                            // RichText(
+                                            //   text: TextSpan(children: [
+                                            //     TextSpan(
+                                            //       text:
+                                            //       ("- Case Material: "),
+                                            //       style:TextStyle(
+                                            //           fontWeight: FontWeight.w500,
+                                            //           fontSize: 15,
+                                            //           color: Colors.grey),
+                                            //     ),
+                                            //     TextSpan(
+                                            //       text:"${widget.trendingModel.caseMaterial}",
+                                            //       style: TextStyle(
+                                            //           fontSize: 15,
+                                            //           color: Colors.black),
+                                            //     ),
+                                            //   ]),
+                                            // ),
+                                            // Divider(
+                                            //   color: Colors.transparent,
+                                            //   height: 5,
+                                            // ),
+                                            // RichText(
+                                            //   text: TextSpan(children: [
+                                            //     TextSpan(
+                                            //       text:
+                                            //       ("- Dial color: "),
+                                            //       style:TextStyle(
+                                            //           fontWeight: FontWeight.w500,
+                                            //           fontSize: 15,
+                                            //           color: Colors.grey),
+                                            //     ),
+                                            //     TextSpan(
+                                            //       text:"${widget.trendingModel.dialColor}",
+                                            //       style: TextStyle(
+                                            //           fontSize: 15,
+                                            //           color: Colors.black),
+                                            //     ),
+                                            //   ]),
+                                            // ),
+                                            // // Text(
+                                            // //     "- Dial color: ${widget.trendingModel.dialColor}",
+                                            // //     style: TextStyle(
+                                            // //         fontWeight: FontWeight.w500,
+                                            // //         fontSize: 15,
+                                            // //         color: Colors.grey)),
+                                            // Divider(
+                                            //   color: Colors.transparent,
+                                            //   height: 5,
+                                            // ),
+                                            // RichText(
+                                            //   text: TextSpan(children: [
+                                            //     TextSpan(
+                                            //       text:
+                                            //       ("- Bid Date: "),
+                                            //       style:TextStyle(
+                                            //           fontWeight: FontWeight.w500,
+                                            //           fontSize: 15,
+                                            //           color: Colors.grey),
+                                            //     ),
+                                            //     TextSpan(
+                                            //       text:"${widget.trendingModel.bidDate}",
+                                            //       style: TextStyle(
+                                            //           fontSize: 15,
+                                            //           color: Colors.black),
+                                            //     ),
+                                            //   ]),
+                                            // ),
+                                            // // Text(
+                                            // //     "- Bid Date: ${widget.trendingModel.bidDate}",
+                                            // //     style: TextStyle(
+                                            // //         fontWeight: FontWeight.w500,
+                                            // //         fontSize: 15,
+                                            // //         color: Colors.grey)),
+                                            // Divider(
+                                            //   color: Colors.transparent,
+                                            //   height: 5,
+                                            // ),
+                                            // RichText(
+                                            //   text: TextSpan(children: [
+                                            //     TextSpan(
+                                            //       text:
+                                            //       ("- Bracelet Material: "),
+                                            //       style:TextStyle(
+                                            //           fontWeight: FontWeight.w500,
+                                            //           fontSize: 15,
+                                            //           color: Colors.grey),
+                                            //     ),
+                                            //     TextSpan(
+                                            //       text:"${widget.trendingModel.braceletMaterial}",
+                                            //       style: TextStyle(
+                                            //           fontSize: 15,
+                                            //           color: Colors.black),
+                                            //     ),
+                                            //   ]),
+                                            // ),
+                                            // // Text(
+                                            // //     "- Bracelet Material: ${widget.trendingModel.braceletMaterial}",
+                                            // //     style: TextStyle(
+                                            // //         fontWeight: FontWeight.w500,
+                                            // //         fontSize: 15,
+                                            // //         color: Colors.grey)),
+                                            // Divider(
+                                            //   color: Colors.transparent,
+                                            //   height: 5,
+                                            // ),
+                                            RichText(
+                                              text: TextSpan(children: [
+                                                TextSpan(
+                                                  text: ("- Referance: "),
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontSize: 15,
+                                                      color: Colors.grey),
+                                                ),
+                                                TextSpan(
+                                                  text:
+                                                      "${widget.trendingModel.reference}",
+                                                  style: TextStyle(
+                                                      fontSize: 15,
+                                                      color: Colors.black),
+                                                ),
+                                              ]),
+                                            ),
+                                            // Text(
+                                            //     "- Referance: ${widget.trendingModel.reference}",
+                                            //     style: TextStyle(
+                                            //         fontWeight: FontWeight.w500,
+                                            //         fontSize: 15,
+                                            //         color: Colors.grey)),
+                                            Divider(
+                                              color: Colors.transparent,
+                                              height: 15,
+                                            ),
+                                            RichText(
+                                              text: TextSpan(children: [
+                                                TextSpan(
+                                                  text: ("- Model: "),
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontSize: 15,
+                                                      color: Colors.grey),
+                                                ),
+                                                TextSpan(
+                                                  text:
+                                                      "${widget.trendingModel.modelName}",
+                                                  style: TextStyle(
+                                                      fontSize: 15,
+                                                      color: Colors.black),
+                                                ),
+                                              ]),
+                                            ),
+                                            // Text(
+                                            //     "- Sold Month: ${widget.trendingModel.soldMonth}",
+                                            //     style: TextStyle(
+                                            //         fontWeight: FontWeight.w500,
+                                            //         fontSize: 15,
+                                            //         color: Colors.grey)),
+                                            Divider(
+                                              color: Colors.transparent,
+                                              height: 5,
+                                            ),
+                                          ],
+                                        )),
+                                  ),
+                                  Align(
+                                    alignment: Alignment.centerLeft,
+                                    child: Padding(
+                                        padding:
+                                            EdgeInsets.fromLTRB(30, 10, 30, 0),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            SizedBox(
+                                              height: 15,
+                                            ),
+                                            RichText(
+                                              text: TextSpan(children: [
+                                                TextSpan(
+                                                  text: ("- Retail Price: "),
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontSize: 15,
+                                                      color: Colors.grey),
+                                                ),
+                                                TextSpan(
+                                                  text:
+                                                      "${widget.trendingModel.RetailPrice}",
+                                                  style: TextStyle(
+                                                      fontSize: 15,
+                                                      color: Colors.black),
+                                                ),
+                                              ]),
+                                            ),
+                                            Divider(
+                                              color: Colors.transparent,
+                                              height: 15,
+                                            ),
+                                            RichText(
+                                              text: TextSpan(children: [
+                                                TextSpan(
+                                                  text: ("- Price Range: "),
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontSize: 15,
+                                                      color: Colors.grey),
+                                                ),
+                                                TextSpan(
+                                                  text:
+                                                      "${widget.trendingModel.priceRange}",
+                                                  style: TextStyle(
+                                                      fontSize: 15,
+                                                      color: Colors.black),
+                                                ),
+                                              ]),
+                                            ),
+                                            // Text(
+                                            //     "- Referance: ${widget.trendingModel.reference}",
+                                            //     style: TextStyle(
+                                            //         fontWeight: FontWeight.w500,
+                                            //         fontSize: 15,
+                                            //         color: Colors.grey)),
+                                            Divider(
+                                              color: Colors.transparent,
+                                              height: 15,
+                                            ),
+                                            RichText(
+                                              text: TextSpan(children: [
+                                                TextSpan(
+                                                  text: ("- Sold/Month: "),
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontSize: 15,
+                                                      color: Colors.grey),
+                                                ),
+                                                TextSpan(
+                                                  text:
+                                                      "${widget.trendingModel.soldMonth}",
+                                                  style: TextStyle(
+                                                      fontSize: 15,
+                                                      color: Colors.black),
+                                                ),
+                                              ]),
+                                            ),
+                                            // Text(
+                                            //     "- Sold Month: ${widget.trendingModel.soldMonth}",
+                                            //     style: TextStyle(
+                                            //         fontWeight: FontWeight.w500,
+                                            //         fontSize: 15,
+                                            //         color: Colors.grey)),
+                                            Divider(
+                                              color: Colors.transparent,
+                                              height: 15,
+                                            ),
+                                            RichText(
+                                              text: TextSpan(children: [
+                                                TextSpan(
+                                                  text: ("- Selling Rate (Sold Watches/Listed Watches): "),
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontSize: 15,
+                                                      color: Colors.grey),
+                                                ),
+                                                TextSpan(
+                                                  text:
+                                                      "${widget.trendingModel.SellingRate}",
+                                                  style: TextStyle(
+                                                      fontSize: 15,
+                                                      color: Colors.black),
+                                                ),
+                                              ]),
+                                            ),
+                                          ],
+                                        )),
+                                  ),
+                                  Icon(Icons.directions_bike),
+                                ],
+                              ),
+                            ),
+                            SizedBox(height: 15,),
+                            Align(
+                              alignment: Alignment.topLeft,
+                              child: Padding(
+                                  padding: EdgeInsets.fromLTRB(30, 10, 30, 0),
+                                  child: Row(children: [
+                                    Text(
+                                      "Price Tracking",
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 18),
+                                    ),
+                                    SizedBox(
+                                      width: 15,
+                                    ),
+                                    Text(
+                                        "${widget.trendingModel.priceTracking}",
+                                        style: TextStyle(
+                                            fontSize: 9.0,
+                                            color: Colors.white,
+                                            background: Paint()
+                                              ..strokeWidth = 12.0
+                                              ..color = Colors.grey
+                                              ..style = PaintingStyle.stroke
+                                              ..strokeJoin = StrokeJoin.round)),
+                                  ])),
+                            ),
+                            SizedBox(
+                              height: 12,
+                            ),
+                            Padding(
+                              padding: EdgeInsets.fromLTRB(9, 0, 0, 0),
+                              child: ListView.builder(
+                                physics: NeverScrollableScrollPhysics(),
+                                itemCount: details.length,
+                                shrinkWrap: true,
+                                itemBuilder: (context, index) {
+                                  return WatchInfoCard(
+                                    watchDetails: details[index],
+                                    trendingModel: widget.trendingModel,
+                                  );
+                                },
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ],
-            ))
-      ]),
+                ],
+              ))
+        ])),
+      ),
       floatingActionButton: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         mainAxisAlignment: MainAxisAlignment.end,

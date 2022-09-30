@@ -46,7 +46,7 @@ class _ZoomDrawerrState extends State<ZoomDrawerr> {
     switch (currentItem) {
       case MenuItems.mainScreen:
         return BottomNavigationBarScreen();
-      case MenuItems.favorites:
+      case MenuItems.MyCollection:
         return Favorites();
       case MenuItems.wantToBuy:
         return WantToBuy();

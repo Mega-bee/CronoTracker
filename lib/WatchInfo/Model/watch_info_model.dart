@@ -1,6 +1,6 @@
 class WatchDetails {
 
-  String? image, brand, modelName, reference, nickname, size, dialColor, caseMaterial,date;
+  String? image, brand, modelName, reference, nickname, size, dialColor, caseMaterial,date,priceRange,RetailPrice,SellingRate;
   double? pricetracking,price;
   bool status;
 
@@ -16,7 +16,10 @@ class WatchDetails {
     this.date,
     required this.status,
     this.price,
-    this.pricetracking
+    this.pricetracking,
+    this.priceRange,
+    this.RetailPrice,
+    this.SellingRate
   });
 
 

@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:money_converter/Currency.dart';
 import 'package:money_converter/money_converter.dart';
-import '../../../Trending/model_classes/watch_card.dart';
+import '../../../Trending/Model/trending_model.dart';
 import 'bottom_sheet_watchinfo.dart';
 
 class WatchInfoCard extends StatefulWidget {
