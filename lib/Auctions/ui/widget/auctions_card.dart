@@ -1,14 +1,39 @@
 import 'package:cronotracker/Auctions/Model/auctions_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:money_converter/Currency.dart';
+import 'package:money_converter/money_converter.dart';
 
 import '../../../AuctionsWatchInfo/ui/screen/AuctionWatchInfo.dart';
 import '../../../utils/Images/Images.dart';
 
-class AuctionsCard extends StatelessWidget {
+class AuctionsCard extends StatefulWidget {
   final AuctionsModel auctionsModel;
   int index;
   AuctionsCard({Key? key, required this.auctionsModel,required this.index}) : super(key: key);
+
+  @override
+  State<AuctionsCard> createState() => _AuctionsCardState();
+}
+
+class _AuctionsCardState extends State<AuctionsCard> {
+  String? AEDtoUSD;
+
+  @override
+  void initState() {
+    super.initState();
+    getAmounts();
+  }
+
+// call function to convert
+  void getAmounts() async {
+    var usdConvert = await MoneyConverter.convert(
+        Currency(Currency.AED, amount: widget.auctionsModel.price),
+        Currency(Currency.USD));
+    setState(() {
+      AEDtoUSD = usdConvert.toString();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,8 +48,8 @@ class AuctionsCard extends StatelessWidget {
               context,
               MaterialPageRoute(
                   builder: (context) => AuctionsInfo(
-                    auctionsModel: auctionsModel,
-                    index: index,
+                    auctionsModel: widget.auctionsModel,
+                    index: widget.index,
                   )));
         },
         child: Container(
@@ -55,30 +80,35 @@ class AuctionsCard extends StatelessWidget {
                                   height: MediaQuery.of(context).size.height * 0.16,
                                   width: double.infinity,
                                   child: Image.asset(
-                                    "${auctionsModel.image}",
+                                    "${widget.auctionsModel.image}",
                                     fit: BoxFit.contain,
                                   ),
                                 ),
                                 SizedBox(height: 20),
                                 Text(
-                                  "${auctionsModel.text}",
+                                  "${widget.auctionsModel.text}",
                                   style: TextStyle(
                                       fontSize: 15,
                                       fontWeight: FontWeight.bold,
                                       color: Color(0xFF000000)),
+                                  overflow: TextOverflow.ellipsis,
+                                  maxLines: 2,
+                                  softWrap: true,
                                 ),
                                 SizedBox(height: 10),
                                 Row(
                                   children: [
-                                    Text(
-                                        "Last Bid AED${auctionsModel.price1} = ${auctionsModel.price2}",
-                                        style: TextStyle(
+                                    Text(widget.auctionsModel.status == true
+                                        ? "Selling Price ${Currency.AED}${widget.auctionsModel.price} = $AEDtoUSD ${Currency.USD}"
+                                    : widget.auctionsModel.status == false
+                                ? "Last Bid ${Currency.AED}${widget.auctionsModel.price} = $AEDtoUSD ${Currency.USD}"
+                                    : "Asking Price ${Currency.AED}${widget.auctionsModel.price} = $AEDtoUSD ${Currency.USD}",                                        style: TextStyle(
                                             fontSize: 15,
                                             color: Color(0xFF777777))),
                                   ],
                                 ),
                                 SizedBox(height: 10),
-                                Text("${auctionsModel.date}",
+                                Text("${widget.auctionsModel.date}",
                                     style: TextStyle(
                                         fontSize: 10, color: Color(0xFF777777))),
                               ],
@@ -89,6 +119,7 @@ class AuctionsCard extends StatelessWidget {
                     ),
                   ),
                 ),),
+                widget.auctionsModel.status == true?
                 Positioned.fill(
                     child: Align(
                         alignment: Alignment.topRight,
@@ -104,7 +135,7 @@ class AuctionsCard extends StatelessWidget {
                       //         fontSize: 15,
                       //         fontWeight: FontWeight.bold,
                       //         color: Color(0xFFD4181E))),
-                    )),
+                    )):Container()
               ]),
         ),
       ),

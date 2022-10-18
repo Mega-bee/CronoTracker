@@ -1,4 +1,3 @@
-import 'package:cronotracker/Favorites/ui/Screen/FavoriteScreen.dart';
 import 'package:cronotracker/NavigationBar/ui/Screen/navbar.dart';
 import 'package:cronotracker/SignIn/ui/signin_screen.dart';
 import 'package:cronotracker/Want%20To%20Buy/ui/Screen/want_to_buy.dart';
@@ -46,8 +45,6 @@ class _ZoomDrawerrState extends State<ZoomDrawerr> {
     switch (currentItem) {
       case MenuItems.mainScreen:
         return BottomNavigationBarScreen();
-      case MenuItems.MyCollection:
-        return Favorites();
       case MenuItems.wantToBuy:
         return WantToBuy();
       case MenuItems.signIn:

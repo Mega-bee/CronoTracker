@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
-
 import '../../../AlertMessage/ui/widget/alert_message_card.dart';
-
 class FavBottomSheet extends StatefulWidget {
   const FavBottomSheet({Key? key}) : super(key: key);
-
   @override
   State<FavBottomSheet> createState() => _FavBottomSheetState();
 }
-
 class _FavBottomSheetState extends State<FavBottomSheet> {
   final TextEditingController _textEditingController = TextEditingController();
 

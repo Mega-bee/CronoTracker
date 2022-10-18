@@ -1,3 +1,4 @@
+import 'package:cronotracker/Auctions/Model/auctions_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../WatchInfo/ui/Screen/watch_info_screen.dart';
@@ -5,16 +6,16 @@ import '../../../utils/style/colors.dart';
 import '../../Model/trending_model.dart';
 
 class BuildWatchCard extends StatelessWidget {
-  final watchCard wc;
+  final AuctionsModel wc;
   int index;
 
-  BuildWatchCard(this.wc, this.index);
+  BuildWatchCard({required this.wc, required this.index});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: MediaQuery.of(context).size.height * 0.27,
-      width: MediaQuery.of(context).size.width * 0.45,
+      width: MediaQuery.of(context).size.width * 0.47,
       child: InkWell(
           onTap: () {
             Navigator.push(
@@ -51,7 +52,7 @@ class BuildWatchCard extends StatelessWidget {
                         padding: const EdgeInsets.only(left: 8.0, right: 8.0),
                         child: Center(
                           child: Image.asset(
-                            '${wc.img}',
+                            '${wc.image}',
                             fit: BoxFit.contain,
                           ),
                         ),
@@ -75,7 +76,7 @@ class BuildWatchCard extends StatelessWidget {
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 8.0, right: 8.0),
-                      child: Text("${wc.modelName}",
+                      child: Text("${wc.model}",
                           overflow: TextOverflow.ellipsis,
                           softWrap: true,
                           style: TextStyle(
@@ -86,7 +87,7 @@ class BuildWatchCard extends StatelessWidget {
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 8.0, right: 8.0),
-                      child: Text("${wc.reference}",
+                      child: Text("${wc.referance}",
                           style: TextStyle(
                               fontSize: 10, color: Color(0xFF777777))),
                     ),

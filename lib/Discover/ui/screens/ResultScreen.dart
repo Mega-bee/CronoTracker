@@ -1,20 +1,18 @@
-import 'package:cronotracker/Discover/models/discoverItem.dart';
-import 'package:cronotracker/Discover/ui/widgets/discover_item_filter.dart';
-import 'package:cronotracker/utils/style/colors.dart';
+import 'package:cronotracker/Auctions/Model/auctions_model.dart';
+import 'package:cronotracker/Discover/ui/widgets/ResultCard.dart';
 import 'package:flutter/material.dart';
 
 import '../../../SearchPage/ui/Screen/SearchPage.dart';
 import '../../../utils/Images/Images.dart';
+import '../../../utils/style/colors.dart';
+class ResultScreen extends StatelessWidget {
+  const ResultScreen({Key? key}) : super(key: key);
 
-class BrandScreen extends StatelessWidget {
-  final DiscoverItem discoverItem;
-
-   BrandScreen({Key? key, required this.discoverItem}) : super(key: key);
-  final TextEditingController _textEditingController = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    TextEditingController _textEditingController = TextEditingController();
     return Scaffold(
-      appBar: AppBar(
+        appBar: AppBar(
           backgroundColor: PrimaryColor,
           titleSpacing: 0,
           toolbarHeight: 70,          centerTitle: true,
@@ -61,12 +59,12 @@ class BrandScreen extends StatelessWidget {
           //   ),
           // ),
           actions:[
-           Padding(
-                   padding: const EdgeInsets.only(right: 6.0),
-                   child: SizedBox(
-                     height: MediaQuery.of(context).size.height*0.1,
-                     width: MediaQuery.of(context).size.width*0.1,
-                       child: IconButton(
+            Padding(
+              padding: const EdgeInsets.only(right: 6.0),
+              child: SizedBox(
+                  height: MediaQuery.of(context).size.height*0.1,
+                  width: MediaQuery.of(context).size.width*0.1,
+                  child: IconButton(
                       onPressed: () {
                         Navigator.push(context, MaterialPageRoute(builder: (context) => SearchPage(),));
                       },
@@ -74,7 +72,7 @@ class BrandScreen extends StatelessWidget {
                         ImageAsset.SEARCH,
                         fit: BoxFit.cover,
                       )))
-                 ) 
+            )
             // Center(
             //   child: SizedBox(
             //     width: 35,
@@ -96,16 +94,36 @@ class BrandScreen extends StatelessWidget {
       body: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-            child: ListView.separated(
-                itemCount: filterList.length,
+            child:
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "Black Dial",
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              softWrap: false,
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500
+              ),
+            ),
+            SizedBox(height: 10,),
+            GridView.builder(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 0,
+                    mainAxisSpacing: 0),
+                itemCount: 5,
                 shrinkWrap: true,
-                separatorBuilder: (BuildContext context, int index) => const Divider(),
                 itemBuilder: (BuildContext context, int index) {
-                  return DiscoverFilterWidget(
-                    discoverFilter: filterList[index],
+                  return ResultCard(
+                    auctionsModel: AuctionsList[index], index: index,
                   );
                 }),
-          )),
-    );
+          ],
+        )
+    )));
   }
 }

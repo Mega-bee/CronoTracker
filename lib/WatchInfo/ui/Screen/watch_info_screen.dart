@@ -4,19 +4,25 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../AlertMessage/ui/widget/alert_message_card.dart';
 import '../../../Auctions/Model/auctions_model.dart';
-import '../../../Favorites/Model/FavoriteModel.dart';
+import '../../../My Collection/Model/FavoriteModel.dart';
 import '../../../Trending/Model/trending_model.dart';
 import '../../../utils/Images/Images.dart';
-import '../../../utils/style/colors.dart' as prefix;
+import 'package:syncfusion_flutter_charts/charts.dart';
+import 'package:grouped_list/grouped_list.dart';
+import 'package:sticky_grouped_list/sticky_grouped_list.dart';
 import '../../../utils/style/colors.dart';
 
 class WatchDetailsScreen extends StatefulWidget {
-  final watchCard trendingModel;
+  final AuctionsModel trendingModel;
+  final WatchDetails? watchDetails;
   int index;
 
   // WatchDetails? watchDetails;
   WatchDetailsScreen(
-      {Key? key, required this.trendingModel, required this.index})
+      {Key? key,
+      required this.trendingModel,
+      required this.index,
+      this.watchDetails})
       : super(key: key);
 
   @override
@@ -56,7 +62,7 @@ class _WatchDetailsScreenState extends State<WatchDetailsScreen> {
                   Expanded(
                     flex: 1,
                     child: Image(
-                      image: AssetImage(widget.trendingModel.img.toString()),
+                      image: AssetImage(widget.trendingModel.image.toString()),
                       fit: BoxFit.cover,
                       width: double.infinity,
                     ),
@@ -74,28 +80,28 @@ class _WatchDetailsScreenState extends State<WatchDetailsScreen> {
                       child: SingleChildScrollView(
                         child: Column(
                           children: [
-                            Padding(
-                              padding: EdgeInsets.fromLTRB(30, 30, 30, 0),
-                              child: Row(
-                                children: [
-                                  Text(
-                                    "${widget.trendingModel.modelName}",
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 18),
-                                  ),
-                                  Spacer(),
-                                  Text(
-                                    "${widget.trendingModel.sellingPrice}\$",
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 18),
-                                  )
-                                ],
-                              ),
-                            ),
+                            // Padding(
+                            //   padding: EdgeInsets.fromLTRB(30, 30, 30, 0),
+                            //   child: Row(
+                            //     children: [
+                            //       Text(
+                            //         "${widget.trendingModel.modelName}",
+                            //         style: TextStyle(
+                            //             color: Colors.black,
+                            //             fontWeight: FontWeight.w500,
+                            //             fontSize: 18),
+                            //       ),
+                            //       Spacer(),
+                            //       Text(
+                            //         "${widget.trendingModel.sellingPrice}\$",
+                            //         style: TextStyle(
+                            //             color: Colors.black,
+                            //             fontWeight: FontWeight.w500,
+                            //             fontSize: 18),
+                            //       )
+                            //     ],
+                            //   ),
+                            // ),
                             // Padding(
                             //   padding: const EdgeInsets.only(bottom: 20),
                             //   child: Text(
@@ -132,7 +138,7 @@ class _WatchDetailsScreenState extends State<WatchDetailsScreen> {
                               ],
                             ),
                             Container(
-                              height: MediaQuery.of(context).size.height * 0.25,
+                              height: MediaQuery.of(context).size.height * 0.37,
                               child: TabBarView(
                                 children: [
                                   Align(
@@ -310,7 +316,7 @@ class _WatchDetailsScreenState extends State<WatchDetailsScreen> {
                                                 ),
                                                 TextSpan(
                                                   text:
-                                                      "${widget.trendingModel.reference}",
+                                                      "${widget.trendingModel.referance}",
                                                   style: TextStyle(
                                                       fontSize: 15,
                                                       color: Colors.black),
@@ -339,7 +345,7 @@ class _WatchDetailsScreenState extends State<WatchDetailsScreen> {
                                                 ),
                                                 TextSpan(
                                                   text:
-                                                      "${widget.trendingModel.modelName}",
+                                                      "${widget.trendingModel.model}",
                                                   style: TextStyle(
                                                       fontSize: 15,
                                                       color: Colors.black),
@@ -455,7 +461,8 @@ class _WatchDetailsScreenState extends State<WatchDetailsScreen> {
                                             RichText(
                                               text: TextSpan(children: [
                                                 TextSpan(
-                                                  text: ("- Selling Rate (Sold Watches/Listed Watches): "),
+                                                  text:
+                                                      ("- Selling Rate (Sold Watches/Listed Watches): "),
                                                   style: TextStyle(
                                                       fontWeight:
                                                           FontWeight.w500,
@@ -474,11 +481,33 @@ class _WatchDetailsScreenState extends State<WatchDetailsScreen> {
                                           ],
                                         )),
                                   ),
-                                  Icon(Icons.directions_bike),
+                                  SfCartesianChart(
+                                      primaryXAxis: CategoryAxis(),
+                                      // Chart title
+                                      title: ChartTitle(text: 'Pice Tracking'),
+                                      // Enable legend
+                                      legend: Legend(isVisible: false),
+                                      // Enable tooltip
+                                      tooltipBehavior:
+                                          TooltipBehavior(enable: true),
+                                      series: <ChartSeries>[
+                                        LineSeries<chartData, String>(
+                                            dataSource: MonthChartData,
+                                            xValueMapper: (chartData data, _) =>
+                                                data.date,
+                                            yValueMapper: (chartData data, _) =>
+                                                data.price,
+                                            // Enable data label
+                                            dataLabelSettings:
+                                                DataLabelSettings(
+                                                    isVisible: true))
+                                      ]),
                                 ],
                               ),
                             ),
-                            SizedBox(height: 15,),
+                            SizedBox(
+                              height: 15,
+                            ),
                             Align(
                               alignment: Alignment.topLeft,
                               child: Padding(
@@ -494,8 +523,7 @@ class _WatchDetailsScreenState extends State<WatchDetailsScreen> {
                                     SizedBox(
                                       width: 15,
                                     ),
-                                    Text(
-                                        "${widget.trendingModel.priceTracking}",
+                                    Text(details.length.toString(),
                                         style: TextStyle(
                                             fontSize: 9.0,
                                             color: Colors.white,
@@ -509,6 +537,72 @@ class _WatchDetailsScreenState extends State<WatchDetailsScreen> {
                             SizedBox(
                               height: 12,
                             ),
+
+                            // StickyGroupedListView<dynamic, String>(
+                            //   elements: details,
+                            //   groupBy: (dynamic element) => element[widget.watchDetails?.date],
+                            //   groupSeparatorBuilder: (dynamic element) =>
+                            //       Text(element[widget.watchDetails?.date]),
+                            //   itemBuilder: (context, index) {
+                            //     return WatchInfoCard(
+                            //       watchDetails: details[index],
+                            //       trendingModel: widget.trendingModel,
+                            //     );
+                            //   },
+                            //   // itemComparator: (e1, e2) =>
+                            //   //     e1['name'].compareTo(e2['name']),
+                            //   // optional
+                            //   //  elementIdentifier: (element) => element.name
+                            //   //  // optional - see below for usage
+                            //   //  itemScrollController: itemScrollController,
+                            //   //  // optional
+                            //   //  order: StickyGroupedListOrder.ASC, // optional
+                            // ),
+                            // Center(
+                            //   child: ListView.builder(
+                            //     shrinkWrap: true,
+                            //       itemCount: details.length,
+                            //       itemBuilder: (_, index) {
+                            //         bool isSameDate = true;
+                            //         final String dateString = details[index][widget.watchDetails.date.toString()];
+                            //         final DateTime date = DateTime.parse(dateString);
+                            //         final item = details[index];
+                            //         if (index == 0) {
+                            //           isSameDate = false;
+                            //         } else {
+                            //           final String prevDateString = details[index - 1]['time'];
+                            //           final DateTime prevDate = DateTime.parse(prevDateString);
+                            //           isSameDate = date.isSameDate(prevDate);
+                            //         }
+                            //         if (index == 0 || !(isSameDate)) {
+                            //           return Column(children: [
+                            //             Text(date.formatDate()),
+                            //             ListTile(title: Text('item $index'))
+                            //           ]);
+                            //         } else {
+                            //           return ListTile(title: Text('item $index'));
+                            //         }
+                            //       }),
+                            // ),
+                            // Padding(
+                            //   padding: EdgeInsets.fromLTRB(9, 0, 0, 0),
+                            //   child: GroupedListView<dynamic, WatchDetails>(
+                            //     elements: details,
+                            //     shrinkWrap: true,
+                            //     groupBy: (element) => element[widget.watchDetails?.nickname],
+                            //     groupSeparatorBuilder: (WatchDetails groupByValue) => Text(groupByValue.toString()),
+                            //     itemBuilder: (context, element) {
+                            //       return WatchInfoCard(
+                            //                 watchDetails: details[element],
+                            //                 trendingModel: widget.trendingModel,
+                            //               );
+                            //     },
+                            //     // itemComparator: (item1, item2) => item1['name'].compareTo(item2['name']), // optional
+                            //     useStickyGroupSeparators: true, // optional
+                            //     floatingHeader: true, // optional
+                            //     order: GroupedListOrder.ASC, // optional
+                            //   ),
+                            // ),
                             Padding(
                               padding: EdgeInsets.fromLTRB(9, 0, 0, 0),
                               child: ListView.builder(
@@ -517,8 +611,8 @@ class _WatchDetailsScreenState extends State<WatchDetailsScreen> {
                                 shrinkWrap: true,
                                 itemBuilder: (context, index) {
                                   return WatchInfoCard(
-                                    watchDetails: details[index],
-                                    trendingModel: widget.trendingModel,
+                                    trendingModel: AuctionsList[index],
+                                    auctionsModel: widget.trendingModel,
                                   );
                                 },
                               ),

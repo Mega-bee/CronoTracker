@@ -3,14 +3,12 @@ import 'package:flutter/material.dart';
 import '../model/menu_item_model.dart';
 class MenuItems {
   static const mainScreen = MenuItemm(icon: Icons.home_filled, title: "Main Page");
-  static const MyCollection = MenuItemm(icon: Icons.star_border_outlined, title: "My collection");
   static const wantToBuy = MenuItemm(icon: Icons.shopping_bag_outlined, title: "Want To Buy");
   static const signIn = MenuItemm(icon: Icons.login, title: "SignIn");
   static const plans = MenuItemm(icon: Icons.shop, title: "Plans");
 
   static const all = <MenuItemm>[
     mainScreen,
-    MyCollection,
     wantToBuy,
     signIn,
     plans

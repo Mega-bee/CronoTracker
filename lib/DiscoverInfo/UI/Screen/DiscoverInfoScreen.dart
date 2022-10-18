@@ -1,33 +1,28 @@
-import 'package:cronotracker/utils/style/colors.dart';
 import 'package:flutter/material.dart';
 
 import '../../../AlertMessage/ui/widget/alert_message_card.dart';
 import '../../../Auctions/Model/auctions_model.dart';
+import '../../../AuctionsWatchInfo/ui/Widget/Modal bottom sheet.dart';
 import '../../../My Collection/Model/FavoriteModel.dart';
 import '../../../WatchInfo/Model/watch_info_model.dart';
 import '../../../WatchInfo/ui/Widget/watch_info_card.dart';
 import '../../../utils/Images/Images.dart';
+import '../../../utils/style/colors.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
-
-import '../Widget/Modal bottom sheet.dart';
-
-class AuctionsInfo extends StatefulWidget {
+class DiscoverInfoScreen extends StatefulWidget {
   final AuctionsModel auctionsModel;
   int index;
-
-  AuctionsInfo({Key? key, required this.auctionsModel, required this.index})
-      : super(key: key);
+  DiscoverInfoScreen({Key? key, required this.auctionsModel,required this.index}) : super(key: key);
 
   @override
-  State<AuctionsInfo> createState() => _AuctionsInfoState();
+  State<DiscoverInfoScreen> createState() => _DiscoverInfoScreenState();
 }
 
-class _AuctionsInfoState extends State<AuctionsInfo> {
+class _DiscoverInfoScreenState extends State<DiscoverInfoScreen> {
   Color fav = BlueColor;
   bool Mycollection = false;
   @override
   Widget build(BuildContext context) {
-    final GlobalKey<ScaffoldState> _key = GlobalKey();
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -73,54 +68,15 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
                       child: SingleChildScrollView(
                         child: Column(
                           children: [
-                            // Padding(
-                            //   padding: EdgeInsets.fromLTRB(30, 30, 30, 0),
-                            //   child: Row(
-                            //     children: [
-                            //       Text(
-                            //         "${widget.auctionsModel.modelName}",
-                            //         style: TextStyle(
-                            //             color: Colors.black,
-                            //             fontWeight: FontWeight.w500,
-                            //             fontSize: 18),
-                            //       ),
-                            //       Spacer(),
-                            //       Text(
-                            //         "${widget.auctionsModel.sellingPrice}\$",
-                            //         style: TextStyle(
-                            //             color: Colors.black,
-                            //             fontWeight: FontWeight.w500,
-                            //             fontSize: 18),
-                            //       )
-                            //     ],
-                            //   ),
-                            // ),
-                            // Padding(
-                            //   padding: const EdgeInsets.only(bottom: 20),
-                            //   child: Text(
-                            //     "${widget.auctionsModel.nickname}",
-                            //     style: TextStyle(
-                            //     fontSize: 15, color: Colors.grey)),
-                            //   ),
-                            // ),
                             SizedBox(
                               height: 15,
                             ),
-                            // Align(
-                            //   alignment: Alignment.topLeft,
-                            //   child: Padding(
-                            //     padding: EdgeInsets.fromLTRB(30, 20, 30, 0),
-                            //     child:
-                            //   ),
-                            // ),
+
                             TabBar(
+                              indicatorColor:BlueColor,
                               tabs: [
                                 Tab(
                                   text: "Description",
-                                  // style: TextStyle(
-                                  //     color: Colors.black,
-                                  //     fontWeight: FontWeight.w500,
-                                  //     fontSize: 18),
                                 ),
                                 Tab(
                                   text: "Analysis",
@@ -138,10 +94,10 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
                                     alignment: Alignment.centerLeft,
                                     child: Padding(
                                         padding:
-                                            EdgeInsets.fromLTRB(30, 10, 30, 0),
+                                        EdgeInsets.fromLTRB(30, 10, 30, 0),
                                         child: Column(
                                           crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                          CrossAxisAlignment.start,
                                           children: [
                                             SizedBox(
                                               height: 15,
@@ -152,13 +108,13 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
                                                   text: ("- Brand: "),
                                                   style: TextStyle(
                                                       fontWeight:
-                                                          FontWeight.w500,
+                                                      FontWeight.w500,
                                                       fontSize: 15,
                                                       color: Colors.grey),
                                                 ),
                                                 TextSpan(
                                                   text:
-                                                      "${widget.auctionsModel.brand}",
+                                                  "${widget.auctionsModel.brand}",
                                                   style: TextStyle(
                                                       fontSize: 15,
                                                       color: Colors.black),
@@ -303,13 +259,13 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
                                                   text: ("- Referance: "),
                                                   style: TextStyle(
                                                       fontWeight:
-                                                          FontWeight.w500,
+                                                      FontWeight.w500,
                                                       fontSize: 15,
                                                       color: Colors.grey),
                                                 ),
                                                 TextSpan(
                                                   text:
-                                                      "${widget.auctionsModel.referance}",
+                                                  "${widget.auctionsModel.referance}",
                                                   style: TextStyle(
                                                       fontSize: 15,
                                                       color: Colors.black),
@@ -332,13 +288,13 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
                                                   text: ("- Model: "),
                                                   style: TextStyle(
                                                       fontWeight:
-                                                          FontWeight.w500,
+                                                      FontWeight.w500,
                                                       fontSize: 15,
                                                       color: Colors.grey),
                                                 ),
                                                 TextSpan(
                                                   text:
-                                                      "${widget.auctionsModel.model}",
+                                                  "${widget.auctionsModel.model}",
                                                   style: TextStyle(
                                                       fontSize: 15,
                                                       color: Colors.black),
@@ -362,13 +318,13 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
                                                   text: ("- Nickname: "),
                                                   style: TextStyle(
                                                       fontWeight:
-                                                          FontWeight.w500,
+                                                      FontWeight.w500,
                                                       fontSize: 15,
                                                       color: Colors.grey),
                                                 ),
                                                 TextSpan(
                                                   text:
-                                                      "${widget.auctionsModel.nickName}",
+                                                  "${widget.auctionsModel.nickName}",
                                                   style: TextStyle(
                                                       fontSize: 15,
                                                       color: Colors.black),
@@ -392,13 +348,13 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
                                                   text: ("- Size: "),
                                                   style: TextStyle(
                                                       fontWeight:
-                                                          FontWeight.w500,
+                                                      FontWeight.w500,
                                                       fontSize: 15,
                                                       color: Colors.grey),
                                                 ),
                                                 TextSpan(
                                                   text:
-                                                      "${widget.auctionsModel.size}",
+                                                  "${widget.auctionsModel.size}",
                                                   style: TextStyle(
                                                       fontSize: 15,
                                                       color: Colors.black),
@@ -421,13 +377,13 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
                                                   text: ("- Case Material: "),
                                                   style: TextStyle(
                                                       fontWeight:
-                                                          FontWeight.w500,
+                                                      FontWeight.w500,
                                                       fontSize: 15,
                                                       color: Colors.grey),
                                                 ),
                                                 TextSpan(
                                                   text:
-                                                      "${widget.auctionsModel.caseMaterial}",
+                                                  "${widget.auctionsModel.caseMaterial}",
                                                   style: TextStyle(
                                                       fontSize: 15,
                                                       color: Colors.black),
@@ -451,13 +407,13 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
                                                   text: ("- Dial Color: "),
                                                   style: TextStyle(
                                                       fontWeight:
-                                                          FontWeight.w500,
+                                                      FontWeight.w500,
                                                       fontSize: 15,
                                                       color: Colors.grey),
                                                 ),
                                                 TextSpan(
                                                   text:
-                                                      "${widget.auctionsModel.dialColor}",
+                                                  "${widget.auctionsModel.dialColor}",
                                                   style: TextStyle(
                                                       fontSize: 15,
                                                       color: Colors.black),
@@ -481,13 +437,13 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
                                                   text: ("- Diamond Dial: "),
                                                   style: TextStyle(
                                                       fontWeight:
-                                                          FontWeight.w500,
+                                                      FontWeight.w500,
                                                       fontSize: 15,
                                                       color: Colors.grey),
                                                 ),
                                                 TextSpan(
                                                   text:
-                                                      "${widget.auctionsModel.diamondDial}",
+                                                  "${widget.auctionsModel.diamondDial}",
                                                   style: TextStyle(
                                                       fontSize: 15,
                                                       color: Colors.black),
@@ -511,13 +467,13 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
                                                   text: ("- Bezel Material: "),
                                                   style: TextStyle(
                                                       fontWeight:
-                                                          FontWeight.w500,
+                                                      FontWeight.w500,
                                                       fontSize: 15,
                                                       color: Colors.grey),
                                                 ),
                                                 TextSpan(
                                                   text:
-                                                      "${widget.auctionsModel.bezelMaterial}",
+                                                  "${widget.auctionsModel.bezelMaterial}",
                                                   style: TextStyle(
                                                       fontSize: 15,
                                                       color: Colors.black),
@@ -540,16 +496,16 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
                                               text: TextSpan(children: [
                                                 TextSpan(
                                                   text:
-                                                      ("- Bracelet Material: "),
+                                                  ("- Bracelet Material: "),
                                                   style: TextStyle(
                                                       fontWeight:
-                                                          FontWeight.w500,
+                                                      FontWeight.w500,
                                                       fontSize: 15,
                                                       color: Colors.grey),
                                                 ),
                                                 TextSpan(
                                                   text:
-                                                      "${widget.auctionsModel.braceletMaterial}",
+                                                  "${widget.auctionsModel.braceletMaterial}",
                                                   style: TextStyle(
                                                       fontSize: 15,
                                                       color: Colors.black),
@@ -573,13 +529,13 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
                                                   text: ("- Production: "),
                                                   style: TextStyle(
                                                       fontWeight:
-                                                          FontWeight.w500,
+                                                      FontWeight.w500,
                                                       fontSize: 15,
                                                       color: Colors.grey),
                                                 ),
                                                 TextSpan(
                                                   text:
-                                                      "${widget.auctionsModel.production}",
+                                                  "${widget.auctionsModel.production}",
                                                   style: TextStyle(
                                                       fontSize: 15,
                                                       color: Colors.black),
@@ -604,13 +560,13 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
                                                   text: ("- Limited: "),
                                                   style: TextStyle(
                                                       fontWeight:
-                                                          FontWeight.w500,
+                                                      FontWeight.w500,
                                                       fontSize: 15,
                                                       color: Colors.grey),
                                                 ),
                                                 TextSpan(
                                                   text:
-                                                      "${widget.auctionsModel.limited}",
+                                                  "${widget.auctionsModel.limited}",
                                                   style: TextStyle(
                                                       fontSize: 15,
                                                       color: Colors.black),
@@ -635,10 +591,10 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
                                     alignment: Alignment.centerLeft,
                                     child: Padding(
                                         padding:
-                                            EdgeInsets.fromLTRB(30, 10, 30, 0),
+                                        EdgeInsets.fromLTRB(30, 10, 30, 0),
                                         child: Column(
                                           crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                          CrossAxisAlignment.start,
                                           children: [
                                             SizedBox(
                                               height: 15,
@@ -649,13 +605,13 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
                                                   text: ("- Retail Price: "),
                                                   style: TextStyle(
                                                       fontWeight:
-                                                          FontWeight.w500,
+                                                      FontWeight.w500,
                                                       fontSize: 15,
                                                       color: Colors.grey),
                                                 ),
                                                 TextSpan(
                                                   text:
-                                                      "${widget.auctionsModel.RetailPrice}",
+                                                  "${widget.auctionsModel.RetailPrice}",
                                                   style: TextStyle(
                                                       fontSize: 15,
                                                       color: Colors.black),
@@ -672,13 +628,13 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
                                                   text: ("- Price Range: "),
                                                   style: TextStyle(
                                                       fontWeight:
-                                                          FontWeight.w500,
+                                                      FontWeight.w500,
                                                       fontSize: 15,
                                                       color: Colors.grey),
                                                 ),
                                                 TextSpan(
                                                   text:
-                                                      "${widget.auctionsModel.priceRange}",
+                                                  "${widget.auctionsModel.priceRange}",
                                                   style: TextStyle(
                                                       fontSize: 15,
                                                       color: Colors.black),
@@ -701,13 +657,13 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
                                                   text: ("- Sold/Month: "),
                                                   style: TextStyle(
                                                       fontWeight:
-                                                          FontWeight.w500,
+                                                      FontWeight.w500,
                                                       fontSize: 15,
                                                       color: Colors.grey),
                                                 ),
                                                 TextSpan(
                                                   text:
-                                                      "${widget.auctionsModel.soldMonth}",
+                                                  "${widget.auctionsModel.soldMonth}",
                                                   style: TextStyle(
                                                       fontSize: 15,
                                                       color: Colors.black),
@@ -728,16 +684,16 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
                                               text: TextSpan(children: [
                                                 TextSpan(
                                                   text:
-                                                      ("- Selling Rate (Sold Watches/Listed Watches): "),
+                                                  ("- Selling Rate (Sold Watches/Listed Watches): "),
                                                   style: TextStyle(
                                                       fontWeight:
-                                                          FontWeight.w500,
+                                                      FontWeight.w500,
                                                       fontSize: 15,
                                                       color: Colors.grey),
                                                 ),
                                                 TextSpan(
                                                   text:
-                                                      "${widget.auctionsModel.SellingRate}",
+                                                  "${widget.auctionsModel.SellingRate}",
                                                   style: TextStyle(
                                                       fontSize: 15,
                                                       color: Colors.black),
@@ -755,18 +711,18 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
                                       legend: Legend(isVisible: false),
                                       // Enable tooltip
                                       tooltipBehavior:
-                                          TooltipBehavior(enable: true),
+                                      TooltipBehavior(enable: true),
                                       series: <ChartSeries>[
                                         LineSeries<chartData, String>(
                                             dataSource: MonthChartData,
                                             xValueMapper: (chartData data, _) =>
-                                                data.date,
+                                            data.date,
                                             yValueMapper: (chartData data, _) =>
-                                                data.price,
+                                            data.price,
                                             // Enable data label
                                             dataLabelSettings:
-                                                DataLabelSettings(
-                                                    isVisible: true))
+                                            DataLabelSettings(
+                                                isVisible: true))
                                       ]),
                                 ],
                               ),
@@ -904,7 +860,7 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
                     return CustomDeleteDialog(
                       title: 'Confirm',
                       content:
-                          'Would you like to be instantly notified when this watch is listed in the next live action ?',
+                      'Would you like to be instantly notified when this watch is listed in the next live action ?',
                       yesBtn: () {
                         Navigator.pop(context);
                       },
@@ -929,7 +885,7 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
                     return CustomDeleteDialog(
                       title: 'Confirm',
                       content:
-                          'Would you like to add this watch to your collection ?',
+                      'Would you like to add this watch to your collection ?',
                       yesBtn: () {
                         Navigator.pop(context);
                         showModalBottomSheet(context: context, builder: (context)=>BottomSheett());
@@ -948,7 +904,7 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
             },
             child: Icon(
               Mycollection?
-                  Icons.done:
+              Icons.done:
               Icons.star,
               color: BlueColor,
             ),

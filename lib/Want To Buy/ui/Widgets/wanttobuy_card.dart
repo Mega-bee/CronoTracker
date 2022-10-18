@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../Auctions/Model/auctions_model.dart';
 import '../../../AuctionsWatchInfo/ui/screen/AuctionWatchInfo.dart';
-import '../../../Favorites/Model/FavoriteModel.dart';
+import '../../../My Collection/Model/FavoriteModel.dart';
 import '../../../utils/style/colors.dart';
 class WantToBuyCard extends StatelessWidget {
   final AuctionsModel auctionsModel;

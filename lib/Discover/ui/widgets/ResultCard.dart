@@ -3,12 +3,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../AuctionsWatchInfo/ui/screen/AuctionWatchInfo.dart';
+import '../../../DiscoverInfo/UI/Screen/DiscoverInfoScreen.dart';
 import '../../../WatchDetails/ui/screens/watch_details_screen.dart';
 
-class DiscoverFilterWidget3 extends StatelessWidget {
+class ResultCard extends StatelessWidget {
   final AuctionsModel auctionsModel;
   int index;
-  DiscoverFilterWidget3({Key? key, required this.auctionsModel,required this.index}) : super(key: key);
+  ResultCard({Key? key, required this.auctionsModel,required this.index}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,7 @@ class DiscoverFilterWidget3 extends StatelessWidget {
           onTap: () {
             Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => AuctionsInfo(auctionsModel: auctionsModel, index: index,)));
+                MaterialPageRoute(builder: (context) => DiscoverInfoScreen(auctionsModel: auctionsModel, index: index,)));
           },
           child: Card(
             shape: RoundedRectangleBorder(
@@ -47,7 +48,7 @@ class DiscoverFilterWidget3 extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(bottom: 5),
                     child: Text(
-                      "${auctionsModel.brand}",
+                      "${auctionsModel.model}",
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       softWrap: false,
@@ -58,7 +59,7 @@ class DiscoverFilterWidget3 extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    "${auctionsModel.caseMaterial}",
+                    "${auctionsModel.referance}",
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     softWrap: false,

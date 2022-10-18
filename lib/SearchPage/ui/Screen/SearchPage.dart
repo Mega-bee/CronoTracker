@@ -1,5 +1,5 @@
 import 'package:cronotracker/Auctions/Model/auctions_model.dart';
-import 'package:cronotracker/Favorites/ui/Widget/FavoriteCard.dart';
+import 'package:cronotracker/Discover/ui/screens/discover_screen.dart';
 import 'package:cronotracker/SearchPage/ui/Widget/SearchWidget.dart';
 import 'package:flutter/material.dart';
 
@@ -33,12 +33,14 @@ class _SearchPageState extends State<SearchPage> {
           elevation: 0,
         ),
         body: Container(
-          child: ListView.builder(
+          child: query.isEmpty ?
+          DiscoverScreen() :ListView.builder(
             itemCount: userInfoModel.length,
             shrinkWrap: true,
             itemBuilder: (context, index) {
               final AuctionsModell = userInfoModel[index];
-              return SearchCard(
+              return
+              SearchCard(
                 auctionsModel: AuctionsModell,
                 index: index,
               );

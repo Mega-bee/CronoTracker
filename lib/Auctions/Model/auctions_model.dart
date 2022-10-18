@@ -2,9 +2,9 @@ import '../../utils/Images/Images.dart';
 
 class AuctionsModel {
   String? text;
+  int? pricetracking;
   bool status;
-  double? price1;
-  double? price2;
+  double? price;
   String? image;
   String? brand;
   String? model;
@@ -21,38 +21,56 @@ class AuctionsModel {
   String? date;
   String? igAccount;
   String? country;
+  bool? limited;
+  String? production;
+  String? braceletMaterial;
+  String? bezelMaterial;
+  bool? diamondDial;
+  String? nickName;
+  double? RetailPrice;
+  List? priceRange;
+  String? soldMonth;
+  String? SellingRate;
 
   AuctionsModel({
-    this.text,
-    this.price1,
-    this.price2,
-    required this.status,
-    this.size,
-    this.date,
-    this.image,
-    this.brand,
-    this.caseMaterial,
-    this.condition,
-    this.country,
-    this.dialColor,
-    this.fullSet,
-    this.igAccount,
-    this.askingPrice,
-    this.lastBidder,
-    this.model,
-    this.numberOfBidders,
-    this.referance,
-    this.year,
-  });
+      this.pricetracking,
+      this.nickName,
+      this.diamondDial,
+      this.bezelMaterial,
+      this.braceletMaterial,
+      this.production,
+      this.limited,
+      this.text,
+      this.price,
+      required this.status,
+      this.size,
+      this.date,
+      this.image,
+      this.brand,
+      this.caseMaterial,
+      this.condition,
+      this.country,
+      this.dialColor,
+      this.fullSet,
+      this.igAccount,
+      this.askingPrice,
+      this.lastBidder,
+      this.model,
+      this.numberOfBidders,
+      this.referance,
+      this.year,
+      this.RetailPrice,
+      this.priceRange,
+      this.soldMonth,
+      this.SellingRate});
 }
 
 List<AuctionsModel> AuctionsList = [
   AuctionsModel(
     text:
         "Vacheron constantin overseas chronograph steel 42.5mm blue dial 2021 unworn, kuwait",
-    price1: 3500,
-    price2: 4000,
-    status: true,
+    price: 3500,
+    status: false,
     image: ImageAsset.WATCH1,
     brand: "Rolex",
     caseMaterial: "Steel",
@@ -71,10 +89,8 @@ List<AuctionsModel> AuctionsList = [
     year: 2021,
   ),
   AuctionsModel(
-    text:
-        "Vacheron constantin overseas chronograph steel",
-    price1: 3500,
-    price2: 4000,
+    text: "Vacheron constantin overseas chronograph steel",
+    price: 3500,
     status: true,
     image: ImageAsset.WATCH2,
     brand: "Girard",
@@ -96,9 +112,8 @@ List<AuctionsModel> AuctionsList = [
   AuctionsModel(
     text:
         "Vacheron constantin overseas chronograph steel 42.5mm blue dial 2021 unworn, kuwait",
-    price1: 3500,
-    price2: 4000,
-    status: true,
+    price: 3500,
+    status: false,
     image: ImageAsset.WATCH3,
     brand: "Patek Philipe",
     caseMaterial: "Steel",
@@ -117,10 +132,8 @@ List<AuctionsModel> AuctionsList = [
     year: 2021,
   ),
   AuctionsModel(
-    text:
-        "Vacheron constantin overseas chronograph steel",
-    price1: 3500,
-    price2: 4000,
+    text: "Vacheron constantin overseas chronograph steel",
+    price: 3500,
     status: true,
     image: ImageAsset.WATCH4,
     brand: "Rechard",
@@ -142,8 +155,7 @@ List<AuctionsModel> AuctionsList = [
   AuctionsModel(
     text:
         "Vacheron constantin overseas chronograph steel 42.5mm blue dial 2021 unworn, kuwait",
-    price1: 3500,
-    price2: 4000,
+    price: 3500,
     status: true,
     image: ImageAsset.WATCH1,
     brand: "Vacheron Costantine",
@@ -163,10 +175,8 @@ List<AuctionsModel> AuctionsList = [
     year: 2021,
   ),
   AuctionsModel(
-    text:
-        "Vacheron constantin overseas chronograph steel",
-    price1: 3500,
-    price2: 4000,
+    text: "Vacheron constantin overseas chronograph steel",
+    price: 3500,
     status: true,
     image: ImageAsset.WATCH2,
     brand: "Vacheron Costantine",
@@ -188,8 +198,7 @@ List<AuctionsModel> AuctionsList = [
   AuctionsModel(
     text:
         "Vacheron constantin overseas chronograph steel 42.5mm blue dial 2021 unworn, kuwait",
-    price1: 3500,
-    price2: 4000,
+    price: 3500,
     status: true,
     image: ImageAsset.WATCH3,
     brand: "Vacheron Costantine",
@@ -209,11 +218,9 @@ List<AuctionsModel> AuctionsList = [
     year: 2021,
   ),
   AuctionsModel(
-    text:
-        "Vacheron constantin overseas chronograph steel",
-    price1: 3500,
-    price2: 4000,
-    status: true,
+    text: "Vacheron constantin overseas chronograph steel",
+    price: 3500,
+    status: false,
     image: ImageAsset.WATCH4,
     brand: "Vacheron Costantine",
     caseMaterial: "Steel",
@@ -234,8 +241,7 @@ List<AuctionsModel> AuctionsList = [
   AuctionsModel(
     text:
         "Vacheron constantin overseas chronograph steel 42.5mm blue dial 2021 unworn, kuwait",
-    price1: 3500,
-    price2: 4000,
+    price: 3500,
     status: true,
     image: ImageAsset.WATCH1,
     brand: "Vacheron Costantine",
@@ -257,8 +263,7 @@ List<AuctionsModel> AuctionsList = [
   AuctionsModel(
     text:
         "Vacheron constantin overseas chronograph steel 42.5mm blue dial 2021 unworn, kuwait",
-    price1: 3500,
-    price2: 4000,
+    price: 3500,
     status: true,
     image: ImageAsset.WATCH2,
     brand: "Vacheron Costantine",
@@ -278,10 +283,8 @@ List<AuctionsModel> AuctionsList = [
     year: 2021,
   ),
   AuctionsModel(
-    text:
-        "Vacheron constantin overseas chronograph steel",
-    price1: 3500,
-    price2: 4000,
+    text: "Vacheron constantin overseas chronograph steel",
+    price: 3500,
     status: true,
     image: ImageAsset.WATCH3,
     brand: "Vacheron Costantine",
@@ -303,8 +306,7 @@ List<AuctionsModel> AuctionsList = [
   AuctionsModel(
     text:
         "Vacheron constantin overseas chronograph steel 42.5mm blue dial 2021 unworn, kuwait",
-    price1: 3500,
-    price2: 4000,
+    price: 3500,
     status: true,
     image: ImageAsset.WATCH4,
     brand: "Vacheron Costantine",

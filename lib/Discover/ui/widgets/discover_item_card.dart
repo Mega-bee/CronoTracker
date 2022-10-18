@@ -1,8 +1,6 @@
 import 'package:cronotracker/Discover/models/discoverItem.dart';
+import 'package:cronotracker/Discover/ui/screens/Filter1.dart';
 import 'package:flutter/material.dart';
-
-import '../screens/brand_screen.dart';
-
 class DiscoverItemCard extends StatelessWidget {
   
   DiscoverItem di;
@@ -18,7 +16,7 @@ class DiscoverItemCard extends StatelessWidget {
         onTap: (){
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => BrandScreen(discoverItem: di)),
+            MaterialPageRoute(builder: (context) => Filter1Screen(discoverItem: di)),
           );
         },
         child:Column(

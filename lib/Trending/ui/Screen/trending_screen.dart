@@ -1,3 +1,4 @@
+import 'package:cronotracker/Auctions/Model/auctions_model.dart';
 import 'package:cronotracker/SearchPage/ui/Screen/SearchPage.dart';
 import 'package:cronotracker/utils/Images/Images.dart';
 import 'package:cronotracker/utils/style/colors.dart';
@@ -9,139 +10,139 @@ import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 class TrendingScreen extends StatelessWidget {
   int currentIndex = 0;
 
-  watchCard? wc;
+  AuctionsModel? wc;
 
-  List<watchCard> watches = [
-    watchCard(
-        img: 'assets/images/watch.jpg',
-        brand: 'Omega',
-        modelName: 'SpeedMaster SunSwatch',
-        reference: 'SO7KG33H',
-        nickname: 'Sun',
-        dialColor: 'Brown',
-        caseMaterial: 'ceramic',
-        braceletMaterial: 'Strap',
-        soldMonth: '6',
-        bidDate: "26/3/2020",
-        priceTracking: '40',
-        sellingPrice: "20"),
-    watchCard(
-        img: 'assets/images/watch2.jpg',
-        brand: 'Rolex',
-        modelName: 'Rolex-2421',
-        reference: 'SO7KG33H',
-        nickname: 'king',
-        dialColor: 'silver',
-        caseMaterial: 'ceramic',
-        braceletMaterial: 'Strap',
-        bidDate: "26/3/2020",
-        priceTracking: '32',
-        sellingPrice: "20"),
-    watchCard(
-        img: 'assets/images/watch4 (1).jpg',
-        brand: 'Quartz',
-        modelName: 'fancy watch',
-        reference: 'quartz-3421fds',
-        nickname: 'cool watch',
-        dialColor: 'blue',
-        caseMaterial: 'silver',
-        braceletMaterial: 'Strap',
-        soldMonth: '12',
-        bidDate: "26/3/2020",
-        priceTracking: '30',
-        sellingPrice: "20"),
-    watchCard(
-        img: 'assets/images/watch4 (2).jpg',
-        brand: 'Fossil',
-        modelName: 'fossilWatchCool',
-        reference: 'fossil-6423',
-        nickname: 'hello world',
-        dialColor: 'Brown',
-        caseMaterial: 'gold',
-        braceletMaterial: 'Strap',
-        soldMonth: '12',
-        bidDate: "26/3/2020",
-        priceTracking: '10',
-        sellingPrice: "20"),
-    watchCard(
-        img: 'assets/images/watch5.jpg',
-        brand: 'Casio',
-        modelName: 'nice watch',
-        reference: 'casio-3453',
-        nickname: 'sweet',
-        dialColor: 'silver',
-        caseMaterial: 'ceramic',
-        braceletMaterial: 'Strap',
-        soldMonth: '12',
-        bidDate: "26/3/2020",
-        priceTracking: '8',
-        sellingPrice: "20"),
-    watchCard(
-      img: 'assets/images/watch.jpg',
-      brand: 'Omega',
-      modelName: 'SpeedMaster SunSwatch',
-      reference: 'SO7KG33H',
-      nickname: 'Sun',
-      dialColor: 'Brown',
-      caseMaterial: 'ceramic',
-      braceletMaterial: 'Strap',
-      soldMonth: '6',
-      priceTracking: '40',
-      sellingPrice: "20",
-    ),
-    watchCard(
-        img: 'assets/images/watch2.jpg',
-        brand: 'Rolex',
-        modelName: 'Rolex-2421',
-        reference: 'SO7KG33H',
-        nickname: 'king',
-        dialColor: 'silver',
-        caseMaterial: 'ceramic',
-        braceletMaterial: 'Strap',
-        soldMonth: '12',
-        bidDate: "26/3/2020",
-        priceTracking: '32',
-        sellingPrice: "20"),
-    watchCard(
-        img: 'assets/images/watch4 (1).jpg',
-        brand: 'Quartz',
-        modelName: 'fancy watch',
-        reference: 'quartz-3421fds',
-        nickname: 'cool watch',
-        dialColor: 'blue',
-        caseMaterial: 'silver',
-        braceletMaterial: 'Strap',
-        soldMonth: '12',
-        bidDate: "26/3/2020",
-        priceTracking: '30',
-        sellingPrice: "20"),
-    watchCard(
-        img: 'assets/images/watch4 (2).jpg',
-        brand: 'Fossil',
-        modelName: 'fossilWatchCool',
-        reference: 'fossil-6423',
-        nickname: 'hello world',
-        dialColor: 'Brown',
-        caseMaterial: 'gold',
-        braceletMaterial: 'Strap',
-        soldMonth: '12',
-        bidDate: "26/3/2020",
-        priceTracking: '10',
-        sellingPrice: "20"),
-    watchCard(
-        img: 'assets/images/watch5.jpg',
-        brand: 'Casio',
-        modelName: 'nice watch',
-        reference: 'casio-3453',
-        nickname: 'sweet',
-        dialColor: 'silver',
-        caseMaterial: 'ceramic',
-        braceletMaterial: 'Strap',
-        soldMonth: '12',
-        bidDate: "26/3/2020",
-        priceTracking: '8',
-        sellingPrice: "20"),
-  ];
+  // List<AuctionsModel> AuctionsList = [
+  //   AuctionsModel(
+  //       img: 'assets/images/watch.jpg',
+  //       brand: 'Omega',
+  //       modelName: 'SpeedMaster SunSwatch',
+  //       reference: 'SO7KG33H',
+  //       nickname: 'Sun',
+  //       dialColor: 'Brown',
+  //       caseMaterial: 'ceramic',
+  //       braceletMaterial: 'Strap',
+  //       soldMonth: '6',
+  //       bidDate: "26/3/2020",
+  //       priceTracking: '40',
+  //       sellingPrice: "20", status: null),
+  //   AuctionsModel(
+  //       img: 'assets/images/watch2.jpg',
+  //       brand: 'Rolex',
+  //       modelName: 'Rolex-2421',
+  //       reference: 'SO7KG33H',
+  //       nickname: 'king',
+  //       dialColor: 'silver',
+  //       caseMaterial: 'ceramic',
+  //       braceletMaterial: 'Strap',
+  //       bidDate: "26/3/2020",
+  //       priceTracking: '32',
+  //       sellingPrice: "20"),
+  //   AuctionsModel(
+  //       img: 'assets/images/watch4 (1).jpg',
+  //       brand: 'Quartz',
+  //       modelName: 'fancy watch',
+  //       reference: 'quartz-3421fds',
+  //       nickname: 'cool watch',
+  //       dialColor: 'blue',
+  //       caseMaterial: 'silver',
+  //       braceletMaterial: 'Strap',
+  //       soldMonth: '12',
+  //       bidDate: "26/3/2020",
+  //       priceTracking: '30',
+  //       sellingPrice: "20"),
+  //   AuctionsModel(
+  //       img: 'assets/images/watch4 (2).jpg',
+  //       brand: 'Fossil',
+  //       modelName: 'fossilWatchCool',
+  //       reference: 'fossil-6423',
+  //       nickname: 'hello world',
+  //       dialColor: 'Brown',
+  //       caseMaterial: 'gold',
+  //       braceletMaterial: 'Strap',
+  //       soldMonth: '12',
+  //       bidDate: "26/3/2020",
+  //       priceTracking: '10',
+  //       sellingPrice: "20"),
+  //   AuctionsModel(
+  //       img: 'assets/images/watch5.jpg',
+  //       brand: 'Casio',
+  //       modelName: 'nice watch',
+  //       reference: 'casio-3453',
+  //       nickname: 'sweet',
+  //       dialColor: 'silver',
+  //       caseMaterial: 'ceramic',
+  //       braceletMaterial: 'Strap',
+  //       soldMonth: '12',
+  //       bidDate: "26/3/2020",
+  //       priceTracking: '8',
+  //       sellingPrice: "20"),
+  //   AuctionsModel(
+  //     img: 'assets/images/watch.jpg',
+  //     brand: 'Omega',
+  //     modelName: 'SpeedMaster SunSwatch',
+  //     reference: 'SO7KG33H',
+  //     nickname: 'Sun',
+  //     dialColor: 'Brown',
+  //     caseMaterial: 'ceramic',
+  //     braceletMaterial: 'Strap',
+  //     soldMonth: '6',
+  //     priceTracking: '40',
+  //     sellingPrice: "20",
+  //   ),
+  //   AuctionsModel(
+  //       img: 'assets/images/watch2.jpg',
+  //       brand: 'Rolex',
+  //       modelName: 'Rolex-2421',
+  //       reference: 'SO7KG33H',
+  //       nickname: 'king',
+  //       dialColor: 'silver',
+  //       caseMaterial: 'ceramic',
+  //       braceletMaterial: 'Strap',
+  //       soldMonth: '12',
+  //       bidDate: "26/3/2020",
+  //       priceTracking: '32',
+  //       sellingPrice: "20"),
+  //   AuctionsModel(
+  //       img: 'assets/images/watch4 (1).jpg',
+  //       brand: 'Quartz',
+  //       modelName: 'fancy watch',
+  //       reference: 'quartz-3421fds',
+  //       nickname: 'cool watch',
+  //       dialColor: 'blue',
+  //       caseMaterial: 'silver',
+  //       braceletMaterial: 'Strap',
+  //       soldMonth: '12',
+  //       bidDate: "26/3/2020",
+  //       priceTracking: '30',
+  //       sellingPrice: "20"),
+  //   AuctionsModel(
+  //       img: 'assets/images/watch4 (2).jpg',
+  //       brand: 'Fossil',
+  //       modelName: 'fossilWatchCool',
+  //       reference: 'fossil-6423',
+  //       nickname: 'hello world',
+  //       dialColor: 'Brown',
+  //       caseMaterial: 'gold',
+  //       braceletMaterial: 'Strap',
+  //       soldMonth: '12',
+  //       bidDate: "26/3/2020",
+  //       priceTracking: '10',
+  //       sellingPrice: "20"),
+  //   AuctionsModel(
+  //       img: 'assets/images/watch5.jpg',
+  //       brand: 'Casio',
+  //       modelName: 'nice watch',
+  //       reference: 'casio-3453',
+  //       nickname: 'sweet',
+  //       dialColor: 'silver',
+  //       caseMaterial: 'ceramic',
+  //       braceletMaterial: 'Strap',
+  //       soldMonth: '12',
+  //       bidDate: "26/3/2020",
+  //       priceTracking: '8',
+  //       sellingPrice: "20"),
+  // ];
 
   final GlobalKey<ScaffoldState> _key = GlobalKey();
   final TextEditingController _textEditingController = TextEditingController();
@@ -240,7 +241,7 @@ class TrendingScreen extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(15),
                     child: Text(
-                      'Most Sold Watches',
+                      'Most Sold AuctionsList',
                       style:
                           TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
                     ),
@@ -267,10 +268,10 @@ class TrendingScreen extends StatelessWidget {
                       height: MediaQuery.of(context).size.height * 0.26,
                       child: ListView.builder(
                         itemBuilder: (context, index) {
-                          return BuildWatchCard(watches[index], index);
+                          return BuildWatchCard(index:index, wc: AuctionsList[index]);
                         },
                         scrollDirection: Axis.horizontal,
-                        itemCount: watches.length,
+                        itemCount: AuctionsList.length,
                         shrinkWrap: true,
                       ),
                     ),
@@ -286,7 +287,7 @@ class TrendingScreen extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(15),
                     child: Text(
-                      'Most Sold Rose Gold Watches',
+                      'Most Sold Rose Gold AuctionsList',
                       style:
                           TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
                     ),
@@ -313,10 +314,10 @@ class TrendingScreen extends StatelessWidget {
                       height: MediaQuery.of(context).size.height * 0.26,
                       child: ListView.builder(
                         itemBuilder: (context, index) {
-                          return BuildWatchCard(watches[index], index);
+                          return BuildWatchCard(index:index, wc: AuctionsList[index]);
                         },
                         scrollDirection: Axis.horizontal,
-                        itemCount: watches.length,
+                        itemCount: AuctionsList.length,
                         shrinkWrap: true,
                       ),
                     ),
@@ -332,7 +333,7 @@ class TrendingScreen extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(15),
                     child: Text(
-                      'Most Sold WHITE GOLD Watches',
+                      'Most Sold WHITE GOLD AuctionsList',
                       style:
                           TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
                     ),
@@ -359,10 +360,10 @@ class TrendingScreen extends StatelessWidget {
                       height: MediaQuery.of(context).size.height * 0.26,
                       child: ListView.builder(
                         itemBuilder: (context, index) {
-                          return BuildWatchCard(watches[index], index);
+                          return BuildWatchCard(index:index, wc: AuctionsList[index]);
                         },
                         scrollDirection: Axis.horizontal,
-                        itemCount: watches.length,
+                        itemCount: AuctionsList.length,
                         shrinkWrap: true,
                       ),
                     ),
@@ -378,7 +379,7 @@ class TrendingScreen extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(15),
                     child: Text(
-                      'Most Sold Yellow Gold Watches',
+                      'Most Sold Yellow Gold AuctionsList',
                       style:
                           TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
                     ),
@@ -405,10 +406,10 @@ class TrendingScreen extends StatelessWidget {
                       height: MediaQuery.of(context).size.height * 0.26,
                       child: ListView.builder(
                         itemBuilder: (context, index) {
-                          return BuildWatchCard(watches[index], index);
+                          return BuildWatchCard(index:index, wc: AuctionsList[index]);
                         },
                         scrollDirection: Axis.horizontal,
-                        itemCount: watches.length,
+                        itemCount: AuctionsList.length,
                         shrinkWrap: true,
                       ),
                     ),
@@ -424,7 +425,7 @@ class TrendingScreen extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(15),
                     child: Text(
-                      'Sold PLATINUM Watches',
+                      'Sold PLATINUM AuctionsList',
                       style:
                           TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
                     ),
@@ -451,10 +452,10 @@ class TrendingScreen extends StatelessWidget {
                       height: MediaQuery.of(context).size.height * 0.26,
                       child: ListView.builder(
                         itemBuilder: (context, index) {
-                          return BuildWatchCard(watches[index], index);
+                          return BuildWatchCard(index:index, wc: AuctionsList[index]);
                         },
                         scrollDirection: Axis.horizontal,
-                        itemCount: watches.length,
+                        itemCount: AuctionsList.length,
                         shrinkWrap: true,
                       ),
                     ),

@@ -2,6 +2,7 @@ import 'package:cronotracker/Auctions/Model/auctions_model.dart';
 import 'package:flutter/material.dart';
 
 import '../../../AuctionsWatchInfo/ui/screen/AuctionWatchInfo.dart';
+import '../../../DiscoverInfo/UI/Screen/DiscoverInfoScreen.dart';
 class SearchCard extends StatelessWidget {
   AuctionsModel auctionsModel;
   int index;
@@ -14,7 +15,7 @@ class SearchCard extends StatelessWidget {
         Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) => AuctionsInfo(
+                builder: (context) => DiscoverInfoScreen(
                   auctionsModel: auctionsModel,
                   index: index,
                 )));
@@ -35,8 +36,8 @@ class SearchCard extends StatelessWidget {
                         backgroundColor: Colors.white,
                       child: Image.asset(auctionsModel.image.toString(),fit: BoxFit.cover,),
                     ),
-                    title: Text(auctionsModel.brand.toString()),
-                    subtitle: Text(auctionsModel.model.toString(),style: TextStyle(fontSize: 12),),
+                    title: Text(auctionsModel.text.toString(),style: TextStyle(fontSize: 14),),
+                    // subtitle: Text(auctionsModel.model.toString(),style: TextStyle(fontSize: 12),),
                   ),
                 ),
                 ),

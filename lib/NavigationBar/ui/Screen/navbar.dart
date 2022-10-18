@@ -61,7 +61,7 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
               Icons.star,
               size: 20,
             ),
-            label: 'Want To Buy',
+            label: 'My collection',
           ),
           BottomNavigationBarItem(
             icon: Icon(
