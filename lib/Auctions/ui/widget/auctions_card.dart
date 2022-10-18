@@ -1,18 +1,14 @@
 import 'package:cronotracker/Auctions/Model/auctions_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:money_converter/Currency.dart';
-import 'package:money_converter/money_converter.dart';
 
 import '../../../AuctionsWatchInfo/ui/screen/AuctionWatchInfo.dart';
-import '../../../utils/Images/Images.dart';
 
 class AuctionsCard extends StatelessWidget {
   final AuctionsModel auctionsModel;
-  int index;
-  AuctionsCard({Key? key, required this.auctionsModel,required this.index}) : super(key: key);
+  final int index;
 
-  const AuctionsCard({Key? key, required this.auctionsModel}) : super(key: key);
+  const AuctionsCard({Key? key, required this.auctionsModel, required this.index}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +52,7 @@ class AuctionsCard extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                             color: Color(0xFFD4181E))),
                         Text("Last Bid AED${auctionsModel
-                            .price1} = ${auctionsModel.price2}",
+                            .price}",
                             style: TextStyle(fontSize: 15,
                                 color: Color(0xFF777777))),
                       ],
