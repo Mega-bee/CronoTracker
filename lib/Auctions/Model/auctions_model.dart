@@ -18,7 +18,7 @@ class AuctionsModel {
   double? askingPrice;
   String? lastBidder;
   double? numberOfBidders;
-  String? date;
+  String date;
   String? igAccount;
   String? country;
   bool? limited;
@@ -44,13 +44,13 @@ class AuctionsModel {
       this.price,
       required this.status,
       this.size,
-      this.date,
+      required this.date,
       this.image,
       this.brand,
       this.caseMaterial,
       this.condition,
       this.country,
-      this.dialColor,
+       this.dialColor,
       this.fullSet,
       this.igAccount,
       this.askingPrice,
@@ -76,8 +76,8 @@ List<AuctionsModel> AuctionsList = [
     caseMaterial: "Steel",
     condition: "Unworn",
     country: "Kuwait",
-    date: "8 august 2022",
-    dialColor: "Blue Dial",
+    date: "7 august 2022",
+    dialColor: "Black Dial",
     fullSet: "Full Set",
     igAccount: "elite_watches_q8",
     askingPrice: 0,
@@ -97,8 +97,8 @@ List<AuctionsModel> AuctionsList = [
     caseMaterial: "Steel",
     condition: "Unworn",
     country: "Kuwait",
-    date: "8 august 2022",
-    dialColor: "Blue Dial",
+    date: "7 august 2022",
+    dialColor: "Black Dial",
     fullSet: "Full Set",
     igAccount: "elite_watches_q8",
     askingPrice: 0,
@@ -119,8 +119,8 @@ List<AuctionsModel> AuctionsList = [
     caseMaterial: "Steel",
     condition: "Unworn",
     country: "Kuwait",
-    date: "8 august 2022",
-    dialColor: "Blue Dial",
+    date: "7 august 2022",
+    dialColor: "Black Dial",
     fullSet: "Full Set",
     igAccount: "elite_watches_q8",
     askingPrice: 0,
@@ -141,7 +141,7 @@ List<AuctionsModel> AuctionsList = [
     condition: "Unworn",
     country: "Kuwait",
     date: "8 august 2022",
-    dialColor: "Blue Dial",
+    dialColor: "Black Dial",
     fullSet: "Full Set",
     igAccount: "elite_watches_q8",
     askingPrice: 0,
@@ -172,7 +172,7 @@ List<AuctionsModel> AuctionsList = [
     numberOfBidders: 2,
     referance: "5500V/110A-B148",
     size: 42.5,
-    year: 2021,
+    year: 2022,
   ),
   AuctionsModel(
     text: "Vacheron constantin overseas chronograph steel",

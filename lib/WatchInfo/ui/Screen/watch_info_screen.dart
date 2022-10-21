@@ -1,9 +1,12 @@
+import 'dart:math';
+
 import 'package:cronotracker/WatchInfo/Model/watch_info_model.dart';
 import 'package:cronotracker/WatchInfo/ui/Widget/watch_info_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../AlertMessage/ui/widget/alert_message_card.dart';
 import '../../../Auctions/Model/auctions_model.dart';
+import '../../../AuctionsWatchInfo/ui/Widget/Modal bottom sheet.dart';
 import '../../../My Collection/Model/FavoriteModel.dart';
 import '../../../Trending/Model/trending_model.dart';
 import '../../../utils/Images/Images.dart';
@@ -603,20 +606,39 @@ class _WatchDetailsScreenState extends State<WatchDetailsScreen> {
                             //     order: GroupedListOrder.ASC, // optional
                             //   ),
                             // ),
+
                             Padding(
-                              padding: EdgeInsets.fromLTRB(9, 0, 0, 0),
-                              child: ListView.builder(
-                                physics: NeverScrollableScrollPhysics(),
-                                itemCount: details.length,
-                                shrinkWrap: true,
-                                itemBuilder: (context, index) {
-                                  return WatchInfoCard(
-                                    trendingModel: AuctionsList[index],
-                                    auctionsModel: widget.trendingModel,
-                                  );
-                                },
-                              ),
-                            ),
+                                padding: EdgeInsets.fromLTRB(9, 0, 0, 0),
+                                child: GroupedListView<dynamic, String>(
+                                    useStickyGroupSeparators: true,
+                                    shrinkWrap: true,
+                                    elements: AuctionsList,
+                                    groupBy: (element) => element.date,
+                                    groupSeparatorBuilder: (value) => Container(
+                                          child: Text(value),
+                                        ),
+                                    order: GroupedListOrder.ASC,
+                                    // groupComparator: ((value1, value2) => value1.compareTo(value2)),
+                                    indexedItemBuilder: (context, element,
+                                            index) =>
+                                        WatchInfoCard(
+                                          trendingModel: AuctionsList[index],
+                                          auctionsModel: widget.trendingModel,
+                                        ),
+                                    reverse: true)
+
+                                //   ListView.builder(
+                                //   physics: NeverScrollableScrollPhysics(),
+                                //   itemCount: details.length,
+                                //   shrinkWrap: true,
+                                //   itemBuilder: (context, index) {
+                                //     return WatchInfoCard(
+                                //       trendingModel: AuctionsList[index],
+                                //       auctionsModel: widget.trendingModel,
+                                //     );
+                                //   },
+                                // ),
+                                )
                           ],
                         ),
                       ),
@@ -666,9 +688,32 @@ class _WatchDetailsScreenState extends State<WatchDetailsScreen> {
                           'Would you like to add the watch to you favorites ?',
                       yesBtn: () {
                         setState(() {
-                          favoriteList.add(AuctionsList[widget.index]);
                           Navigator.pop(context);
-                          fav = Colors.red;
+                          showDialog(
+                              context: context,
+                              builder: (context) => AlertDialog(
+                                    content: BottomSheett(),
+                                    actions: [
+                                      TextButton(
+                                          onPressed: () {
+                                            Navigator.pop(context);
+                                          },
+                                          child: Text(
+                                            'Submit',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ))
+                                    ],
+                                  ));
+                          print("hi");
+                          setState(() {
+                            favoriteList.add(AuctionsList[widget.index]);
+                           
+                          });
+
+                          // favoriteList.add(AuctionsList[widget.index]);
+                          // Navigator.pop(context);
+                          // fav = Colors.red;
                         });
                       },
                       noBtn: () {
@@ -678,7 +723,7 @@ class _WatchDetailsScreenState extends State<WatchDetailsScreen> {
                   });
             },
             child: Icon(
-              Icons.favorite,
+              Icons.star,
               color: fav,
             ),
             backgroundColor: PrimaryColor,

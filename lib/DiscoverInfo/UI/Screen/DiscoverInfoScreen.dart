@@ -8,6 +8,7 @@ import '../../../WatchInfo/Model/watch_info_model.dart';
 import '../../../WatchInfo/ui/Widget/watch_info_card.dart';
 import '../../../utils/Images/Images.dart';
 import '../../../utils/style/colors.dart';
+import 'package:grouped_list/grouped_list.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 class DiscoverInfoScreen extends StatefulWidget {
   final AuctionsModel auctionsModel;
@@ -45,16 +46,17 @@ class _DiscoverInfoScreenState extends State<DiscoverInfoScreen> {
         child: (CustomScrollView(slivers: [
           SliverFillRemaining(
               hasScrollBody: true,
+              
               child: Column(
                 children: [
-                  Expanded(
-                    flex: 1,
-                    child: Image(
-                      image: AssetImage(widget.auctionsModel.image.toString()),
-                      fit: BoxFit.cover,
-                      width: double.infinity,
-                    ),
-                  ),
+                  // Expanded(
+                  //   flex: 1,
+                  //   child: Image(
+                  //     image: AssetImage(widget.auctionsModel.image.toString()),
+                  //     fit: BoxFit.cover,
+                  //     width: double.infinity,
+                  //   ),
+                  // ),
                   Expanded(
                     flex: 2,
                     child: Container(
@@ -68,6 +70,17 @@ class _DiscoverInfoScreenState extends State<DiscoverInfoScreen> {
                       child: SingleChildScrollView(
                         child: Column(
                           children: [
+                         
+                              
+                    
+                       Container(
+                         child: Image(
+                      image: AssetImage(widget.auctionsModel.image.toString()),
+                 
+                      width: double.infinity,
+                    ),
+                       ),
+                  
                             SizedBox(
                               height: 15,
                             ),
@@ -827,17 +840,34 @@ class _DiscoverInfoScreenState extends State<DiscoverInfoScreen> {
                             // ),
                             Padding(
                               padding: EdgeInsets.fromLTRB(9, 0, 0, 0),
-                              child: ListView.builder(
-                                physics: NeverScrollableScrollPhysics(),
-                                itemCount: details.length,
+                              child: GroupedListView<dynamic,String>(
+                                useStickyGroupSeparators: true,
                                 shrinkWrap: true,
-                                itemBuilder: (context, index) {
-                                  return WatchInfoCard(
-                                    trendingModel: AuctionsList[index],
-                                    auctionsModel: widget.auctionsModel,
-                                  );
-                                },
-                              ),
+                                elements: AuctionsList,
+                                groupBy: (element) => element.date,
+                                groupSeparatorBuilder: (value) => Container(
+                                  child: Text(value),
+                                  
+                                ),
+                                groupComparator: ((value1, value2) => value1.compareTo(value2)),
+                                indexedItemBuilder: (context, element, index) => WatchInfoCard(
+                                 trendingModel: AuctionsList[index],
+                                  auctionsModel: widget.auctionsModel,
+                               ),
+                               reverse: true,
+                                )
+                              
+                              // ListView.builder(
+                              //   physics: NeverScrollableScrollPhysics(),
+                              //   itemCount: details.length,
+                              //   shrinkWrap: true,
+                              //   itemBuilder: (context, index) {
+                              //     return WatchInfoCard(
+                              //       trendingModel: AuctionsList[index],
+                              //       auctionsModel: widget.auctionsModel,
+                              //     );
+                              //   },
+                              // ),
                             ),
                           ],
                         ),
@@ -888,7 +918,13 @@ class _DiscoverInfoScreenState extends State<DiscoverInfoScreen> {
                       'Would you like to add this watch to your collection ?',
                       yesBtn: () {
                         Navigator.pop(context);
-                        showModalBottomSheet(context: context, builder: (context)=>BottomSheett());
+                        showDialog(context: context, builder: (context)=>AlertDialog( content: BottomSheett(),  actions: [
+                                    TextButton(
+                                        onPressed: () {
+                                          Navigator.pop(context);
+                                        },
+                                        child: Text('Submit',style: TextStyle(color: Colors.black),))
+                                  ],));
                         print("hi");
                         setState(() {
                           favoriteList.add(AuctionsList[widget.index]);

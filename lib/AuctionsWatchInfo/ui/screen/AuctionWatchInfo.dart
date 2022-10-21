@@ -8,15 +8,20 @@ import '../../../WatchInfo/Model/watch_info_model.dart';
 import '../../../WatchInfo/ui/Widget/watch_info_card.dart';
 import '../../../utils/Images/Images.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
-
+import 'package:grouped_list/grouped_list.dart';
 import '../Widget/Modal bottom sheet.dart';
+import '../../../Auctions/Model/auctions_model.dart';
 
 class AuctionsInfo extends StatefulWidget {
   final AuctionsModel auctionsModel;
+
   int index;
 
-  AuctionsInfo({Key? key, required this.auctionsModel, required this.index})
-      : super(key: key);
+  AuctionsInfo({
+    Key? key,
+    required this.auctionsModel,
+    required this.index,
+  }) : super(key: key);
 
   @override
   State<AuctionsInfo> createState() => _AuctionsInfoState();
@@ -354,7 +359,6 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
                                             Divider(
                                               color: Colors.transparent,
                                               height: 15,
-
                                             ),
                                             RichText(
                                               text: TextSpan(children: [
@@ -384,7 +388,6 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
                                             Divider(
                                               color: Colors.transparent,
                                               height: 15,
-
                                             ),
                                             RichText(
                                               text: TextSpan(children: [
@@ -443,7 +446,6 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
                                             Divider(
                                               color: Colors.transparent,
                                               height: 15,
-
                                             ),
                                             RichText(
                                               text: TextSpan(children: [
@@ -473,7 +475,6 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
                                             Divider(
                                               color: Colors.transparent,
                                               height: 15,
-
                                             ),
                                             RichText(
                                               text: TextSpan(children: [
@@ -503,7 +504,6 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
                                             Divider(
                                               color: Colors.transparent,
                                               height: 15,
-
                                             ),
                                             RichText(
                                               text: TextSpan(children: [
@@ -533,7 +533,6 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
                                             Divider(
                                               color: Colors.transparent,
                                               height: 15,
-
                                             ),
 
                                             RichText(
@@ -565,7 +564,6 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
                                             Divider(
                                               color: Colors.transparent,
                                               height: 15,
-
                                             ),
                                             RichText(
                                               text: TextSpan(children: [
@@ -595,7 +593,6 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
                                             Divider(
                                               color: Colors.transparent,
                                               height: 15,
-
                                             ),
 
                                             RichText(
@@ -626,7 +623,6 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
                                             Divider(
                                               color: Colors.transparent,
                                               height: 15,
-
                                             ),
                                           ],
                                         )),
@@ -870,19 +866,37 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
                             //   ),
                             // ),
                             Padding(
-                              padding: EdgeInsets.fromLTRB(9, 0, 0, 0),
-                              child: ListView.builder(
-                                physics: NeverScrollableScrollPhysics(),
-                                itemCount: details.length,
-                                shrinkWrap: true,
-                                itemBuilder: (context, index) {
-                                  return WatchInfoCard(
+                                padding: EdgeInsets.fromLTRB(9, 0, 0, 0),
+                                child: GroupedListView<dynamic, String>(
+                                  useStickyGroupSeparators: true,
+                                  shrinkWrap: true,
+                                  elements: AuctionsList,
+                                  groupBy: (element) => element.date,
+                                  groupSeparatorBuilder: (value) => Container(
+                                    child: Text(value),
+                                  ),
+                                  groupComparator: ((value1, value2) =>
+                                      value1.compareTo(value2)),
+                                  indexedItemBuilder:
+                                      (context, element, index) =>
+                                          WatchInfoCard(
                                     trendingModel: AuctionsList[index],
                                     auctionsModel: widget.auctionsModel,
-                                  );
-                                },
-                              ),
-                            ),
+                                  ),
+                                  reverse: true,
+                                )
+                                // ListView.builder(
+                                //   physics: NeverScrollableScrollPhysics(),
+                                //   itemCount: details.length,
+                                //   shrinkWrap: true,
+                                //   itemBuilder: (context, index) {
+                                //     return WatchInfoCard(
+                                //       trendingModel: AuctionsList[index],
+                                //       auctionsModel: widget.auctionsModel,
+                                //     );
+                                //   },
+                                // ),
+                                ),
                           ],
                         ),
                       ),
@@ -932,12 +946,23 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
                           'Would you like to add this watch to your collection ?',
                       yesBtn: () {
                         Navigator.pop(context);
-                        showModalBottomSheet(context: context, builder: (context)=>BottomSheett());
+                        showDialog(
+                            context: context,
+                            builder: (context) => AlertDialog(
+                                  content: BottomSheett(),
+                                  actions: [
+                                    TextButton(
+                                        onPressed: () {
+                                          Navigator.pop(context);
+                                        },
+                                        child: Text('Submit',style: TextStyle(color: Colors.black),))
+                                  ],
+                                ));
                         print("hi");
                         setState(() {
                           favoriteList.add(AuctionsList[widget.index]);
                           fav = Colors.red;
-                          Mycollection=true;
+                          Mycollection = true;
                         });
                       },
                       noBtn: () {
@@ -947,9 +972,7 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
                   });
             },
             child: Icon(
-              Mycollection?
-                  Icons.done:
-              Icons.star,
+              Mycollection ? Icons.done : Icons.star,
               color: BlueColor,
             ),
             backgroundColor: PrimaryColor,

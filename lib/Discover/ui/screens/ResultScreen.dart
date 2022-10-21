@@ -2,9 +2,14 @@ import 'package:cronotracker/Auctions/Model/auctions_model.dart';
 import 'package:cronotracker/Discover/ui/widgets/ResultCard.dart';
 import 'package:flutter/material.dart';
 
+import 'package:grouped_list/grouped_list.dart';
 import '../../../SearchPage/ui/Screen/SearchPage.dart';
 import '../../../utils/Images/Images.dart';
 import '../../../utils/style/colors.dart';
+import 'package:sticky_grouped_list/sticky_grouped_list.dart';
+import '../widgets/discover_item_card.dart';
+import 'discover_screen.dart';
+
 class ResultScreen extends StatelessWidget {
   const ResultScreen({Key? key}) : super(key: key);
 
@@ -15,19 +20,18 @@ class ResultScreen extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: PrimaryColor,
           titleSpacing: 0,
-          toolbarHeight: 70,          centerTitle: true,
+          toolbarHeight: 70, centerTitle: true,
           elevation: 0,
-          title:SizedBox(
+          title: SizedBox(
             width: 35,
             height: 60,
             child: InkWell(
               onTap: () {},
               child: Transform.scale(
                 scale: 3,
-                child:
-                Image.asset(
+                child: Image.asset(
                   ImageAsset.LOGO,
-                  alignment: Alignment(0.0,0.0),
+                  alignment: Alignment(0.0, 0.0),
                 ),
               ),
             ),
@@ -58,21 +62,24 @@ class ResultScreen extends StatelessWidget {
           //         fontFamily: 'Rubik'),
           //   ),
           // ),
-          actions:[
+          actions: [
             Padding(
-              padding: const EdgeInsets.only(right: 6.0),
-              child: SizedBox(
-                  height: MediaQuery.of(context).size.height*0.1,
-                  width: MediaQuery.of(context).size.width*0.1,
-                  child: IconButton(
-                      onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => SearchPage(),));
-                      },
-                      icon: Image.asset(
-                        ImageAsset.SEARCH,
-                        fit: BoxFit.cover,
-                      )))
-            )
+                padding: const EdgeInsets.only(right: 6.0),
+                child: SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.1,
+                    width: MediaQuery.of(context).size.width * 0.1,
+                    child: IconButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => SearchPage(),
+                              ));
+                        },
+                        icon: Image.asset(
+                          ImageAsset.SEARCH,
+                          fit: BoxFit.cover,
+                        ))))
             // Center(
             //   child: SizedBox(
             //     width: 35,
@@ -90,40 +97,29 @@ class ResultScreen extends StatelessWidget {
             //       ),
             //   ),
             // ),
-          ],),
-      body: SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-            child:
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              "Black Dial",
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              softWrap: false,
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 18,
-                  fontWeight: FontWeight.w500
-              ),
-            ),
-            SizedBox(height: 10,),
-            GridView.builder(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 0,
-                    mainAxisSpacing: 0),
-                itemCount: 5,
-                shrinkWrap: true,
-                itemBuilder: (BuildContext context, int index) {
-                  return ResultCard(
-                    auctionsModel: AuctionsList[index], index: index,
-                  );
-                }),
           ],
-        )
-    )));
+        ),
+        body: SingleChildScrollView(
+            child: Padding(
+                padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                child: GroupedListView<dynamic,String>(
+                              useStickyGroupSeparators: true,
+                              shrinkWrap: true,
+                              elements: AuctionsList,
+                              groupBy: (element) => element.dialColor,
+                              groupSeparatorBuilder: (value) => Container(
+                                child: Text(value, style:TextStyle(
+                          color: Colors.black,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500),),
+                                
+                              ),
+                              order: GroupedListOrder.ASC,
+                              // groupComparator: ((value1, value2) => value1.compareTo(value2)),
+                              indexedItemBuilder: (context, element, index) =>ResultCard(
+                                auctionsModel: AuctionsList[index], index: index,
+                             ),
+                             reverse:true
+                              ))));
   }
 }

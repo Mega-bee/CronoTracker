@@ -22,7 +22,7 @@ class AuctionsCard extends StatelessWidget {
         height: MediaQuery
             .of(context)
             .size
-            .height * 0.35,
+            .height * 0.39,
         child: Padding(
           padding: const EdgeInsets.only(
               left: 11, right: 11, top: 13, bottom: 11),

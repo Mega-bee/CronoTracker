@@ -1,5 +1,6 @@
 import 'package:cronotracker/Auctions/Model/auctions_model.dart';
 import 'package:cronotracker/SearchPage/ui/Screen/SearchPage.dart';
+import 'package:cronotracker/Trending/ui/widget/trending_watch_card_list.dart';
 import 'package:cronotracker/utils/Images/Images.dart';
 import 'package:cronotracker/utils/style/colors.dart';
 import 'package:flutter/material.dart';
@@ -231,241 +232,80 @@ class TrendingScreen extends StatelessWidget {
           ],
           leading: MenuWidget()),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            // SizedBox(height: MediaQuery.of(context).size.height*0.03,),
-            Stack(
-              children: [
-                SizedBox(
-                  width: double.infinity,
-                  child: Padding(
-                    padding: const EdgeInsets.all(15),
-                    child: Text(
-                      'Most Sold AuctionsList',
-                      style:
-                          TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
-                    ),
-                  ),
-                  height: MediaQuery.of(context).size.height * 0.31,
-                  // decoration: BoxDecoration(
-                  //   borderRadius: BorderRadius.circular(1.0),
-                  //   color: Colors.white,
-                  //   boxShadow: [
-                  //     BoxShadow(
-                  //       color: Colors.grey,
-                  //       blurRadius: 2.0,
-                  //       spreadRadius: 0.0,
-                  //       offset: Offset(1.0, 1.0),
-                  //     )
-                  //   ],
-                  // ),
-                ),
-                Positioned.fill(
-                  child: Align(
-                    alignment: Alignment.bottomLeft,
-                    child: SizedBox(
-                      width: double.infinity,
-                      height: MediaQuery.of(context).size.height * 0.26,
-                      child: ListView.builder(
-                        itemBuilder: (context, index) {
-                          return BuildWatchCard(index:index, wc: AuctionsList[index]);
-                        },
-                        scrollDirection: Axis.horizontal,
-                        itemCount: AuctionsList.length,
-                        shrinkWrap: true,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 10),
-            Stack(
-              children: [
-                SizedBox(
-                  width: double.infinity,
-                  child: Padding(
-                    padding: const EdgeInsets.all(15),
-                    child: Text(
-                      'Most Sold Rose Gold AuctionsList',
-                      style:
-                          TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
-                    ),
-                  ),
-                  height: MediaQuery.of(context).size.height * 0.31,
-                  // decoration: BoxDecoration(
-                  //   borderRadius: BorderRadius.circular(1.0),
-                  //   color: Colors.white,
-                  //   boxShadow: [
-                  //     BoxShadow(
-                  //       color: Colors.grey,
-                  //       blurRadius: 2.0,
-                  //       spreadRadius: 0.0,
-                  //       offset: Offset(1.0, 1.0),
-                  //     )
-                  //   ],
-                  // ),
-                ),
-                Positioned.fill(
-                  child: Align(
-                    alignment: Alignment.bottomLeft,
-                    child: SizedBox(
-                      width: double.infinity,
-                      height: MediaQuery.of(context).size.height * 0.26,
-                      child: ListView.builder(
-                        itemBuilder: (context, index) {
-                          return BuildWatchCard(index:index, wc: AuctionsList[index]);
-                        },
-                        scrollDirection: Axis.horizontal,
-                        itemCount: AuctionsList.length,
-                        shrinkWrap: true,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 10),
-            Stack(
-              children: [
-                SizedBox(
-                  width: double.infinity,
-                  child: Padding(
-                    padding: const EdgeInsets.all(15),
-                    child: Text(
-                      'Most Sold WHITE GOLD AuctionsList',
-                      style:
-                          TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
-                    ),
-                  ),
-                  height: MediaQuery.of(context).size.height * 0.31,
-                  // decoration: BoxDecoration(
-                  //   borderRadius: BorderRadius.circular(1.0),
-                  //   color: Colors.white,
-                  //   boxShadow: [
-                  //     BoxShadow(
-                  //       color: Colors.grey,
-                  //       blurRadius: 2.0,
-                  //       spreadRadius: 0.0,
-                  //       offset: Offset(1.0, 1.0),
-                  //     )
-                  //   ],
-                  // ),
-                ),
-                Positioned.fill(
-                  child: Align(
-                    alignment: Alignment.bottomLeft,
-                    child: SizedBox(
-                      width: double.infinity,
-                      height: MediaQuery.of(context).size.height * 0.26,
-                      child: ListView.builder(
-                        itemBuilder: (context, index) {
-                          return BuildWatchCard(index:index, wc: AuctionsList[index]);
-                        },
-                        scrollDirection: Axis.horizontal,
-                        itemCount: AuctionsList.length,
-                        shrinkWrap: true,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 10),
-            Stack(
-              children: [
-                SizedBox(
-                  width: double.infinity,
-                  child: Padding(
-                    padding: const EdgeInsets.all(15),
-                    child: Text(
-                      'Most Sold Yellow Gold AuctionsList',
-                      style:
-                          TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
-                    ),
-                  ),
-                  height: MediaQuery.of(context).size.height * 0.31,
-                  // decoration: BoxDecoration(
-                  //   borderRadius: BorderRadius.circular(1.0),
-                  //   color: Colors.white,
-                  //   boxShadow: [
-                  //     BoxShadow(
-                  //       color: Colors.grey,
-                  //       blurRadius: 2.0,
-                  //       spreadRadius: 0.0,
-                  //       offset: Offset(1.0, 1.0),
-                  //     )
-                  //   ],
-                  // ),
-                ),
-                Positioned.fill(
-                  child: Align(
-                    alignment: Alignment.bottomLeft,
-                    child: SizedBox(
-                      width: double.infinity,
-                      height: MediaQuery.of(context).size.height * 0.26,
-                      child: ListView.builder(
-                        itemBuilder: (context, index) {
-                          return BuildWatchCard(index:index, wc: AuctionsList[index]);
-                        },
-                        scrollDirection: Axis.horizontal,
-                        itemCount: AuctionsList.length,
-                        shrinkWrap: true,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 10),
-            Stack(
-              children: [
-                SizedBox(
-                  width: double.infinity,
-                  child: Padding(
-                    padding: const EdgeInsets.all(15),
-                    child: Text(
-                      'Sold PLATINUM AuctionsList',
-                      style:
-                          TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
-                    ),
-                  ),
-                  height: MediaQuery.of(context).size.height * 0.31,
-                  // decoration: BoxDecoration(
-                  //   borderRadius: BorderRadius.circular(1.0),
-                  //   color: Colors.white,
-                  //   boxShadow: [
-                  //     BoxShadow(
-                  //       color: Colors.grey,
-                  //       blurRadius: 2.0,
-                  //       spreadRadius: 0.0,
-                  //       offset: Offset(1.0, 1.0),
-                  //     )
-                  //   ],
-                  // ),
-                ),
-                Positioned.fill(
-                  child: Align(
-                    alignment: Alignment.bottomLeft,
-                    child: SizedBox(
-                      width: double.infinity,
-                      height: MediaQuery.of(context).size.height * 0.26,
-                      child: ListView.builder(
-                        itemBuilder: (context, index) {
-                          return BuildWatchCard(index:index, wc: AuctionsList[index]);
-                        },
-                        scrollDirection: Axis.horizontal,
-                        itemCount: AuctionsList.length,
-                        shrinkWrap: true,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 10),
-          ],
-        ),
+       
+         child: ListView.builder(
+           physics: const NeverScrollableScrollPhysics(),
+          scrollDirection: Axis.vertical,
+          shrinkWrap: true,
+          itemCount: 5,
+          itemBuilder: ((context, index) => TrendingCardList(index: index,)
+          
+          )
+
+          )
+        
+        // Column(
+        //   children: [
+        //     // SizedBox(height: MediaQuery.of(context).size.height*0.03,),
+           
+        //       TrendingCardList(),
+        //     SizedBox(height: 10),
+        //    TrendingCardList(),
+        //     SizedBox(height: 10),
+        //    TrendingCardList(),
+        //     SizedBox(height: 10),
+        //      TrendingCardList(),
+        //     SizedBox(height: 10),
+        //     TrendingCardList(),
+        //     // Stack(
+        //     //   children: [
+        //     //     SizedBox(
+        //     //       width: double.infinity,
+        //     //       child: Padding(
+        //     //         padding: const EdgeInsets.all(15),
+        //     //         child: Text(
+        //     //           'Sold PLATINUM AuctionsList',
+        //     //           style:
+        //     //               TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
+        //     //         ),
+        //     //       ),
+        //     //       height: MediaQuery.of(context).size.height * 0.31,
+        //     //       // decoration: BoxDecoration(
+        //     //       //   borderRadius: BorderRadius.circular(1.0),
+        //     //       //   color: Colors.white,
+        //     //       //   boxShadow: [
+        //     //       //     BoxShadow(
+        //     //       //       color: Colors.grey,
+        //     //       //       blurRadius: 2.0,
+        //     //       //       spreadRadius: 0.0,
+        //     //       //       offset: Offset(1.0, 1.0),
+        //     //       //     )
+        //     //       //   ],
+        //     //       // ),
+        //     //     ),
+               
+        //     //     Positioned.fill(
+        //     //       child: Align(
+        //     //         alignment: Alignment.bottomLeft,
+        //     //         child: SizedBox(
+        //     //           width: double.infinity,
+        //     //           height: MediaQuery.of(context).size.height * 0.26,
+        //     //           child: ListView.builder(
+        //     //             itemBuilder: (context, index) {
+        //     //               return BuildWatchCard(index:index, wc: AuctionsList[index]);
+        //     //             },
+        //     //             scrollDirection: Axis.horizontal,
+        //     //             itemCount: AuctionsList.length,
+        //     //             shrinkWrap: true,
+        //     //           ),
+        //     //         ),
+        //     //       ),
+        //     //     ),
+        //     //   ],
+        //     // ),
+        //     SizedBox(height: 10),
+        //   ],
+        // ),
       ),
     );
   }

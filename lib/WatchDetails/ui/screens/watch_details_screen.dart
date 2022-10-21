@@ -293,7 +293,7 @@ class WatchDetailsScreen extends StatelessWidget {
                             Padding(
                               padding: EdgeInsets.all(12.0),
                               child: Text(
-                                'Price Tracking',
+                                'Price Track',
                                 style: TextStyle(
                                   color: Colors.grey,
                                 ),
@@ -426,6 +426,7 @@ class WatchDetailsScreen extends StatelessWidget {
                               ),
                             ),
                             Spacer(),
+                            
                           ],
                         ),
 
@@ -437,7 +438,7 @@ class WatchDetailsScreen extends StatelessWidget {
 
 
 
-              SizedBox(height: 10),
+              SizedBox(height: 20),
 
               ListView.builder(
                 physics: NeverScrollableScrollPhysics(),

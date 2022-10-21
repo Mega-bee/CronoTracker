@@ -40,11 +40,12 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  simple_grouped_listview: ^1.0.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  grouped_list:
+  grouped_list: ^5.1.2
   share_plus: ^4.0.10
   rflutter_alert:
   lottie: ^1.4.1

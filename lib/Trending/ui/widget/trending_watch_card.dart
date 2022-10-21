@@ -14,7 +14,7 @@ class BuildWatchCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.27,
+      height: MediaQuery.of(context).size.height * 0.3,
       width: MediaQuery.of(context).size.width * 0.47,
       child: InkWell(
           onTap: () {
@@ -35,7 +35,7 @@ class BuildWatchCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      height: MediaQuery.of(context).size.height * 0.15,
+                      height: MediaQuery.of(context).size.height * 0.115,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8.0),
                         color: Colors.white,

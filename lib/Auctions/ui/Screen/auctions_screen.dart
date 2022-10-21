@@ -14,6 +14,38 @@ class Auctions extends StatefulWidget {
 }
 
 class _AuctionsState extends State<Auctions> {
+  List<AuctionsModel> aucts = List.from(AuctionsList);
+  List<DropdownMenuItem> dropValues = [
+    DropdownMenuItem(
+      child: Text('Brand'),
+      value: "Brands",
+    ),
+    DropdownMenuItem(
+      child: Text('Year'),
+      value: "Year",
+    ),
+    DropdownMenuItem(
+      child: Text('Model'),
+      value: "Model",
+    ),
+    DropdownMenuItem(
+      child: Text('Sold'),
+      value: "Sold",
+    ),
+  ];
+  String selected1 = 'Sold';
+  String selected2 = "Brands";
+  String selected3 = "Year";
+  String selected4 = "Model";
+  final List models = ['Model', 'OverSeas'];
+  final List sold = ['Sold', 'Not Sold'];
+  final List brands = ['Brands', 'Vacheron Constantine', 'Rolex'];
+
+  final List years = [
+    'Year',
+    '2021',
+    '2022',
+  ];
   final TextEditingController _textEditingController = TextEditingController();
   final GlobalKey<ScaffoldState> _key = GlobalKey();
   @override
@@ -23,19 +55,19 @@ class _AuctionsState extends State<Auctions> {
         appBar: AppBar(
             backgroundColor: PrimaryColor,
             titleSpacing: 0,
-            toolbarHeight: 70,            centerTitle: true,
+            toolbarHeight: 70,
+            centerTitle: true,
             elevation: 0,
-            title:SizedBox(
+            title: SizedBox(
               width: 35,
               height: 60,
               child: InkWell(
                 onTap: () {},
                 child: Transform.scale(
                   scale: 3,
-                  child:
-                  Image.asset(
+                  child: Image.asset(
                     ImageAsset.LOGO,
-                    alignment: Alignment(0.0,0.0),
+                    alignment: Alignment(0.0, 0.0),
                   ),
                 ),
               ),
@@ -66,59 +98,149 @@ class _AuctionsState extends State<Auctions> {
             //         fontFamily: 'Rubik'),
             //   ),
             // ),
-           actions: [
-            Padding(
-              padding: const EdgeInsets.only(right: 6.0),
-              child: SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.1,
-                  width: MediaQuery.of(context).size.width * 0.1,
-                  child: IconButton(
-                      onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => SearchPage(),));
-                      },
-                      icon: Image.asset(
-                        ImageAsset.SEARCH,
-                        fit: BoxFit.cover,
-                      ))),
-            ) // Center(
-            //   child: SizedBox(
-            //     width: 35,
-            //       height: 40,
-            //       child: InkWell(
-            //         onTap: () {},
-            //         child: Transform.scale(
-            //             scale: 2.5,
-            //             child:
-            //               Image.asset(
-            //                 ImageAsset.LOGO,
-            //                 alignment: Alignment(0.0,0.0),
-            //               ),
-            //             ),
-            //       ),
-            //   ),
-            // ),
-          ],
+            actions: [
+              Padding(
+                padding: const EdgeInsets.only(right: 6.0),
+                child: SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.1,
+                    width: MediaQuery.of(context).size.width * 0.1,
+                    child: IconButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => SearchPage(),
+                              ));
+                        },
+                        icon: Image.asset(
+                          ImageAsset.SEARCH,
+                          fit: BoxFit.cover,
+                        ))),
+              ) // Center(
+              //   child: SizedBox(
+              //     width: 35,
+              //       height: 40,
+              //       child: InkWell(
+              //         onTap: () {},
+              //         child: Transform.scale(
+              //             scale: 2.5,
+              //             child:
+              //               Image.asset(
+              //                 ImageAsset.LOGO,
+              //                 alignment: Alignment(0.0,0.0),
+              //               ),
+              //             ),
+              //       ),
+              //   ),
+              // ),
+            ],
             leading: MenuWidget()),
-
-        body:Container(
-      child: SingleChildScrollView(
-          child: Padding(
-        padding: EdgeInsets.only(top: 10),
-        child:
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.8070,
-              child: ListView.builder(
-                shrinkWrap: false,
-                physics: BouncingScrollPhysics(
-                    parent: AlwaysScrollableScrollPhysics()),
-                itemCount: AuctionsList.length,
-                itemBuilder: (context, index) {
-                  return AuctionsCard(
-                      auctionsModel: AuctionsList[index], index: index,);
-                },
-              ),
+        body: Container(
+          child: SingleChildScrollView(
+              child: Padding(
+            padding: EdgeInsets.only(top: 10),
+            child: Column(
+              children: [
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.95,
+                  child: Row(
+                    children: [
+                      DropdownButton<dynamic>(
+                          items: sold
+                              .map((e) => DropdownMenuItem(
+                                    child: Text(
+                                      e,
+                                      style: TextStyle(fontSize: 9),
+                                    ),
+                                    value: e,
+                                  ))
+                              .toList(),
+                          onChanged: (value) {
+                            setState(() {
+                              selected1 = value as String;
+                            });
+                          },
+                          underline: Container(color: Colors.transparent),
+                          value: selected1),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.4,
+                        child: DropdownButton(
+                          items: brands
+                              .map((e) => DropdownMenuItem(
+                                    child: Container(
+                                     
+                                        child: Text(
+                                          e,
+                                          style: TextStyle(fontSize: 9),
+                                        )),
+                                    value: e,
+                                  ))
+                              .toList(),
+                          onChanged: (value) {
+                            setState(() {
+                              selected2 = value as String;
+                            });
+                          },
+                          underline: Container(color: Colors.transparent),
+                          value: selected2,
+                        ),
+                      ),
+                      DropdownButton(
+                        items: years
+                            .map((e) => DropdownMenuItem(
+                                  child: Text(
+                                    e,
+                                    style: TextStyle(fontSize: 9),
+                                  ),
+                                  value: e,
+                                ))
+                            .toList(),
+                        onChanged: (value) {
+                          setState(() {
+                            selected3 = value as String;
+                            aucts.where((element) =>
+                                element.year as String == selected3);
+                          });
+                        },
+                        underline: Container(color: Colors.transparent),
+                        value: selected3,
+                      ),
+                      DropdownButton(
+                        items: models
+                            .map((e) => DropdownMenuItem(
+                                  child: Text(e,style: TextStyle(fontSize: 9),),
+                                  value: e,
+                                ))
+                            .toList(),
+                        onChanged: (value) {
+                          setState(() {
+                            selected4 = value as String;
+                          });
+                        },
+                        underline: Container(color: Colors.transparent),
+                        value: selected4,
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.8070,
+                  child: ListView.builder(
+                    shrinkWrap: false,
+                    physics: BouncingScrollPhysics(
+                        parent: AlwaysScrollableScrollPhysics()),
+                    itemCount: aucts.length,
+                    itemBuilder: (context, index) {
+                      return AuctionsCard(
+                        auctionsModel: AuctionsList[index],
+                        index: index,
+                      );
+                    },
+                  ),
+                ),
+              ],
             ),
-      )),
-    ));
+          )),
+        ));
   }
 }
