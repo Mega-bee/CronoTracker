@@ -489,7 +489,7 @@ class _WatchDetailsScreenState extends State<WatchDetailsScreen> {
                                   SfCartesianChart(
                                       primaryXAxis: CategoryAxis(),
                                       // Chart title
-                                      title: ChartTitle(text: 'Pice Tracking'),
+                                      title: ChartTitle(text: 'Price Tracking'),
                                       // Enable legend
                                       legend: Legend(isVisible: false),
                                       // Enable tooltip
