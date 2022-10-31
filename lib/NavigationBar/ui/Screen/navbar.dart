@@ -1,3 +1,4 @@
+import 'package:cronotracker/Want%20To%20Buy/ui/Screen/want_to_buy.dart';
 import 'package:flutter/material.dart';
 import '../../../Auctions/ui/Screen/auctions_screen.dart';
 import '../../../Discover/ui/screens/discover_screen.dart';
@@ -6,19 +7,18 @@ import '../../../Trending/ui/Screen/trending_screen.dart';
 import '../../../utils/style/colors.dart';
 
 class BottomNavigationBarScreen extends StatefulWidget {
-
   @override
-  State<BottomNavigationBarScreen> createState() => _BottomNavigationBarScreenState();
+  State<BottomNavigationBarScreen> createState() =>
+      _BottomNavigationBarScreenState();
 }
 
 class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
-
-  int  currentIndex = 0;
+  int currentIndex = 0;
 
   List<Widget> screens = [
     TrendingScreen(),
-    DiscoverScreen(),
     Auctions(),
+    WantToBuy(),
     NotificationScreen(),
   ];
 
@@ -27,17 +27,16 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
     return Scaffold(
       backgroundColor: PrimaryColor,
       body: screens[currentIndex],
-
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: BlueColor,
         unselectedItemColor: Color(0xFF747474),
-        unselectedIconTheme: IconThemeData(color:Color(0xFF747474) ),
+        unselectedIconTheme: IconThemeData(color: Color(0xFF747474)),
         selectedIconTheme: IconThemeData(color: BlueColor),
         type: BottomNavigationBarType.fixed,
         backgroundColor: Color(0xFFF9F9F9),
         currentIndex: currentIndex,
         onTap: (index) {
-          setState(()  {
+          setState(() {
             currentIndex = index;
           });
         },
@@ -45,24 +44,29 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
           BottomNavigationBarItem(
             icon: Icon(
               Icons.trending_up_sharp,
+              size: 20,
             ),
             label: 'Trending',
           ),
+
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.search,
+              Icons.gavel,
+              size: 20,
             ),
-            label: 'Discover',
+            label: 'Auctions',
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.gavel,),
-            label: 'Auctions',
-
+              Icons.star,
+              size: 20,
+            ),
+            label: 'My collection',
           ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.notifications,
+              size: 20,
             ),
             label: 'Notification',
           ),

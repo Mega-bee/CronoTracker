@@ -14,7 +14,7 @@ class NotificationCard extends StatelessWidget {
       height: MediaQuery.of(context).size.height * 0.15,
       child: Card(
         child: Padding(
-          padding: const EdgeInsets.all(15),
+          padding: const EdgeInsets.all(10),
           child: Column(
             children: [
               Text(
@@ -24,6 +24,7 @@ class NotificationCard extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                     fontSize: 14),
               ),
+              Spacer(),
               Align(
                 alignment: Alignment.bottomRight,
                 child: Text(

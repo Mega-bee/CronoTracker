@@ -1,21 +1,21 @@
-import 'package:cronotracker/Discover/ui/widgets/discover_item_filter_2.dart';
+import 'package:cronotracker/Discover/ui/screens/Filter3.dart';
 import 'package:flutter/material.dart';
 
+import '../../../SearchPage/ui/Screen/SearchPage.dart';
 import '../../../utils/Images/Images.dart';
 import '../../../utils/style/colors.dart';
 import '../../models/discoverItem.dart';
-class BrandScreen2 extends StatelessWidget {
-  const BrandScreen2({Key? key}) : super(key: key);
+import '../widgets/discover_item_filter.dart';
+class Filter2Screenn extends StatelessWidget {
+  const Filter2Screenn({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController _textEditingController = TextEditingController();
     return Scaffold(
       appBar: AppBar(
         backgroundColor: PrimaryColor,
         titleSpacing: 0,
-        toolbarHeight: 100,
-        centerTitle: true,
+        toolbarHeight: 70,          centerTitle: true,
         elevation: 0,
         title:SizedBox(
           width: 35,
@@ -59,7 +59,20 @@ class BrandScreen2 extends StatelessWidget {
         //   ),
         // ),
         actions:[
-          IconButton(onPressed:(){} ,icon: Icon(Icons.search),iconSize: 35,)
+          Padding(
+              padding: const EdgeInsets.only(right: 6.0),
+              child: SizedBox(
+                  height: MediaQuery.of(context).size.height*0.1,
+                  width: MediaQuery.of(context).size.width*0.1,
+                  child: IconButton(
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => SearchPage(),));
+                      },
+                      icon: Image.asset(
+                        ImageAsset.SEARCH,
+                        fit: BoxFit.cover,
+                      )))
+          )
           // Center(
           //   child: SizedBox(
           //     width: 35,
@@ -81,14 +94,24 @@ class BrandScreen2 extends StatelessWidget {
       body: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-            child: ListView.builder(
-                itemCount: filterList2.length,
-                shrinkWrap: true,
-                itemBuilder: (BuildContext context, int index) {
-                  return DiscoverFilterWidget2(
-                    discoverFilter: filterList2[index],
-                  );
-                }),
+            child: Column(
+              children: [
+                Align(
+                    alignment: Alignment.topLeft,
+                    child: Text("Case Size",style: TextStyle(fontWeight: FontWeight.w500,fontSize:16),)),
+                SizedBox(height: 10,),
+                ListView.separated(
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: filterList2.length,
+                    shrinkWrap: true,
+                    separatorBuilder: (BuildContext context, int index) => const Divider(),
+                    itemBuilder: (BuildContext context, int index) {
+                      return DiscoverFilterWidget(
+                        discoverFilter: filterList2[index], widget: Filter3Screen(),
+                      );
+                    }),
+              ],
+            ),
           )),
     );
   }

@@ -1,7 +1,7 @@
 import 'package:cronotracker/AlertMessage/ui/widget/alert_message_card.dart';
-import 'package:cronotracker/Trending/model_classes/watch_card.dart';
 import 'package:cronotracker/utils/style/colors.dart';
 import 'package:flutter/material.dart';
+import '../../../Trending/Model/trending_model.dart';
 import '../../../Trending/ui/Screen/trending_screen.dart';
 import '../../../utils/Images/Images.dart';
 import '../widget/bid_card.dart';

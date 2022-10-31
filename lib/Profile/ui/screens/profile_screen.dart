@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
-import '../../../Favorites/ui/Screen/FavoriteScreen.dart';
+import '../../../My Collection/ui/Screen/FavoriteScreen.dart';
 import '../../../utils/style/colors.dart';
 
 class ProfileScreen extends StatelessWidget {

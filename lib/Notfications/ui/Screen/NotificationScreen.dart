@@ -1,6 +1,7 @@
 import 'package:cronotracker/Notfications/ui/Widgets/NotificationCard.dart';
 import 'package:cronotracker/utils/style/colors.dart';
 import 'package:flutter/material.dart';
+import '../../../SearchPage/ui/Screen/SearchPage.dart';
 import '../../../Trending/ui/Screen/trending_screen.dart';
 import '../../../utils/Images/Images.dart';
 import '../../Model/NotficationModel.dart';
@@ -68,7 +69,20 @@ class _NotificationScreenState extends State<NotificationScreen> {
           //   ),
           // ),
                actions:[
-                 IconButton(onPressed:(){} ,icon: Icon(Icons.search),iconSize: 35,)
+                Padding(
+                   padding: const EdgeInsets.only(right: 6.0),
+                   child: SizedBox(
+                     height: MediaQuery.of(context).size.height*0.1,
+                     width: MediaQuery.of(context).size.width*0.1,
+                       child: IconButton(
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => SearchPage(),));
+                      },
+                      icon: Image.asset(
+                        ImageAsset.SEARCH,
+                        fit: BoxFit.cover,
+                      )))
+                 ) 
               // Center(
               //   child: SizedBox(
               //     width: 35,
@@ -88,12 +102,21 @@ class _NotificationScreenState extends State<NotificationScreen> {
               // ),
             ],
           leading: MenuWidget()),
-      body: ListView.builder(
-        itemCount: notificationList.length,
-        shrinkWrap: false,
-        itemBuilder: (context, index) {
-      return NotificationCard(notificationModel: notificationList[index]);
-        },
+      body: Column(
+        children:[
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Align(
+              alignment: Alignment.topLeft,
+                child: Text("Notifications",style: TextStyle(color: Colors.black,fontWeight: FontWeight.w500,fontSize:24 ),)),
+          ),
+          ListView.builder(
+          itemCount: notificationList.length,
+          shrinkWrap: true,
+          itemBuilder: (context, index) {
+        return NotificationCard(notificationModel: notificationList[index]);
+          },
+        )],
       ),
     );
   }

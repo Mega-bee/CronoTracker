@@ -1,18 +1,17 @@
 import 'package:cronotracker/utils/style/colors.dart';
 import 'package:flutter/material.dart';
-
 import '../model/menu_item_model.dart';
-
-
 class MenuItems {
   static const mainScreen = MenuItemm(icon: Icons.home_filled, title: "Main Page");
-  static const favorites = MenuItemm(icon: Icons.star_border_outlined, title: "Favorites");
   static const wantToBuy = MenuItemm(icon: Icons.shopping_bag_outlined, title: "Want To Buy");
+  static const signIn = MenuItemm(icon: Icons.login, title: "SignIn");
+  static const plans = MenuItemm(icon: Icons.shop, title: "Plans");
 
   static const all = <MenuItemm>[
     mainScreen,
-    favorites,
-    wantToBuy
+    wantToBuy,
+    signIn,
+    plans
   ];
 }
 
@@ -63,7 +62,5 @@ class _MenuPageState extends State<MenuPage> {
               fontSize: 16,
               fontWeight: FontWeight.w400,
               fontFamily: 'Rubik'),),
-
-
           onTap: () => widget.onSelectedItem(item)));
 }

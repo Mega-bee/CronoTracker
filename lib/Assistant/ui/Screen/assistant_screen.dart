@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../SearchPage/ui/Screen/SearchPage.dart';
 import '../../../Trending/ui/Screen/trending_screen.dart';
 import '../../../utils/Images/Images.dart';
 import '../../../utils/style/colors.dart';
@@ -57,7 +58,20 @@ class AssistantScreen extends StatelessWidget {
           //   ),
           // ),
                actions:[
-                 IconButton(onPressed:(){} ,icon: Icon(Icons.search),iconSize: 35,)
+                Padding(
+                   padding: const EdgeInsets.only(right: 6.0),
+                   child: SizedBox(
+                     height: MediaQuery.of(context).size.height*0.1,
+                     width: MediaQuery.of(context).size.width*0.1,
+                       child: IconButton(
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => SearchPage(),));
+                      },
+                      icon: Image.asset(
+                        ImageAsset.SEARCH,
+                        fit: BoxFit.cover,
+                      )))
+                 ) 
               // Center(
               //   child: SizedBox(
               //     width: 35,

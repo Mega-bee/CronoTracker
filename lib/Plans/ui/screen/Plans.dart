@@ -1,38 +1,32 @@
-import 'package:cronotracker/Discover/models/discoverItem.dart';
-import 'package:cronotracker/Discover/ui/widgets/discover_item_filter.dart';
-import 'package:cronotracker/utils/style/colors.dart';
+import 'package:cronotracker/Plans/model/PlansModel.dart';
+import 'package:cronotracker/Plans/ui/widget/PlansWidget.dart';
 import 'package:flutter/material.dart';
 
+import '../../../DrawerMenu/ui/screen/zoom_drawer_screen.dart';
+import '../../../NavigationBar/ui/Screen/navbar.dart';
+import '../../../Trending/ui/Screen/trending_screen.dart';
 import '../../../utils/Images/Images.dart';
+import '../../../utils/style/colors.dart';
+class Plans extends StatefulWidget {
+  const Plans({Key? key}) : super(key: key);
 
-class BrandScreen extends StatelessWidget {
-  final DiscoverItem discoverItem;
+  @override
+  State<Plans> createState() => _PlansState();
+}
 
-   BrandScreen({Key? key, required this.discoverItem}) : super(key: key);
+class _PlansState extends State<Plans> {
   final TextEditingController _textEditingController = TextEditingController();
+  final GlobalKey<ScaffoldState> _key = GlobalKey();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _key,
       appBar: AppBar(
           backgroundColor: PrimaryColor,
           titleSpacing: 0,
-          toolbarHeight: 70,          centerTitle: true,
+          toolbarHeight: 70,
+          centerTitle: true,
           elevation: 0,
-          title:SizedBox(
-            width: 35,
-            height: 60,
-            child: InkWell(
-              onTap: () {},
-              child: Transform.scale(
-                scale: 3,
-                child:
-                Image.asset(
-                  ImageAsset.LOGO,
-                  alignment: Alignment(0.0,0.0),
-                ),
-              ),
-            ),
-          ),
           // TextField(
           //   controller: _textEditingController,
           //   autofocus: false,
@@ -60,7 +54,29 @@ class BrandScreen extends StatelessWidget {
           //   ),
           // ),
           actions:[
-            IconButton(onPressed:(){} ,icon: Icon(Icons.search),iconSize: 35,)
+            Padding(
+              padding: const EdgeInsets.only(right: 6.0),
+              child: SizedBox(
+                width: 35,
+                height: 60,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => ZoomDrawerr()),
+                    );
+                  },
+                  child: Transform.scale(
+                    scale: 3,
+                    child:
+                    Image.asset(
+                      ImageAsset.LOGO,
+                      alignment: Alignment(0.0,0.0),
+                    ),
+                  ),
+                ),
+              ),
+            )
             // Center(
             //   child: SizedBox(
             //     width: 35,
@@ -78,19 +94,30 @@ class BrandScreen extends StatelessWidget {
             //       ),
             //   ),
             // ),
-          ],),
+          ],
+          leading: MenuWidget()),
       body: SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-            child: ListView.builder(
-                itemCount: filterList.length,
+        child: Column(
+          children:[
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Align(
+                  alignment: Alignment.topLeft,
+                  child: Text("Plans",style: TextStyle(color: Colors.black,fontWeight: FontWeight.w500,fontSize:24 ),)),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+              child: ListView.builder(
+                itemCount: plans.length,
                 shrinkWrap: true,
-                itemBuilder: (BuildContext context, int index) {
-                  return DiscoverFilterWidget(
-                    discoverFilter: filterList[index],
-                  );
-                }),
-          )),
-    );
+                itemBuilder: (context, index) {
+                  return PlansWidget(plansModel: plans[index]);
+                },
+              ),
+            )
+          ],
+        ),
+      ),
+    );;
   }
 }

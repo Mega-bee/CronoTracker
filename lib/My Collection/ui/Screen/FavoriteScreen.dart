@@ -69,24 +69,35 @@ class _FavoritesState extends State<Favorites> {
               ),
             ],
             leading: MenuWidget()),
-        body:Padding(
-        padding: EdgeInsets.all(8),
-        child: favoriteList.isEmpty
-            ? const Center(
-                child: Text(
-                  'There are no favorites yet!',
-                  style: TextStyle(color: Colors.black),
-                ),
-              )
-            : GridView.builder(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    childAspectRatio: 1,
-                    crossAxisSpacing: 5,
-                    mainAxisSpacing: 5),
-                itemCount: favoriteList.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return FavoriteCard(auctionsModel: favoriteList[index], index: index,);
-                })));
+        body:Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Align(
+                  alignment: Alignment.topLeft,
+                  child: Text("My Collection",style: TextStyle(color: Colors.black,fontWeight: FontWeight.w500,fontSize:24 ),)),
+            ),
+            Padding(
+            padding: EdgeInsets.all(8),
+            child: favoriteList.isEmpty
+                ? const Center(
+                    child: Text(
+                      'There are no favorites yet!',
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  )
+                : GridView.builder(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        childAspectRatio: 1,
+                        crossAxisSpacing: 5,
+                        mainAxisSpacing: 5),
+                    itemCount: favoriteList.length,
+                    shrinkWrap: true,
+                    itemBuilder: (BuildContext context, int index) {
+                      return FavoriteCard(auctionsModel: favoriteList[index], index: index,);
+                    })),
+          ],
+        ));
   }
 }

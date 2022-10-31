@@ -10,7 +10,7 @@ class DiscoverFilter{
   DiscoverFilter({required this.Filter});
 }
 List <DiscoverFilter> filterList =[
-  DiscoverFilter(Filter: "All"),
+  DiscoverFilter(Filter: "Model"),
   DiscoverFilter(Filter: "Airking"),
   DiscoverFilter(Filter: "Date"),
   DiscoverFilter(Filter: "Datejust"),
@@ -32,4 +32,11 @@ List <DiscoverFilter> filterList =[
 List <DiscoverFilter> filterList2 =[
   DiscoverFilter(Filter: "44mm"),
   DiscoverFilter(Filter: "40mm"),
+];
+List <DiscoverFilter> filterList3 =[
+  DiscoverFilter(Filter: "All"),
+  DiscoverFilter(Filter: "Steel"),
+  DiscoverFilter(Filter: "Steel & Rose Gold"),
+  DiscoverFilter(Filter: "White Gold"),
+  DiscoverFilter(Filter: "Yellow Gold"),
 ];

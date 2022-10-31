@@ -1,21 +1,25 @@
-import 'package:cronotracker/Auctions/Model/auctions_model.dart';
-import 'package:cronotracker/Discover/ui/widgets/discover_item_filter_3.dart';
+import 'package:cronotracker/Discover/models/discoverItem.dart';
+import 'package:cronotracker/Discover/ui/widgets/discover_item_filter.dart';
+import 'package:cronotracker/SearchFilter/ui/screens/filter_main_screen.dart';
+import 'package:cronotracker/utils/style/colors.dart';
 import 'package:flutter/material.dart';
 
+import '../../../SearchPage/ui/Screen/SearchPage.dart';
 import '../../../utils/Images/Images.dart';
-import '../../../utils/style/colors.dart';
-class BrandScreen3 extends StatelessWidget {
-  const BrandScreen3({Key? key}) : super(key: key);
+import 'Filter2.dart';
 
+class Filter1Screen extends StatelessWidget {
+  final DiscoverItem discoverItem;
+
+  Filter1Screen({Key? key, required this.discoverItem}) : super(key: key);
+  final TextEditingController _textEditingController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    TextEditingController _textEditingController = TextEditingController();
     return Scaffold(
       appBar: AppBar(
         backgroundColor: PrimaryColor,
         titleSpacing: 0,
-        toolbarHeight: 100,
-        centerTitle: true,
+        toolbarHeight: 70,          centerTitle: true,
         elevation: 0,
         title:SizedBox(
           width: 35,
@@ -59,7 +63,20 @@ class BrandScreen3 extends StatelessWidget {
         //   ),
         // ),
         actions:[
-          IconButton(onPressed:(){} ,icon: Icon(Icons.search),iconSize: 35,)
+          Padding(
+              padding: const EdgeInsets.only(right: 6.0),
+              child: SizedBox(
+                  height: MediaQuery.of(context).size.height*0.1,
+                  width: MediaQuery.of(context).size.width*0.1,
+                  child: IconButton(
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => SearchPage(),));
+                      },
+                      icon: Image.asset(
+                        ImageAsset.SEARCH,
+                        fit: BoxFit.cover,
+                      )))
+          )
           // Center(
           //   child: SizedBox(
           //     width: 35,
@@ -79,14 +96,17 @@ class BrandScreen3 extends StatelessWidget {
           // ),
         ],),
       body: SingleChildScrollView(
+          physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
           child: Padding(
             padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-            child: ListView.builder(
-                itemCount: 1,
+            child: ListView.separated(
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: filterList.length,
                 shrinkWrap: true,
-                itemBuilder: (BuildContext context, int index) {
-                  return DiscoverFilterWidget3(
-                    auctionsModel: AuctionsList[index], index: index,
+                separatorBuilder: (context,index) => const Divider(),
+                itemBuilder: (context,index) {
+                  return DiscoverFilterWidget(
+                    discoverFilter: filterList[index], widget: Filter2Screenn(),
                   );
                 }),
           )),

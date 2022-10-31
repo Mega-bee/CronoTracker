@@ -1,4 +1,5 @@
-import '../../Trending/model_classes/watch_card.dart';
+
+import '../../Trending/Model/trending_model.dart';
 
 class WatchDetails {
   String? image, brand, modelName, referece, nickname, dialColor, caseMaterial,
