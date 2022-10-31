@@ -16,7 +16,7 @@ class WantToBuyCard extends StatelessWidget {
         Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) => AuctionsInfo(
+                builder: (context) => AuctionsInfo0(
                   auctionsModel: auctionsModel,
                   index: index,
                 )));

@@ -41,7 +41,7 @@ class _AuctionsCardState extends State<AuctionsCard> {
       onTap: () {
         Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => AuctionsInfo(auctionsModel: widget.auctionsModel, index: 1,)));
+            MaterialPageRoute(builder: (context) => AuctionsInfo0(auctionsModel: widget.auctionsModel, index: 1,)));
       },
       child: SizedBox(
         height: MediaQuery
@@ -94,8 +94,8 @@ class _AuctionsCardState extends State<AuctionsCard> {
                                 style: TextStyle(color: Colors.grey, fontSize: 14),
                               ),
                         Text(
-                               "${Currency.AED} ${widget.auctionsModel.price} ",
-                          style: TextStyle(color: BlueColor, fontSize: 17,),
+                               'Retail price ${widget.auctionsModel.RetailPrice}\$ as of May 2015',
+                          style: TextStyle(color: BlueColor, fontSize: 14,),
                         ),
                       ],
                     ),
