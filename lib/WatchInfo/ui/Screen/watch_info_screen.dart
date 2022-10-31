@@ -1,9 +1,12 @@
+import 'dart:math';
+
 import 'package:cronotracker/WatchInfo/Model/watch_info_model.dart';
 import 'package:cronotracker/WatchInfo/ui/Widget/watch_info_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../AlertMessage/ui/widget/alert_message_card.dart';
 import '../../../Auctions/Model/auctions_model.dart';
+import '../../../AuctionsWatchInfo/ui/Widget/Modal bottom sheet.dart';
 import '../../../My Collection/Model/FavoriteModel.dart';
 import '../../../Trending/Model/trending_model.dart';
 import '../../../utils/Images/Images.dart';
@@ -20,9 +23,9 @@ class WatchDetailsScreen extends StatefulWidget {
   // WatchDetails? watchDetails;
   WatchDetailsScreen(
       {Key? key,
-      required this.trendingModel,
-      required this.index,
-      this.watchDetails})
+        required this.trendingModel,
+        required this.index,
+        this.watchDetails})
       : super(key: key);
 
   @override
@@ -31,6 +34,7 @@ class WatchDetailsScreen extends StatefulWidget {
 
 class _WatchDetailsScreenState extends State<WatchDetailsScreen> {
   Color fav = BlueColor;
+  bool Mycollection = false;
 
   @override
   Widget build(BuildContext context) {
@@ -121,6 +125,7 @@ class _WatchDetailsScreenState extends State<WatchDetailsScreen> {
                             //   ),
                             // ),
                             TabBar(
+                              indicatorColor: BlueColor ,
                               tabs: [
                                 Tab(
                                   text: "Description",
@@ -145,10 +150,10 @@ class _WatchDetailsScreenState extends State<WatchDetailsScreen> {
                                     alignment: Alignment.centerLeft,
                                     child: Padding(
                                         padding:
-                                            EdgeInsets.fromLTRB(30, 10, 30, 0),
+                                        EdgeInsets.fromLTRB(30, 10, 30, 0),
                                         child: Column(
                                           crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                          CrossAxisAlignment.start,
                                           children: [
                                             SizedBox(
                                               height: 15,
@@ -159,13 +164,13 @@ class _WatchDetailsScreenState extends State<WatchDetailsScreen> {
                                                   text: ("- Brand: "),
                                                   style: TextStyle(
                                                       fontWeight:
-                                                          FontWeight.w500,
+                                                      FontWeight.w500,
                                                       fontSize: 15,
                                                       color: Colors.grey),
                                                 ),
                                                 TextSpan(
                                                   text:
-                                                      "${widget.trendingModel.brand}",
+                                                  "${widget.trendingModel.brand}",
                                                   style: TextStyle(
                                                       fontSize: 15,
                                                       color: Colors.black),
@@ -310,13 +315,13 @@ class _WatchDetailsScreenState extends State<WatchDetailsScreen> {
                                                   text: ("- Referance: "),
                                                   style: TextStyle(
                                                       fontWeight:
-                                                          FontWeight.w500,
+                                                      FontWeight.w500,
                                                       fontSize: 15,
                                                       color: Colors.grey),
                                                 ),
                                                 TextSpan(
                                                   text:
-                                                      "${widget.trendingModel.referance}",
+                                                  "${widget.trendingModel.referance}",
                                                   style: TextStyle(
                                                       fontSize: 15,
                                                       color: Colors.black),
@@ -339,13 +344,13 @@ class _WatchDetailsScreenState extends State<WatchDetailsScreen> {
                                                   text: ("- Model: "),
                                                   style: TextStyle(
                                                       fontWeight:
-                                                          FontWeight.w500,
+                                                      FontWeight.w500,
                                                       fontSize: 15,
                                                       color: Colors.grey),
                                                 ),
                                                 TextSpan(
                                                   text:
-                                                      "${widget.trendingModel.model}",
+                                                  "${widget.trendingModel.model}",
                                                   style: TextStyle(
                                                       fontSize: 15,
                                                       color: Colors.black),
@@ -369,10 +374,10 @@ class _WatchDetailsScreenState extends State<WatchDetailsScreen> {
                                     alignment: Alignment.centerLeft,
                                     child: Padding(
                                         padding:
-                                            EdgeInsets.fromLTRB(30, 10, 30, 0),
+                                        EdgeInsets.fromLTRB(30, 10, 30, 0),
                                         child: Column(
                                           crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                          CrossAxisAlignment.start,
                                           children: [
                                             SizedBox(
                                               height: 15,
@@ -383,13 +388,13 @@ class _WatchDetailsScreenState extends State<WatchDetailsScreen> {
                                                   text: ("- Retail Price: "),
                                                   style: TextStyle(
                                                       fontWeight:
-                                                          FontWeight.w500,
+                                                      FontWeight.w500,
                                                       fontSize: 15,
                                                       color: Colors.grey),
                                                 ),
                                                 TextSpan(
                                                   text:
-                                                      "${widget.trendingModel.RetailPrice}",
+                                                  "${widget.trendingModel.RetailPrice}",
                                                   style: TextStyle(
                                                       fontSize: 15,
                                                       color: Colors.black),
@@ -406,13 +411,13 @@ class _WatchDetailsScreenState extends State<WatchDetailsScreen> {
                                                   text: ("- Price Range: "),
                                                   style: TextStyle(
                                                       fontWeight:
-                                                          FontWeight.w500,
+                                                      FontWeight.w500,
                                                       fontSize: 15,
                                                       color: Colors.grey),
                                                 ),
                                                 TextSpan(
                                                   text:
-                                                      "${widget.trendingModel.priceRange}",
+                                                  "${widget.trendingModel.priceRange}",
                                                   style: TextStyle(
                                                       fontSize: 15,
                                                       color: Colors.black),
@@ -435,13 +440,13 @@ class _WatchDetailsScreenState extends State<WatchDetailsScreen> {
                                                   text: ("- Sold/Month: "),
                                                   style: TextStyle(
                                                       fontWeight:
-                                                          FontWeight.w500,
+                                                      FontWeight.w500,
                                                       fontSize: 15,
                                                       color: Colors.grey),
                                                 ),
                                                 TextSpan(
                                                   text:
-                                                      "${widget.trendingModel.soldMonth}",
+                                                  "${widget.trendingModel.soldMonth}",
                                                   style: TextStyle(
                                                       fontSize: 15,
                                                       color: Colors.black),
@@ -462,16 +467,16 @@ class _WatchDetailsScreenState extends State<WatchDetailsScreen> {
                                               text: TextSpan(children: [
                                                 TextSpan(
                                                   text:
-                                                      ("- Selling Rate (Sold Watches/Listed Watches): "),
+                                                  ("- Selling Rate (Sold Watches/Listed Watches): "),
                                                   style: TextStyle(
                                                       fontWeight:
-                                                          FontWeight.w500,
+                                                      FontWeight.w500,
                                                       fontSize: 15,
                                                       color: Colors.grey),
                                                 ),
                                                 TextSpan(
                                                   text:
-                                                      "${widget.trendingModel.SellingRate}",
+                                                  "${widget.trendingModel.SellingRate}",
                                                   style: TextStyle(
                                                       fontSize: 15,
                                                       color: Colors.black),
@@ -489,18 +494,18 @@ class _WatchDetailsScreenState extends State<WatchDetailsScreen> {
                                       legend: Legend(isVisible: false),
                                       // Enable tooltip
                                       tooltipBehavior:
-                                          TooltipBehavior(enable: true),
+                                      TooltipBehavior(enable: true),
                                       series: <ChartSeries>[
                                         LineSeries<chartData, String>(
                                             dataSource: MonthChartData,
                                             xValueMapper: (chartData data, _) =>
-                                                data.date,
+                                            data.date,
                                             yValueMapper: (chartData data, _) =>
-                                                data.price,
+                                            data.price,
                                             // Enable data label
                                             dataLabelSettings:
-                                                DataLabelSettings(
-                                                    isVisible: true))
+                                            DataLabelSettings(
+                                                isVisible: true))
                                       ]),
                                 ],
                               ),
@@ -603,20 +608,40 @@ class _WatchDetailsScreenState extends State<WatchDetailsScreen> {
                             //     order: GroupedListOrder.ASC, // optional
                             //   ),
                             // ),
+
                             Padding(
-                              padding: EdgeInsets.fromLTRB(9, 0, 0, 0),
-                              child: ListView.builder(
-                                physics: NeverScrollableScrollPhysics(),
-                                itemCount: details.length,
-                                shrinkWrap: true,
-                                itemBuilder: (context, index) {
-                                  return WatchInfoCard(
-                                    trendingModel: AuctionsList[index],
-                                    auctionsModel: widget.trendingModel,
-                                  );
-                                },
-                              ),
-                            ),
+                                padding: EdgeInsets.fromLTRB(9, 0, 0, 0),
+                                child: GroupedListView<dynamic, String>(
+                                    useStickyGroupSeparators: true,
+                                    shrinkWrap: true,
+                                    elements: AuctionsList,
+                                    groupBy: (element) => element.date,
+                                    groupSeparatorBuilder: (value) => Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Text(value,style: TextStyle(fontWeight: FontWeight.w300,fontSize: 17)),
+                                    ),
+                                    order: GroupedListOrder.ASC,
+                                    // groupComparator: ((value1, value2) => value1.compareTo(value2)),
+                                    indexedItemBuilder: (context, element,
+                                        index) =>
+                                        WatchInfoCard(
+                                          trendingModel: AuctionsList[index],
+                                          auctionsModel: widget.trendingModel,
+                                        ),
+                                    reverse: true)
+
+                              //   ListView.builder(
+                              //   physics: NeverScrollableScrollPhysics(),
+                              //   itemCount: details.length,
+                              //   shrinkWrap: true,
+                              //   itemBuilder: (context, index) {
+                              //     return WatchInfoCard(
+                              //       trendingModel: AuctionsList[index],
+                              //       auctionsModel: widget.trendingModel,
+                              //     );
+                              //   },
+                              // ),
+                            )
                           ],
                         ),
                       ),
@@ -638,7 +663,7 @@ class _WatchDetailsScreenState extends State<WatchDetailsScreen> {
                     return CustomDeleteDialog(
                       title: 'Confirm',
                       content:
-                          'Would you like to be instantly notified when this watch is listed in the next live action ?',
+                      'Would you like to be instantly notified when this watch is listed in the next live action ?',
                       yesBtn: () {
                         Navigator.pop(context);
                       },
@@ -649,7 +674,7 @@ class _WatchDetailsScreenState extends State<WatchDetailsScreen> {
                   });
             },
             child: Icon(
-              Icons.credit_card,
+              Icons.notifications_active,
               color: BlueColor,
             ),
             backgroundColor: PrimaryColor,
@@ -659,27 +684,25 @@ class _WatchDetailsScreenState extends State<WatchDetailsScreen> {
             onPressed: () {
               showDialog(
                   context: context,
-                  builder: (BuildContext context) {
-                    return CustomDeleteDialog(
-                      title: 'Confirm',
-                      content:
-                          'Would you like to add the watch to you favorites ?',
-                      yesBtn: () {
-                        setState(() {
-                          favoriteList.add(AuctionsList[widget.index]);
-                          Navigator.pop(context);
-                          fav = Colors.red;
-                        });
-                      },
-                      noBtn: () {
-                        Navigator.pop(context);
-                      },
+                  builder: (BuildContext ctx) {
+                    return AlertDialog(
+                      content: BottomSheett(),
+                      actions: [
+                        TextButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: Text(
+                              'Submit',
+                              style: TextStyle(color: Colors.black),
+                            ))
+                      ],
                     );
                   });
             },
             child: Icon(
-              Icons.favorite,
-              color: fav,
+              Mycollection ? Icons.done : Icons.star,
+              color: BlueColor,
             ),
             backgroundColor: PrimaryColor,
           ),

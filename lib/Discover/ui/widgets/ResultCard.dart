@@ -29,7 +29,7 @@ class ResultCard extends StatelessWidget {
             elevation: 1,
             child: Padding(
               padding: const EdgeInsets.all(20.0),
-              child: Column(
+              child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Center(
@@ -38,6 +38,7 @@ class ResultCard extends StatelessWidget {
                       children: [
                         SizedBox(
                           height: 70,
+                          width: 100,
                           child: Image.asset("${auctionsModel.image}",
                               fit: BoxFit.cover),
                         ),
@@ -45,26 +46,31 @@ class ResultCard extends StatelessWidget {
                     ),
                   ),
                   Spacer(),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 5),
-                    child: Text(
-                      "${auctionsModel.model}",
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      softWrap: false,
-                      style: TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.w600,
-                          fontSize: 14
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 5),
+                        child: Text(
+                          "${auctionsModel.model}",
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                          softWrap: false,
+                          style: TextStyle(
+                              color: Colors.black, fontWeight: FontWeight.w600,
+                              fontSize: 14
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
-                  Text(
-                    "${auctionsModel.referance}",
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    softWrap: false,
-                    style: TextStyle(
-                        color: Colors.black54, fontSize: 12),
+                      Text(
+                        "${auctionsModel.referance}",
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        softWrap: false,
+                        style: TextStyle(
+                            color: Colors.black54, fontSize: 12),
+                      ),
+                    ],
                   ),
                   // Icon(Icons.favorite,color: PrimaryColor,)
                 ],

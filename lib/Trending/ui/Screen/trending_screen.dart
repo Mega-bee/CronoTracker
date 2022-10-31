@@ -241,7 +241,7 @@ class TrendingScreen extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(15),
                     child: Text(
-                      'Most Sold AuctionsList',
+                      'Most Sold watches',
                       style:
                           TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
                     ),
@@ -287,7 +287,7 @@ class TrendingScreen extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(15),
                     child: Text(
-                      'Most Sold Rose Gold AuctionsList',
+                      'Most Sold Rose Gold watches',
                       style:
                           TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
                     ),
@@ -333,7 +333,7 @@ class TrendingScreen extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(15),
                     child: Text(
-                      'Most Sold WHITE GOLD AuctionsList',
+                      'Most Sold WHITE GOLD watches',
                       style:
                           TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
                     ),
@@ -379,7 +379,7 @@ class TrendingScreen extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(15),
                     child: Text(
-                      'Most Sold Yellow Gold AuctionsList',
+                      'Most Sold Yellow Gold watches',
                       style:
                           TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
                     ),
@@ -425,7 +425,7 @@ class TrendingScreen extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(15),
                     child: Text(
-                      'Sold PLATINUM AuctionsList',
+                      'Sold PLATINUM watches',
                       style:
                           TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
                     ),
