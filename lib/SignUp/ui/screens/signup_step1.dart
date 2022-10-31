@@ -169,49 +169,77 @@ class _SignUpStep1State extends State<SignUpStep1> {
                   ),
                 ),
                 SizedBox(height: MediaQuery.of(context).size.height * 0.10),
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 5, left: 15, top: 30),
-                  child: Container(
-                    alignment: Alignment.topLeft,
-                    child: Text(
-                      'First Name',
-                      style: TextStyle(
-                          fontWeight: FontWeight.w400
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 15, right: 15),
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      icon: const Icon(Icons.sort, color: Colors.black,),
-                      hintText: 'Enter your name',
-                    ),
-                  ),
-                ),
+                // Padding(
+                //   padding: const EdgeInsets.only(bottom: 5, left: 15, top: 30),
+                //   child:
+                //   Container(
+                //     alignment: Alignment.topLeft,
+                //      child:
+                //         Text(
+                //       'First Name',
+                //       style: TextStyle(
+                //           fontWeight: FontWeight.w400
+                //       ),
+                //     ),
+                //   ),
+                // ),
+                // Padding(
+                //   padding: EdgeInsets.only(left: 15, right: 15),
+                //   child: TextFormField(
+                //     decoration: InputDecoration(
+                //       icon: const Icon(Icons.sort, color: Colors.black,),
+                //       hintText: 'Enter your name',
+                //     ),
+                //   ),
+                // ),
+                //
+                // Padding(
+                //   padding: const EdgeInsets.only(bottom: 5, left: 15, top: 30),
+                //   child: Container(
+                //     alignment: Alignment.topLeft,
+                //     child: Text(
+                //       'Last Name',
+                //       style: TextStyle(
+                //           fontWeight: FontWeight.w400
+                //       ),
+                //     ),
+                //   ),
+                // ),
+                // Padding(
+                //   padding: EdgeInsets.only(left: 15, right: 15),
+                //   child: TextFormField(
+                //     decoration: InputDecoration(
+                //       icon: const Icon(Icons.sort, color: Colors.black,),
+                //       hintText: 'Enter your last name',
+                //     ),
+                //   ),
+                // ),
+
 
                 Padding(
                   padding: const EdgeInsets.only(bottom: 5, left: 15, top: 30),
                   child: Container(
                     alignment: Alignment.topLeft,
                     child: Text(
-                      'Last Name',
+                      'Full Name',
                       style: TextStyle(
                           fontWeight: FontWeight.w400
                       ),
                     ),
                   ),
                 ),
+
                 Padding(
                   padding: EdgeInsets.only(left: 15, right: 15),
                   child: TextFormField(
                     decoration: InputDecoration(
                       icon: const Icon(Icons.sort, color: Colors.black,),
-                      hintText: 'Enter your last name',
+                      hintText: 'Enter your full name',
                     ),
                   ),
                 ),
+
+
                 Padding(
                   padding: const EdgeInsets.only(bottom: 5, left: 15, top: 30),
                   child: Container(
@@ -241,6 +269,30 @@ class _SignUpStep1State extends State<SignUpStep1> {
                     ),
                   ),
                 ),
+
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 5, left: 15, top: 30),
+                  child: Container(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      'Phone Number',
+                      style: TextStyle(
+                          fontWeight: FontWeight.w400
+                      ),
+                    ),
+                  ),
+                ),
+
+                Padding(
+                  padding: EdgeInsets.only(left: 15, right: 15),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      icon: const Icon(Icons.dialpad, color: Colors.black,),
+                      hintText: 'Enter your phone number',
+                    ),
+                  ),
+                ),
+
 
                 Padding(
                   padding: const EdgeInsets.only(bottom: 5, left: 15, top: 30),
@@ -534,8 +586,6 @@ class _SignUpStep1State extends State<SignUpStep1> {
                 //     const Spacer()
                 //   ],
                 // ),
-                //
-
 
               ],
             ),

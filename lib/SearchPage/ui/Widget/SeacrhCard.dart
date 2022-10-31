@@ -36,7 +36,20 @@ class SearchCard extends StatelessWidget {
                         backgroundColor: Colors.white,
                       child: Image.asset(auctionsModel.image.toString(),fit: BoxFit.cover,),
                     ),
-                    title: Text(auctionsModel.text.toString(),style: TextStyle(fontSize: 14),),
+                    title:RichText(
+                      text: TextSpan(
+                        style: TextStyle(color: Colors.black, fontSize: 14),
+                        children: <TextSpan>[
+                          TextSpan(text: "${auctionsModel.brand}"),
+                          TextSpan(text: " ${auctionsModel.model}"),
+                          TextSpan(text: " ${auctionsModel.caseMaterial}"),
+                          TextSpan(text: auctionsModel.nickName == null?"":" ${auctionsModel.nickName}"),
+                          TextSpan(text: " ${auctionsModel.referance}"),
+                        ],
+                      ),
+                    )
+
+                    // Text(auctionsModel.text.toString(),style: TextStyle(fontSize: 14),),
                     // subtitle: Text(auctionsModel.model.toString(),style: TextStyle(fontSize: 12),),
                   ),
                 ),

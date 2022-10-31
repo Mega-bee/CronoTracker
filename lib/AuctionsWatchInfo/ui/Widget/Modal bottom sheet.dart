@@ -1,7 +1,13 @@
+
+
 import 'package:cronotracker/utils/style/colors.dart';
 import 'package:flutter/material.dart';
 
 import '../../../AlertMessage/ui/widget/alert_message_card.dart';
+
+String _values= 'Warranty';
+String _valuess= 'Unworn';
+
 class BottomSheett extends StatefulWidget {
   const BottomSheett({Key? key}) : super(key: key);
 
@@ -102,13 +108,13 @@ class _BottomSheettState extends State<BottomSheett> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Full Set: '),
-              SizedBox(
-                width: MediaQuery
-                    .of(context)
-                    .size
-                    .width * 0.1,
-              ), Spacer(),// Text("No"),
+              // Text('Full Set: '),
+              // SizedBox(
+              //   width: MediaQuery
+              //       .of(context)
+              //       .size
+              //       .width * 0.1,
+              // ), //Spacer(),// Text("No"),
               // Checkbox(
               //     activeColor: Colors.blue[900],
               //     value: value2,
@@ -118,17 +124,101 @@ class _BottomSheettState extends State<BottomSheett> {
               //       });
               //     }),
               // Text("Yes"),
-              Checkbox(
+             /* Checkbox(
                   activeColor: Colors.blue[900],
                   value: value,
                   onChanged: (value) {
                     setState(() {
                       this.value = value!;
                     });
-                  })
+                  }),*/
+              Text('Warranty \n Card:', style: TextStyle(fontSize: 13),),
+              SizedBox(
+                width: MediaQuery
+                    .of(context)
+                    .size
+                    .width * 0.01,
+              ),
+              Radio(
+                  value: "Warranty",
+                  groupValue: _values,
+                  onChanged: (value){ setState(() {
+                      _values =value.toString();
+                  });}),
+
+              Text('Without Warranty \n Card:', style: TextStyle(fontSize: 13),),
+              SizedBox(
+                width: MediaQuery
+                    .of(context)
+                    .size
+                    .width * 0.01,
+              ),
+              Radio(
+                  value:"Without Warranty",
+                  groupValue: _values,
+                  onChanged: (value){ setState(() {
+                    _values =value.toString();
+                  });})
             ],
-          ), SizedBox(height: 5,),
-          SizedBox(
+          ), SizedBox(height: 25,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Column(
+                    children: [
+                      Text('Unworn', style: TextStyle(fontSize: 13),),
+                      SizedBox(
+                        width: MediaQuery
+                            .of(context)
+                            .size
+                            .width * 0.01,
+                      ),
+                      Radio(
+                          value: "Unworn",
+                          groupValue: _valuess,
+                          onChanged: (value){ setState(() {
+                            _valuess =value.toString();
+                          });}),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Text('Pre-owned', style: TextStyle(fontSize: 13),),
+                      SizedBox(
+                        width: MediaQuery
+                            .of(context)
+                            .size
+                            .width * 0.01,
+                      ),
+                      Radio(
+                          value: "Pre-owned",
+                          groupValue: _valuess,
+                          onChanged: (value){ setState(() {
+                            _valuess =value.toString();
+                          });}),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Text('Pre-owned like new', style: TextStyle(fontSize: 13),),
+                      SizedBox(
+                        width: MediaQuery
+                            .of(context)
+                            .size
+                            .width * 0.01,
+                      ),
+                      Radio(
+                          value: "Pre-owned like new",
+                          groupValue: _valuess,
+                          onChanged: (value){ setState(() {
+                            _valuess =value.toString();
+                          });}),
+                    ],
+                  ),
+                ],
+              )
+
+          /*SizedBox(
             width: MediaQuery
                 .of(context)
                 .size
@@ -151,7 +241,7 @@ class _BottomSheettState extends State<BottomSheett> {
                     BorderSide(style: BorderStyle.solid, width: 3),
                   )),
             ),
-          ),
+          ),*/
         ]),
       ),
     );
