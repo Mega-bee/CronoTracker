@@ -125,6 +125,7 @@ class _WatchDetailsScreenState extends State<WatchDetailsScreen> {
                             //   ),
                             // ),
                             TabBar(
+                              indicatorColor: BlueColor ,
                               tabs: [
                                 Tab(
                                   text: "Description",
