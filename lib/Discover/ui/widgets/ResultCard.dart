@@ -14,7 +14,7 @@ class ResultCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height*0.15,
+      height: MediaQuery.of(context).size.height*0.2,
       child: Padding(
         padding: EdgeInsets.fromLTRB(0, 6, 10, 0),
         child: InkWell(
@@ -29,67 +29,52 @@ class ResultCard extends StatelessWidget {
             elevation: 1,
             child: Padding(
               padding: const EdgeInsets.all(20.0),
-              child:ListTile(title: Text(
-                      "${auctionsModel.model}",
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      softWrap: false,
-                      style: TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.w600,
-                          fontSize: 14
-                      ),
-                    ),leading:    SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.06,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Center(
+                    child: Stack(
+                      alignment: Alignment.topRight,
+                      children: [
+                        SizedBox(
+                          height: 70,
+                          width: 100,
                           child: Image.asset("${auctionsModel.image}",
                               fit: BoxFit.cover),
-                        ),subtitle:Text(
-                    "${auctionsModel.referance}",
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    softWrap: false,
-                    style: TextStyle(
-                        color: Colors.black54, fontSize: 12),
-                  ) ,)
-              //  Column(
-              //   crossAxisAlignment: CrossAxisAlignment.start,
-              //   children: [
-              //     Center(
-              //       child: Stack(
-              //         alignment: Alignment.topRight,
-              //         children: [
-              //           SizedBox(
-              //             height: MediaQuery.of(context).size.height * 0.06,
-              //             child: Image.asset("${auctionsModel.image}",
-              //                 fit: BoxFit.cover),
-              //           ),
-              //         ],
-              //       ),
-              //     ),
-              //     Spacer(),
-              //     Padding(
-              //       padding: const EdgeInsets.only(bottom: 5),
-              //       child: Text(
-              //         "${auctionsModel.model}",
-              //         maxLines: 2,
-              //         overflow: TextOverflow.ellipsis,
-              //         softWrap: false,
-              //         style: TextStyle(
-              //             color: Colors.black, fontWeight: FontWeight.w600,
-              //             fontSize: 14
-              //         ),
-              //       ),
-              //     ),
-              //     Text(
-              //       "${auctionsModel.referance}",
-              //       maxLines: 1,
-              //       overflow: TextOverflow.ellipsis,
-              //       softWrap: false,
-              //       style: TextStyle(
-              //           color: Colors.black54, fontSize: 12),
-              //     ),
-              //     // Icon(Icons.favorite,color: PrimaryColor,)
-              //   ],
-              // ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Spacer(),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 5),
+                        child: Text(
+                          "${auctionsModel.model}",
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                          softWrap: false,
+                          style: TextStyle(
+                              color: Colors.black, fontWeight: FontWeight.w600,
+                              fontSize: 14
+                          ),
+                        ),
+                      ),
+                      Text(
+                        "${auctionsModel.referance}",
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        softWrap: false,
+                        style: TextStyle(
+                            color: Colors.black54, fontSize: 12),
+                      ),
+                    ],
+                  ),
+                  // Icon(Icons.favorite,color: PrimaryColor,)
+                ],
+              ),
             ),
           ),
         ),

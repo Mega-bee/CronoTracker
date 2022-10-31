@@ -103,23 +103,23 @@ class ResultScreen extends StatelessWidget {
             child: Padding(
                 padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                 child: GroupedListView<dynamic,String>(
-                              useStickyGroupSeparators: true,
-                              shrinkWrap: true,
-                              elements: AuctionsList,
-                              groupBy: (element) => element.dialColor,
-                              groupSeparatorBuilder: (value) => Container(
-                                child: Text(value, style:TextStyle(
+                    useStickyGroupSeparators: true,
+                    shrinkWrap: true,
+                    elements: AuctionsList,
+                    groupBy: (element) => element.dialColor,
+                    groupSeparatorBuilder: (value) => Container(
+                      child: Text(value, style:TextStyle(
                           color: Colors.black,
                           fontSize: 18,
                           fontWeight: FontWeight.w500),),
-                                
-                              ),
-                              order: GroupedListOrder.ASC,
-                              // groupComparator: ((value1, value2) => value1.compareTo(value2)),
-                              indexedItemBuilder: (context, element, index) =>ResultCard(
-                                auctionsModel: AuctionsList[index], index: index,
-                             ),
-                             reverse:true
-                              ))));
+
+                    ),
+                    order: GroupedListOrder.ASC,
+                    // groupComparator: ((value1, value2) => value1.compareTo(value2)),
+                    indexedItemBuilder: (context, element, index) =>ResultCard(
+                      auctionsModel: AuctionsList[index], index: index,
+                    ),
+                    reverse:true
+                ))));
   }
 }

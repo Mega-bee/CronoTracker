@@ -30,6 +30,7 @@ class AuctionsInfo extends StatefulWidget {
 class _AuctionsInfoState extends State<AuctionsInfo> {
   Color fav = BlueColor;
   bool Mycollection = false;
+
   @override
   Widget build(BuildContext context) {
     final GlobalKey<ScaffoldState> _key = GlobalKey();
@@ -119,6 +120,7 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
                             //   ),
                             // ),
                             TabBar(
+                              indicatorColor: BlueColor,
                               tabs: [
                                 Tab(
                                   text: "Description",
@@ -872,8 +874,12 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
                                   shrinkWrap: true,
                                   elements: AuctionsList,
                                   groupBy: (element) => element.date,
-                                  groupSeparatorBuilder: (value) => Container(
-                                    child: Text(value),
+                                  groupSeparatorBuilder: (value) => Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text(value,
+                                        style: TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w300)),
                                   ),
                                   groupComparator: ((value1, value2) =>
                                       value1.compareTo(value2)),
@@ -929,7 +935,7 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
                   });
             },
             child: Icon(
-              Icons.credit_card,
+              Icons.notifications_active,
               color: BlueColor,
             ),
             backgroundColor: PrimaryColor,
@@ -940,34 +946,18 @@ class _AuctionsInfoState extends State<AuctionsInfo> {
               showDialog(
                   context: context,
                   builder: (BuildContext ctx) {
-                    return CustomDeleteDialog(
-                      title: 'Confirm',
-                      content:
-                          'Would you like to add this watch to your collection ?',
-                      yesBtn: () {
-                        Navigator.pop(context);
-                        showDialog(
-                            context: context,
-                            builder: (context) => AlertDialog(
-                                  content: BottomSheett(),
-                                  actions: [
-                                    TextButton(
-                                        onPressed: () {
-                                          Navigator.pop(context);
-                                        },
-                                        child: Text('Submit',style: TextStyle(color: Colors.black),))
-                                  ],
-                                ));
-                        print("hi");
-                        setState(() {
-                          favoriteList.add(AuctionsList[widget.index]);
-                          fav = Colors.red;
-                          Mycollection = true;
-                        });
-                      },
-                      noBtn: () {
-                        Navigator.pop(context);
-                      },
+                    return AlertDialog(
+                      content: BottomSheett(),
+                      actions: [
+                        TextButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: Text(
+                              'Submit',
+                              style: TextStyle(color: Colors.black),
+                            ))
+                      ],
                     );
                   });
             },
