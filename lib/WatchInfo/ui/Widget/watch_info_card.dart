@@ -48,6 +48,7 @@ class _WatchInfoCardState extends State<WatchInfoCard> {
             elevation: 0.5,
             child: SizedBox(
               height: MediaQuery.of(context).size.height * 0.11,
+            
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                 child: Row(
@@ -58,7 +59,7 @@ class _WatchInfoCardState extends State<WatchInfoCard> {
                       padding: const EdgeInsets.only(left: 10),
                       child: Container(
                         color: PrimaryColor,
-                        width: 80,
+                        width: MediaQuery.of(context).size.width * 0.15,
                         child: Image.asset(
                           widget.auctionsModel.image.toString(),
                           fit: BoxFit.cover,
@@ -110,7 +111,7 @@ class _WatchInfoCardState extends State<WatchInfoCard> {
                               : widget.trendingModel.status == false
                                   ? "Last Bid ${Currency.AED}${widget.trendingModel.price} = $AEDtoUSD ${Currency.USD}"
                                   : "Asking Price ${Currency.AED}${widget.trendingModel.price} = $AEDtoUSD ${Currency.USD}",
-                          style: TextStyle(color: Colors.grey, fontSize: 12),
+                          style: TextStyle(color: Colors.grey, fontSize: 10),
                         ),
                       ],
                     ),

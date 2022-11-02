@@ -24,7 +24,7 @@ class _FavoriteCardState extends State<FavoriteCard> {
       Navigator.push(
           context,
           MaterialPageRoute(
-              builder: (context) => AuctionsInfo(
+              builder: (context) => AuctionsInfo0(
                 auctionsModel: widget.auctionsModel,
                 index: widget.index,
               )));

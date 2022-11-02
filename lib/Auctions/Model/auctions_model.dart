@@ -87,6 +87,7 @@ List<AuctionsModel> AuctionsList = [
     referance: "5500V/110A-B148",
     size: 42.5,
     year: 2021,
+    RetailPrice: 9000
   ),
   AuctionsModel(
     text: "Vacheron constantin overseas chronograph steel",
@@ -108,6 +109,7 @@ List<AuctionsModel> AuctionsList = [
     referance: "5500V/110A-B148",
     size: 42.5,
     year: 2021,
+    RetailPrice: 8000
   ),
   AuctionsModel(
     text:
@@ -130,6 +132,7 @@ List<AuctionsModel> AuctionsList = [
     referance: "5500V/110A-B148",
     size: 42.5,
     year: 2021,
+    RetailPrice: 9000
   ),
   AuctionsModel(
     text: "Vacheron constantin overseas chronograph steel",
@@ -151,6 +154,7 @@ List<AuctionsModel> AuctionsList = [
     referance: "5500V/110A-B148",
     size: 42.5,
     year: 2021,
+    RetailPrice: 9000
   ),
   AuctionsModel(
     text:
@@ -173,6 +177,7 @@ List<AuctionsModel> AuctionsList = [
     referance: "5500V/110A-B148",
     size: 42.5,
     year: 2021,
+    RetailPrice: 9000
   ),
   AuctionsModel(
     text: "Vacheron constantin overseas chronograph steel",
@@ -194,6 +199,7 @@ List<AuctionsModel> AuctionsList = [
     referance: "5500V/110A-B148",
     size: 42.5,
     year: 2021,
+    RetailPrice: 9000
   ),
   AuctionsModel(
     text:
@@ -216,6 +222,7 @@ List<AuctionsModel> AuctionsList = [
     referance: "5500V/110A-B148",
     size: 42.5,
     year: 2021,
+    RetailPrice: 9000
   ),
   AuctionsModel(
     text: "Vacheron constantin overseas chronograph steel",
@@ -237,6 +244,7 @@ List<AuctionsModel> AuctionsList = [
     referance: "5500V/110A-B148",
     size: 42.5,
     year: 2021,
+    RetailPrice: 9000
   ),
   AuctionsModel(
     text:
@@ -259,6 +267,7 @@ List<AuctionsModel> AuctionsList = [
     referance: "5500V/110A-B148",
     size: 42.5,
     year: 2021,
+    RetailPrice: 9000
   ),
   AuctionsModel(
     text:
@@ -281,6 +290,7 @@ List<AuctionsModel> AuctionsList = [
     referance: "5500V/110A-B148",
     size: 42.5,
     year: 2021,
+    RetailPrice: 9000
   ),
   AuctionsModel(
     text: "Vacheron constantin overseas chronograph steel",
@@ -302,6 +312,7 @@ List<AuctionsModel> AuctionsList = [
     referance: "5500V/110A-B148",
     size: 42.5,
     year: 2021,
+    RetailPrice: 9000
   ),
   AuctionsModel(
     text:
@@ -324,5 +335,6 @@ List<AuctionsModel> AuctionsList = [
     referance: "5500V/110A-B148",
     size: 42.5,
     year: 2021,
+    RetailPrice: 9000
   ),
 ];

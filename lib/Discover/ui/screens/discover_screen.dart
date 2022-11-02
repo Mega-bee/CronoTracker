@@ -1,47 +1,32 @@
 import 'package:cronotracker/utils/style/colors.dart';
 import 'package:flutter/material.dart';
+import '../../../Auctions/Model/auctions_model.dart';
 import '../../../SearchPage/ui/Screen/SearchPage.dart';
 import '../../../Trending/ui/Screen/trending_screen.dart';
 import '../../../utils/Images/Images.dart';
 import '../../models/discoverItem.dart';
 import '../widgets/discover_item_card.dart';
+import 'package:simple_grouped_listview/simple_grouped_listview.dart';
 
+final List<DiscoverItem> brands = [
+    DiscoverItem(image: ImageAsset.ROLEX, label: 'Rolex'),
+    DiscoverItem(image: ImageAsset.AUDEMARSPIGUET, label: 'Audemars Piguet'),
+    DiscoverItem(image: ImageAsset.PATEKPHILIPE, label: 'Patek Philippe'),
+    DiscoverItem(image: ImageAsset.RECHARD, label: 'Richard Mille'),
+    DiscoverItem(image: ImageAsset.GIRARD, label: 'Girard-Parregaux'),
+    DiscoverItem(image: ImageAsset.OTHERBRAND, label: 'Other Brands'),
+  ];
 class DiscoverScreen extends StatelessWidget {
-
   DiscoverItem? discoveritem;
 
-  List<DiscoverItem> brands = [
-
-    DiscoverItem(
-        image: ImageAsset.ROLEX,
-      label: 'Rolex'
-    ),
-    DiscoverItem(
-        image: ImageAsset.AUDEMARSPIGUET,
-        label: 'Audemars Piguet'
-    ),
-
-    DiscoverItem(
-        image: ImageAsset.PATEKPHILIPE,
-        label: 'Patek Philippe'
-    ),
-    DiscoverItem(
-        image: ImageAsset.RECHARD,
-        label: 'Richard Mille'
-    ),
-
-
-    DiscoverItem(
-        image: ImageAsset.GIRARD,
-        label: 'Girard-Parregaux'
-    ),
-    DiscoverItem(
-        image: ImageAsset.OTHERBRAND,
-        label: 'Other Brands'
-    ),
-
-
-  ];
+  // List<DiscoverItem> brands = [
+  //   DiscoverItem(image: ImageAsset.ROLEX, label: 'Rolex'),
+  //   DiscoverItem(image: ImageAsset.AUDEMARSPIGUET, label: 'Audemars Piguet'),
+  //   DiscoverItem(image: ImageAsset.PATEKPHILIPE, label: 'Patek Philippe'),
+  //   DiscoverItem(image: ImageAsset.RECHARD, label: 'Richard Mille'),
+  //   DiscoverItem(image: ImageAsset.GIRARD, label: 'Girard-Parregaux'),
+  //   DiscoverItem(image: ImageAsset.OTHERBRAND, label: 'Other Brands'),
+  // ];
   final TextEditingController _textEditingController = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -172,9 +157,31 @@ class DiscoverScreen extends StatelessWidget {
                 )
               ],
               ),
-            ],
-          ),
+              height: MediaQuery.of(context).size.height * 0.05,
+            ),
+            Column(
+              children: [
+                SizedBox(
+                  height: 20,
+                ),
+               
+                GridView.builder(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        childAspectRatio: 1,
+                        crossAxisSpacing: 10,
+                        mainAxisSpacing: 10),
+                    physics: ScrollPhysics(),
+                    shrinkWrap: true,
+                    itemCount: brands.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return DiscoverItemCard(brands[index]);
+                    }),
+              ],
+            ),
+          ],
         ),
+      ),
     );
   }
 }
