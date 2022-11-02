@@ -47,7 +47,7 @@ class _AuctionsCardState extends State<AuctionsCard> {
         height: MediaQuery
             .of(context)
             .size
-            .height * 0.39,
+            .height * 0.40,
         child: Padding(
           padding: const EdgeInsets.only(
               left: 11, right: 11, top: 13, bottom: 11),
