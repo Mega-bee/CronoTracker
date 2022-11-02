@@ -9,9 +9,8 @@ import '../../../AuctionsWatchInfo/ui/screen/AuctionWatchInfo.dart';
 
 class AuctionsCard extends StatefulWidget {
   final AuctionsModel auctionsModel;
-  final int index;
-
-  const AuctionsCard({Key? key, required this.auctionsModel, required this.index}) : super(key: key);
+int index;
+AuctionsCard({Key? key, required this.auctionsModel, required this.index}) : super(key: key);
 
   @override
   State<AuctionsCard> createState() => _AuctionsCardState();
