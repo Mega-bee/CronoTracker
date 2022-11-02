@@ -1,3 +1,4 @@
+import 'package:cronotracker/utils/style/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -16,71 +17,73 @@ class CustomDeleteDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     return AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const SizedBox(
-              height: 30,
-            ),
-            Container(
-              child: Text(
-                title,
-                style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ],
-        ),
+        // title: Column(
+        //   crossAxisAlignment: CrossAxisAlignment.center,
+        //   children: [
+        //     Container(
+        //       child: Text(
+        //         title,
+        //         style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        //         textAlign: TextAlign.center,
+        //       ),
+        //     ),
+        //   ],
+        // ),
         content: Column(
           mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(
-              content,
-              style: const TextStyle(fontSize: 14),
-            ),
             const SizedBox(
-              height: 50,
+              height: 20,
             ),
             Center(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  ElevatedButton(
-                    onPressed: () {
-                      yesBtn();
-                    },
-                    child: Text("  Yes  ",
-                        style: TextStyle(
-                            color: Theme.of(context).primaryColor,
-                            fontWeight: FontWeight.w400,
-                            fontSize: 12)
-                    ),
-                    style: ElevatedButton.styleFrom(
-                        elevation: 0,
-                        side: BorderSide(color: Theme.of(context).primaryColor),
-                        padding: const EdgeInsets.fromLTRB(30, 10, 30, 10)),
-                  ),
-                  ElevatedButton(
-                    onPressed: () {
-                      noBtn();
-                    },
-                    child: Text(
-                      "Cancel",
-                      style: TextStyle(
-                          color: Theme.of(context).primaryColor,
-                          fontWeight: FontWeight.w400,
-                          fontSize: 12)     ,               ),
-                    style: ElevatedButton.styleFrom(
-                        elevation: 0,
-                        side: BorderSide(color: Theme.of(context).primaryColor),
-                        padding: const EdgeInsets.fromLTRB(30, 10, 30, 10)),
-                  ),
-                ],
+              child: Text(
+                content,textAlign: TextAlign.center,
+                style: const TextStyle(fontSize: 14,fontWeight: FontWeight.w500),
               ),
             ),
             const SizedBox(
-              height: 30,
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    noBtn();
+                  },
+                  child: Text(
+                    "Cancel",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14)     ,               ),
+                  // style: ElevatedButton.styleFrom(
+                  //     primary: BlueColor,
+                  //
+                  //     elevation: 0,
+                  //     side: BorderSide(color: Theme.of(context).Colors.black),
+                  //     padding: const EdgeInsets.fromLTRB(30, 10, 30, 10)),
+                ),
+                TextButton(
+                  onPressed: () {
+                    yesBtn();
+                  },
+                  child: Text("  OK  ",
+                      style: TextStyle(
+                          color: BlueColor,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14)
+                  ),
+                  // style: ElevatedButton.styleFrom(
+                  //     primary: BlueColor,
+                  //     elevation: 0,
+                  //     side: BorderSide(color: Colors.black),
+                  //     padding: const EdgeInsets.fromLTRB(30, 10, 30, 10)),
+                ),
+                // const SizedBox(
+                //   height: 20,
+                // ),
+              ],
             ),
           ],
         ));

@@ -1,157 +1,121 @@
-import 'package:flutter/cupertino.dart';
+import 'package:cronotracker/Want%20To%20Buy/ui/Screen/want_to_buy.dart';
 import 'package:flutter/material.dart';
 import '../../../Auctions/ui/Screen/auctions_screen.dart';
 import '../../../Discover/ui/screens/discover_screen.dart';
-import '../../../DrawerMenu/ui/Screen/drawer_menu.dart';
 import '../../../Notfications/ui/Screen/NotificationScreen.dart';
-import '../../../Profile/ui/screens/profile_screen.dart';
 import '../../../Trending/ui/Screen/trending_screen.dart';
 import '../../../utils/style/colors.dart';
-import '../Widgets/items.dart';
 
 class BottomNavigationBarScreen extends StatefulWidget {
-
   @override
-  State<BottomNavigationBarScreen> createState() => _BottomNavigationBarScreenState();
+  State<BottomNavigationBarScreen> createState() =>
+      _BottomNavigationBarScreenState();
 }
 
 class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
-
-  int  currentIndex = 0;
+  int currentIndex = 0;
 
   List<Widget> screens = [
     TrendingScreen(),
-    DiscoverScreen(),
     Auctions(),
+    WantToBuy(),
     NotificationScreen(),
-    ProfileScreen()
   ];
 
-  final GlobalKey<ScaffoldState> _key = GlobalKey();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        key: _key,
-        appBar: AppBar(
-        backgroundColor: PrimaryColor,
-          // bottom: PreferredSize(
-          //   preferredSize: const Size.fromHeight(5),
-          //   child: Padding(
-          //     padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-          //     child: SearchWidget(
-          //         text: query,
-          //         onChanged: searchUsers,
-          //         hintText: 'Search'),
-          //   ),
-          // ),
-        actions: [
-          IconButton(
-            onPressed: (){
-              showSearch(
-                  context: context,
-                  delegate: MysearchDelegate());},
-            icon: Icon(Icons.search),
-          ),
-
-          IconButton(
-            onPressed: (){},
-            icon: Icon(Icons.refresh),
-          ),
-
-        ],
-
-        leading: IconButton(
-          icon: Icon(Icons.sort),
-          onPressed: () {
-            _key.currentState!.openDrawer();
-          },
-        ),
-      ),
-      drawer: DrawerMenu(),
+      backgroundColor: PrimaryColor,
       body: screens[currentIndex],
-
       bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.white38,
-        unselectedIconTheme: IconThemeData(color:Colors.white38 ),
-        selectedIconTheme: IconThemeData(color: Colors.white),
+        selectedItemColor: BlueColor,
+        unselectedItemColor: Color(0xFF747474),
+        unselectedIconTheme: IconThemeData(color: Color(0xFF747474)),
+        selectedIconTheme: IconThemeData(color: BlueColor),
         type: BottomNavigationBarType.fixed,
-        backgroundColor: PrimaryColor,
+        backgroundColor: Color(0xFFF9F9F9),
         currentIndex: currentIndex,
         onTap: (index) {
           setState(() {
             currentIndex = index;
           });
         },
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(
               Icons.trending_up_sharp,
+              size: 20,
             ),
             label: 'Trending',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.search,
-            ),
-            label: 'Discover',
-          ),
+
           BottomNavigationBarItem(
             icon: Icon(
               Icons.gavel,
+              size: 20,
             ),
             label: 'Auctions',
-
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.star,
+              size: 20,
+            ),
+            label: 'My collection',
           ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.notifications,
+              size: 20,
             ),
             label: 'Notification',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.person,
-            ),
-            label: 'Profile',
-          ),
+          // BottomNavigationBarItem(
+          //   icon: Icon(
+          //     Icons.person,
+          //   ),
+          //   label: 'Profile',
+          // ),
         ],
       ),
-
-
     );
   }
 }
 
-class MysearchDelegate extends SearchDelegate{
-  @override
-  List<Widget>? buildActions(BuildContext context) {
-  [
-    IconButton(
-    onPressed: (){
-      if(query.isEmpty){
-        close(context,null);
-      }
-      else {query="";}
-      },
-    icon: Icon(Icons.clear)),
-  ];
-  }
-
-  @override
-  Widget? buildLeading(BuildContext context) {
-    return IconButton(
-        onPressed: (){close(context,null);},
-        icon: const Icon(Icons.arrow_back));
-  }
-
-  @override
-  Widget buildResults(BuildContext context) {
-    return Container();
-  }
-
-  @override
-  Widget buildSuggestions(BuildContext context) {
-    return Container();
-  }
-}
+// class MysearchDelegate extends SearchDelegate {
+//   @override
+//   List<Widget>? buildActions(BuildContext context) {
+//     [
+//       IconButton(
+//           onPressed: () {
+//             if (query.isEmpty) {
+//               close(context, null);
+//             }
+//             else {
+//               query = "";
+//             }
+//           },
+//           icon: Icon(Icons.clear)),
+//     ];
+//     return null;
+//   }
+//
+//   @override
+//   Widget? buildLeading(BuildContext context) {
+//     return IconButton(
+//         onPressed: () {
+//           close(context, null);
+//         },
+//         icon: const Icon(Icons.arrow_back));
+//   }
+//
+//   @override
+//   Widget buildResults(BuildContext context) {
+//     return Container();
+//   }
+//
+//   @override
+//   Widget buildSuggestions(BuildContext context) {
+//     return Container();
+//   }
+// }

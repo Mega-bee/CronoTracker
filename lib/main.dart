@@ -1,7 +1,8 @@
 import 'package:cronotracker/SplashScreen/ui/Screen/splash_screen.dart';
+import 'package:cronotracker/utils/style/colors.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
   runApp(const MyApp());
 }
 
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: PrimaryColor,
       ),
       home: SplashScreenMain(),
     );
