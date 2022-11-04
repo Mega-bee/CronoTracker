@@ -1,3 +1,4 @@
+import 'package:cronotracker/AuctionsWatchInfo/ui/screen/AuctionsWatchInfo1.dart';
 import 'package:cronotracker/utils/style/colors.dart';
 import 'package:flutter/material.dart';
 

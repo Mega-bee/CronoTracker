@@ -52,7 +52,7 @@ dev_dependencies:
   hive_generator:
   sticky_grouped_list: ^3.1.0
   syncfusion_flutter_charts:
-
+  flutter_launcher_icons:
 
 
   # The "flutter_lints" package below contains a set of recommended lints to
